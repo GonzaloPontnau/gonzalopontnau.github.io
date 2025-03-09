@@ -10,39 +10,34 @@
 
     <!-- Favicons -->
     <link rel="shortcut icon" href="{% static 'favicon/favicon.ico' %}">
-
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
-
     <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
 
     <meta name="msapplication-TileColor" content="#ffffff">
-
-
 </head>
 
-<!-- Github, lkd, email logos -->
-<div class="social-nav">
-    <div class="social-links">
-        <a href="https://github.com/PontnauGonzalo" target="_blank" rel="noopener noreferrer" class="social-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-        </a>
-        <a href="https://linkedin.com/in/gonzalopontnau" target="_blank" rel="noopener noreferrer" class="social-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-        </a>
-        <a href="mailto:gonzalopontnau@gmail.com" class="social-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-        </a>
-        <a href="{% static 'images/CV.pdf' %}" download class="social-icon cv-icon">
-            <span class="cv-text">CV</span>
-        </a>
-        <div class="social-line"></div>
-    </div>
-</div>
-
 <body>
+    <!-- Github, lkd, cv logos en barra lateral -->
+    <div class="social-nav">
+        <div class="social-links">
+            <a href="https://github.com/PontnauGonzalo" target="_blank" rel="noopener noreferrer" class="social-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+            <a href="https://linkedin.com/in/gonzalopontnau" target="_blank" rel="noopener noreferrer" class="social-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="{% static 'images/CV.pdf' %}" target="_blank" rel="noopener noreferrer" class="social-icon cv-icon">
+                <div class="cv-circle">
+                    <span class="cv-text">CV</span>
+                </div>
+            </a>
+            <div class="social-line"></div>
+        </div>
+    </div>
+
     <!-- Navbar va aquí -->
     <nav class="navbar">
         <div class="nav-container">
@@ -66,7 +61,7 @@
         <div class="title">Backend Developer</div>
         <!-- cv and contact buttom -->
         <div class="button-container">
-            <a href="#contact" class="btn">Contáctame</a>
+            <a href="#contact" class="btn">Contactame</a>
         </div>
     </div>
 
@@ -76,13 +71,13 @@
             <h2 class="section-title">Sobre Mí</h2>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="{% static 'images/imagenPerfil.png' %}" alt="Gonzalo Pontnau" class="profile-image-large">
+                    <img src="{% static 'images/imagenPerfil.png' %}" alt="Gonzalo Pontnau" class="profile-image-large" loading="lazy" decoding="async">
                     <div class="about-social">
                         <a href="https://github.com/PontnauGonzalo" target="_blank" class="about-social-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                         </a>
                         <a href="https://linkedin.com/in/gonzalopontnau" target="_blank" class="about-social-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                         </a>
                     </div>
                 </div>
@@ -127,8 +122,7 @@
                 <!-- Proyecto 1 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="{% static '.\images\demo-cryptoAPI-python.gif' %}" alt="Visualizador de Criptomonedas">
-                        <!-- Nota: Reemplaza la imagen con tu GIF usando el mismo nombre de archivo o cambiando la referencia -->
+                        <img src="{% static 'images/demo-cryptoAPI-python.gif' %}" alt="Visualizador de Criptomonedas">
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Visualizador de Precios de Criptomonedas</h3>
@@ -203,138 +197,139 @@
 
     <!-- Sección de contacto -->
     <section id="contact" class="contact-section">
-    <div class="contact-wrapper">
-        <div class="contact-info">
-            <h2 class="contact-title">Contáctame.</h2>
-            <p class="contact-description">
-                Si quieres contactarte conmigo, puedes hacerlo a través de las redes sociales 
-                o llenando el formulario. ¡Gracias! 🚀
-            </p>
-            <div class="contact-email">
-                <span class="email-icon">📧</span>
-                <a href="mailto:gonzalopontnau@gmail.com" class="email-link">gonzalopontnau@gmail.com</a>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h2 class="contact-title">Contactame.</h2>
+                <p class="contact-description">
+                    Si quieres contactarte conmigo, puedes hacerlo a través de las redes sociales 
+                    o llenando el formulario. ¡Gracias! 🚀
+                </p>
+                <div class="contact-email">
+                    <span class="email-icon">📧</span>
+                    <a href="mailto:gonzalopontnau@gmail.com" class="email-link">gonzalopontnau@gmail.com</a>
+                </div>
+                <div class="profile-image-container">
+                    <img src="{% static 'images/imagenPerfil.png' %}" alt="Gonzalo Pontnau" class="profile-image">
+                </div>
             </div>
-            <div class="profile-image-container">
-                <img src="{% static 'images/imagenPerfil.png' %}" alt="Gonzalo Pontnau" class="profile-image">
+            <div class="contact-form">
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Correo electrónico" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="subject" placeholder="Asunto" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar mensaje</button>
+                </form>
             </div>
         </div>
-        <div class="contact-form">
-            <form action="#" method="post">
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="Nombre" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" name="email" placeholder="Correo electrónico" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" name="subject" placeholder="Asunto" required>
-                </div>
-                <div class="form-group">
-                    <textarea name="message" placeholder="Mensaje" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Enviar mensaje</button>
-            </form>
-        </div>
-    </div>
-    </section> 
+    </section>
     
+    <!-- Canvas para partículas -->
     <canvas id="particle-canvas"></canvas>
 
     <style>
-    #particle-canvas {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        background: #0a0a0a; /* Color de fondo oscuro */
-    }
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: #0a0a0a; /* Color de fondo oscuro */
+        }
 
-    .header {
-        position: relative; /* Asegura que el contenido esté sobre el canvas */
-        z-index: 1;
-    }
+        .header {
+            position: relative; /* Asegura que el contenido esté sobre el canvas */
+            z-index: 1;
+        }
     </style>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const canvas = document.getElementById('particle-canvas');
-        const ctx = canvas.getContext('2d');
-        
-        // Configuración inicial
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        
-        const particles = [];
-        const particleCount = 80;
-        
-        // Clase Partícula
-        class Particle {
-            constructor() {
-                this.reset();
-            }
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('particle-canvas');
+            const ctx = canvas.getContext('2d');
             
-            reset() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.radius = Math.random() * 1.5;
-                this.speed = Math.random() * 0.5 + 0.2;
-                this.alpha = Math.random() * 0.5 + 0.1;
-            }
-            
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`;
-                ctx.fill();
-            }
-            
-            update() {
-                this.y -= this.speed;
-                if (this.y < -10) this.reset();
-            }
-        }
-
-        // Crear partículas
-        for (let i = 0; i < particleCount; i++) {
-            particles.push(new Particle());
-        }
-
-        // Función de animación
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            particles.forEach(particle => {
-                particle.update();
-                particle.draw();
-            });
-            
-            requestAnimationFrame(animate);
-        }
-
-        // Iniciar animación
-        animate();
-
-        // Redimensionar canvas
-        window.addEventListener('resize', () => {
+            // Configuración inicial
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-        });
-
-        // Nuevo script para el efecto de navbar al scroll
-        const navbar = document.querySelector('.navbar');
-        
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                navbar.classList.add('navbar-scrolled');
-            } else {
-                navbar.classList.remove('navbar-scrolled');
+            
+            const particles = [];
+            const particleCount = 80;
+            
+            // Clase Partícula
+            class Particle {
+                constructor() {
+                    this.reset();
+                }
+                
+                reset() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.radius = Math.random() * 1.5;
+                    this.speed = Math.random() * 0.5 + 0.2;
+                    this.alpha = Math.random() * 0.5 + 0.1;
+                }
+                
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`;
+                    ctx.fill();
+                }
+                
+                update() {
+                    this.y -= this.speed;
+                    if (this.y < -10) this.reset();
+                }
             }
+
+            // Crear partículas
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+
+            // Función de animación
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                particles.forEach(particle => {
+                    particle.update();
+                    particle.draw();
+                });
+                
+                requestAnimationFrame(animate);
+            }
+
+            // Iniciar animación
+            animate();
+
+            // Redimensionar canvas
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+
+            // Nuevo script para el efecto de navbar al scroll
+            const navbar = document.querySelector('.navbar');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('navbar-scrolled');
+                } else {
+                    navbar.classList.remove('navbar-scrolled');
+                }
+            });
         });
-    });
     </script>
         
-        <footer class="footer">
-            <p>© 2021 Gonzalo Pontnau</p>
-        </footer>
+    <footer class="footer">
+        <p>© 2023 Gonzalo Pontnau</p>
+    </footer>
 </body>
 </html>

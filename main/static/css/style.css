@@ -6,6 +6,7 @@
     align-items: center;
     text-align: center;
     padding: 0 20px;
+    padding-top: 50px; /* Ajustar este valor según la altura de tu navbar */
 }
 
 .greeting {
@@ -349,18 +350,18 @@ body {
 
 .btn {
     padding: 0.8rem 2rem;
-    border: 2px solid #5BC0BE;
+    border: 2px solid #00ff88;
     border-radius: 25px;
     text-decoration: none;
-    color: #5BC0BE;
+    color: #00ff88;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     transition: all 0.3s ease;
 }
 
 .btn:hover {
-    background: #5BC0BE;
-    color: #0a0a0a;
+    background: #00ff882a;
+    color: #ffffff;
 }
 
 /* Estilos para la sección de contacto */
@@ -434,11 +435,18 @@ body {
     left: 0;
     right: 0;
     width: 100%;
-    background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(8px);
+    background: rgba(10, 10, 10, 0.8);
     z-index: 1000;
-    padding: 1rem 0;
+    padding: 1.3rem 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.navbar-scrolled {
+    background: rgb(37 38 59 / 23%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    /* box-shadow: 1px 9px 20px 3px rgb(37 38 59 / 23%); */
 }
 
 .nav-container {
@@ -454,7 +462,7 @@ body {
 .gp-logo {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 1.8rem;
+    font-size: 2.4rem;
     /* Gradiente */
     background: linear-gradient(45deg, #4f2fffd2, #037ff3, #03f0b4, #9df100);
     background-size: 400% 400%;
@@ -479,10 +487,12 @@ body {
 }
 
 .nav-links a {
+    text-transform: uppercase;
+    font-size: 14px;
     color: #f8f9fa;
     text-decoration: none;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
+    font-family: monospace;
+    font-weight: bold;
     transition: all 0.3s ease;
     position: relative;
 }
@@ -504,4 +514,290 @@ body {
 
 .nav-links a:hover::after {
     width: 100%;
+}
+
+/* Estilos para la sección de proyectos */
+.projects-section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #00ff88;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.projects-section .project-card {
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0;
+}
+
+.projects-section .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-title {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.project-description {
+    color: #ccc;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-tech .tech-tag {
+    background: rgba(0, 255, 136, 0.1);
+    color: #00ff88;
+    padding: 0.2rem 0.6rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-right: 0;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.project-link {
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: #00ff88;
+}
+
+/* Responsive para la sección de proyectos */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* Estilos para la sección Sobre mí */
+.about-section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-content {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-image-large {
+    width: 280px;
+    height: 280px;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.about-social {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.about-social-icon {
+    color: #e0e0e0;
+    background: rgba(30, 30, 30, 0.6);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.about-social-icon:hover {
+    color: #00ff88;
+    transform: translateY(-3px);
+}
+
+.about-text {
+    flex: 2;
+}
+
+.about-bio {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.highlight {
+    color: #00ff88;
+    font-weight: 600;
+}
+
+.about-skills {
+    margin-top: 2rem;
+}
+
+.skills-title {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+.skill-tag {
+    background: rgba(0, 255, 136, 0.1);
+    color: #00ff88;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background: rgba(0, 255, 136, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Estilos para el icono CV */
+.cv-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    position: relative;
+}
+
+.cv-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #e0e0e0;
+}
+
+.social-icon.cv-icon:hover .cv-text {
+    color: #00ff88;
+}
+
+/* Eliminar o comentar el bloque .about-cta y .btn-about que ya no se necesitan */
+/* 
+.about-cta {
+    margin-top: 2.5rem;
+}
+
+.btn-about {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: transparent;
+    border: 2px solid #00ff88;
+    color: #00ff88;
+    border-radius: 25px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-about:hover {
+    background: rgba(0, 255, 136, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.2);
+}
+*/
+
+/* Responsive para la sección Sobre mí */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-image-large {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .about-text {
+        margin-top: 2rem;
+    }
+    
+    .skills-container {
+        justify-content: center;
+    }
 }

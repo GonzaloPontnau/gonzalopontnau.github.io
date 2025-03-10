@@ -114,19 +114,35 @@ body {
     bottom: 0;
     z-index: 1000;
     margin: 0;
+    padding: 0 !important;
+    padding-bottom: 0 !important;
+    padding-block-end: 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .social-links {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 28px;
+    gap: 15px;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
 }
 
 .social-icon {
     color: #e0e0e0;
     transition: all 0.3s ease;
     font-size: 1.1rem;
+}
+
+.social-icon.cv-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+    text-decoration: none;
 }
 
 .social-icon svg {
@@ -141,35 +157,29 @@ body {
 
 .social-line {
     width: 2px;
-    height: 100px;
+    height: 60vh;
     background-color: #e0e0e0;
-    margin: 0 auto;
+    margin: -5px auto 0;
+    position: relative;
+}
+
+.social-line::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    width: 2px;
+    height: 200px;
+    background-color: #e0e0e0;
 }
 
 /* Estilos para el icono CV */
-.cv-icon {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 28px;
-    height: 28px;
-}
-
-.cv-circle {
-    width: 28px;
-    height: 28px;
-    border: 2px solid currentColor;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .cv-text {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 11px;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+    text-decoration: none;
 }
 
 /*  SECCIÓN HERO  */
@@ -648,13 +658,8 @@ footer {
         font-size: 1.1rem;
     }
     
-    .cv-circle {
-        width: 28px;
-        height: 28px;
-    }
-    
     .cv-text {
-        font-size: 12px;
+        font-size: 1.2rem;
     }
     
     .submit-btn {

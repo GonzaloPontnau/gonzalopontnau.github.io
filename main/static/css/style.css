@@ -19,10 +19,11 @@ body {
 
 @keyframes typing {
     0%, 90%, 100% { width: 0; }
-    30%, 60% { width: 145px; }
+    30%, 60% { width: 100%; }
 }
 
 @keyframes cursor {
+    0%, 100% { border-color: #00ff88; }
     50% { border-color: transparent; }
 }
 
@@ -109,7 +110,7 @@ body {
 /*  BARRA LATERAL DE REDES SOCIALES  */
 .social-nav {
     position: fixed;
-    left: 24px;
+    left: 35px;
     bottom: 0;
     z-index: 1000;
     margin: 0;
@@ -119,22 +120,28 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
+    gap: 28px;
 }
 
 .social-icon {
     color: #e0e0e0;
     transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.social-icon svg {
+    width: 28px;
+    height: 28px;
 }
 
 .social-icon:hover {
     color: #00ff88;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 }
 
 .social-line {
-    width: 1px;
-    height: 90px;
+    width: 2px;
+    height: 100px;
     background-color: #e0e0e0;
     margin: 0 auto;
 }
@@ -145,13 +152,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
 }
 
 .cv-circle {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     border: 2px solid currentColor;
     border-radius: 50%;
     display: flex;
@@ -162,7 +169,7 @@ body {
 .cv-text {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 9px;
+    font-size: 11px;
 }
 
 /*  SECCIÓN HERO  */
@@ -446,7 +453,7 @@ body {
 
 /*  SECCIÓN DE CONTACTO  */
 .contact-section {
-    padding: 4rem 2rem;
+    padding: 8rem 0 4rem;
     background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
     border-radius: 20px;
     margin: 4rem auto;
@@ -459,34 +466,40 @@ body {
     justify-content: space-between;
     max-width: 1000px;
     margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .contact-info {
     flex: 1;
     max-width: 450px;
+    display: flex;
+    flex-direction: column;
 }
 
 .contact-title {
     font-size: 2.5rem;
     color: #fff;
-    margin-bottom: 1rem;
-    padding: 1rem 2rem;
+    margin-bottom: 1.5rem;
+    padding: 0.8rem 1.5rem;
     background: rgba(45, 45, 45, 0.9);
     width: max-content;
     position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .contact-title::before {
     content: 'Contáctame';
     position: absolute;
-    top: 1rem;
-    left: 2rem;
-    width: 100%;
+    top: 0.8rem;
+    left: 1.5rem;
+    width: 0;
     height: 70%;
     color: #00ff88;
     border-right: 2px solid #00ff88;
     overflow: hidden;
-    animation: typing 4s steps(10) infinite, cursor 0.4s step-end infinite alternate;
+    white-space: nowrap;
+    animation: typing 4s steps(10) infinite, cursor 0.8s step-end infinite;
 }
 
 .contact-description {

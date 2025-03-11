@@ -126,7 +126,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 23px;
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
 }
@@ -157,7 +157,7 @@ body {
 
 .social-line {
     width: 2px;
-    height: 60vh;
+    height: 14vh;
     background-color: #e0e0e0;
     margin: -5px auto 0;
     position: relative;
@@ -166,10 +166,8 @@ body {
 .social-line::after {
     content: '';
     position: absolute;
-    bottom: -100px;
     left: 0;
     width: 2px;
-    height: 200px;
     background-color: #e0e0e0;
 }
 
@@ -509,7 +507,7 @@ body {
     border-right: 2px solid #00ff88;
     overflow: hidden;
     white-space: nowrap;
-    animation: typing 4s steps(10) infinite, cursor 0.8s step-end infinite;
+    animation: typing 4s steps(5) infinite, cursor 0.8s step-end infinite;
 }
 
 .contact-description {

@@ -632,54 +632,20 @@
               </div>
             </div>
             <div class="education-content">
-              <div class="certification-overview">
-                <p>Formación universitaria en Ingeniería de Sistemas con enfoque en desarrollo de software, bases de datos, y arquitectura de sistemas.</p>
-              </div>
-              
-              <div class="certification-modules">
-                <h4 class="certification-modules-title">Materias destacadas</h4>
-                <div class="certification-modules-grid">
-                  <div class="certification-module">
-                    <span class="cert-module-icon">📚</span>
-                    <span>Algoritmos y Estructuras de Datos</span>
-                  </div>
-                  <div class="certification-module">
-                    <span class="cert-module-icon">📚</span>
-                    <span>Bases de Datos</span>
-                  </div>
-                  <div class="certification-module">
-                    <span class="cert-module-icon">📚</span>
-                    <span>Paradigmas de Programación</span>
-                  </div>
-                  <div class="certification-module">
-                    <span class="cert-module-icon">📚</span>
-                    <span>Arquitectura de Software</span>
-                  </div>
-                  <div class="certification-module">
-                    <span class="cert-module-icon">📚</span>
-                    <span>Ingeniería de Software</span>
-                  </div>
-                  <div class="certification-module">
-                    <span class="cert-module-icon">📚</span>
-                    <span>Redes y Sistemas Distribuidos</span>
-                  </div>
+              <div class="education-content-paragraphs">
+                <div class="education-paragraph">
+                  <h4 class="paragraph-title">Formación en programación</h4>
+                  <p class="paragraph-content">
+                    Dominio de C/C++, Go, Java, bases de datos MySQL y diseño de sistemas operativos. Destaco el desarrollo de un sistema operativo distribuido en Go, integrando módulos como Kernel, CPU, Memoria y File System. Implementé APIs HTTP para comunicación modular, configuración JSON y logs estructurados. Además, diseñé un analizador léxico, sintáctico y semántico en C usando Flex/Bison y expresiones regulares (regex), aplicado en la interpretación de pseudocódigo para procesos.
+                  </p>
                 </div>
-              </div>
-              
-              <div class="education-skills-container">
-                <h4 class="certification-skills-title">Habilidades adquiridas</h4>
-                <div class="certification-skills">
-                  <span class="skill-tag">Programación</span>
-                  <span class="skill-tag">Análisis de Sistemas</span>
-                  <span class="skill-tag">Diseño de Software</span>
-                  <span class="skill-tag">Resolución de Problemas</span>
-                  <span class="skill-tag">Trabajo en Equipo</span>
-                  <span class="skill-tag">Gestión de Proyectos</span>
+                
+                <div class="education-paragraph">
+                  <h4 class="paragraph-title">Metodologías y enfoque</h4>
+                  <p class="paragraph-content">
+                    Experiencia en análisis de requerimientos, diseño modular bajo principios SOLID, y aplicación de metodologías ágiles (Scrum) para gestionar ciclos de desarrollo iterativos. Conocimientos de analista en sistemas, combinando habilidades técnicas con capacidad para modelar soluciones, desde la especificación de requisitos hasta la implementación y optimización.
+                  </p>
                 </div>
-              </div>
-              
-              <div class="certification-highlight">
-                <p>Programa académico enfocado en formar ingenieros con sólidos conocimientos técnicos y capacidad para liderar proyectos de tecnología.</p>
               </div>
             </div>
           </div>
@@ -700,6 +666,15 @@
                 <h3 class="education-institution">Curso Completo de Django</h3>
                 <p class="education-degree">Desarrollo Web Backend <span class="education-date">| Platzi</span></p>
               </div>
+              <div class="education-external-link">
+                <a href="https://platzi.com/cursos/django/" target="_blank" rel="noopener noreferrer" class="edu-link" title="Ver curso en Platzi">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
             </div>
             <div class="education-content">
               <div class="certification-overview">
@@ -707,7 +682,6 @@
               </div>
               
               <div class="certification-modules">
-                <h4 class="certification-modules-title">Módulos completados</h4>
                 <div class="certification-modules-grid">
                   <div class="certification-module">
                     <span class="cert-module-icon">✅</span>
@@ -736,7 +710,7 @@
                 </div>
               </div>
               
-              <div class="education-skills-container">
+              {% comment %} <div class="education-skills-container">
                 <h4 class="certification-skills-title">Tecnologías</h4>
                 <div class="certification-skills">
                   <span class="skill-tag">Python</span>
@@ -748,7 +722,7 @@
                   <span class="skill-tag">PostgreSQL</span>
                   <span class="skill-tag">Git & GitHub</span>
                 </div>
-              </div>
+              </div> {% endcomment %}
               
               <div class="certification-highlight">
                 <p>Curso completo que abarca tanto arquitectura MVT como desarrollo avanzado de APIs con Django REST Framework y despliegue en producción.</p>

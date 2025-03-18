@@ -494,9 +494,9 @@ body {
 
 .contact-description {
     color: #e0e0e0;
-    font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 2rem;
+    margin-right: 10rem;
 }
 
 .contact-email {
@@ -510,7 +510,7 @@ body {
 .email-link {
     color: #00ff88;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     transition: color 0.3s ease;
 }
 

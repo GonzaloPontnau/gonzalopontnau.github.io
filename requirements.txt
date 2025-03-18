@@ -1,0 +1,4 @@
+Django==5.1.6  # Versión actual que estás utilizando
+Pillow==10.1.0  # Para manejo de imágenes (si lo estás utilizando)
+whitenoise==6.6.0  # Para servir archivos estáticos en producción
+gunicorn==21.2.0  # Servidor WSGI para producción

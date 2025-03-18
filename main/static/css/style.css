@@ -770,14 +770,6 @@ body {
   }
 }
 
-/* Borrar estos estilos ya que no se usarán más */
-.dual-card-container,
-.dual-card-container::before,
-.red-card,
-.yellow-card {
-  /* Se eliminan estos estilos específicos de color */
-}
-
 /*  SECCIÓN DE CONTACTO  */
 .contact-section {
     padding: 4rem 2rem;

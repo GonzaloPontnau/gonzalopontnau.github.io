@@ -445,6 +445,202 @@ body {
     color: #00ff88;
 }
 
+/* Nuevos estilos para sección de educación en formato vertical */
+.education-cards-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+}
+
+.education-card {
+  position: relative;
+  padding: 2rem;
+  border-radius: 12px;
+  background: rgba(30, 30, 30, 0.9);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 4px solid #00ff88;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.education-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.education-icon {
+  background: rgba(0, 255, 136, 0.1);
+  color: #00ff88;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cert-icon {
+  background: rgba(79, 47, 255, 0.1);
+  color: #4f2fff;
+}
+
+.education-title-area {
+  flex-grow: 1;
+}
+
+.education-institution {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 0 0.5rem 0;
+}
+
+.education-degree {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  margin: 0;
+}
+
+.education-date {
+  color: #00ff88;
+  font-style: italic;
+}
+
+.education-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.certification-overview p {
+  color: #e0e0e0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.certification-modules-title,
+.certification-skills-title {
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 0 0 1.5rem 0;
+}
+
+.certification-modules-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  background: rgba(40, 40, 40, 0.4);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.certification-module {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.certification-module span {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+}
+
+.cert-module-icon {
+  color: #00ff88;
+  font-size: 1.2rem;
+}
+
+.certification-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.certification-skills .skill-tag {
+  background: rgba(0, 255, 136, 0.1);
+  color: #00ff88;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  font-size: 1.1rem;
+}
+
+.certification-highlight {
+  background: rgba(0, 255, 136, 0.05);
+  border-left: 3px solid #00ff88;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  font-style: italic;
+  border-radius: 0 10px 10px 0;
+}
+
+.certification-highlight p {
+  color: #e0e0e0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 991px) {
+  .certification-modules-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .education-institution {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .certification-modules-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .education-card-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .education-institution {
+    font-size: 1.6rem;
+  }
+  
+  .certification-module span,
+  .certification-overview p,
+  .certification-highlight p {
+    font-size: 1.1rem;
+  }
+  
+  .certification-modules-title,
+  .certification-skills-title {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  
+  .certification-skills {
+    justify-content: center;
+  }
+}
+
+/* Borrar estos estilos ya que no se usarán más */
+.dual-card-container,
+.dual-card-container::before,
+.red-card,
+.yellow-card {
+  /* Se eliminan estos estilos específicos de color */
+}
+
 /*  SECCIÓN DE CONTACTO  */
 .contact-section {
     padding: 4rem 2rem;
@@ -610,7 +806,7 @@ footer {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 15rem 2rem;
     box-sizing: border-box;
 }
 

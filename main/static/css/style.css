@@ -494,6 +494,11 @@ body {
   color: #4f2fff;
 }
 
+.go-icon {
+  background: rgba(0, 173, 216, 0.1);
+  color: #00add8;
+}
+
 .education-title-area {
   flex-grow: 1;
 }
@@ -637,6 +642,66 @@ body {
   transform: translateY(-2px);
 }
 
+/* Estilos para el botón de LinkedIn al final de educación */
+.linkedin-more-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 4rem;
+  padding: 2rem;
+  background: rgba(30, 30, 30, 0.6);
+  border-radius: 10px;
+}
+
+.linkedin-more-text {
+  color: #e0e0e0;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+}
+
+.linkedin-button {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: rgba(10, 102, 194, 0.2);
+  color: #0a66c2;
+  padding: 0.8rem 2rem;
+  border: 2px solid #0a66c2;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.linkedin-button:hover {
+  background: rgba(10, 102, 194, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(10, 102, 194, 0.2);
+}
+
+.linkedin-icon {
+  transition: all 0.3s ease;
+}
+
+.linkedin-button:hover .linkedin-icon {
+  transform: scale(1.1);
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 767px) {
+  .linkedin-more-text {
+    font-size: 1.1rem;
+  }
+  
+  .linkedin-button {
+    font-size: 1rem;
+    padding: 0.7rem 1.5rem;
+  }
+}
+
 /* Media query para dispositivos móviles */
 @media (max-width: 767px) {
   .education-paragraph {
@@ -718,7 +783,9 @@ body {
     padding: 4rem 2rem;
     background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
     border-radius: 20px;
-    margin: 4rem auto; /* Eliminamos márgenes laterales específicos */
+    margin: auto;
+    margin-top: 15rem;
+    margin-bottom: 15rem;
     max-width: 1200px;
 }
 
@@ -878,7 +945,7 @@ footer {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 15rem 2rem;
+    padding-top: 15rem 2rem;
     box-sizing: border-box;
 }
 

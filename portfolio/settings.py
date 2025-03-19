@@ -8,8 +8,7 @@ whitenoise_available = importlib.util.find_spec('whitenoise') is not None
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECURITY WARNING: keep the secret key used in production secret!
-# En producción, usar variables de entorno para el SECRET_KEY
+# SECURITY WARNING
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-f^0x*wb%tp58_0n+=*62f%e@mc51#^4lpwp^^@oweuh8m!si15')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -128,7 +127,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'portfoliopontnau@gmail.com')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', 'hlqw hqhi jepe rkyy')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', 'EMAIL_HOST_PASSWORD')
 
 # Asegurarse de que no haya espacios en la contraseña cuando se lea desde .env
 if EMAIL_HOST_PASSWORD and ' ' in EMAIL_HOST_PASSWORD:

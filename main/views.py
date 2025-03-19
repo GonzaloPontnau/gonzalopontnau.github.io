@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 from django.conf import settings
 from django.http import JsonResponse
 
@@ -19,14 +19,17 @@ def home(request):
             print(f"Intentando enviar correo a: {settings.CONTACT_EMAIL}")
             print(f"Usando cuenta: {settings.EMAIL_HOST_USER}")
             
-            # Enviar correo (método simplificado)
-            send_mail(
-                subject=f"Contacto portfolio: {subject}",
-                message=email_body,
-                from_email=settings.EMAIL_HOST_USER,
-                recipient_list=[settings.CONTACT_EMAIL],
-                fail_silently=False,
+            # Crear objeto EmailMessage para tener más control sobre los encabezados
+            email_message = EmailMessage(
+                subject=f"Contacto portfolio de {name}: {subject}",
+                body=email_body,
+                from_email=f"{name} <{settings.EMAIL_HOST_USER}>",
+                to=[settings.CONTACT_EMAIL],
+                reply_to=[email]  # Configurar reply-to con el email del remitente
             )
+            
+            # Enviar el correo
+            email_message.send(fail_silently=False)
             
             # Si llegamos aquí, el envío fue exitoso
             print("¡Correo enviado exitosamente!")

@@ -1,4 +1,13 @@
-Django==5.1.6  # Versión actual que estás utilizando
-Pillow==10.1.0  # Para manejo de imágenes (si lo estás utilizando)
+# Paquetes básicos 
+Django==5.1.6
+
+# Para manejo de imágenes
+Pillow==10.1.0
+
+# Para variables de entorno (necesario para cargar .env)
+python-dotenv==1.0.1
+
+# Para producción (opcionales en desarrollo)
+# pip install whitenoise gunicorn
 whitenoise==6.6.0  # Para servir archivos estáticos en producción
-gunicorn==21.2.0  # Servidor WSGI para producción
+gunicorn==21.2.0   # Servidor WSGI para producción

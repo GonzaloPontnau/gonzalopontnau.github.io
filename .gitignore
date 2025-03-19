@@ -22,3 +22,8 @@ db.sqlite3-journal
 # Archivos del sistema
 .DS_Store
 Thumbs.db
+
+# Archivos de configuración sensibles
+settings.py
+.env
+C:\Users\gonzalo\Desktop\mi-portafolio-web\myPortfolio\portfolio\settings.py

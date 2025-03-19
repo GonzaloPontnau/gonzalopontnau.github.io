@@ -24,12 +24,9 @@ db.sqlite3-journal
 Thumbs.db
 
 # Archivos de configuración sensibles
+C:\Users\gonzalo\Desktop\mi-portafolio-web\myPortfolio\portfolio\settings.py
 settings.py
 .env
 portfolio/settings.py
 **/portfolio/settings.py
 **/settings_local.py
-
-# Pero permitir el archivo de ejemplo
-!portfolio/settings_example.py
-!**/portfolio/settings_example.py

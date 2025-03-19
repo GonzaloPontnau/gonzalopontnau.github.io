@@ -128,7 +128,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'portfoliopontnau@gmail.com')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', 'kbcm nlpr wvgq fqiz')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', 'hlqw hqhi jepe rkyy')
 
 # Asegurarse de que no haya espacios en la contraseña cuando se lea desde .env
 if EMAIL_HOST_PASSWORD and ' ' in EMAIL_HOST_PASSWORD:

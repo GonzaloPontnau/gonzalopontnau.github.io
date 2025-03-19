@@ -123,17 +123,19 @@ if not DEBUG:
     X_FRAME_OPTIONS = 'DENY'
 
 # Configuración de correo electrónico
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'  # Servidor SMTP de Gmail
-EMAIL_PORT = 587  # Puerto para TLS
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  # Usar SMTP siempre
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'gonzalopontnau@gmail.com')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', 'rpzs tbab dwha vmew')
-CONTACT_EMAIL = os.environ.get('CONTACT_EMAIL', 'gonzalopontnau@gmail.com')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'portfoliopontnau@gmail.com')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', 'kbcm nlpr wvgq fqiz')
 
 # Asegurarse de que no haya espacios en la contraseña cuando se lea desde .env
 if EMAIL_HOST_PASSWORD and ' ' in EMAIL_HOST_PASSWORD:
     EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD.replace(' ', '')
+
+# Correo de contacto - correo al que llegarán los mensajes del formulario
+CONTACT_EMAIL = os.environ.get('CONTACT_EMAIL', 'gonzalopontnau@gmail.com')
 
 # Para mensajes flash
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'

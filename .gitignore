@@ -26,4 +26,10 @@ Thumbs.db
 # Archivos de configuración sensibles
 settings.py
 .env
-portfolio\settings.py
+portfolio/settings.py
+**/portfolio/settings.py
+**/settings_local.py
+
+# Pero permitir el archivo de ejemplo
+!portfolio/settings_example.py
+!**/portfolio/settings_example.py

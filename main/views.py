@@ -1,43 +1,47 @@
 from django.shortcuts import render
-from django.core.mail import EmailMultiAlternatives
+from django.core.mail import send_mail
 from django.conf import settings
 from django.http import JsonResponse
 
 def home(request):
     if request.method == 'POST' and request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-        # Procesar formulario de contacto AJAX
-        name = request.POST.get('name', '')
-        email = request.POST.get('email', '')
-        subject = request.POST.get('subject', '')
-        message = request.POST.get('message', '')
-        
-        # Construir el cuerpo del mensaje
-        email_body = f"Has recibido un mensaje de {name}:\n\n{message}"
-        
         try:
-            # Crear un objeto EmailMultiAlternatives para tener más control sobre los headers
-            email_message = EmailMultiAlternatives(
-                f"Mensaje de contacto: {subject}",  # Asunto
-                email_body,  # Cuerpo del mensaje
-                f"{name} <{email}>",  # From (nombre y correo del remitente del formulario)
-                [settings.CONTACT_EMAIL],  # Para
+            # Obtener datos del formulario
+            name = request.POST.get('name', '')
+            email = request.POST.get('email', '')
+            subject = request.POST.get('subject', '')
+            message = request.POST.get('message', '')
+            
+            # Construir el cuerpo del mensaje
+            email_body = f"Nombre: {name}\nEmail: {email}\n\nMensaje:\n{message}"
+            
+            # Para depuración - imprimir en consola
+            print(f"Intentando enviar correo a: {settings.CONTACT_EMAIL}")
+            print(f"Usando cuenta: {settings.EMAIL_HOST_USER}")
+            
+            # Enviar correo (método simplificado)
+            send_mail(
+                subject=f"Contacto portfolio: {subject}",
+                message=email_body,
+                from_email=settings.EMAIL_HOST_USER,
+                recipient_list=[settings.CONTACT_EMAIL],
+                fail_silently=False,
             )
             
-            # Establecer cabeceras adicionales para manejar la autenticación correctamente
-            email_message.extra_headers = {
-                'From': f"{name} <{email}>",
-                'Reply-To': email,
-                'Sender': settings.EMAIL_HOST_USER,  # Necesario para autenticación SMTP
-            }
+            # Si llegamos aquí, el envío fue exitoso
+            print("¡Correo enviado exitosamente!")
             
-            # Enviar el correo
-            email_message.send(fail_silently=False)
-            
-            return JsonResponse({'success': True, 'message': 'Mensaje enviado correctamente.'})
+            return JsonResponse({
+                'success': True,
+                'message': f'Gracias {name}, tu mensaje ha sido enviado correctamente.'
+            })
         except Exception as e:
-            return JsonResponse({'success': False, 'message': f'Error al enviar el mensaje: {str(e)}'})
+            print(f"Error al enviar correo: {str(e)}")
+            return JsonResponse({
+                'success': False,
+                'message': f'Error al enviar el mensaje: {str(e)}'
+            })
     
-    # Renderizar la página principal
     return render(request, 'main/home.html')
 
 def projects(request):

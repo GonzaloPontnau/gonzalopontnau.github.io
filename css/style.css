@@ -679,6 +679,39 @@ body {
   transform: translateY(-2px);
 }
 
+/* Estilos para el botón de LinkedIn al final de educación - modificado para ancho completo */
+.linkedin-more-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 4rem;
+  padding: 3rem 2rem;
+  background: rgba(30, 30, 30, 0.6);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Nuevo contenedor para mantener el contenido centrado pero permitir fondo completo */
+.linkedin-more-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Clase adicional para elementos que deben ocupar todo el ancho */
+.full-width {
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
 /* Estilos para el botón de LinkedIn al final de educación */
 .linkedin-more-container {
   display: flex;

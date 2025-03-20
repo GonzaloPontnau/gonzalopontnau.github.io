@@ -565,23 +565,28 @@
         </div>
       </div>
 
-      <!-- Botón LinkedIn para más información educativa -->
-      <div class="linkedin-more-container">
-        <p class="linkedin-more-text">Para información adicional sobre educación secundaria y otros certificados, visita
-          mi perfil de LinkedIn</p>
-        <a href="https://www.linkedin.com/in/gonzalopontnau/" target="_blank" rel="noopener noreferrer"
-          class="linkedin-button">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="linkedin-icon">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-            <rect x="2" y="9" width="4" height="12"></rect>
-            <circle cx="4" cy="4" r="2"></circle>
-          </svg>
-          Ver más en LinkedIn
-        </a>
-      </div>
     </section>
+  </div> <!-- Cierre del main-container antes del contenedor LinkedIn -->
 
+  <!-- Botón LinkedIn para más información educativa - ahora fuera del main-container -->
+  <div class="linkedin-more-container full-width">
+    <div class="linkedin-more-content">
+      <p class="linkedin-more-text">Para información adicional sobre educación secundaria y otros certificados, visita
+        mi perfil de LinkedIn</p>
+      <a href="https://www.linkedin.com/in/gonzalopontnau/" target="_blank" rel="noopener noreferrer"
+        class="linkedin-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="linkedin-icon">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+          <rect x="2" y="9" width="4" height="12"></rect>
+          <circle cx="4" cy="4" r="2"></circle>
+        </svg>
+        Ver más en LinkedIn
+      </a>
+    </div>
+  </div>
+
+  <div class="main-container"> <!-- Reapertura del main-container para el resto del contenido -->
     <!-- Sección de contacto optimizada -->
     <section id="contact" class="contact-section">
       <div class="container">
@@ -627,15 +632,10 @@
       </div>
     </section>
 
-    <footer class="footer">
-      <p>© 2025 Gonzalo Pontnau</p>
-    </footer>
-  </div>
-
   <!-- Canvas para partículas - optimizado -->
   <canvas id="particle-canvas"></canvas>
 
-  <style>
+  <!-- <style>
     /*  ESTILOS GLOBALES  */
     body {
       font-family: 'Roboto', sans-serif;
@@ -1912,7 +1912,7 @@
         height: 180px;
       }
     }
-  </style>
+  </style> -->
 
   <!-- Script de partículas con transparencia y color ajustados -->
   <script defer>

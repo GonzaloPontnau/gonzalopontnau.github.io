@@ -609,20 +609,19 @@
             </div>
           </div>
           <div class="contact-form">
-            <!-- Agregar id al formulario y modificar para usar AJAX -->
-            <form id="contactForm" action="#" method="post">
-              {% csrf_token %}
+            <!-- Formulario sin sintaxis de Django -->
+            <form id="contactForm">
               <div class="form-group">
-                <input type="text" name="name" placeholder="Nombre" required />
+                <input type="text" name="name" id="name" placeholder="Nombre" required />
               </div>
               <div class="form-group">
-                <input type="email" name="email" placeholder="Correo electrónico" required />
+                <input type="email" name="email" id="email" placeholder="Correo electrónico" required />
               </div>
               <div class="form-group">
-                <input type="text" name="subject" placeholder="Asunto" required />
+                <input type="text" name="subject" id="subject" placeholder="Asunto" required />
               </div>
               <div class="form-group">
-                <textarea name="message" placeholder="Mensaje" rows="5" required></textarea>
+                <textarea name="message" id="message" placeholder="Mensaje" rows="5" required></textarea>
               </div>
               <button type="submit" class="submit-btn">Enviar mensaje</button>
             </form>
@@ -635,6 +634,79 @@
 
   <!-- Canvas para partículas - optimizado -->
   <canvas id="particle-canvas"></canvas>
+
+  <!-- Agregar EmailJS antes de nuestros scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  
+  <!-- Script de contacto usando EmailJS -->
+  <script>
+    // Inicializar EmailJS con la clave pública
+    (function() {
+      emailjs.init("KNS3PXI5GpBl5z9kl");
+    })();
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const contactForm = document.getElementById('contactForm');
+      const formMessages = document.getElementById('form-messages');
+
+      if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          // Mostrar indicador de carga
+          const submitButton = contactForm.querySelector('.submit-btn');
+          const originalText = submitButton.textContent;
+          submitButton.textContent = 'Enviando...';
+          submitButton.disabled = true;
+
+          // Obtener datos del formulario
+          const nameValue = document.getElementById('name').value;
+          const emailValue = document.getElementById('email').value;
+          const subjectValue = document.getElementById('subject').value;
+          const messageValue = document.getElementById('message').value;
+
+          // Preparar los parámetros para EmailJS
+          const templateParams = {
+            from_name: nameValue,
+            email_sender: emailValue,
+            subject: subjectValue,
+            message: messageValue
+          };
+
+          // Enviar correo utilizando EmailJS
+          emailjs.send('service_4xbcexc', 'template_2kklqya', templateParams)
+            .then(function(response) {
+              console.log('SUCCESS!', response.status, response.text);
+              
+              // Mostrar mensaje de éxito
+              formMessages.className = 'form-messages success-message';
+              formMessages.textContent = `Gracias ${nameValue}, tu mensaje ha sido enviado correctamente.`;
+              
+              // Alerta de éxito
+              alert(`¡Gracias ${nameValue}! Tu mensaje ha sido enviado correctamente. Me pondré en contacto contigo a la brevedad.`);
+              
+              // Limpiar el formulario
+              contactForm.reset();
+            })
+            .catch(function(error) {
+              console.error('Error al enviar el correo:', error);
+              
+              // Mostrar mensaje de error
+              formMessages.className = 'form-messages error-message';
+              formMessages.textContent = 'Ocurrió un error al enviar el mensaje. Por favor, inténtalo de nuevo.';
+              
+              // Alerta de error
+              alert('Error al enviar el mensaje: ' + error.text);
+            })
+            .finally(function() {
+              // Restaurar el botón
+              submitButton.textContent = originalText;
+              submitButton.disabled = false;
+            });
+        });
+      }
+    });
+  </script>
 
   <!-- Script de partículas con transparencia y color ajustados -->
   <script defer>

@@ -9,7 +9,7 @@ whitenoise_available = importlib.util.find_spec('whitenoise') is not None
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-f^0x*wb%tp58_0n+=*62f%e@mc51#^4lpwp^^@oweuh8m!si15')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', 'True') == 'True'

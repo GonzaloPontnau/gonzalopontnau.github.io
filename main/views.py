@@ -46,3 +46,8 @@ def home(request):
             })
     
     return render(request, './index.html')
+
+# Añadir la función projects que falta
+def projects(request):
+    # Simplemente redirigir a la página principal
+    return render(request, './index.html')

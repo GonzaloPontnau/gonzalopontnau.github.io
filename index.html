@@ -750,9 +750,14 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // Inicializar EmailJS con la clave pública
+      // Método más seguro para inicializar EmailJS
       (function() {
-        emailjs.init("TU_CLAVE_PUBLICA_EMAILJS");
+        // Ofuscación básica de las claves
+        const publicKey = atob("S05TM1BYSTVHcEJsNXo5a2w="); // KNS3PXI5GpBl5z9kl codificado en base64
+        const serviceID = atob("c2VydmljZV80eGJjZXhj"); // service_4xbcexc codificado en base64
+        const templateID = atob("dGVtcGxhdGVfMmtrbHF5YQ=="); // template_2kklqya codificado en base64
+        
+        emailjs.init(publicKey);
       })();
       
       const contactForm = document.getElementById('contactForm');
@@ -782,8 +787,12 @@
             message: messageValue
           };
 
-          // Enviar el correo usando EmailJS
-          emailjs.send('TU_SERVICE_ID', 'TU_TEMPLATE_ID', templateParams)
+          // Enviar el correo usando EmailJS con las credenciales ofuscadas
+          emailjs.send(
+            atob("c2VydmljZV80eGJjZXhj"), // service_4xbcexc
+            atob("dGVtcGxhdGVfMmtrbHF5YQ=="), // template_2kklqya
+            templateParams
+          )
             .then(function(response) {
               // Mostrar mensaje de éxito
               formMessages.className = 'form-messages success-message';

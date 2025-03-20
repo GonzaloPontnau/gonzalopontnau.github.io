@@ -30,3 +30,6 @@ settings.py
 portfolio/settings.py
 **/portfolio/settings.py
 **/settings_local.py
+
+# Archivo de configuración local con claves API
+apikeys.js

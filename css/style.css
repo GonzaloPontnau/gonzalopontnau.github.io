@@ -10,6 +10,53 @@ body {
     box-sizing: border-box;
 }
 
+/* Añadiendo contenedor principal con margen fijo */
+.main-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+/* Ajustamos el ancho de los contenedores de sección para que respeten el contenedor principal */
+.section-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ajuste para que la navbar respete el contenedor principal */
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+/* Ajustamos la sección de contacto para que respete el contenedor principal */
+.contact-section {
+    padding: 4rem 0;
+    background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+    border-radius: 20px;
+    margin: 15rem auto;
+    max-width: 1300px;
+}
+
+.contact-wrapper {
+    display: flex;
+    gap: 10rem;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
 /*  EFECTOS DE ANIMACIÓN  */
 @keyframes gradientShift {
     0% { background-position: 0% 50%; }
@@ -45,16 +92,6 @@ body {
     background: rgb(37 38 59 / 23%);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-    box-sizing: border-box;
 }
 
 .gp-logo {
@@ -770,15 +807,43 @@ body {
   }
 }
 
+/* Ajustes para el responsive */
+@media (max-width: 991px) {
+    .main-container {
+        padding: 0 40px;
+    }
+    
+    .nav-container {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    .main-container {
+        padding: 0 20px;
+    }
+    
+    .nav-container {
+        padding: 0 20px;
+    }
+    
+    /* Eliminar el margen lateral en celulares */
+    .hero, section, footer {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
 /*  SECCIÓN DE CONTACTO  */
 .contact-section {
-    padding: 4rem 2rem;
+    padding: 4rem 0;
     background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
     border-radius: 20px;
-    margin: auto;
-    margin-top: 15rem;
-    margin-bottom: 15rem;
-    max-width: 1200px;
+    margin: 15rem auto;
+    max-width: 1300px;
 }
 
 .contact-wrapper {

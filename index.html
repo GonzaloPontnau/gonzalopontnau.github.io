@@ -13,14 +13,14 @@
 
   <!-- Favicons - Precargados con prioridad baja -->
   <link rel="shortcut icon" href="./favicon/favicon.ico" />
-  <link rel="icon" type="image/PNG" sizes="32x32" href="./favicon/favicon-32x32.PNG" />
-  <link rel="icon" type="image/PNG" sizes="16x16" href="./favicon/favicon-16x16.PNG" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.PNG" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
   <link rel="manifest" href="./favicon/site.webmanifest" />
   <meta name="msapplication-TileColor" content="#ffffff" />
 
   <!-- Precargar imágenes críticas -->
-  <link rel="preload" as="image" href="./images/imagenPerfil.PNG" />
+  <link rel="preload" as="image" href="./images/imagenPerfil.png" />
 </head>
 
 <body>
@@ -43,7 +43,7 @@
           <circle cx="4" cy="4" r="2"></circle>
         </svg>
       </a>
-      <a href="./images/CV.PDF" target="_blank" rel="noopener noreferrer" class="social-icon cv-icon">
+      <a href="./images/CV.pdf" target="_blank" rel="noopener noreferrer" class="social-icon cv-icon">
         <div class="cv-circle">
           <span class="cv-text">CV</span>
         </div>
@@ -67,117 +67,31 @@
     </div>
   </nav>
 
-  <div class="hero">
-    <div class="greeting">Hola 👋🏼, soy</div>
-    <h1 class="name-animation">
-      <span class="first-name">Gonzalo</span><br />
-      <span class="last-name">Pontnau</span>
-    </h1>
-    <div class="title">Backend Developer</div>
-    <!-- cv and contact buttom -->
-    <div class="button-container">
-      <a href="#contact" class="btn">Contactame</a>
-    </div>
-  </div>
-
-  <!-- Nueva sección Sobre mí -->
-  <section id="about" class="about-section">
-    <div class="section-container">
-      <h2 class="section-title">Sobre Mí</h2>
-      <div class="about-content">
-        <div class="about-image">
-          <img src="./images/imagenPerfil.PNG" alt="Gonzalo Pontnau" class="profile-image-large"
-            loading="lazy" decoding="async" />
-          <div class="about-social">
-            <a href="https://github.com/PontnauGonzalo" target="_blank" class="about-social-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                </path>
-              </svg>
-            </a>
-            <a href="https://linkedin.com/in/gonzalopontnau" target="_blank" class="about-social-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect x="2" y="9" width="4" height="12"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-            </a>
-          </div>
-        </div>
-        <div class="about-text">
-          <p class="about-bio">
-            Soy desarrollador Backend con enfoque en
-            <span class="highlight">Python</span> y
-            <span class="highlight">Django</span>, con experiencia adicional
-            en <span class="highlight">Go</span>. Me apasiona construir
-            aplicaciones web seguras y escalables, así como diseñar APIs
-            RESTful.
-          </p>
-          <p class="about-bio">
-            Tengo experiencia en tecnologías como Django, Flask y MySQL, y
-            también en Go para arquitecturas de microservicios. Soy competente
-            en prácticas de seguridad web y metodologías ágiles (Scrum).
-          </p>
-          <p class="about-bio">
-            Como estudiante avanzado de
-            <span class="highlight">Ingeniería en sistemas</span> en la
-            Universidad Nacional Tecnológica de Buenos Aires (UTN), combino la
-            sólida base teórica que brinda la formación universitaria con mi
-            constante aprendizaje autodidacta en tecnologías emergentes.
-          </p>
-          <p class="about-bio">
-            Soy un aprendiz apasionado de la tecnología que disfruta
-            resolviendo desafíos técnicos complejos de manera eficiente y
-            colaborativa.
-          </p>
-          <div class="about-skills">
-            <h3 class="skills-title">Tecnologías</h3>
-            <div class="skills-container">
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">Django</span>
-              <span class="skill-tag">Go</span>
-              <span class="skill-tag">Flask</span>
-              <span class="skill-tag">MySQL</span>
-              <span class="skill-tag">PostgreSQL</span>
-              <span class="skill-tag">RESTful APIs</span>
-              <span class="skill-tag">Git</span>
-              <span class="skill-tag">HTML/CSS/JS</span>
-            </div>
-          </div>
-        </div>
+  <!-- Contenedor principal con margen fijo -->
+  <div class="main-container">
+    <div class="hero">
+      <div class="greeting">Hola 👋🏼, soy</div>
+      <h1 class="name-animation">
+        <span class="first-name">Gonzalo</span><br />
+        <span class="last-name">Pontnau</span>
+      </h1>
+      <div class="title">Backend Developer</div>
+      <!-- cv and contact buttom -->
+      <div class="button-container">
+        <a href="#contact" class="btn">Contactame</a>
       </div>
     </div>
-  </section>
 
-  <!-- Nueva sección de proyectos -->
-  <section id="projects" class="projects-section">
-    <div class="section-container">
-      <h2 class="section-title">Mis Proyectos</h2>
-      <div class="projects-grid">
-        <!-- Proyecto 1 -->
-        <!-- Proyecto Money Manager -->
-        <div class="project-card">
-          <div class="project-image">
-            <img src="./images/demo-money-manager.GIF" alt="Money Manager Dashboard" />
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">Money Manager</h3>
-            <p class="project-description">
-              Aplicación web de gestión financiera personal con dashboard
-              interactivo y seguimiento de transacciones.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">Django</span>
-              <span class="tech-tag">PostgreSQL</span>
-              <span class="tech-tag">Chart.js</span>
-              <span class="tech-tag">JavaScript</span>
-              <span class="tech-tag">HTTP</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/PontnauGonzalo/money-manager-python" target="_blank" class="project-link">
+    <!-- Nueva sección Sobre mí -->
+    <section id="about" class="about-section">
+      <div class="section-container">
+        <h2 class="section-title">Sobre Mí</h2>
+        <div class="about-content">
+          <div class="about-image">
+            <img src="./images/imagenPerfil.png" alt="Gonzalo Pontnau" class="profile-image-large"
+              loading="lazy" decoding="async" />
+            <div class="about-social">
+              <a href="https://github.com/PontnauGonzalo" target="_blank" class="about-social-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path
@@ -185,446 +99,539 @@
                   </path>
                 </svg>
               </a>
-              <a href="https://money-manager-nine-umber.vercel.app/" target="_blank" class="project-link">
+              <a href="https://linkedin.com/in/gonzalopontnau" target="_blank" class="about-social-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
                 </svg>
               </a>
             </div>
           </div>
-        </div>
-
-        <!-- Proyecto 2 -->
-        <div class="project-card">
-          <div class="project-image">
-            <img src="./images/demo-cryptoAPI-python.GIF" alt="Visualizador de Criptomonedas" />
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">
-              Visualizador de Precios de Criptomonedas
-            </h3>
-            <p class="project-description">
-              Aplicación web que muestra en tiempo real los precios de las 10
-              principales criptomonedas utilizando la API de CoinMarketCap.
+          <div class="about-text">
+            <p class="about-bio">
+              Soy desarrollador Backend con enfoque en
+              <span class="highlight">Python</span> y
+              <span class="highlight">Django</span>, con experiencia adicional
+              en <span class="highlight">Go</span>. Me apasiona construir
+              aplicaciones web seguras y escalables, así como diseñar APIs
+              RESTful.
             </p>
-            <div class="project-tech">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Flask</span>
-              <span class="tech-tag">CoinMarketCap API</span>
-              <span class="tech-tag">HTML/CSS</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/PontnauGonzalo/CMC-price" target="_blank" class="project-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path
-                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                  </path>
-                </svg>
-              </a>
-              <a href="https://crypto-price-visualizer-one.vercel.app/" target="_blank" class="project-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 3 -->
-        <div class="project-card">
-          <div class="project-image">
-            <img src="./images/go-rest-api.PNG" alt="GO Web API REST" />
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">GO Web API REST</h3>
-            <p class="project-description">
-              API REST en Go que implementa los principios SOLID y clean
-              architecture. Estructurada en capas (Repository, Service,
-              Controller) con gestión de contexts, autenticación JWT y manejo
-              estandarizado de errores HTTP.
+            <p class="about-bio">
+              Tengo experiencia en tecnologías como Django, Flask y MySQL, y
+              también en Go para arquitecturas de microservicios. Soy competente
+              en prácticas de seguridad web y metodologías ágiles (Scrum).
             </p>
-            <div class="project-tech">
-              <span class="tech-tag">Go</span>
-              <span class="tech-tag">Gin Gonic</span>
-              <span class="tech-tag">PostgreSQL</span>
-              <span class="tech-tag">JWT</span>
-              <span class="tech-tag">RESTful</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/PontnauGonzalo/go-rest-api" target="_blank" class="project-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path
-                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                  </path>
-                </svg>
-              </a>
-              <a href="https://go.dev/doc/tutorial/web-service-gin" target="_blank" class="project-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 4 -->
-        <div class="project-card">
-          <div class="project-image">
-            <img src="./images/RESTful-API-java.JPG" alt="API RESTful Clínica Priory" />
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">API RESTful Clínica Médica Priory</h3>
-            <p class="project-description">
-              API completa desarrollada con Spring Boot que proporciona un sistema de gestión para una clínica médica,
-              implementando operaciones CRUD con MySQL, migraciones con Flyway, validaciones y autenticación JWT.
+            <p class="about-bio">
+              Como estudiante avanzado de
+              <span class="highlight">Ingeniería en sistemas</span> en la
+              Universidad Nacional Tecnológica de Buenos Aires (UTN), combino la
+              sólida base teórica que brinda la formación universitaria con mi
+              constante aprendizaje autodidacta en tecnologías emergentes.
             </p>
-            <div class="project-tech">
-              <span class="tech-tag">Java</span>
-              <span class="tech-tag">Spring Boot</span>
-              <span class="tech-tag">MySQL</span>
-              <span class="tech-tag">JWT</span>
-              <span class="tech-tag">Flyway</span>
-              <span class="tech-tag">OpenAPI</span>
-              <span class="tech-tag">SOLID</span>
-              <span class="tech-tag">Spring Security</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/PontnauGonzalo/API-REST-priorymed.api" target="_blank" class="project-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path
-                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                  </path>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 5 -->
-        <div class="project-card">
-          <div class="project-image">
-            <img src="./images/pdp.JPG" alt="Paradigmas de Programación" />
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">Paradigmas de Programación</h3>
-            <p class="project-description">
-              Implementación de soluciones usando múltiples paradigmas:
-              funcional (Haskell), lógico (Prolog) y orientado a objetos
-              (Wollok). Demuestra la capacidad de adaptar el enfoque de
-              programación según los requerimientos del problema.
+            <p class="about-bio">
+              Soy un aprendiz apasionado de la tecnología que disfruta
+              resolviendo desafíos técnicos complejos de manera eficiente y
+              colaborativa.
             </p>
-            <div class="project-tech">
-              <span class="tech-tag">Haskell</span>
-              <span class="tech-tag">Prolog</span>
-              <span class="tech-tag">Wollok</span>
-              <span class="tech-tag">Programación Funcional</span>
-              <span class="tech-tag">Programación Lógica</span>
-              <span class="tech-tag">POO</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/gpontnau/paradigmasProgramacion_funcional-logico-objetos" target="_blank"
-                class="project-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path
-                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                  </path>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 6 Detector de Líneas Blancas -->
-        <div class="project-card">
-          <div class="project-image">
-            <img src="./images/detector-linea.GIF" alt="Detector de Líneas Blancas en Cartones" />
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">Detector de Líneas Blancas en Cartones</h3>
-            <p class="project-description">
-              Solución de visión artificial desarrollada para una fábrica de cartón que detecta
-              automáticamente la presencia o ausencia de líneas blancas en productos sobre una cinta transportadora.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">OpenCV</span>
-              <span class="tech-tag">NumPy</span>
-              <span class="tech-tag">Visión Artificial</span>
-              <span class="tech-tag">Procesamiento de Imágenes</span>
-              <span class="tech-tag">Transformada de Hough</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/PontnauGonzalo/detector_linea_cajas" target="_blank" class="project-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path
-                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                  </path>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sección de Educación y Certificaciones rediseñada -->
-  <section id="education" class="education-section">
-    <div class="section-container">
-      <h2 class="section-title">Educación y Certificaciones</h2>
-
-      <div class="education-cards-vertical">
-        <!-- Tarjeta de Educación -->
-        <div class="education-card">
-          <div class="education-card-header">
-            <div class="education-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
-              </svg>
-            </div>
-            <div class="education-title-area">
-              <h3 class="education-institution">Universidad Tecnológica Nacional</h3>
-              <p class="education-degree">Ingeniería de Sistemas <span class="education-date">| 2022 – Presente</span>
-              </p>
-            </div>
-          </div>
-          <div class="education-content">
-            <div class="education-content-paragraphs">
-              <div class="education-paragraph">
-                <h4 class="paragraph-title">Formación en programación</h4>
-                <p class="paragraph-content">
-                  Dominio de C/C++, Go, Java, bases de datos MySQL y diseño de sistemas operativos. Destaco el
-                  desarrollo de un sistema operativo distribuido en Go, integrando módulos como Kernel, CPU, Memoria y
-                  File System. Implementé APIs HTTP para comunicación modular, configuración JSON y logs estructurados.
-                  Además, diseñé un analizador léxico, sintáctico y semántico en C usando Flex/Bison y expresiones
-                  regulares (regex), aplicado en la interpretación de pseudocódigo para procesos.
-                </p>
-              </div>
-
-              <div class="education-paragraph">
-                <h4 class="paragraph-title">Metodologías y enfoque</h4>
-                <p class="paragraph-content">
-                  Experiencia en análisis de requerimientos, diseño modular bajo principios SOLID, y aplicación de
-                  metodologías ágiles (Scrum) para gestionar ciclos de desarrollo iterativos. Conocimientos de analista
-                  en sistemas, combinando habilidades técnicas con capacidad para modelar soluciones, desde la
-                  especificación de requisitos hasta la implementación y optimización.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Educacion -- Curso de Platzi (Django) -->
-        <div class="education-card">
-          <div class="education-card-header">
-            <div class="education-icon cert-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                <path d="M3 9h18"></path>
-                <path d="M9 21V9"></path>
-                <path d="m16 16-2 2 2 2"></path>
-                <path d="m12 16 2 2-2 2"></path>
-              </svg>
-            </div>
-            <div class="education-title-area">
-              <h3 class="education-institution">Curso Completo de Django</h3>
-              <p class="education-degree">Desarrollo Web Backend <span class="education-date">| Platzi</span></p>
-            </div>
-            <div class="education-external-link">
-              <a href="https://platzi.com/cursos/django/" target="_blank" rel="noopener noreferrer" class="edu-link"
-                title="Ver curso en Platzi">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div class="education-content">
-            <div class="certification-overview">
-              <p>Formación completa en desarrollo web con Django, abarcando desde fundamentos hasta despliegue avanzado
-                con REST API y AWS.</p>
-            </div>
-
-            <div class="certification-modules">
-              <div class="certification-modules-grid">
-                <div class="certification-module">
-                  <span class="cert-module-icon">✅</span>
-                  <span>Fundamentos de Django</span>
-                </div>
-                <div class="certification-module">
-                  <span class="cert-module-icon">✅</span>
-                  <span>Modelos y Bases de Datos</span>
-                </div>
-                <div class="certification-module">
-                  <span class="cert-module-icon">✅</span>
-                  <span>Relaciones entre Modelos</span>
-                </div>
-                <div class="certification-module">
-                  <span class="cert-module-icon">✅</span>
-                  <span>Queries y Filtros Avanzados</span>
-                </div>
-                <div class="certification-module">
-                  <span class="cert-module-icon">✅</span>
-                  <span>URLs y Vistas</span>
-                </div>
-                <div class="certification-module">
-                  <span class="cert-module-icon">✅</span>
-                  <span>Django REST Framework</span>
-                </div>
-              </div>
-            </div>
-            <div class="certification-highlight">
-              <p>Curso completo que abarca tanto arquitectura MVT como desarrollo avanzado de APIs con Django REST
-                Framework y despliegue en producción.</p>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- Educacion -- Curso de GO -->
-        <div class="education-card">
-          <div class="education-card-header">
-            <div class="education-icon go-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-              </svg>
-            </div>
-            <div class="education-title-area">
-              <h3 class="education-institution">Fundamentos de GO</h3>
-              <p class="education-degree">Desarrollo Backend <span class="education-date">| Digital House</span></p>
-            </div>
-            <div class="education-external-link">
-              <a href="./images/fundamentos-GO.PDF" target="_blank" rel="noopener noreferrer"
-                class="edu-link" title="Ver programa del curso">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div class="education-content">
-            <div class="certification-overview">
-              <p>Formación técnica en <strong>Go</strong> para desarrollo de <em>back end</em> y microservicios,
-                enfocada en sintaxis avanzada (structs, interfaces, generics), concurrencia nativa
-                (<strong>Goroutines/Channels</strong>) y manejo de errores (<strong>Panic/Recover</strong>). Incluye
-                diseño de <strong>APIs RESTful</strong> con arquitectura por capas (controlador, servicio, repositorio),
-                integración con bases de datos y herramientas como <strong>Gin Gonic</strong>. Aplicación de paquetes
-                clave (<strong>UUID</strong>, <strong>OS</strong>, <strong>log</strong>) y principios
-                <strong>SOLID</strong> en proyectos escalables. Metodología práctica con evaluación basada en
-                <em>checkpoints</em> y desarrollo de microservicios funcionales, priorizando integración en entornos
-                <strong>Spring Cloud</strong> y gestión eficiente de recursos para big data.</p>
-            </div>
-
-            <div class="education-skills-container">
-              <h4 class="certification-skills-title">Tecnologías</h4>
-              <div class="certification-skills">
+            <div class="about-skills">
+              <h3 class="skills-title">Tecnologías</h3>
+              <div class="skills-container">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Django</span>
                 <span class="skill-tag">Go</span>
-                <span class="skill-tag">APIs RESTful</span>
-                <span class="skill-tag">Gin Gonic</span>
-                <span class="skill-tag">Goroutines</span>
-                <span class="skill-tag">Concurrencia</span>
-                <span class="skill-tag">SOLID</span>
-                <span class="skill-tag">Microservicios</span>
+                <span class="skill-tag">Flask</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">PostgreSQL</span>
+                <span class="skill-tag">RESTful APIs</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">HTML/CSS/JS</span>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <div class="certification-highlight">
-              <p>Enfoque práctico y profesional en Go para el desarrollo de APIs y microservicios escalables con
-                arquitectura limpia y patrones de concurrencia avanzados.</p>
+    <!-- Nueva sección de proyectos -->
+    <section id="projects" class="projects-section">
+      <div class="section-container">
+        <h2 class="section-title">Mis Proyectos</h2>
+        <div class="projects-grid">
+          <!-- Proyecto 1 -->
+          <!-- Proyecto Money Manager -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="./images/demo-money-manager.gif" alt="Money Manager Dashboard" />
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Money Manager</h3>
+              <p class="project-description">
+                Aplicación web de gestión financiera personal con dashboard
+                interactivo y seguimiento de transacciones.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Django</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Chart.js</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">HTTP</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/PontnauGonzalo/money-manager-python" target="_blank" class="project-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                </a>
+                <a href="https://money-manager-nine-umber.vercel.app/" target="_blank" class="project-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyecto 2 -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="./images/demo-cryptoAPI-python.gif" alt="Visualizador de Criptomonedas" />
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">
+                Visualizador de Precios de Criptomonedas
+              </h3>
+              <p class="project-description">
+                Aplicación web que muestra en tiempo real los precios de las 10
+                principales criptomonedas utilizando la API de CoinMarketCap.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Flask</span>
+                <span class="tech-tag">CoinMarketCap API</span>
+                <span class="tech-tag">HTML/CSS</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/PontnauGonzalo/CMC-price" target="_blank" class="project-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                </a>
+                <a href="https://crypto-price-visualizer-one.vercel.app/" target="_blank" class="project-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyecto 3 -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="./images/go-rest-api.png" alt="GO Web API REST" />
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">GO Web API REST</h3>
+              <p class="project-description">
+                API REST en Go que implementa los principios SOLID y clean
+                architecture. Estructurada en capas (Repository, Service,
+                Controller) con gestión de contexts, autenticación JWT y manejo
+                estandarizado de errores HTTP.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Go</span>
+                <span class="tech-tag">Gin Gonic</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">JWT</span>
+                <span class="tech-tag">RESTful</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/PontnauGonzalo/go-rest-api" target="_blank" class="project-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                </a>
+                <a href="https://go.dev/doc/tutorial/web-service-gin" target="_blank" class="project-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyecto 4 -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="./images/RESTful-API-java.jpg" alt="API RESTful Clínica Priory" />
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">API RESTful Clínica Médica Priory</h3>
+              <p class="project-description">
+                API completa desarrollada con Spring Boot que proporciona un sistema de gestión para una clínica médica,
+                implementando operaciones CRUD con MySQL, migraciones con Flyway, validaciones y autenticación JWT.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">Spring Boot</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">JWT</span>
+                <span class="tech-tag">Flyway</span>
+                <span class="tech-tag">OpenAPI</span>
+                <span class="tech-tag">SOLID</span>
+                <span class="tech-tag">Spring Security</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/PontnauGonzalo/API-REST-priorymed.api" target="_blank" class="project-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyecto 5 -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="./images/pdp.jpg" alt="Paradigmas de Programación" />
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Paradigmas de Programación</h3>
+              <p class="project-description">
+                Implementación de soluciones usando múltiples paradigmas:
+                funcional (Haskell), lógico (Prolog) y orientado a objetos
+                (Wollok). Demuestra la capacidad de adaptar el enfoque de
+                programación según los requerimientos del problema.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Haskell</span>
+                <span class="tech-tag">Prolog</span>
+                <span class="tech-tag">Wollok</span>
+                <span class="tech-tag">Programación Funcional</span>
+                <span class="tech-tag">Programación Lógica</span>
+                <span class="tech-tag">POO</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/gpontnau/paradigmasProgramacion_funcional-logico-objetos" target="_blank"
+                  class="project-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyecto 6 Detector de Líneas Blancas -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="./images/detector-linea.gif" alt="Detector de Líneas Blancas en Cartones" />
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Detector de Líneas Blancas en Cartones</h3>
+              <p class="project-description">
+                Solución de visión artificial desarrollada para una fábrica de cartón que detecta
+                automáticamente la presencia o ausencia de líneas blancas en productos sobre una cinta transportadora.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">OpenCV</span>
+                <span class="tech-tag">NumPy</span>
+                <span class="tech-tag">Visión Artificial</span>
+                <span class="tech-tag">Procesamiento de Imágenes</span>
+                <span class="tech-tag">Transformada de Hough</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/PontnauGonzalo/detector_linea_cajas" target="_blank" class="project-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-
       </div>
-    </div>
+    </section>
 
-    <!-- Botón LinkedIn para más información educativa -->
-    <div class="linkedin-more-container">
-      <p class="linkedin-more-text">Para información adicional sobre educación secundaria y otros certificados, visita
-        mi perfil de LinkedIn</p>
-      <a href="https://www.linkedin.com/in/gonzalopontnau/" target="_blank" rel="noopener noreferrer"
-        class="linkedin-button">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="linkedin-icon">
-          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-          <rect x="2" y="9" width="4" height="12"></rect>
-          <circle cx="4" cy="4" r="2"></circle>
-        </svg>
-        Ver más en LinkedIn
-      </a>
-    </div>
-  </section>
+    <!-- Sección de Educación y Certificaciones rediseñada -->
+    <section id="education" class="education-section">
+      <div class="section-container">
+        <h2 class="section-title">Educación y Certificaciones</h2>
 
-  <!-- Sección de contacto optimizada -->
-  <section id="contact" class="contact-section">
-    <div class="container">
-      <div class="contact-wrapper">
-        <div class="contact-info">
-          <h2 class="contact-title">Contactame.</h2>
-          <p class="contact-description">
-            Si quieres contactarte conmigo, puedes hacerlo a través de las
-            redes sociales o llenando el formulario. ¡Gracias! 🚀
-          </p>
-          <div class="contact-email">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
-              <path d="M22,6 L12,13 L2,6"></path>
-            </svg>
-            <a href="mailto:gonzalopontnau@gmail.com" class="email-link">
-              gonzalopontnau@gmail.com
-            </a>
+        <div class="education-cards-vertical">
+          <!-- Tarjeta de Educación -->
+          <div class="education-card">
+            <div class="education-card-header">
+              <div class="education-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
+                </svg>
+              </div>
+              <div class="education-title-area">
+                <h3 class="education-institution">Universidad Tecnológica Nacional</h3>
+                <p class="education-degree">Ingeniería de Sistemas <span class="education-date">| 2022 – Presente</span>
+                </p>
+              </div>
+            </div>
+            <div class="education-content">
+              <div class="education-content-paragraphs">
+                <div class="education-paragraph">
+                  <h4 class="paragraph-title">Formación en programación</h4>
+                  <p class="paragraph-content">
+                    Dominio de C/C++, Go, Java, bases de datos MySQL y diseño de sistemas operativos. Destaco el
+                    desarrollo de un sistema operativo distribuido en Go, integrando módulos como Kernel, CPU, Memoria y
+                    File System. Implementé APIs HTTP para comunicación modular, configuración JSON y logs estructurados.
+                    Además, diseñé un analizador léxico, sintáctico y semántico en C usando Flex/Bison y expresiones
+                    regulares (regex), aplicado en la interpretación de pseudocódigo para procesos.
+                  </p>
+                </div>
+
+                <div class="education-paragraph">
+                  <h4 class="paragraph-title">Metodologías y enfoque</h4>
+                  <p class="paragraph-content">
+                    Experiencia en análisis de requerimientos, diseño modular bajo principios SOLID, y aplicación de
+                    metodologías ágiles (Scrum) para gestionar ciclos de desarrollo iterativos. Conocimientos de analista
+                    en sistemas, combinando habilidades técnicas con capacidad para modelar soluciones, desde la
+                    especificación de requisitos hasta la implementación y optimización.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Educacion -- Curso de Platzi (Django) -->
+          <div class="education-card">
+            <div class="education-card-header">
+              <div class="education-icon cert-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <path d="M3 9h18"></path>
+                  <path d="M9 21V9"></path>
+                  <path d="m16 16-2 2 2 2"></path>
+                  <path d="m12 16 2 2-2 2"></path>
+                </svg>
+              </div>
+              <div class="education-title-area">
+                <h3 class="education-institution">Curso Completo de Django</h3>
+                <p class="education-degree">Desarrollo Web Backend <span class="education-date">| Platzi</span></p>
+              </div>
+              <div class="education-external-link">
+                <a href="https://platzi.com/cursos/django/" target="_blank" rel="noopener noreferrer" class="edu-link"
+                  title="Ver curso en Platzi">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="education-content">
+              <div class="certification-overview">
+                <p>Formación completa en desarrollo web con Django, abarcando desde fundamentos hasta despliegue avanzado
+                  con REST API y AWS.</p>
+              </div>
+
+              <div class="certification-modules">
+                <div class="certification-modules-grid">
+                  <div class="certification-module">
+                    <span class="cert-module-icon">✅</span>
+                    <span>Fundamentos de Django</span>
+                  </div>
+                  <div class="certification-module">
+                    <span class="cert-module-icon">✅</span>
+                    <span>Modelos y Bases de Datos</span>
+                  </div>
+                  <div class="certification-module">
+                    <span class="cert-module-icon">✅</span>
+                    <span>Relaciones entre Modelos</span>
+                  </div>
+                  <div class="certification-module">
+                    <span class="cert-module-icon">✅</span>
+                    <span>Queries y Filtros Avanzados</span>
+                  </div>
+                  <div class="certification-module">
+                    <span class="cert-module-icon">✅</span>
+                    <span>URLs y Vistas</span>
+                  </div>
+                  <div class="certification-module">
+                    <span class="cert-module-icon">✅</span>
+                    <span>Django REST Framework</span>
+                  </div>
+                </div>
+              </div>
+              <div class="certification-highlight">
+                <p>Curso completo que abarca tanto arquitectura MVT como desarrollo avanzado de APIs con Django REST
+                  Framework y despliegue en producción.</p>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Educacion -- Curso de GO -->
+          <div class="education-card">
+            <div class="education-card-header">
+              <div class="education-icon go-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </div>
+              <div class="education-title-area">
+                <h3 class="education-institution">Fundamentos de GO</h3>
+                <p class="education-degree">Desarrollo Backend <span class="education-date">| Digital House</span></p>
+              </div>
+              <div class="education-external-link">
+                <a href="./images/fundamentos-GO.pdf" target="_blank" rel="noopener noreferrer"
+                  class="edu-link" title="Ver programa del curso">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="education-content">
+              <div class="certification-overview">
+                <p>Formación técnica en <strong>Go</strong> para desarrollo de <em>back end</em> y microservicios,
+                  enfocada en sintaxis avanzada (structs, interfaces, generics), concurrencia nativa
+                  (<strong>Goroutines/Channels</strong>) y manejo de errores (<strong>Panic/Recover</strong>). Incluye
+                  diseño de <strong>APIs RESTful</strong> con arquitectura por capas (controlador, servicio, repositorio),
+                  integración con bases de datos y herramientas como <strong>Gin Gonic</strong>. Aplicación de paquetes
+                  clave (<strong>UUID</strong>, <strong>OS</strong>, <strong>log</strong>) y principios
+                  <strong>SOLID</strong> en proyectos escalables. Metodología práctica con evaluación basada en
+                  <em>checkpoints</em> y desarrollo de microservicios funcionales, priorizando integración en entornos
+                  <strong>Spring Cloud</strong> y gestión eficiente de recursos para big data.</p>
+              </div>
+
+              <div class="education-skills-container">
+                <h4 class="certification-skills-title">Tecnologías</h4>
+                <div class="certification-skills">
+                  <span class="skill-tag">Go</span>
+                  <span class="skill-tag">APIs RESTful</span>
+                  <span class="skill-tag">Gin Gonic</span>
+                  <span class="skill-tag">Goroutines</span>
+                  <span class="skill-tag">Concurrencia</span>
+                  <span class="skill-tag">SOLID</span>
+                  <span class="skill-tag">Microservicios</span>
+                </div>
+              </div>
+
+              <div class="certification-highlight">
+                <p>Enfoque práctico y profesional en Go para el desarrollo de APIs y microservicios escalables con
+                  arquitectura limpia y patrones de concurrencia avanzados.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Botón LinkedIn para más información educativa -->
+      <div class="linkedin-more-container">
+        <p class="linkedin-more-text">Para información adicional sobre educación secundaria y otros certificados, visita
+          mi perfil de LinkedIn</p>
+        <a href="https://www.linkedin.com/in/gonzalopontnau/" target="_blank" rel="noopener noreferrer"
+          class="linkedin-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="linkedin-icon">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+          Ver más en LinkedIn
+        </a>
+      </div>
+    </section>
+
+    <!-- Sección de contacto optimizada -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <h2 class="contact-title">Contactame.</h2>
+            <p class="contact-description">
+              Si quieres contactarte conmigo, puedes hacerlo a través de las
+              redes sociales o llenando el formulario. ¡Gracias! 🚀
+            </p>
+            <div class="contact-email">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+                <path d="M22,6 L12,13 L2,6"></path>
+              </svg>
+              <a href="mailto:gonzalopontnau@gmail.com" class="email-link">
+                gonzalopontnau@gmail.com
+              </a>
+            </div>
+          </div>
+          <div class="contact-form">
+            <!-- Agregar id al formulario y modificar para usar AJAX -->
+            <form id="contactForm" action="#" method="post">
+              {% csrf_token %}
+              <div class="form-group">
+                <input type="text" name="name" placeholder="Nombre" required />
+              </div>
+              <div class="form-group">
+                <input type="email" name="email" placeholder="Correo electrónico" required />
+              </div>
+              <div class="form-group">
+                <input type="text" name="subject" placeholder="Asunto" required />
+              </div>
+              <div class="form-group">
+                <textarea name="message" placeholder="Mensaje" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Enviar mensaje</button>
+            </form>
+            <!-- Contenedor para mensajes -->
+            <div id="form-messages" class="form-messages"></div>
           </div>
         </div>
-        <div class="contact-form">
-          <!-- Agregar id al formulario y modificar para usar AJAX -->
-          <form id="contactForm" action="#" method="post">
-            {% csrf_token %}
-            <div class="form-group">
-              <input type="text" name="name" placeholder="Nombre" required />
-            </div>
-            <div class="form-group">
-              <input type="email" name="email" placeholder="Correo electrónico" required />
-            </div>
-            <div class="form-group">
-              <input type="text" name="subject" placeholder="Asunto" required />
-            </div>
-            <div class="form-group">
-              <textarea name="message" placeholder="Mensaje" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Enviar mensaje</button>
-          </form>
-          <!-- Contenedor para mensajes -->
-          <div id="form-messages" class="form-messages"></div>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <footer class="footer">
+      <p>© 2025 Gonzalo Pontnau</p>
+    </footer>
+  </div>
 
   <!-- Canvas para partículas - optimizado -->
   <canvas id="particle-canvas"></canvas>

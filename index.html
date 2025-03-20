@@ -8,20 +8,19 @@
   <meta name="description"
     content="Portfolio profesional de Gonzalo Pontnau, Backend Developer especializado en Python, Django y Go">
 
-  {% load static %}
   <!-- CSS -->
   <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 
   <!-- Favicons - Precargados con prioridad baja -->
-  <link rel="shortcut icon" href="{% static 'myportfolio/favicon/favicon.ico' %}" />
-  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'myportfolio/favicon/favicon-32x32.png' %}" />
-  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'myportfolio/favicon/favicon-16x16.png' %}" />
-  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'myportfolio/favicon/apple-touch-icon.png' %}" />
-  <link rel="manifest" href="{% static 'myportfolio/favicon/site.webmanifest' %}" />
+  <link rel="shortcut icon" href="{% static './favicon/favicon.ico' %}" />
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static './favicon/favicon-32x32.png' %}" />
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static './favicon/favicon-16x16.png' %}" />
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static './favicon/apple-touch-icon.png' %}" />
+  <link rel="manifest" href="{% static './favicon/site.webmanifest' %}" />
   <meta name="msapplication-TileColor" content="#ffffff" />
 
   <!-- Precargar imágenes críticas -->
-  <link rel="preload" as="image" href="{% static 'myportfolio/images/imagenPerfil.png' %}" />
+  <link rel="preload" as="image" href="{% static './images/imagenPerfil.png' %}" />
 </head>
 
 <body>
@@ -87,7 +86,7 @@
       <h2 class="section-title">Sobre Mí</h2>
       <div class="about-content">
         <div class="about-image">
-          <img src="{% static 'myportfolio/images/imagenPerfil.png' %}" alt="Gonzalo Pontnau" class="profile-image-large"
+          <img src="{% static './images/imagenPerfil.png' %}" alt="Gonzalo Pontnau" class="profile-image-large"
             loading="lazy" decoding="async" />
           <div class="about-social">
             <a href="https://github.com/PontnauGonzalo" target="_blank" class="about-social-icon">
@@ -162,7 +161,7 @@
         <!-- Proyecto Money Manager -->
         <div class="project-card">
           <div class="project-image">
-            <img src="{% static 'myportfolio/images/demo-money-manager.gif' %}" alt="Money Manager Dashboard" />
+            <img src="{% static './images/demo-money-manager.gif' %}" alt="Money Manager Dashboard" />
           </div>
           <div class="project-info">
             <h3 class="project-title">Money Manager</h3>
@@ -201,7 +200,7 @@
         <!-- Proyecto 2 -->
         <div class="project-card">
           <div class="project-image">
-            <img src="{% static 'myportfolio/images/demo-cryptoAPI-python.gif' %}" alt="Visualizador de Criptomonedas" />
+            <img src="{% static './images/demo-cryptoAPI-python.gif' %}" alt="Visualizador de Criptomonedas" />
           </div>
           <div class="project-info">
             <h3 class="project-title">
@@ -241,7 +240,7 @@
         <!-- Proyecto 3 -->
         <div class="project-card">
           <div class="project-image">
-            <img src="{% static 'myportfolio/images/go-rest-api.png' %}" alt="GO Web API REST" />
+            <img src="{% static './images/go-rest-api.png' %}" alt="GO Web API REST" />
           </div>
           <div class="project-info">
             <h3 class="project-title">GO Web API REST</h3>
@@ -282,7 +281,7 @@
         <!-- Proyecto 4 -->
         <div class="project-card">
           <div class="project-image">
-            <img src="{% static 'myportfolio/images/RESTful-API-java.jpg' %}" alt="API RESTful Clínica Priory" />
+            <img src="{% static './images/RESTful-API-java.jpg' %}" alt="API RESTful Clínica Priory" />
           </div>
           <div class="project-info">
             <h3 class="project-title">API RESTful Clínica Médica Priory</h3>
@@ -316,7 +315,7 @@
         <!-- Proyecto 5 -->
         <div class="project-card">
           <div class="project-image">
-            <img src="{% static 'myportfolio/images/pdp.jpg' %}" alt="Paradigmas de Programación" />
+            <img src="{% static './images/pdp.jpg' %}" alt="Paradigmas de Programación" />
           </div>
           <div class="project-info">
             <h3 class="project-title">Paradigmas de Programación</h3>
@@ -351,7 +350,7 @@
         <!-- Proyecto 6 Detector de Líneas Blancas -->
         <div class="project-card">
           <div class="project-image">
-            <img src="{% static 'myportfolio/images/detector-linea.gif' %}" alt="Detector de Líneas Blancas en Cartones" />
+            <img src="{% static './images/detector-linea.gif' %}" alt="Detector de Líneas Blancas en Cartones" />
           </div>
           <div class="project-info">
             <h3 class="project-title">Detector de Líneas Blancas en Cartones</h3>
@@ -517,7 +516,7 @@
               <p class="education-degree">Desarrollo Backend <span class="education-date">| Digital House</span></p>
             </div>
             <div class="education-external-link">
-              <a href="{% static 'myportfolio/images/fundamentos-GO.pdf' %}" target="_blank" rel="noopener noreferrer"
+              <a href="{% static './images/fundamentos-GO.pdf' %}" target="_blank" rel="noopener noreferrer"
                 class="edu-link" title="Ver programa del curso">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -2085,7 +2084,7 @@
   </script>
 
   <footer class="footer">
-    <p>© {% now "Y" %} Gonzalo Pontnau</p>
+    <p>© 2025 Gonzalo Pontnau</p>
   </footer>
 </body>
 

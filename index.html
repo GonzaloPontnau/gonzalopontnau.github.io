@@ -592,7 +592,7 @@
   </div>
 
   <div class="main-container"> <!-- Reapertura del main-container para el resto del contenido -->
-
+    >
     <!-- Sección de contacto -->
     <section id="contact" class="contact-section">
       <div class="container">
@@ -637,7 +637,123 @@
       </div>
     </section>
 
-    <!-- Agregar EmailJS antes de nuestros scripts -->
+
+    <!-- Canvas para partículas - optimizado -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Script de partículas con transparencia y color ajustados -->
+    <script defer>
+      document.addEventListener("DOMContentLoaded", function () {
+        const canvas = document.getElementById("particle-canvas");
+        const ctx = canvas.getContext("2d");
+
+        // Detectar si es un dispositivo móvil para ajustar la cantidad de partículas
+        const isMobile = window.innerWidth <= 767;
+
+        // Configuración inicial
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles = [];
+        // Ajuste de cantidad de partículas, manteniendo optimización para móviles
+        const particleCount = isMobile ? 50 : 100;
+
+        // Clase Partícula con parámetros mejorados para mayor visibilidad
+        class Particle {
+          constructor() {
+            this.reset();
+          }
+
+          reset() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            // Mantener el tamaño actual
+            this.radius = Math.random() * 2.5 + 0.5;
+            // Velocidad original mantenida
+            this.speed = Math.random() * 0.5 + 0.2;
+            // Mayor transparencia - reducido el valor mínimo y máximo de alpha
+            this.alpha = Math.random() * 0.4 + 0.1;
+            // Colores más suaves - gris claro en lugar de blanco puro
+            this.color = Math.random() > 0.7
+              ? 'rgba(120, 180, 255,' // Azul suave, con más frecuencia (30%)
+              : (Math.random() > 0.5
+                ? 'rgba(220, 220, 230,' // Gris azulado muy claro (35%)
+                : 'rgba(200, 200, 210,'); // Gris más neutro (35%)
+          }
+
+          draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+
+            // Reducir el brillo de las sombras para un efecto más sutil
+            ctx.shadowBlur = this.radius * 1.5;
+            ctx.shadowColor = 'rgba(255, 255, 255, 0.2)';
+
+            // Color con opacidad personalizada
+            ctx.fillStyle = `${this.color} ${this.alpha})`;
+            ctx.fill();
+
+            // Restaurar configuración de sombra para no afectar otros elementos
+            ctx.shadowBlur = 0;
+          }
+
+          update() {
+            this.y -= this.speed;
+            if (this.y < -10) this.reset();
+          }
+        }
+
+        // Inicializar partículas
+        for (let i = 0; i < particleCount; i++) {
+          particles.push(new Particle());
+        }
+
+        // Función de animación optimizada
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+          particles.forEach((particle) => {
+            particle.update();
+            particle.draw();
+          });
+
+          requestAnimationFrame(animate);
+        }
+
+        // Iniciar animación con requestAnimationFrame
+        animate();
+
+        // Optimizar el redimensionamiento con debounce
+        let resizeTimeout;
+        window.addEventListener("resize", () => {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(() => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+          }, 200);
+        });
+
+        // Efecto de navbar al scroll - optimizado
+        const navbar = document.querySelector(".navbar");
+        let scrollTimeout;
+
+        window.addEventListener("scroll", function () {
+          if (!scrollTimeout) {
+            scrollTimeout = setTimeout(() => {
+              if (window.scrollY > 50) {
+                navbar.classList.add("navbar-scrolled");
+              } else {
+                navbar.classList.remove("navbar-scrolled");
+              }
+              scrollTimeout = null;
+            }, 100);
+          }
+        });
+      });
+    </script>
+
+
+    <!-- EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <!-- Script de contacto usando EmailJS -->
@@ -669,10 +785,10 @@
 
             // Preparar los parámetros para EmailJS
             const templateParams = {
-              from_name: nameValue,
-              email_sender: emailValue,
-              subject: subjectValue,
-              message: messageValue
+              from_name: nameValue,     // Nombre del remitente
+              email_sender: emailValue, // Email del remitente
+              subject: subjectValue,    // Asunto del mensaje
+              message: messageValue     // Contenido del mensaje
             };
 
             // Enviar correo utilizando EmailJS
@@ -710,4 +826,5 @@
       });
     </script>
 </body>
+
 </html>

@@ -10,6 +10,33 @@ body {
     box-sizing: border-box;
 }
 
+/* Estilos personalizados para la barra de desplazamiento */
+/* Para navegadores WebKit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(10, 10, 10, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 136, 0.2);
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 255, 136, 0.4);
+}
+
+/* Para Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 255, 136, 0.2) rgba(10, 10, 10, 0.8);
+}
+
 /* Añadiendo contenedor principal con margen fijo */
 .main-container {
     max-width: 1400px;
@@ -448,7 +475,7 @@ body {
 
 .project-description {
     color: #ccc;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
     line-height: 1.5;
 }
@@ -722,7 +749,6 @@ body {
   margin-top: 4rem;
   padding: 2rem;
   background: rgba(30, 30, 30, 0.6);
-  border-radius: 10px;
 }
 
 .linkedin-more-text {
@@ -886,7 +912,7 @@ body {
     justify-content: space-between;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 4rem;
     box-sizing: border-box;
 }
 
@@ -922,6 +948,7 @@ body {
     color: #e0e0e0;
     line-height: 1.6;
     margin-bottom: 2rem;
+    font-size: 1.2rem;
 }
 
 .contact-email {

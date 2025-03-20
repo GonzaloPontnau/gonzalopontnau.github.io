@@ -33,3 +33,5 @@ portfolio/settings.py
 
 # Archivo de configuración local con claves API
 apikeys.js
+
+requirements.txt

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -21,9 +22,6 @@
 
   <!-- Precargar imágenes críticas -->
   <link rel="preload" as="image" href="./images/imagenPerfil.png" />
-  
-  <!-- EmailJS SDK -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -612,20 +610,21 @@
             </div>
           </div>
           <div class="contact-form">
-            <form id="contactForm">
+            <!-- Agregar id al formulario y modificar para usar AJAX -->
+            <form id="contactForm" action="#" method="post">
               <div class="form-group">
-                <input type="text" id="name" name="name" placeholder="Nombre" required />
+                <input type="text" name="name" placeholder="Nombre" required />
               </div>
               <div class="form-group">
-                <input type="email" id="email" name="email" placeholder="Correo electrónico" required />
+                <input type="email" name="email" placeholder="Correo electrónico" required />
               </div>
               <div class="form-group">
-                <input type="text" id="subject" name="subject" placeholder="Asunto" required />
+                <input type="text" name="subject" placeholder="Asunto" required />
               </div>
               <div class="form-group">
-                <textarea id="message" name="message" placeholder="Mensaje" rows="5" required></textarea>
+                <textarea name="message" placeholder="Mensaje" rows="5" required></textarea>
               </div>
-              <button type="submit" class="submit-btn" id="submit-btn">Enviar mensaje</button>
+              <button type="submit" class="submit-btn">Enviar mensaje</button>
             </form>
             <!-- Contenedor para mensajes -->
             <div id="form-messages" class="form-messages"></div>
@@ -750,16 +749,6 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // Método más seguro para inicializar EmailJS
-      (function() {
-        // Ofuscación básica de las claves
-        const publicKey = atob("S05TM1BYSTVHcEJsNXo5a2w="); // KNS3PXI5GpBl5z9kl codificado en base64
-        const serviceID = atob("c2VydmljZV80eGJjZXhj"); // service_4xbcexc codificado en base64
-        const templateID = atob("dGVtcGxhdGVfMmtrbHF5YQ=="); // template_2kklqya codificado en base64
-        
-        emailjs.init(publicKey);
-      })();
-      
       const contactForm = document.getElementById('contactForm');
       const formMessages = document.getElementById('form-messages');
 
@@ -768,48 +757,49 @@
           e.preventDefault();
 
           // Mostrar indicador de carga
-          const submitButton = document.getElementById('submit-btn');
+          const submitButton = contactForm.querySelector('.submit-btn');
           const originalText = submitButton.textContent;
           submitButton.textContent = 'Enviando...';
           submitButton.disabled = true;
 
-          // Obtener los valores del formulario
-          const nameValue = document.getElementById('name').value;
-          const emailValue = document.getElementById('email').value;
-          const subjectValue = document.getElementById('subject').value;
-          const messageValue = document.getElementById('message').value;
-          
-          // Preparar el objeto de parámetros para EmailJS
-          const templateParams = {
-            from_name: nameValue,
-            reply_to: emailValue,
-            subject: subjectValue,
-            message: messageValue
-          };
+          // Recopilar los datos del formulario
+          const formData = new FormData(contactForm);
+          const nameValue = formData.get('name');
 
-          // Enviar el correo usando EmailJS con las credenciales ofuscadas
-          emailjs.send(
-            atob("c2VydmljZV80eGJjZXhj"), // service_4xbcexc
-            atob("dGVtcGxhdGVfMmtrbHF5YQ=="), // template_2kklqya
-            templateParams
-          )
-            .then(function(response) {
-              // Mostrar mensaje de éxito
-              formMessages.className = 'form-messages success-message';
-              formMessages.textContent = `¡Gracias ${nameValue}! Tu mensaje ha sido enviado correctamente.`;
-              
-              // Alerta de éxito
-              alert(`¡Gracias ${nameValue}! Tu mensaje ha sido enviado correctamente. Me pondré en contacto contigo a la brevedad.`);
-              
-              // Limpiar el formulario
-              contactForm.reset();
-            }, function(error) {
-              // Mostrar mensaje de error
+          // Enviar datos mediante fetch API
+          fetch(window.location.pathname, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'X-Requested-With': 'XMLHttpRequest',
+              'X-CSRFToken': formData.get('csrfmiddlewaretoken')
+            }
+          })
+            .then(response => response.json())
+            .then(data => {
+              if (data.success) {
+                // Mostrar alerta de éxito personalizada con el nombre
+                alert(`¡Gracias ${nameValue}! Tu mensaje ha sido enviado correctamente. Me pondré en contacto contigo a la brevedad.`);
+
+                // También mostrarlo en el formulario
+                formMessages.className = 'form-messages success-message';
+                formMessages.textContent = data.message;
+
+                // Limpiar el formulario
+                contactForm.reset();
+              } else {
+                // Mostrar error
+                formMessages.className = 'form-messages error-message';
+                formMessages.textContent = data.message || 'Ocurrió un error al enviar el mensaje.';
+                alert('Error: ' + data.message);
+              }
+            })
+            .catch(error => {
+              // Manejar errores de red
+              console.error('Error:', error);
               formMessages.className = 'form-messages error-message';
-              formMessages.textContent = 'Ocurrió un error al enviar el mensaje. Por favor, inténtalo de nuevo.';
-              
-              console.error('Error al enviar el correo:', error);
-              alert('Error al enviar el mensaje. Por favor, inténtalo de nuevo.');
+              formMessages.textContent = 'Ocurrió un error al enviar el mensaje.';
+              alert('Error de conexión al enviar el mensaje. Por favor, inténtelo de nuevo.');
             })
             .finally(() => {
               // Restaurar el botón

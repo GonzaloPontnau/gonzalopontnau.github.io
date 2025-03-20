@@ -45,21 +45,4 @@ def home(request):
                 'message': f'Error al enviar el mensaje: {str(e)}'
             })
     
-    return render(request, 'main/home.html')
-
-def projects(request):
-    projects_list = [
-        {
-            "title": "API para Clínica Priory",
-            "tech": ["Java", "Spring Boot", "JWT"],
-            "description": "API RESTful con seguridad JWT y despliegue en la nube.",
-            "github": "https://github.com/PontnauGonzalo/API-REST-priorymed.api"
-        },
-        {
-            "title": "Sistema de Tareas con Django",
-            "tech": ["Python", "Django", "PostgreSQL"],
-            "description": "Aplicación web con autenticación y CRUD.",
-            "github": "https://github.com/PontnauGonzalo/money-manager-python"
-        }
-    ]
-    return render(request, 'main/projects.html', {'projects': projects_list})
+    return render(request, './index.html')

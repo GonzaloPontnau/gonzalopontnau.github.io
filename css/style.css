@@ -14,7 +14,7 @@ body {
 .main-container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 150px;
     box-sizing: border-box;
 }
 
@@ -40,7 +40,7 @@ body {
 
 /* Ajustamos la sección de contacto para que respete el contenedor principal */
 .contact-section {
-    padding: 4rem 0;
+    padding: 4rem 4rem;
     background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
     border-radius: 20px;
     margin: 15rem auto;
@@ -226,7 +226,7 @@ body {
 .name-animation {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 7rem;
+    font-size: 6rem;
     line-height: 1.1;
     margin: 0;
     background: linear-gradient(45deg, #4f2fffd2, #037ff3, #03f0b4, #9df100);
@@ -271,9 +271,9 @@ body {
 
 /*  SECCIÓN SOBRE MÍ  */
 .about-section {
-    padding: 15rem 2rem;
+    padding: 15rem 0rem;
     max-width: 1200px;
-    margin: 0 auto; /* Eliminamos márgenes laterales específicos */
+    margin: 0 auto; /* Elimino márgenes laterales específicos */
 }
 
 .section-title {
@@ -347,13 +347,14 @@ body {
 
 .about-text {
     flex: 2;
+    padding: 12px;
 }
 
 .about-bio {
     color: #e0e0e0;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
 }
 
 .highlight {
@@ -921,7 +922,6 @@ body {
     color: #e0e0e0;
     line-height: 1.6;
     margin-bottom: 2rem;
-    margin-right: 10rem;
 }
 
 .contact-email {
@@ -1072,6 +1072,14 @@ footer {
         margin-bottom: 2.5rem;
     }
     
+    @media (max-width: 991px) {
+        .about-bio, .contact-description, .project-description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+    }
+
+
     .about-bio, .contact-description, .project-description {
         font-size: 1.2rem;
         line-height: 1.8;

@@ -90,7 +90,7 @@
         <h2 class="section-title">Sobre Mí</h2>
         <div class="about-content">
           <div class="about-image">
-            <img src="./assets/images/imagenPerfil.png" alt="Gonzalo Pontnau" class="profile-image-large" loading="lazy"
+            <img id="profile-image" src="./assets/images/imagenPerfil.png" alt="Gonzalo Pontnau" class="profile-image-large" loading="lazy"
               decoding="async" />
             <div class="about-social">
               <a href="https://github.com/GonzaloPontnau" target="_blank" class="about-social-icon">
@@ -121,7 +121,7 @@
               RESTful.
             </p>
             <p class="about-bio">
-              Tengo experiencia en tecnologías como Django, Flask y MySQL, y
+              Tengo experiencia en tecnologías como Django, Flask, FastAPI y
               también en Go para arquitecturas de microservicios. Soy competente
               en prácticas de seguridad web y metodologías ágiles (Scrum).
             </p>
@@ -142,12 +142,12 @@
               <div class="skills-container">
                 <span class="skill-tag">Python</span>
                 <span class="skill-tag">Django</span>
+                <span class="skill-tag">FastAPI</span>
                 <span class="skill-tag">Go</span>
                 <span class="skill-tag">Flask</span>
-                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">SQLite</span>
                 <span class="skill-tag">PostgreSQL</span>
                 <span class="skill-tag">RESTful APIs</span>
-                <span class="skill-tag">Git</span>
                 <span class="skill-tag">HTML/CSS/JS</span>
               </div>
             </div>
@@ -163,7 +163,7 @@
         <div class="projects-grid">
           <!-- Proyecto 1 -->
           <!-- Proyecto Money Manager -->
-          <div class="project-card">
+          <div id="money-manager" class="project-card">
             <div class="project-image">
               <img src="./assets/images/demo-money-manager.gif" alt="Money Manager Dashboard" />
             </div>
@@ -390,7 +390,7 @@
 
         <div class="education-cards-vertical">
           <!-- Tarjeta de Educación -->
-          <div class="education-card">
+          <div id="utn-education" class="education-card">
             <div class="education-card-header">
               <div class="education-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
@@ -591,7 +591,6 @@
   </div>
 
   <div class="main-container"> <!-- Reapertura del main-container para el resto del contenido -->
-    >
     <!-- Sección de contacto -->
     <section id="contact" class="contact-section">
       <div class="container">
@@ -615,7 +614,7 @@
             </div>
           </div>
           <div class="contact-form">
-            <form id="contactForm">
+            <form id="contact-form">
               <div class="form-group">
                 <input type="text" name="name" id="name" placeholder="Nombre" required />
               </div>
@@ -764,7 +763,7 @@
       })();
 
       document.addEventListener("DOMContentLoaded", function () {
-        const contactForm = document.getElementById('contactForm');
+        const contactForm = document.getElementById('contact-form');
         const formMessages = document.getElementById('form-messages');
 
         if (contactForm) {

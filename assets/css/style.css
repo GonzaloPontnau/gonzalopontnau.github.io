@@ -78,17 +78,17 @@ body {
     padding: 2.5rem 2.5rem; /* Reducido de 3rem 3rem */
     background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
     border-radius: 20px;
-    margin: 10rem auto; /* Reducido de 12rem */
-    max-width: 1100px; /* Reducido de 1200px */
+    margin: 10rem auto; 
+    max-width: 1100px; 
 }
 
 .contact-wrapper {
     display: flex;
-    gap: 6rem; /* Reducido de 8rem */
+    gap: 2rem; 
     justify-content: space-between;
-    max-width: 850px; /* Reducido de 900px */
+    max-width: 850px; 
     margin: 0 auto;
-    padding: 0 1.5rem; /* Reducido de 2rem */
+    padding: 0 1.5rem; 
     box-sizing: border-box;
 }
 
@@ -304,7 +304,8 @@ body {
 
 /*  SECCIÓN SOBRE MÍ  */
 .about-section {
-    padding-top: 20rem; 
+    padding-top: 20rem;
+    padding-bottom: 20rem;
 }
 
 .section-title {
@@ -425,7 +426,8 @@ body {
 
 /*  SECCIÓN DE PROYECTOS  */
 .projects-section {
-    padding: 40rem 0; /* Reducido de 5rem */
+    padding-top: 20rem;
+    padding-bottom: 40rem;
 }
 
 .projects-grid {
@@ -964,7 +966,7 @@ body {
 .email-link {
     color: #00ff88;
     text-decoration: none;
-    font-size: 1.4rem;
+    font-size: 1rem;
     transition: color 0.3s ease;
 }
 
@@ -1446,4 +1448,68 @@ footer {
     .project-card {
         padding: 0.8rem; 
     }
+}
+
+/* Clases para animaciones de scroll */
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.zoom-in {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.stagger-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Clases activas al entrar en viewport */
+.show {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+/* Delay para efectos escalonados */
+.delay-1 {
+  transition-delay: 0.1s;
+}
+
+.delay-2 {
+  transition-delay: 0.2s;
+}
+
+.delay-3 {
+  transition-delay: 0.3s;
+}
+
+.delay-4 {
+  transition-delay: 0.4s;
+}
+
+.delay-5 {
+  transition-delay: 0.5s;
 }

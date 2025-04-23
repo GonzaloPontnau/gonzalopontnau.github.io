@@ -43,11 +43,17 @@
           <circle cx="4" cy="4" r="2"></circle>
         </svg>
       </a>
-      <a href="./assets/images/CV.pdf" target="_blank" rel="noopener noreferrer" class="social-icon cv-icon">
+      <!-- Modificación: Quitar href, añadir id y contenedor para opciones -->
+      <a href="#" id="cv-selector" class="social-icon cv-icon" aria-haspopup="true" aria-expanded="false">
         <div class="cv-circle">
           <span class="cv-text">CV</span>
         </div>
       </a>
+      <!-- Menú desplegable para CV -->
+      <div id="cv-options-menu" class="cv-options-menu" role="menu">
+        <a href="./assets/images/CV-ES.pdf" target="_blank" rel="noopener noreferrer" role="menuitem">Español</a>
+        <a href="./assets/images/CV-EN.pdf" target="_blank" rel="noopener noreferrer" role="menuitem">English</a>
+      </div>
       <div class="social-line"></div>
     </div>
   </div>
@@ -830,6 +836,31 @@
                 submitButton.textContent = originalText;
                 submitButton.disabled = false;
               });
+          });
+        }
+      });
+    </script>
+
+    <!-- Script para manejar el menú desplegable del CV -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const cvSelector = document.getElementById('cv-selector');
+        const cvOptionsMenu = document.getElementById('cv-options-menu');
+
+        if (cvSelector && cvOptionsMenu) {
+          cvSelector.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevenir comportamiento por defecto del enlace
+            const isExpanded = cvSelector.getAttribute('aria-expanded') === 'true';
+            cvOptionsMenu.classList.toggle('show');
+            cvSelector.setAttribute('aria-expanded', !isExpanded);
+          });
+
+          // Cerrar el menú si se hace clic fuera de él
+          document.addEventListener('click', function (event) {
+            if (!cvSelector.contains(event.target) && !cvOptionsMenu.contains(event.target)) {
+              cvOptionsMenu.classList.remove('show');
+              cvSelector.setAttribute('aria-expanded', 'false');
+            }
           });
         }
       });

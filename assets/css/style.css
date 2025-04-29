@@ -1593,3 +1593,63 @@ footer {
 .delay-5 {
     transition-delay: 0.5s;
 }
+
+/*  SELECTOR DE IDIOMA  */
+.language-switcher {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1000;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.language-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: #ffffff;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.language-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    border-color: #00ff88;
+    color: #00ff88;
+}
+
+.language-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #ffffff;
+}
+
+/* Ajustes responsivos para el selector de idioma */
+@media (max-width: 767px) {
+    .language-button {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .language-text {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .language-button {
+        width: 32px;
+        height: 32px;
+    }
+}

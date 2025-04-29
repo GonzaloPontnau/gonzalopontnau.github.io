@@ -24,6 +24,13 @@
 </head>
 
 <body>
+  <!-- Botón de cambio de idioma -->
+  <div class="language-switcher">
+    <div class="language-button" id="language-toggle">
+      <span class="language-text" id="current-language">ES</span>
+    </div>
+  </div>
+
   <!-- Github, lkd, cv logos en barra lateral -->
   <div class="social-nav">
     <div class="social-links">
@@ -110,7 +117,7 @@
               <a href="https://linkedin.com/in/gonzalopontnau" target="_blank" class="about-social-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                   <rect x="2" y="9" width="4" height="12"></rect>
                   <circle cx="4" cy="4" r="2"></circle>
                 </svg>
@@ -324,6 +331,7 @@
                     <path
                       d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
                     </path>
+                  </svg>
                 </a>
               </div>
             </div>
@@ -592,7 +600,7 @@
   <div class="linkedin-more-container full-width fade-in">
     <div class="linkedin-more-content">
       <p class="linkedin-more-text">Para información adicional sobre educación secundaria y otros certificados, visita
-        mi perfil de LinkedIn</p>
+        mi perfil de Linkedin</p>
       <a href="https://www.linkedin.com/in/gonzalopontnau/" target="_blank" rel="noopener noreferrer"
         class="linkedin-button">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -601,7 +609,7 @@
           <rect x="2" y="9" width="4" height="12"></rect>
           <circle cx="4" cy="4" r="2"></circle>
         </svg>
-        Ver más en LinkedIn
+        Linkedin
       </a>
     </div>
   </div>
@@ -898,8 +906,476 @@
       });
     </script>
 
+    <!-- Script para cambio de idioma -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const languageToggle = document.getElementById('language-toggle');
+        const currentLanguage = document.getElementById('current-language');
+        let currentLang = 'es'; // Idioma por defecto: español
+        
+        // Asegurarse de que todos los elementos existen antes de intentar traducirlos
+        function elementExists(selector) {
+          return document.querySelector(selector) !== null;
+        }
+
+        // Traducciones
+        const translations = {
+          // Navbar
+          'nav': {
+            'es': {
+              'about': 'Sobre mí',
+              'projects': 'Proyectos',
+              'education': 'Educación',
+              'contact': 'Contacto'
+            },
+            'en': {
+              'about': 'About me',
+              'projects': 'Projects',
+              'education': 'Education',
+              'contact': 'Contact'
+            }
+          },
+          // Hero section
+          'hero': {
+            'es': {
+              'greeting': 'Hola 👋🏼, soy',
+              'role': 'Desarrollador Backend',
+              'btnProjects': 'Proyectos',
+              'btnEducation': 'Educación',
+              'btnContact': 'Contáctame'
+            },
+            'en': {
+              'greeting': 'Hello 👋🏼, I am',
+              'role': 'Backend Developer',
+              'btnProjects': 'Projects',
+              'btnEducation': 'Education',
+              'btnContact': 'Contact me'
+            }
+          },
+          // About section
+          'about': {
+            'es': {
+              'title': 'Sobre Mí',
+              'bio1': 'Soy desarrollador Backend con enfoque enPython y Django, con experiencia adicionalen Go. Me apasiona construir aplicaciones web seguras y escalables, así como diseñar APIs RESTful.',
+              'bio2': 'Como estudiante avanzado de Ingeniería en sistemas en la Universidad Nacional Tecnológica de Buenos Aires (UTN), combino la sólida base teórica que brinda la formación universitaria con mi constante aprendizaje autodidacta en tecnologías emergentes.',
+              'bio3': 'También, tengo conocimientos sólidos de patrones de diseño, principios SOLID y desarrollo ágil.',
+              'bio4': 'Soy un aprendiz apasionado de la tecnología que disfruta resolviendo desafíos técnicos complejos de manera eficiente y colaborativa.'
+            },
+            'en': {
+              'title': 'About Me',
+              'bio1': 'I am a backend developer focused on Python and Django, with additional experience in Go. I am passionate about building secure and scalable web applications and designing RESTful APIs.',
+              'bio2': 'As an advanced Systems Engineering student at the National Technological University of Buenos Aires (UTN), I combine the solid theoretical foundation provided by my university education with my constant self-learning in emerging technologies.',
+              'bio3': 'I also have a solid understanding of design patterns, SOLID principles, and agile development.',
+              'bio4': 'I am a passionate technology learner who enjoys solving complex technical challenges efficiently and collaboratively.'
+            }
+          },
+          // Projects section
+          'projects': {
+            'es': {
+              'title': 'Proyectos',
+              'view': 'Ver proyecto',
+              'code': 'Ver código',
+              'moneyManager': {
+                'title': 'Money Manager',
+                'description': 'Aplicación web de gestión financiera personal con dashboard interactivo y seguimiento de transacciones. Con autenticación de usuario y almacenamiento seguro de datos.'
+              },
+              'GymAI': {
+                'title': 'GymAI - Tu personal TrAIner',
+                'description': 'Aplicación web que utiliza IA (Google Gemini) para crear rutinas de entrenamiento personalizadas y generar modificaciones mediante chat en tiempo real. (Por favor espere unos segundos apenas se ingrese al sitio web.)'
+              },
+              'cryptoViewer': {
+                'title': 'Visualizador de Precios de Criptomonedas',
+                'description': 'Aplicación web que muestra en tiempo real los precios de las 10 principales criptomonedas utilizando la API de CoinMarketCap. Incluye datos detallados como capitalización de mercado, volumen de 24h y cambio porcentual a través del endpoint'
+              },
+              'Go-web-api': {
+                'title': 'GO Web API REST',
+                'description': 'API REST en Go que implementa los principios SOLID y clean architecture. Estructurada en capas (Repository, Service, Controller) con gestión de contexts, autenticación JWT y manejo estandarizado de errores HTTP.'
+              },
+              'API-RESTful-java': {
+                'title': 'API RESTful Clínica Médica Priory',
+                'description': 'API completa desarrollada con Spring Boot que proporciona un sistema de gestión para una clínica médica, implementando operaciones CRUD con MySQL, migraciones con Flyway, validaciones y autenticación JWT.'
+              },
+              'python-lineas-blancas': {
+                'title': 'Detector de Líneas Blancas en Cartones',
+                'description': 'Solución de visión artificial desarrollada para una fábrica de cartón que detecta automáticamente la presencia o ausencia de líneas blancas en productos sobre una cinta transportadora.'
+              },
+              
+
+            },
+            'en': {
+              'title': 'Projects',
+              'view': 'View project',
+              'code': 'View code',
+              'moneyManager': {
+                'title': 'Money Manager',
+                'description': 'Personal finance management web application with interactive dashboard and transaction tracking. Features user authentication and secure data storage.'
+              },
+              'GymAI': {
+                'title': 'GymAI - Your Personal TrAIner',
+                'description': 'Web application that uses AI (Google Gemini) to create personalized workout routines and generate modifications via real-time chat. (Please wait a few seconds after entering the website.)'
+              },
+              'cryptoViewer': {
+                'title': 'Cryptocurrency Price Viewer',
+                'description': 'Web application that displays real-time prices of the top 10 cryptocurrencies using the CoinMarketCap API. Includes detailed data such as market capitalization, 24h volume, and percentage change through the endpoint.'
+              },
+              'Go-web-api': {
+                'title': 'GO Web API REST',
+                'description': 'REST API in Go that implements SOLID principles and clean architecture. Structured in layers (Repository, Service, Controller) with context management, JWT authentication, and standardized HTTP error handling.'
+              },
+              'API-RESTful-java': {
+                'title': 'API RESTful Clínica Médica Priory',
+                'description': 'A complete API developed with Spring Boot that provides a management system for a medical clinic, implementing CRUD operations with MySQL, migrations with Flyway, and JWT validation and authentication.'
+              },
+              'python-lineas-blancas': {
+                'title': 'White Line Detector on Cardboard',
+                'description': 'Machine vision solution developed for a cardboard factory that automatically detects the presence or absence of white lines in products on a conveyor belt.'
+              },
+
+            }
+          },
+          // Education section
+          'education': {
+            'es': {
+              'title': 'Educación',
+              'more': 'Para información adicional sobre educación secundaria y otros certificados, visita mi perfil de Linkedin',
+              'utn': {
+                'institution': 'Universidad Tecnológica Nacional',
+                'degree': 'Ingeniería de Sistemas',
+                'period': '| 2022 – Presente',
+                'programmingTitle': 'Formación en programación',
+                'programmingContent': 'Dominio de C/C++, Go, Java, bases de datos MySQL y diseño de sistemas operativos. Destaco el desarrollo de un sistema operativo distribuido en Go, integrando módulos como Kernel, CPU, Memoria y File System. Implementé APIs HTTP para comunicación modular, configuración JSON y logs estructurados. Además, diseñé un analizador léxico, sintáctico y semántico en C usando Flex/Bison y expresiones regulares (regex), aplicado en la interpretación de pseudocódigo para programación.'
+              },
+              'python': {
+                'institution': 'Coderhouse',
+                'degree': 'Python Backend Developer',
+                'period': '| Abr. 2023 – Sept. 2023',
+                'topics': 'Principales temas estudiados',
+                'topicsContent': 'Desarrollo backend con Django y API REST, arquitectura MVT, patrones de diseño, SOLID, debugging, bases de datos ORM (SQLite y PostgreSQL), autenticación, testing y despliegue en servidores virtuales.'
+              }
+            },
+            'en': {
+              'title': 'Education',
+              'more': 'For additional information on secondary education and other certificates, visit my Linkedin profile.',
+              'utn': {
+                'institution': 'National Technological University',
+                'degree': 'Systems Engineering',
+                'period': '| 2022 - Present',
+                'programmingTitle': 'Programming Training',
+                'programmingContent': 'Proficient in C/C++, Go, Java, MySQL databases, and operating system design. Highlight: developed a distributed operating system in Go, integrating modules such as Kernel, CPU, Memory, and File System. Implemented HTTP APIs for modular communication, JSON configuration, and structured logging. Additionally, designed a lexical, syntactic, and semantic analyzer in C using Flex/Bison and regular expressions (regex), applied in pseudocode interpretation for programming.'
+              },
+              'python': {
+                'institution': 'Coderhouse',
+                'degree': 'Python Backend Developer',
+                'period': '| Apr. 2023 - Sept. 2023',
+                'topics': 'Main topics studied',
+                'topicsContent': 'Backend development with Django and REST API, MVT architecture, design patterns, SOLID, debugging, ORM databases (SQLite and PostgreSQL), authentication, testing, and deployment on virtual servers.'
+              }
+            }
+          },
+          // Contact section
+          'contact': {
+            'es': {
+              'title': 'Contáctame',
+              'description': 'Si quieres contactarte conmigo puedes mandarme un mail llenando el formulario o traves de Linkedin en la barra de abajo a la izquierda. ¡Gracias! 🚀',
+              'form': {
+                'name': 'Nombre',
+                'email': 'Email',
+                'subject': 'Asunto',
+                'message': 'Mensaje',
+                'send': 'Enviar mensaje'
+              }
+            },
+            'en': {
+              'title': 'Contact Me',
+              'description': 'If you want to contact me you can send me an email by filling out the form or through Linkedin in the bar at the bottom left. Thanks! 🚀',
+              'form': {
+                'name': 'Name',
+                'email': 'Email',
+                'subject': 'Subject',
+                'message': 'Message',
+                'send': 'Send message'
+              }
+            }
+          },
+          // Footer
+          'footer': {
+            'es': '2025 Gonzalo Pontnau',
+            'en': '2025 Gonzalo Pontnau'
+          },
+          // Language button
+          'languageBtn': {
+            'es': {
+              'text': 'ES',
+              'label': 'Cambiar a English'
+            },
+            'en': {
+              'text': 'EN',
+              'label': 'Switch to Español'
+            }
+          }
+        };
+
+        // Función para cambiar el idioma de la página
+        function changeLanguage(lang) {
+          currentLang = lang;
+          console.log('Iniciando cambio de idioma a:', lang);
+          
+          try {
+            // Actualizar el botón de idioma
+            if (currentLanguage) {
+              currentLanguage.textContent = translations.languageBtn[lang].text;
+            }
+            
+            // Actualizar navbar
+            const navLinks = document.querySelectorAll('.nav-links a');
+            if (navLinks.length >= 4) {
+              navLinks[0].textContent = translations.nav[lang].about;
+              navLinks[1].textContent = translations.nav[lang].projects;
+              navLinks[2].textContent = translations.nav[lang].education;
+              navLinks[3].textContent = translations.nav[lang].contact;
+            }
+            
+            // Actualizar hero section
+            if (elementExists('.greeting')) {
+              document.querySelector('.greeting').textContent = translations.hero[lang].greeting;
+            }
+            
+            if (elementExists('.hero .title')) {
+              document.querySelector('.hero .title').textContent = translations.hero[lang].role;
+            }
+            
+            const heroButtons = document.querySelectorAll('.hero .button-container .btn');
+            if (heroButtons.length >= 3) {
+              heroButtons[0].textContent = translations.hero[lang].btnProjects;
+              heroButtons[1].textContent = translations.hero[lang].btnEducation;
+              heroButtons[2].textContent = translations.hero[lang].btnContact;
+            }
+            
+            // Actualizar sección Sobre Mí
+            if (elementExists('#about .section-title')) {
+              document.querySelector('#about .section-title').textContent = translations.about[lang].title;
+            }
+            
+            const aboutBios = document.querySelectorAll('.about-bio');
+            if (aboutBios.length >= 4) {
+              aboutBios[0].innerHTML = translations.about[lang].bio1.replace('Python', '<span class="highlight">Python</span>').replace('Django', '<span class="highlight">Django</span>').replace('Go', '<span class="highlight">Go</span>').replace('Node.js', '<span class="highlight">Node.js</span>');
+              aboutBios[1].textContent = translations.about[lang].bio2;
+              aboutBios[2].textContent = translations.about[lang].bio3;
+              aboutBios[3].textContent = translations.about[lang].bio4;
+            }
+            
+            // Actualizar sección Proyectos
+            if (elementExists('#projects .section-title')) {
+              document.querySelector('#projects .section-title').textContent = translations.projects[lang].title;
+            }
+            
+            // Actualizar descripciones de proyectos específicos
+            if (elementExists('#money-manager .project-title')) {
+              document.querySelector('#money-manager .project-title').textContent = translations.projects[lang].moneyManager.title;
+            }
+            
+            if (elementExists('#money-manager .project-description')) {
+              document.querySelector('#money-manager .project-description').textContent = translations.projects[lang].moneyManager.description;
+            }
+            
+            // Proyecto Crypto Viewer
+            const cryptoTitles = document.querySelectorAll('.project-title');
+            const cryptoDescriptions = document.querySelectorAll('.project-description');
+            
+            // Buscar y actualizar el título y descripción del visualizador de criptomonedas
+            cryptoTitles.forEach(title => {
+              if (title.textContent.includes('Criptomonedas') || title.textContent.includes('Cryptocurrency')) {
+                title.textContent = translations.projects[lang].cryptoViewer.title;
+              }
+            });
+            
+            cryptoDescriptions.forEach(desc => {
+              if (desc.textContent.includes('CoinMarketCap')) {
+                desc.textContent = translations.projects[lang].cryptoViewer.description;
+              }
+            });
+            
+            // Proyecto GymAI
+            const gymAItitles = document.querySelectorAll('.project-title');
+            const gymAIDescriptions = document.querySelectorAll('.project-description');
+            
+            // Buscar y actualizar el título y descripción de GymAI
+            gymAItitles.forEach(title => {
+              if (title.textContent.includes('GymAI')) {
+                title.textContent = translations.projects[lang].GymAI.title;
+              }
+            });
+            
+            gymAIDescriptions.forEach(desc => {
+              if (desc.textContent.includes('Google Gemini')) {
+                desc.textContent = translations.projects[lang].GymAI.description;
+              }
+            });
+            
+
+
+
+            
+            document.querySelectorAll('.project-view').forEach(btn => {
+              btn.textContent = translations.projects[lang].view;
+            });
+            
+            document.querySelectorAll('.project-code').forEach(btn => {
+              btn.textContent = translations.projects[lang].code;
+            });
+            
+            // Actualizar sección Educación
+            if (elementExists('#education .section-title')) {
+              document.querySelector('#education .section-title').textContent = translations.education[lang].title;
+            }
+            
+            if (elementExists('.linkedin-more-text')) {
+              document.querySelector('.linkedin-more-text').textContent = translations.education[lang].more;
+            }
+            
+            // Actualizar detalles de UTN
+            if (elementExists('#utn-education .education-institution')) {
+              document.querySelector('#utn-education .education-institution').textContent = translations.education[lang].utn.institution;
+            }
+            
+            if (elementExists('#utn-education .education-degree')) {
+              const degreeElement = document.querySelector('#utn-education .education-degree');
+              // Mantener la estructura pero actualizar el texto
+              degreeElement.innerHTML = translations.education[lang].utn.degree + ' <span class="education-date">' + translations.education[lang].utn.period + '</span>';
+            }
+            
+            // Actualizar títulos y contenidos de los párrafos educativos
+            const paragraphTitles = document.querySelectorAll('.paragraph-title');
+            const paragraphContents = document.querySelectorAll('.paragraph-content');
+            
+            paragraphTitles.forEach(title => {
+              if (title.textContent.includes('programación') || title.textContent.includes('Programming')) {
+                title.textContent = translations.education[lang].utn.programmingTitle;
+              }
+            });
+            
+            paragraphContents.forEach(content => {
+              if (content.textContent.includes('C/C++') && content.textContent.includes('Go')) {
+                content.textContent = translations.education[lang].utn.programmingContent;
+              }
+            });
+            
+            // Actualizar Coderhouse
+            const educationInstitutions = document.querySelectorAll('.education-institution');
+            educationInstitutions.forEach(institution => {
+              if (institution.textContent.includes('Coderhouse')) {
+                // El nombre de la institución no cambia
+                const parentCard = institution.closest('.education-card');
+                if (parentCard) {
+                  const degree = parentCard.querySelector('.education-degree');
+                  if (degree) {
+                    degree.innerHTML = translations.education[lang].python.degree + ' <span class="education-date">' + translations.education[lang].python.period + '</span>';
+                  }
+                  
+                  // Buscar los títulos y contenidos relacionados con Python
+                  const titles = parentCard.querySelectorAll('.paragraph-title');
+                  titles.forEach(title => {
+                    if (title.textContent.includes('temas') || title.textContent.includes('topics')) {
+                      title.textContent = translations.education[lang].python.topics;
+                    }
+                  });
+                  
+                  const contents = parentCard.querySelectorAll('.paragraph-content');
+                  contents.forEach(content => {
+                    if (content.textContent.includes('Django')) {
+                      content.textContent = translations.education[lang].python.topicsContent;
+                    }
+                  });
+                }
+              }
+            });
+            
+            // Actualizar sección Contacto
+            if (elementExists('#contact .section-title')) {
+              document.querySelector('#contact .section-title').textContent = translations.contact[lang].title;
+            }
+            
+            if (elementExists('.contact-description')) {
+              document.querySelector('.contact-description').textContent = translations.contact[lang].description;
+            }
+            
+            if (elementExists('.contact-title')) {
+              document.querySelector('.contact-title').textContent = translations.contact[lang].title + '.';
+            }
+            
+            // Actualizar placeholders del formulario
+            if (elementExists('#name')) {
+              document.querySelector('#name').placeholder = translations.contact[lang].form.name;
+            }
+            
+            if (elementExists('#email')) {
+              document.querySelector('#email').placeholder = lang === 'es' ? 'Correo electrónico' : 'Email';
+            }
+            
+            if (elementExists('#subject')) {
+              document.querySelector('#subject').placeholder = translations.contact[lang].form.subject;
+            }
+            
+            if (elementExists('#message')) {
+              document.querySelector('#message').placeholder = translations.contact[lang].form.message;
+            }
+            
+            // Actualizar botón de envío
+            if (elementExists('.submit-btn')) {
+              document.querySelector('.submit-btn').textContent = translations.contact[lang].form.send;
+            }
+            
+            // Mantener compatibilidad con etiquetas si existen
+            if (elementExists('label[for="name"]')) {
+              document.querySelector('label[for="name"]').textContent = translations.contact[lang].form.name;
+            }
+            
+            if (elementExists('label[for="email"]')) {
+              document.querySelector('label[for="email"]').textContent = translations.contact[lang].form.email;
+            }
+            
+            if (elementExists('label[for="subject"]')) {
+              document.querySelector('label[for="subject"]').textContent = translations.contact[lang].form.subject;
+            }
+            
+            if (elementExists('label[for="message"]')) {
+              document.querySelector('label[for="message"]').textContent = translations.contact[lang].form.message;
+            }
+            
+            if (elementExists('#submit-button')) {
+              document.querySelector('#submit-button').textContent = translations.contact[lang].form.send;
+            }
+            
+            // Actualizar footer
+            if (elementExists('.footer p')) {
+              document.querySelector('.footer p').textContent = translations.footer[lang];
+            }
+            
+            // Cambiar el atributo lang de la etiqueta html
+            document.documentElement.lang = lang;
+            
+            console.log('Idioma cambiado con éxito a:', lang);
+          } catch (error) {
+            console.error('Error al cambiar el idioma:', error);
+          }
+        }
+
+        // Event listener para el botón de cambio de idioma
+        languageToggle.addEventListener('click', function() {
+          const newLang = currentLang === 'es' ? 'en' : 'es';
+          changeLanguage(newLang);
+          console.log('Idioma cambiado a:', newLang); // Agregar log para depuración
+        });
+        
+        // Inicializar la función una vez que la página esté completamente cargada
+        window.addEventListener('load', function() {
+          console.log('Página completamente cargada, inicializando traducción');
+        });
+      });
+    </script>
+
     <footer class="footer">
-      <p>© 2025 Gonzalo Pontnau</p>
+      <p> 2025 Gonzalo Pontnau</p>
     </footer>
 </body>
 

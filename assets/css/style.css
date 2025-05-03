@@ -1,3 +1,17 @@
+/* Define color variables at the root */
+:root {
+    --accent-color: #00ff88;
+    /* Tu color verde de acento principal */
+    --bg-color: #0a0a0a;
+    /* Tu color de fondo principal */
+    --card-bg: rgba(30, 30, 30, 0.9);
+    /* Fondo para tarjetas como educación y experiencia */
+    --text-color: #fff;
+    /* Tu color de texto principal */
+    --text-secondary: #e0e0e0;
+    /* Tu color de texto secundario */
+}
+
 /* Ajuste global de tamaño base para todo el sitio */
 html {
     font-size: 13px;
@@ -29,7 +43,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(0, 255, 136, 0.3);
+    background: rgba(50, 50, 50, 0.5);
     border-radius: 10px;
     transition: background 0.3s ease;
     border: 2px solid transparent;
@@ -37,29 +51,29 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 255, 136, 0.5);
+    background: rgba(70, 70, 70, 0.7);
     border: 2px solid transparent;
     background-clip: content-box;
 }
 
 * {
     scrollbar-width: thin;
-    scrollbar-color: rgba(0, 255, 136, 0.3) transparent;
+    scrollbar-color: rgba(50, 50, 50, 0.5) transparent;
 }
 
 /* Añadiendo contenedor principal con margen fijo */
 .main-container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 80px;
+    padding: 0 40px;
     box-sizing: border-box;
 }
 
 /* Ajustamos el ancho de los contenedores de sección para que respeten el contenedor principal */
 .section-container {
     width: 100%;
-    max-width: 1000px;
-    /* Reducido de 1100px */
+    max-width: 850px;
+    /* Reducido de 1000px */
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
@@ -270,14 +284,14 @@ body {
 .cv-options-menu {
     display: none;
     position: absolute;
-    left: 40px; 
-    bottom: 40px; 
+    left: 40px;
+    bottom: 40px;
     background-color: rgba(30, 30, 30, 0.95);
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     padding: 0.5rem 0;
-    z-index: 1001; 
-    min-width: 80px; 
+    z-index: 1001;
+    min-width: 80px;
 }
 
 .cv-options-menu.show {
@@ -1158,7 +1172,8 @@ footer {
 /*  SECCIÓN CONTAINER GENERAL  */
 .section-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 850px;
+    /* Reducido de 1000px */
     margin: 0 auto;
     padding-top: 15rem 2rem;
     box-sizing: border-box;
@@ -1479,7 +1494,7 @@ footer {
     }
 
     .main-container {
-        padding: 0 50px;
+        padding: 0 170px;
     }
 
     .name-animation {
@@ -1641,7 +1656,7 @@ footer {
         width: 36px;
         height: 36px;
     }
-    
+
     .language-text {
         font-size: 0.8rem;
     }
@@ -1651,5 +1666,643 @@ footer {
     .language-button {
         width: 32px;
         height: 32px;
+    }
+}
+
+/* Estilos para la sección de Experiencia laboral */
+.experience-section {
+    padding: 6rem 0;
+    background-color: var(--bg-color);
+}
+
+/* Contenedor de la línea de tiempo */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 3rem auto 0;
+    padding-left: 20px;
+    /* Añadido espacio para la línea */
+    min-height: 300px;
+    /* Asegurar altura mínima para mostrar la línea */
+    display: block;
+    /* Asegurar que se muestre como bloque */
+}
+
+/* Línea vertical explícita - elemento dedicado */
+.timeline-vertical-line {
+    position: absolute;
+    width: 4px;
+    background-color: var(--accent-color);
+    top: 0;
+    bottom: 0;
+    left: 120px;
+    z-index: 1;
+    height: 100%;
+    /* Asegurar que cubra toda la altura */
+}
+
+/* Conector vertical de la línea de tiempo - REFORZADO */
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    /* Aún más grosor para garantizar visibilidad */
+    background-color: var(--accent-color);
+    top: 0;
+    bottom: 0;
+    left: 120px;
+    opacity: 1;
+    /* Opacidad completa */
+    z-index: 1;
+    /* Asegurar que la línea esté por detrás de los conectores */
+    display: block !important;
+    /* Forzar visualización */
+}
+
+/* Elemento individual de la línea de tiempo */
+.timeline-item {
+    display: flex;
+    margin-bottom: 3rem;
+    /* Más espacio entre elementos */
+    position: relative;
+}
+
+/* Fecha en la línea de tiempo */
+.timeline-date {
+    width: 150px;
+    position: relative;
+    padding-right: 30px;
+    flex-shrink: 0;
+}
+
+.date-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 20px;
+}
+
+.date {
+    font-weight: 600;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+}
+
+.date-line {
+    width: 15px;
+    height: 1px;
+    background-color: var(--accent-color);
+    margin: 4px 0;
+}
+
+/* Conector circular - CORREGIDO */
+.timeline-connector {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 16px;
+    /* Aumentado tamaño */
+    height: 16px;
+    /* Aumentado tamaño */
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    z-index: 2;
+    border: 3px solid var(--card-bg);
+    /* Borde para destacar */
+    box-shadow: 0 0 0 1px var(--accent-color);
+    /* Sombra adicional para resaltar */
+}
+
+/* Contenido de la línea de tiempo */
+.timeline-content {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+    width: calc(100% - 150px);
+    border-left: 3px solid var(--accent-color);
+    margin-left: 10px;
+    /* Espacio entre el conector y el contenido */
+}
+
+.job-header {
+    margin-bottom: 1rem;
+}
+
+.job-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.job-subtitle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.job-type {
+    font-weight: 500;
+}
+
+.job-location {
+    font-style: italic;
+}
+
+.job-description p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.tech-title {
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--accent-color);
+}
+
+.tech-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.tech-list li {
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 1.5rem;
+    line-height: 1.5;
+}
+
+.tech-list li:before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+.tech-highlight {
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+/* Responsividad para móviles - CORREGIDO */
+@media screen and (max-width: 768px) {
+    .timeline::before {
+        left: 30px;
+    }
+
+    .timeline-date {
+        width: 80px;
+    }
+
+    .date-content {
+        padding-right: 10px;
+    }
+
+    .timeline-content {
+        width: calc(100% - 80px);
+    }
+
+    .date {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .timeline-item {
+        flex-direction: column;
+    }
+
+    .timeline::before {
+        left: 20px;
+        height: calc(100% + 30px);
+        /* Extender la línea */
+    }
+
+    .timeline-date {
+        width: 100%;
+        padding-bottom: 20px;
+        padding-right: 0;
+    }
+
+    .date-content {
+        align-items: flex-start;
+        padding-left: 40px;
+        padding-right: 0;
+    }
+
+    .timeline-connector {
+        left: 20px;
+        right: auto;
+        top: 15px;
+    }
+
+    .timeline-content {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .timeline-vertical-line {
+        display: none;
+    }
+}
+
+/* Estilos mejorados para la sección de Experiencia laboral */
+.experience-section {
+    padding: 6rem 0;
+    background-color: var(--bg-color);
+}
+
+.experience-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.experience-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid var(--accent-color);
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.5rem 2rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.experience-title-container {
+    flex: 1;
+}
+
+.experience-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.experience-subtitle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.experience-type {
+    font-weight: 500;
+}
+
+.experience-location {
+    font-style: italic;
+}
+
+.experience-date-badge {
+    background-color: rgba(0, 255, 136, 0.1);
+    color: var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+    margin-left: 1rem;
+}
+
+.experience-content {
+    padding: 2rem;
+}
+
+.experience-description p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+.tech-container {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.tech-title {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+.tech-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.tech-list li {
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 1.5rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.tech-list li:before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+.tech-highlight {
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+/* Ajuste responsivo para la sección de experiencia */
+@media screen and (max-width: 768px) {
+    .experience-header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.2rem 1.5rem;
+    }
+
+    .experience-date-badge {
+        margin-left: 0;
+        align-self: flex-start;
+    }
+
+    .experience-content {
+        padding: 1.5rem;
+    }
+
+    .tech-container {
+        padding: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .experience-title {
+        font-size: 1.3rem;
+    }
+
+    .experience-subtitle {
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .tech-list li {
+        padding-left: 1.2rem;
+    }
+}
+
+/* Nuevo diseño para la sección de Experiencia laboral */
+.experience-section {
+    padding: 6rem 0;
+    background-color: var(--bg-color);
+}
+
+.experience-showcase {
+    position: relative;
+    background: rgba(25, 25, 30, 0.7);
+    border-radius: 16px;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 3rem auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 255, 136, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-showcase:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(0, 255, 136, 0.2);
+}
+
+/* Elementos decorativos */
+.decorative-circle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    z-index: 0;
+    opacity: 0.1;
+}
+
+.top-left {
+    background: radial-gradient(var(--accent-color), transparent 70%);
+    top: -100px;
+    left: -100px;
+}
+
+.bottom-right {
+    background: radial-gradient(var(--accent-color), transparent 70%);
+    bottom: -100px;
+    right: -100px;
+}
+
+/* Cabecera de experiencia */
+.experience-header {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem 2.5rem;
+    background-color: rgba(20, 20, 25, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.experience-header-content {
+    flex: 1;
+}
+
+.experience-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0 0 0.8rem 0;
+}
+
+.experience-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.experience-type {
+    font-weight: 500;
+}
+
+.experience-divider {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.experience-location {
+    font-style: italic;
+}
+
+.experience-date {
+    margin-left: 1.5rem;
+}
+
+.date-pill {
+    display: inline-block;
+    background: rgba(0, 255, 136, 0.1);
+    color: var(--accent-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.experience-showcase:hover .date-pill {
+    background: rgba(0, 255, 136, 0.15);
+    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.1);
+}
+
+/* Contenido principal */
+.experience-content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem 2.5rem 2.5rem;
+}
+
+.experience-description p {
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+/* Stack tecnológico */
+.tech-stack {
+    margin-top: 2rem;
+    padding: 1.8rem;
+    background: rgba(15, 15, 20, 0.4);
+    border-radius: 12px;
+    border-left: 3px solid var(--accent-color);
+}
+
+.tech-stack-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+.tech-stack-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tech-stack-list li {
+    display: flex;
+    margin-bottom: 1.2rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.tech-stack-list li:last-child {
+    margin-bottom: 0;
+}
+
+.tech-icon {
+    display: flex;
+    align-items: flex-start;
+    color: var(--accent-color);
+    margin-right: 0.8rem;
+    margin-top: 0.3rem;
+}
+
+.tech-text {
+    flex: 1;
+    font-size: 0.95rem;
+}
+
+.tech-highlight {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .experience-header {
+        flex-direction: column;
+        padding: 1.8rem 2rem;
+    }
+
+    .experience-date {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+
+    .experience-content {
+        padding: 1.8rem 2rem;
+    }
+
+    .tech-stack {
+        padding: 1.5rem;
+    }
+
+    .main-container {
+        padding: 0 30px;
+        /* Reducido para móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-title {
+        font-size: 1.5rem;
+    }
+
+    .experience-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+
+    .experience-divider {
+        display: none;
+    }
+
+    .tech-stack-list li {
+        flex-direction: column;
+    }
+
+    .tech-icon {
+        margin-bottom: 0.5rem;
+    }
+
+    .main-container {
+        padding: 0 20px;
+        /* Aún más reducido para teléfonos pequeños */
     }
 }

@@ -1016,7 +1016,7 @@ body {
 }
 
 .contact-title::before {
-    content: 'Contáctame';
+    content: 'Contactame';
     position: absolute;
     top: 1rem;
     left: 2rem;

@@ -131,10 +131,6 @@ document.addEventListener("DOMContentLoaded", function() {
           'title': 'API RESTful Clínica Médica Priory',
           'description': 'API completa desarrollada con Spring Boot que proporciona un sistema de gestión para una clínica médica, implementando operaciones CRUD con MySQL, migraciones con Flyway, validaciones y autenticación JWT.'
         },
-        'python-lineas-blancas': {
-          'title': 'Detector de Líneas Blancas en Cartones',
-          'description': 'Solución de visión artificial desarrollada para una fábrica de cartón que detecta automáticamente la presencia o ausencia de líneas blancas en productos sobre una cinta transportadora.'
-        }
       },
       'en': {
         'title': 'My Projects',
@@ -152,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         'notesApp': {
           'title': 'Notes App - Note Management System',
-          'description': 'Complete web application for personal note management. It allows users to create, edit, archive, and filter notes by categories. Developed with REST architecture, responsive modern frontend and robust backend.'
+          'description': 'Complete web application for personal note management, with features to create, edit, archive, and filter notes by categories. Developed with REST architecture, modern responsive frontend, and robust backend.'
         },
         'Go-web-api': {
           'title': 'GO Web API REST',
@@ -162,10 +158,6 @@ document.addEventListener("DOMContentLoaded", function() {
           'title': 'API RESTful Clínica Médica Priory',
           'description': 'A complete API developed with Spring Boot that provides a management system for a medical clinic, implementing CRUD operations with MySQL, migrations with Flyway, and JWT validation and authentication.'
         },
-        'python-lineas-blancas': {
-          'title': 'White Line Detector on Cardboard',
-          'description': 'Machine vision solution developed for a cardboard factory that automatically detects the presence or absence of white lines in products on a conveyor belt.'
-        }
       }
     },
     // Education section
@@ -450,6 +442,10 @@ document.addEventListener("DOMContentLoaded", function() {
         translations.projects[currentLang].title;
     }
     
+    // Declaración de variables usadas en toda la función
+    const projectTitles = document.querySelectorAll('.project-title');
+    const projectDescriptions = document.querySelectorAll('.project-description');
+    
     // Money Manager
     if (elementExists('#money-manager .project-title')) {
       document.querySelector('#money-manager .project-title').textContent = 
@@ -473,10 +469,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Notes App
-    const notesTitles = document.querySelectorAll('.project-title');
-    const notesDescriptions = document.querySelectorAll('.project-description');
-    
-    notesTitles.forEach(title => {
+    projectTitles.forEach(title => {
       if (title.textContent.includes('Notes App') || 
           title.textContent.includes('Sistema de Gestión de Notas') ||
           title.textContent.includes('Note Management System')) {
@@ -484,16 +477,12 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
 
-    notesDescriptions.forEach(desc => {
+    projectDescriptions.forEach(desc => {
       if (desc.textContent.includes('gestión de notas') || 
           desc.textContent.includes('note management')) {
         desc.textContent = translations.projects[currentLang].notesApp.description;
       }
     });
-
-    // Para los demás proyectos, búsqueda por texto en títulos y descripciones
-    const projectTitles = document.querySelectorAll('.project-title');
-    const projectDescriptions = document.querySelectorAll('.project-description');
 
     // Crypto Viewer
     projectTitles.forEach(title => {

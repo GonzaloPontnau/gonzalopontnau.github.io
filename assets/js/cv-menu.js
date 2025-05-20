@@ -105,14 +105,5 @@ document.addEventListener("DOMContentLoaded", function() {
         notesAppLangSelector.focus();
       }
     });
-    
-    // Cerrar el menú después de seleccionar un idioma
-    const languageOptions = notesAppLangOptions.querySelectorAll('a');
-    languageOptions.forEach(option => {
-      option.addEventListener('click', function() {
-        notesAppLangOptions.classList.remove('show');
-        notesAppLangSelector.setAttribute('aria-expanded', 'false');
-      });
-    });
   }
 });

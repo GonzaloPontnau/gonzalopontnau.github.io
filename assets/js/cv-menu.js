@@ -53,4 +53,66 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   }
+
+  // Funcionalidad para el selector de idioma del proyecto Notes App
+  const notesAppLangSelector = document.getElementById('notes-app-lang');
+  const notesAppLangOptions = document.getElementById('notes-app-lang-options');
+
+  if (notesAppLangSelector && notesAppLangOptions) {
+    // Abrir/cerrar el menú al hacer click en el selector
+    notesAppLangSelector.addEventListener('click', function(event) {
+      event.preventDefault();
+      const isExpanded = notesAppLangSelector.getAttribute('aria-expanded') === 'true';
+      
+      // Alternar la visibilidad del menú
+      notesAppLangOptions.classList.toggle('show');
+      
+      // Actualizar el atributo aria-expanded para accesibilidad
+      notesAppLangSelector.setAttribute('aria-expanded', !isExpanded);
+    });
+
+    // Cerrar el menú si se hace clic fuera de él
+    document.addEventListener('click', function(event) {
+      if (!notesAppLangSelector.contains(event.target) && !notesAppLangOptions.contains(event.target)) {
+        notesAppLangOptions.classList.remove('show');
+        notesAppLangSelector.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Permitir navegación con teclado para accesibilidad
+    notesAppLangSelector.addEventListener('keydown', function(event) {
+      // Abrir el menú con Enter o Space
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        const isExpanded = notesAppLangSelector.getAttribute('aria-expanded') === 'true';
+        notesAppLangOptions.classList.toggle('show');
+        notesAppLangSelector.setAttribute('aria-expanded', !isExpanded);
+      }
+      
+      // Cerrar con Escape
+      if (event.key === 'Escape' && notesAppLangOptions.classList.contains('show')) {
+        notesAppLangOptions.classList.remove('show');
+        notesAppLangSelector.setAttribute('aria-expanded', 'false');
+        notesAppLangSelector.focus();
+      }
+    });
+
+    // Navegación por teclado dentro del menú
+    notesAppLangOptions.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        notesAppLangOptions.classList.remove('show');
+        notesAppLangSelector.setAttribute('aria-expanded', 'false');
+        notesAppLangSelector.focus();
+      }
+    });
+    
+    // Cerrar el menú después de seleccionar un idioma
+    const languageOptions = notesAppLangOptions.querySelectorAll('a');
+    languageOptions.forEach(option => {
+      option.addEventListener('click', function() {
+        notesAppLangOptions.classList.remove('show');
+        notesAppLangSelector.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
 });

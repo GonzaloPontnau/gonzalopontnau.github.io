@@ -497,11 +497,11 @@
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="2" y1="12" x2="22" y2="12"></line>
                       <path
-                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
                       ></path>
-                      <polyline points="15 3 21 3 21 9"></polyline>
-                      <line x1="10" y1="14" x2="21" y2="3"></line>
                     </svg>
                   </a>
                 </div>
@@ -574,11 +574,11 @@
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="2" y1="12" x2="22" y2="12"></line>
                       <path
-                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
                       ></path>
-                      <polyline points="15 3 21 3 21 9"></polyline>
-                      <line x1="10" y1="14" x2="21" y2="3"></line>
                     </svg>
                   </a>
                 </div>
@@ -648,11 +648,11 @@
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="2" y1="12" x2="22" y2="12"></line>
                       <path
-                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
                       ></path>
-                      <polyline points="15 3 21 3 21 9"></polyline>
-                      <line x1="10" y1="14" x2="21" y2="3"></line>
                     </svg>
                   </a>
                 </div>
@@ -682,6 +682,7 @@
                   <span class="tech-tag">FastAPI</span>
                   <span class="tech-tag">SQLAlchemy</span>
                   <span class="tech-tag">Vue.js 3</span>
+                  <span class="tech-tag">Pinia</span>
                   <span class="tech-tag">SQLite/PostgreSQL</span>
                   <span class="tech-tag">Responsive Design</span>
                 </div>
@@ -707,29 +708,31 @@
                       ></path>
                     </svg>
                   </a>
-                  <a
-                    href="https://notes-app-pontnau.vercel.app/"
-                    target="_blank"
-                    class="project-link"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <line x1="2" y1="12" x2="22" y2="12"></line>
-                      <path
-                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                      ></path>
-                    </svg>
-                  </a>
+                  <div class="language-selector">
+                    <a href="#" id="notes-app-lang" class="project-link" aria-haspopup="true" aria-expanded="false">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path
+                          d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                        ></path>
+                      </svg>
+                    </a>
+                    <div id="notes-app-lang-options" class="lang-options-menu" role="menu">
+                      <a href="https://notes-app-pontnau.vercel.app/" target="_blank" rel="noopener noreferrer" role="menuitem">Español</a>
+                      <a href="https://notes-app-pontnau.vercel.app/en" target="_blank" rel="noopener noreferrer" role="menuitem">English</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

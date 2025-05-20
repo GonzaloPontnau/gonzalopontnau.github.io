@@ -119,6 +119,10 @@ document.addEventListener("DOMContentLoaded", function() {
           'title': 'Visualizador de Precios de Criptomonedas',
           'description': 'Aplicación web que muestra en tiempo real los precios de las 10 principales criptomonedas utilizando la API de CoinMarketCap. Incluye datos detallados como capitalización de mercado, volumen de 24h y cambio porcentual a través del endpoint'
         },
+        'notesApp': {
+          'title': 'Notes App - Sistema de Gestión de Notas',
+          'description': 'Aplicación web completa para gestión de notas personales, con funcionalidades para crear, editar, archivar y filtrar notas por categorías. Desarrollada con arquitectura REST, frontend moderno responsive y backend robusto.'
+        },
         'Go-web-api': {
           'title': 'GO Web API REST',
           'description': 'API REST en Go que implementa los principios SOLID y clean architecture. Estructurada en capas (Repository, Service, Controller) con gestión de contexts, autenticación JWT y manejo estandarizado de errores HTTP.'
@@ -145,6 +149,10 @@ document.addEventListener("DOMContentLoaded", function() {
         'cryptoViewer': {
           'title': 'Cryptocurrency Price Viewer',
           'description': 'Web application that displays real-time prices of the top 10 cryptocurrencies using the CoinMarketCap API. Includes detailed data such as market capitalization, 24h volume, and percentage change through the endpoint.'
+        },
+        'notesApp': {
+          'title': 'Notes App - Note Management System',
+          'description': 'Complete web application for personal note management. It allows users to create, edit, archive, and filter notes by categories. Developed with REST architecture, responsive modern frontend and robust backend.'
         },
         'Go-web-api': {
           'title': 'GO Web API REST',
@@ -463,6 +471,25 @@ document.addEventListener("DOMContentLoaded", function() {
       document.querySelector('#gym-ai .project-description').textContent = 
         translations.projects[currentLang].GymAI.description;
     }
+
+    // Notes App
+    const notesTitles = document.querySelectorAll('.project-title');
+    const notesDescriptions = document.querySelectorAll('.project-description');
+    
+    notesTitles.forEach(title => {
+      if (title.textContent.includes('Notes App') || 
+          title.textContent.includes('Sistema de Gestión de Notas') ||
+          title.textContent.includes('Note Management System')) {
+        title.textContent = translations.projects[currentLang].notesApp.title;
+      }
+    });
+
+    notesDescriptions.forEach(desc => {
+      if (desc.textContent.includes('gestión de notas') || 
+          desc.textContent.includes('note management')) {
+        desc.textContent = translations.projects[currentLang].notesApp.description;
+      }
+    });
 
     // Para los demás proyectos, búsqueda por texto en títulos y descripciones
     const projectTitles = document.querySelectorAll('.project-title');

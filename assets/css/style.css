@@ -312,6 +312,42 @@ body {
     color: #00ff88;
 }
 
+/* Estilos para el selector de idiomas del proyecto Notes App */
+.language-selector {
+    position: relative;
+}
+
+.lang-options-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    background-color: rgba(30, 30, 30, 0.95);
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 0;
+    z-index: 1001;
+    min-width: 100px;
+}
+
+.lang-options-menu.show {
+    display: block;
+}
+
+.lang-options-menu a {
+    display: block;
+    color: #e0e0e0;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.lang-options-menu a:hover {
+    background-color: rgba(0, 255, 136, 0.1);
+    color: #00ff88;
+}
+
 /*  SECCIÓN HERO  */
 .hero {
     height: 70vh;

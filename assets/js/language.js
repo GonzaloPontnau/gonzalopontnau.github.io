@@ -155,9 +155,9 @@ document.addEventListener("DOMContentLoaded", function() {
           'title': 'GO Web API REST',
           'description': 'API REST en Go que implementa los principios SOLID y clean architecture. Estructurada en capas (Repository, Service, Controller) con gestión de contexts, autenticación JWT y manejo estandarizado de errores HTTP.'
         },
-        'API-RESTful-java': {
-          'title': 'API RESTful Clínica Médica Priory',
-          'description': 'API completa desarrollada con Spring Boot que proporciona un sistema de gestión para una clínica médica, implementando operaciones CRUD con MySQL, migraciones con Flyway, validaciones y autenticación JWT.'
+        'sistema-operativo': {
+          'title': 'Sistema Operativo Distribuido en Go',
+          'description': 'Sistema operativo distribuido desarrollado en Go que simula los componentes principales de un SO moderno. Implementa gestión de procesos, memoria virtual con paginación multinivel, planificadores de corto/mediano/largo plazo, TLB con algoritmos FIFO/LRU y sistema de I/O asíncrono.'
         },
       },
       'en': {
@@ -182,9 +182,9 @@ document.addEventListener("DOMContentLoaded", function() {
           'title': 'GO Web API REST',
           'description': 'REST API in Go that implements SOLID principles and clean architecture. Structured in layers (Repository, Service, Controller) with context management, JWT authentication, and standardized HTTP error handling.'
         },
-        'API-RESTful-java': {
-          'title': 'API RESTful Clínica Médica Priory',
-          'description': 'A complete API developed with Spring Boot that provides a management system for a medical clinic, implementing CRUD operations with MySQL, migrations with Flyway, and JWT validation and authentication.'
+        'sistema-operativo': {
+          'title': 'Distributed Operating System in Go',
+          'description': 'Distributed operating system developed in Go that simulates the main components of a modern OS. Implements process management, virtual memory with multilevel paging, short/medium/long-term schedulers, TLB with FIFO/LRU algorithms, and asynchronous I/O system.'
         },
       }
     },

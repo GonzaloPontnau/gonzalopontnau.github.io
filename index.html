@@ -1,1455 +1,1017 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Gonzalo Martín Pontnau</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Portfolio profesional de Gonzalo Pontnau, Backend Developer especializado en Python, Django y Go"
-    />
 
-    <!-- CSS - Ruta actualizada -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
+<head>
+  <meta charset="UTF-8" />
+  <title>Gonzalo Martín Pontnau</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Portfolio profesional de Gonzalo Pontnau, Backend Developer especializado en Python, Django y Go" />
 
-    <!-- Favicons - Precargados con prioridad baja -->
-    <link rel="shortcut icon" href="./assets/favicon/favicon.ico" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./assets/favicon/favicon-16x16.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./assets/favicon/apple-touch-icon.png"
-    />
-    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
-    <meta name="msapplication-TileColor" content="#ffffff" />
+  <!-- CSS - Ruta actualizada -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
 
-    <!-- Precargar imágenes críticas -->
-    <link rel="preload" as="image" href="./assets/images/imagenPerfil.png" />
+  <!-- Favicons - Precargados con prioridad baja -->
+  <link rel="shortcut icon" href="./assets/favicon/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
 
-    <!-- EmailJS -->
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
-  </head>
+  <!-- Precargar imágenes críticas -->
+  <link rel="preload" as="image" href="./assets/images/imagenPerfil.png" />
 
-  <body>
-    <!-- Botón de cambio de idioma -->
-    <div class="language-switcher">
-      <div class="language-button" id="language-toggle">
-        <span class="language-text" id="current-language">ES</span>
+  <!-- EmailJS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+
+<body>
+  <!-- Botón de cambio de idioma -->
+  <div class="language-switcher">
+    <div class="language-button" id="language-toggle">
+      <span class="language-text" id="current-language">ES</span>
+    </div>
+  </div>
+
+  <!-- Github, lkd, cv logos en barra lateral -->
+  <div class="social-nav">
+    <div class="social-links">
+      <a href="https://github.com/GonzaloPontnau" target="_blank" rel="noopener noreferrer" class="social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0  0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path
+            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+          </path>
+        </svg>
+      </a>
+      <a href="https://linkedin.com/in/gonzalopontnau" target="_blank" rel="noopener noreferrer" class="social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+          <rect x="2" y="9" width="4" height="12"></rect>
+          <circle cx="4" cy="4" r="2"></circle>
+        </svg>
+      </a>
+      <!-- Modificación: Quitar href, añadir id y contenedor para opciones -->
+      <a href="#" id="cv-selector" class="social-icon cv-icon" aria-haspopup="true" aria-expanded="false">
+        <div class="cv-circle">
+          <span class="cv-text">CV</span>
+        </div>
+      </a>
+      <!-- Menú desplegable para CV -->
+      <div id="cv-options-menu" class="cv-options-menu" role="menu">
+        <a href="./assets/images/CV-ES.pdf" target="_blank" rel="noopener noreferrer" role="menuitem">Español</a>
+        <a href="./assets/images/CV-EN.pdf" target="_blank" rel="noopener noreferrer" role="menuitem">English</a>
+      </div>
+      <div class="social-line"></div>
+    </div>
+  </div>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <span class="gp-logo">GP</span>
+      </div>
+      <div class="nav-links">
+        <a href="#about">Sobre mí</a>
+        <a href="#experience">Experiencia</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#education">Educación</a>
+        <a href="#contact">Contacto</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenedor principal con margen fijo -->
+  <div class="main-container">
+    <div class="hero">
+      <div class="greeting">Hola 👋🏼, soy</div>
+      <h1 class="name-animation">
+        <span class="first-name">Gonzalo</span><br />
+        <span class="last-name">Pontnau</span>
+      </h1>
+      <div class="title">Python Backend Developer</div>
+      <!-- cv and contact buttom -->
+      <div class="button-container">
+        <a href="#experience" class="btn">Experiencia</a>
+        <a href="#projects" class="btn">Proyectos</a>
+        <a href="#education" class="btn">Educación</a>
+        <a href="#contact" class="btn">Contactame</a>
       </div>
     </div>
 
-    <!-- Github, lkd, cv logos en barra lateral -->
-    <div class="social-nav">
-      <div class="social-links">
-        <a
-          href="https://github.com/GonzaloPontnau"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="social-icon"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0  0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path
-              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-            ></path>
-          </svg>
-        </a>
-        <a
-          href="https://linkedin.com/in/gonzalopontnau"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="social-icon"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path
-              d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
-            ></path>
-            <rect x="2" y="9" width="4" height="12"></rect>
-            <circle cx="4" cy="4" r="2"></circle>
-          </svg>
-        </a>
-        <!-- Modificación: Quitar href, añadir id y contenedor para opciones -->
-        <a
-          href="#"
-          id="cv-selector"
-          class="social-icon cv-icon"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          <div class="cv-circle">
-            <span class="cv-text">CV</span>
-          </div>
-        </a>
-        <!-- Menú desplegable para CV -->
-        <div id="cv-options-menu" class="cv-options-menu" role="menu">
-          <a
-            href="./assets/images/CV-ES.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            role="menuitem"
-            >Español</a
-          >
-          <a
-            href="./assets/images/CV-EN.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            role="menuitem"
-            >English</a
-          >
-        </div>
-        <div class="social-line"></div>
-      </div>
-    </div>
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="nav-container">
-        <div class="logo">
-          <span class="gp-logo">GP</span>
-        </div>
-        <div class="nav-links">
-          <a href="#about">Sobre mí</a>
-          <a href="#experience">Experiencia</a>
-          <a href="#projects">Proyectos</a>
-          <a href="#education">Educación</a>
-          <a href="#contact">Contacto</a>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Contenedor principal con margen fijo -->
-    <div class="main-container">
-      <div class="hero">
-        <div class="greeting">Hola 👋🏼, soy</div>
-        <h1 class="name-animation">
-          <span class="first-name">Gonzalo</span><br />
-          <span class="last-name">Pontnau</span>
-        </h1>
-        <div class="title">Python Backend Developer</div>
-        <!-- cv and contact buttom -->
-        <div class="button-container">
-          <a href="#experience" class="btn">Experiencia</a>
-          <a href="#projects" class="btn">Proyectos</a>
-          <a href="#education" class="btn">Educación</a>
-          <a href="#contact" class="btn">Contactame</a>
-        </div>
-      </div>
-
-      <!-- Nueva sección Sobre mí -->
-      <section id="about" class="about-section">
-        <div class="section-container">
-          <h2 class="section-title fade-in">Sobre Mí</h2>
-          <div class="about-content">
-            <div class="about-image">
-              <img
-                id="profile-image"
-                src="./assets/images/imagenPerfil.png"
-                alt="Gonzalo Pontnau"
-                class="profile-image-large zoom-in"
-                loading="lazy"
-                decoding="async"
-              />
-              <div class="about-social fade-in delay-2">
-                <a
-                  href="https://github.com/GonzaloPontnau"
-                  target="_blank"
-                  class="about-social-icon"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path
-                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                    ></path>
-                  </svg>
-                </a>
-                <a
-                  href="https://linkedin.com/in/gonzalopontnau"
-                  target="_blank"
-                  class="about-social-icon"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path
-                      d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
-                    ></path>
-                    <rect x="2" y="9" width="4" height="12"></rect>
-                    <circle cx="4" cy="4" r="2"></circle>
-                  </svg>
-                </a>
-                <a
-                  href="mailto:gonzalopontnau@gmail.com"
-                  class="about-social-icon"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path
-                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                    ></path>
-                    <polyline points="22,6 12,13 2,6"></polyline>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div class="about-text">
-              <p class="about-bio slide-in-right delay-1">
-                Soy desarrollador Backend con enfoque en
-                <span class="highlight">Python</span> y
-                <span class="highlight">Go</span>. Me apasiona construir
-                aplicaciones web seguras y escalables, así como diseñar APIs
-                RESTful.
-              </p>
-              <p class="about-bio slide-in-right delay-2">
-                Tengo experiencia en tecnologías como Django, Flask, FastAPI y
-                también en Go para arquitecturas de microservicios. Soy
-                competente en prácticas de seguridad web y metodologías ágiles
-                (Scrum).
-              </p>
-              <p class="about-bio slide-in-right delay-3">
-                Como estudiante avanzado de
-                <span class="highlight">Ingeniería en sistemas</span> en la
-                Universidad Nacional Tecnológica de Buenos Aires (UTN), combino
-                la sólida base teórica que brinda la formación universitaria con
-                mi constante aprendizaje autodidacta en tecnologías emergentes.
-              </p>
-              <p class="about-bio slide-in-right delay-4">
-                Soy un aprendiz apasionado de la tecnología que disfruta
-                resolviendo desafíos técnicos complejos de manera eficiente y
-                colaborativa.
-              </p>
-              <div class="about-skills fade-in delay-5">
-                <h3 class="skills-title">Tecnologías</h3>
-                <div class="skills-container">
-                  <span class="skill-tag">Python</span>
-                  <span class="skill-tag">Django</span>
-                  <span class="skill-tag">FastAPI</span>
-                  <span class="skill-tag">Pytest</span>
-                  <span class="skill-tag">PostgreSQL</span>
-                  <span class="skill-tag">SQLite</span>
-                  <span class="skill-tag">Go</span>
-                  <span class="skill-tag">HTML/CSS/JS</span>
-                  <span class="skill-tag">RESTful APIs</span>
-                  <span class="skill-tag">Git</span>
-                  <span class="skill-tag">CI/CD</span>
-                  <span class="skill-tag">Linux</span>
-                  <span class="skill-tag">Postman</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Nueva sección de Experiencia -->
-      <section id="experience" class="experience-section">
-        <div class="section-container">
-          <h2 class="section-title fade-in">Experiencia Laboral</h2>
-
-          <!-- Experiencia 1: AI Quality Analyst -->
-          <div class="experience-showcase fade-in" id="ai-quality-analyst">
-            <!-- Elementos decorativos -->
-            <div class="decorative-circle top-left"></div>
-            <div class="decorative-circle bottom-right"></div>
-
-            <!-- Cabecera de experiencia -->
-            <div class="experience-header">
-              <div class="experience-header-content">
-                <div class="title-with-logo">
-                  <img src="./assets/images/outlier-logo.png" alt="Outlier" class="company-logo">
-                  <h3 class="experience-title">AI Quality Analyst</h3>
-                </div>
-                <div class="experience-meta">
-                  <span class="experience-type">Outlier · Freelance</span>
-                  <span class="experience-divider">|</span>
-                  <span class="experience-location"
-                    >Buenos Aires, Argentina · Remoto</span
-                  >
-                </div>
-              </div>
-              <div class="experience-date">
-                <div class="date-pill">Jun 2025 - Presente</div>
-              </div>
-            </div>
-
-            <!-- Contenido principal -->
-            <div class="experience-content slide-in-right">
-              <div class="experience-description">
-                <p>
-                  Diseño de frameworks de evaluación técnica (rúbricas) para validar 
-                  la calidad de código generado por modelos de IA en múltiples lenguajes 
-                  de programación, interpretando requisitos explícitos e implícitos de cada prompt.
-                </p>
-                <p>
-                  Análisis y diagnóstico de fallos en respuestas de modelos LLM, utilizando 
-                  métricas precisas para diferenciar entre errores de Correctness (bugs lógicos, 
-                  información factual incorrecta) y de Instruction Following (incumplimiento de restricciones).
-                </p>
-              </div>
-
-              <!-- Stack tecnológico -->
-              <div class="tech-stack">
-                <h4 class="tech-stack-title">QA & AI stack:</h4>
-                <ul class="tech-stack-list">
-                  <li>
-                    <div class="tech-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <path d="M9 12l2 2 4-4"></path>
-                        <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"></path>
-                      </svg>
-                    </div>
-                    <div class="tech-text">
-                      <span class="tech-highlight">Testing & Evaluation</span>: 
-                      Creación de escenarios de prueba complejos y frameworks de 
-                      evaluación técnica para código AI-generado en Python (Flask, FastAPI), 
-                      Java y JavaScript/TypeScript.
-                    </div>
-                  </li>
-                  <li>
-                    <div class="tech-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
-                      </svg>
-                    </div>
-                    <div class="tech-text">
-                      <span class="tech-highlight">AI Model Analysis</span>: 
-                      Auditorías técnicas del código generado evaluando calidad, 
-                      escalabilidad y legibilidad, proporcionando feedback estructurado 
-                      que guía el proceso de fine-tuning de modelos LLM.
-                    </div>
-                  </li>
-                  <li>
-                    <div class="tech-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <path d="M12 3v18m-4-4h8m-8-8h8"></path>
-                      </svg>
-                    </div>
-                    <div class="tech-text">
-                      <span class="tech-highlight">Quality Assurance</span>: 
-                      Metodologías de QA aplicadas a IA, diferenciando entre errores 
-                      lógicos y de seguimiento de instrucciones, con métricas exactas 
-                      para alinear modelos con estándares de alta calidad.
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Experiencia 2: Back End Developer -->
-          <div class="experience-showcase fade-in" id="backend-developer" style="margin-top: 3rem;">
-            <!-- Elementos decorativos -->
-            <div class="decorative-circle top-left"></div>
-            <div class="decorative-circle bottom-right"></div>
-
-            <!-- Cabecera de experiencia -->
-            <div class="experience-header">
-              <div class="experience-header-content">
-                <h3 class="experience-title">Back End Developer</h3>
-                <div class="experience-meta">
-                  <span class="experience-type">Freelance</span>
-                  <span class="experience-divider">|</span>
-                  <span class="experience-location"
-                    >Buenos Aires, Argentina · Remoto</span
-                  >
-                </div>
-              </div>
-              <div class="experience-date">
-                <div class="date-pill">Mar 2023 - Jul 2025</div>
-              </div>
-            </div>
-
-            <!-- Contenido principal -->
-            <div class="experience-content slide-in-right">
-              <div class="experience-description">
-                <p>
-                  Desarrollo de aplicaciones web seguras y escalables,
-                  diseño de APIs RESTful y microservicios, implementación de
-                  bases de datos relacionales, integración de sistemas externos y
-                  desarrollo de soluciones de software.
-                </p>
-                <p>
-                  Recopilación de requerimientos funcionales y no funcionales; 
-                  modelado UML de situaciones de uso, clases y secuencias; 
-                  creación de esquemas de arquitectura (MVC/MVT) y determinación 
-                  de flujos de datos.
-                </p>
-              </div>
-
-              <!-- Stack tecnológico -->
-              <div class="tech-stack">
-                <h4 class="tech-stack-title">Backend stack:</h4>
-                <ul class="tech-stack-list">
-                  <li>
-                    <div class="tech-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <polyline points="16 18 22 12 16 6"></polyline>
-                        <polyline points="8 6 2 12 8 18"></polyline>
-                      </svg>
-                    </div>
-                    <div class="tech-text">
-                      <span class="tech-highlight">APIs REST</span> utilizando
-                      Django REST y Flask: generación de accesos, organización
-                      de páginas, autenticación JWT y administración de
-                      permisos.
-                    </div>
-                  </li>
-                  <li>
-                    <div class="tech-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <rect x="2" y="2" width="8" height="8"></rect>
-                        <rect x="14" y="2" width="8" height="8"></rect>
-                        <rect x="2" y="14" width="8" height="8"></rect>
-                        <rect x="14" y="14" width="8" height="8"></rect>
-                      </svg>
-                    </div>
-                    <div class="tech-text">
-                      <span class="tech-highlight">Microservicios</span> en
-                      FastAPI y Go: gestión de concurrencia a través de
-                      goroutines, transferencia de información HTTP/JSON,
-                      transformación de servicios en contenedores.
-                    </div>
-                  </li>
-                  <li>
-                    <div class="tech-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-                      </svg>
-                    </div>
-                    <div class="tech-text">
-                      <span class="tech-highlight"
-                        >Bases de datos relacionales</span
-                      >
-                      (PostgreSQL, SQLite, MySQL): organización de esquemas,
-                      optimización de consultas, operaciones mediante ORM, uso
-                      de UUIDs y funciones ACID.
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Nueva sección de proyectos -->
-      <section id="projects" class="projects-section">
-        <div class="section-container">
-          <h2 class="section-title fade-in">Mis Proyectos</h2>
-          <div class="projects-grid">
-            <!-- Proyecto 1 -->
-            <!-- Proyecto Money Manager -->
-            <div id="money-manager" class="project-card fade-in">
-              <div class="project-image">
-                <img
-                  src="./assets/images/demo-money-manager.gif"
-                  alt="Money Manager Dashboard"
-                />
-              </div>
-              <div class="project-info">
-                <h3 class="project-title">Money Manager</h3>
-                <p class="project-description">
-                  Aplicación web de gestión financiera personal con dashboard
-                  interactivo y seguimiento de transacciones. Con autenticación
-                  de usuario y almacenamiento seguro de datos.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag">Django</span>
-                  <span class="tech-tag">PostgreSQL</span>
-                  <span class="tech-tag">Chart.js</span>
-                  <span class="tech-tag">JavaScript</span>
-                  <span class="tech-tag">HTTP</span>
-                </div>
-                <div class="project-links">
-                  <a
-                    href="https://github.com/GonzaloPontnau/money-manager-python"
-                    target="_blank"
-                    class="project-link"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path
-                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                      ></path>
-                    </svg>
-                  </a>
-                  <a
-                    href="https://money-manager-nine-umber.vercel.app/"
-                    target="_blank"
-                    class="project-link"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <line x1="2" y1="12" x2="22" y2="12"></line>
-                      <path
-                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                      ></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Proyecto 2 GymAI -->
-            <div id="gym-ai" class="project-card fade-in delay-1">
-              <div class="project-image">
-                <img
-                  src="./assets/images/prompt-inicial.gif"
-                  alt="GymAI - Demo"
-                  onerror="this.onerror=null; this.src='./assets/images/placeholder-image.png';"
-                />
-                <!-- onerror como fallback -->
-              </div>
-              <div class="project-info">
-                <h3 class="project-title">GymAI - Tu personal TrAIner</h3>
-                <p class="project-description">
-                  Aplicación web que utiliza IA (Google Gemini) para crear
-                  rutinas de entrenamiento personalizadas y generar
-                  modificaciones mediante chat en tiempo real. Implementada con
-                  enfoque en calidad y pruebas automatizadas. (Espere unos
-                  segundos al ingresar en la web)
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag">Python</span>
-                  <span class="tech-tag">FastAPI</span>
-                  <span class="tech-tag">WebSockets</span>
-                  <span class="tech-tag">SQLite/PostgreSQL</span>
-                  <span class="tech-tag">Pytest</span>
-                  <span class="tech-tag">AI chat</span>
-                  <span class="tech-tag">HTMX</span>
-                </div>
-                <div class="project-links">
-                  <a
-                    href="https://github.com/GonzaloPontnau/gym-AI"
-                    target="_blank"
-                    class="project-link"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path
-                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                      ></path>
-                    </svg>
-                  </a>
-                  <a
-                    href="https://gym-ai-pontnau.onrender.com/"
-                    target="_blank"
-                    class="project-link"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <line x1="2" y1="12" x2="22" y2="12"></line>
-                      <path
-                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                      ></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Proyecto 3 -->
-            <div class="project-card fade-in delay-2">
-              <div class="project-image">
-                <img
-                  src="./assets/images/demo-cryptoAPI-python.gif"
-                  alt="Visualizador de Criptomonedas"
-                />
-              </div>
-              <div class="project-info">
-                <h3 class="project-title">
-                  Visualizador de Precios de Criptomonedas
-                </h3>
-                <p class="project-description">
-                  Aplicación web que muestra en tiempo real los precios de las
-                  10 principales criptomonedas utilizando la API de
-                  CoinMarketCap. Incluye datos detallados como capitalización de
-                  mercado, volumen de 24h y cambio porcentual a través del
-                  endpoint
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag">Python</span>
-                  <span class="tech-tag">Flask</span>
-                  <span class="tech-tag">CoinMarketCap API</span>
-                  <span class="tech-tag">HTML/CSS</span>
-                </div>
-                <div class="project-links">
-                  <a
-                    href="https://github.com/GonzaloPontnau/crypto-price-pyhon"
-                    target="_blank"
-                    class="project-link"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path
-                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                      ></path>
-                    </svg>
-                  </a>
-                  <a
-                    href="https://crypto-price-visualizer-one.vercel.app/"
-                    target="_blank"
-                    class="project-link"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <line x1="2" y1="12" x2="22" y2="12"></line>
-                      <path
-                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                      ></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Proyecto 4 Notes App -->
-            <div class="project-card fade-in delay-5">
-              <div class="project-image">
-                <img
-                  src="./assets/images/demo-app-notas.gif"
-                  alt="Notes App - Sistema de Gestión de Notas"
-                />
-              </div>
-              <div class="project-info">
-                <h3 class="project-title">
-                  Notes App - Sistema de Gestión de Notas
-                </h3>
-                <p class="project-description">
-                  Aplicación web completa para gestión de notas personales, con
-                  funcionalidades para crear, editar, archivar y filtrar notas
-                  por categorías. Desarrollada con arquitectura REST, frontend
-                  moderno responsive y backend robusto.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag">Python</span>
-                  <span class="tech-tag">FastAPI</span>
-                  <span class="tech-tag">SQLAlchemy</span>
-                  <span class="tech-tag">Vue.js 3</span>
-                  <span class="tech-tag">Pinia</span>
-                  <span class="tech-tag">SQLite/PostgreSQL</span>
-                  <span class="tech-tag">Responsive Design</span>
-                </div>
-                <div class="project-links">
-                  <a
-                    href="https://github.com/GonzaloPontnau/notes-app-pontnau"
-                    target="_blank"
-                    class="project-link"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path
-                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                      ></path>
-                    </svg>
-                  </a>
-                  <a
-                    href="https://notes-app-pontnau.vercel.app/"
-                    target="_blank"
-                    class="project-link"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <line x1="2" y1="12" x2="22" y2="12"></line>
-                      <path
-                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                      ></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Proyecto 5 -->
-            <div class="project-card fade-in delay-3">
-              <div class="project-image">
-                <img
-                  src="./assets/images/go-rest-api.png"
-                  alt="GO Web API REST"
-                />
-              </div>
-              <div class="project-info">
-                <h3 class="project-title">GO Web API REST</h3>
-                <p class="project-description">
-                  API REST en Go que implementa los principios SOLID y clean
-                  architecture. Estructurada en capas (Repository, Service,
-                  Controller) con gestión de contexts, autenticación JWT y
-                  manejo estandarizado de errores HTTP.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag">Go</span>
-                  <span class="tech-tag">Gin Gonic</span>
-                  <span class="tech-tag">PostgreSQL</span>
-                  <span class="tech-tag">JWT</span>
-                  <span class="tech-tag">RESTful</span>
-                </div>
-                <div class="project-links">
-                  <a
-                    href="https://github.com/GonzaloPontnau/go-rest-api"
-                    target="_blank"
-                    class="project-link"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path
-                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                      ></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Proyecto 6 -->
-            <div class="project-card fade-in delay-4">
-              <div class="project-image">
-                <img
-                  src="./assets/images/SO.gif"
-                  alt="Sistema Operativo Distribuido en Go"
-                />
-              </div>
-              <div class="project-info">
-                <h3 class="project-title">Sistema Operativo Distribuido en Go</h3>
-                <p class="project-description">
-                  Sistema operativo distribuido desarrollado en Go que simula los
-                  componentes principales de un SO moderno. Implementa gestión de
-                  procesos, memoria virtual con paginación multinivel,
-                  planificadores de corto/mediano/largo plazo, TLB con algoritmos
-                  FIFO/LRU y sistema de I/O asíncrono.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag">Go</span>
-                  <span class="tech-tag">Goroutines</span>
-                  <span class="tech-tag">HTTP APIs</span>
-                  <span class="tech-tag">Concurrencia</span>
-                  <span class="tech-tag">Memoria Virtual</span>
-                  <span class="tech-tag">Planificadores</span>
-                  <span class="tech-tag">TLB</span>
-                  <span class="tech-tag">Microservicios</span>
-                </div>
-                <div class="project-links">
-                  <a
-                    href="https://github.com/GonzaloPontnau/SISTEMA-OPERATIVO.go"
-                    target="_blank"
-                    class="project-link"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path
-                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                      ></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Sección de Educación y Certificaciones -->
-      <section id="education" class="education-section">
-        <div class="section-container">
-          <h2 class="section-title fade-in">Educación y Certificaciones</h2>
-
-          <div class="education-cards-vertical">
-            <!-- Tarjeta de UTN -->
-            <div id="utn-education" class="education-card slide-in-left">
-              <div class="education-card-header">
-                <div class="education-icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="40"
-                    height="40"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                    <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
-                  </svg>
-                </div>
-                <div class="education-title-area">
-                  <h3 class="education-institution">
-                    Universidad Tecnológica Nacional
-                  </h3>
-                  <p class="education-degree">
-                    Ingeniería de Sistemas
-                    <span class="education-date">| 2022 – Presente</span>
-                  </p>
-                </div>
-              </div>
-              <div class="education-content">
-                <div class="education-content-paragraphs">
-                  <div class="education-paragraph">
-                    <h4 class="paragraph-title">Formación en programación</h4>
-                    <p class="paragraph-content">
-                      Dominio de C/C++, Go, Java, bases de datos MySQL y diseño
-                      de sistemas operativos. Destaco el desarrollo de un
-                      sistema operativo distribuido en Go, integrando módulos
-                      como Kernel, CPU, Memoria y File System. Implementé APIs
-                      HTTP para comunicación modular, configuración JSON y logs
-                      estructurados. Además, diseñé un analizador léxico,
-                      sintáctico y semántico en C usando Flex/Bison y
-                      expresiones regulares (regex), aplicado en la
-                      interpretación de pseudocódigo para procesos.
-                    </p>
-                  </div>
-
-                  <div class="education-paragraph">
-                    <h4 class="paragraph-title">Metodologías y enfoque</h4>
-                    <p class="paragraph-content">
-                      Dominio en análisis de requisitos tanto funcionales como
-                      no funcionales, con capacidad para traducir necesidades
-                      del cliente en especificaciones técnicas precisas.
-                      Modelado UML para visualización y documentación de
-                      sistemas complejos. Implementación efectiva de
-                      metodologías ágiles, especialmente Scrum, facilitando
-                      entregas incrementales de valor y adaptación a cambios de
-                      requisitos.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Educacion -- Curso de Platzi (Django) -->
-            <div class="education-card slide-in-left delay-1">
-              <div class="education-card-header">
-                <div class="education-icon cert-icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="40"
-                    height="40"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <rect
-                      x="3"
-                      y="3"
-                      width="18"
-                      height="18"
-                      rx="2"
-                      ry="2"
-                    ></rect>
-                    <path d="M3 9h18"></path>
-                    <path d="M9 21V9"></path>
-                    <path d="m16 16-2 2 2 2"></path>
-                    <path d="m12 16 2 2-2 2"></path>
-                  </svg>
-                </div>
-                <div class="education-title-area">
-                  <h3 class="education-institution">
-                    Curso Completo de Django
-                  </h3>
-                  <p class="education-degree">
-                    Desarrollo Web Backend
-                    <span class="education-date">| Platzi</span>
-                  </p>
-                </div>
-                <div class="education-external-link">
-                  <a
-                    href="https://platzi.com/cursos/django/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="edu-link"
-                    title="Ver curso en Platzi"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path
-                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                      ></path>
-                      <polyline points="15 3 21 3 21 9"></polyline>
-                      <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              <div class="education-content">
-                <div class="certification-overview">
-                  <p>
-                    Formación completa en desarrollo web con Django, abarcando
-                    desde fundamentos hasta despliegue avanzado con REST API y
-                    AWS.
-                  </p>
-                </div>
-
-                <div class="certification-modules">
-                  <div class="certification-modules-grid">
-                    <div class="certification-module">
-                      <span class="cert-module-icon">✅</span>
-                      <span>Fundamentos de Django</span>
-                    </div>
-                    <div class="certification-module">
-                      <span class="cert-module-icon">✅</span>
-                      <span>Modelos y Bases de Datos</span>
-                    </div>
-                    <div class="certification-module">
-                      <span class="cert-module-icon">✅</span>
-                      <span>Relaciones entre Modelos</span>
-                    </div>
-                    <div class="certification-module">
-                      <span class="cert-module-icon">✅</span>
-                      <span>Queries y Filtros Avanzados</span>
-                    </div>
-                    <div class="certification-module">
-                      <span class="cert-module-icon">✅</span>
-                      <span>URLs y Vistas</span>
-                    </div>
-                    <div class="certification-module">
-                      <span class="cert-module-icon">✅</span>
-                      <span>Django REST Framework</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="certification-highlight">
-                  <p>
-                    Curso completo que abarca tanto arquitectura MVT como
-                    desarrollo avanzado de APIs con Django REST Framework y
-                    despliegue en producción.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Educacion -- Curso de GO -->
-            <div class="education-card slide-in-left delay-2">
-              <div class="education-card-header">
-                <div class="education-icon go-icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="40"
-                    height="40"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path
-                      d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
-                    ></path>
-                    <path
-                      d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
-                    ></path>
-                  </svg>
-                </div>
-                <div class="education-title-area">
-                  <h3 class="education-institution">Fundamentos de GO</h3>
-                  <p class="education-degree">
-                    Desarrollo Backend
-                    <span class="education-date">| Digital House</span>
-                  </p>
-                </div>
-                <div class="education-external-link">
-                  <a
-                    href="./assets/images/fundamentos-GO.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="edu-link"
-                    title="Ver programa del curso"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path
-                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                      ></path>
-                      <polyline points="15 3 21 3 21 9"></polyline>
-                      <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              <div class="education-content">
-                <div class="certification-overview">
-                  <p>
-                    Formación técnica en <strong>Go</strong> para desarrollo de
-                    <em>back end</em> y microservicios, enfocada en sintaxis
-                    avanzada (structs, interfaces, generics), concurrencia
-                    nativa (<strong>Goroutines/Channels</strong>) y manejo de
-                    errores (<strong>Panic/Recover</strong>). Incluye diseño de
-                    <strong>APIs RESTful</strong> con arquitectura por capas
-                    (controlador, servicio, repositorio), integración con bases
-                    de datos y herramientas como <strong>Gin Gonic</strong>.
-                    Aplicación de paquetes clave (<strong>UUID</strong>,
-                    <strong>OS</strong>, <strong>log</strong>) y principios
-                    <strong>SOLID</strong> en proyectos escalables. Metodología
-                    práctica con evaluación basada en <em>checkpoints</em> y
-                    desarrollo de microservicios funcionales, priorizando
-                    integración en entornos <strong>Spring Cloud</strong> y
-                    gestión eficiente de recursos para big data.
-                  </p>
-                </div>
-
-                <div class="education-skills-container">
-                  <h4 class="certification-skills-title">Tecnologías</h4>
-                  <div class="certification-skills">
-                    <span class="skill-tag">Go</span>
-                    <span class="skill-tag">APIs RESTful</span>
-                    <span class="skill-tag">Gin Gonic</span>
-                    <span class="skill-tag">Goroutines</span>
-                    <span class="skill-tag">Concurrencia</span>
-                    <span class="skill-tag">SOLID</span>
-                    <span class="skill-tag">Microservicios</span>
-                  </div>
-                </div>
-
-                <div class="certification-highlight">
-                  <p>
-                    Enfoque práctico y profesional en Go para el desarrollo de
-                    APIs y microservicios escalables con arquitectura limpia y
-                    patrones de concurrencia avanzados.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-    <!-- Cierre del main-container antes del contenedor LinkedIn -->
-
-    <!-- Botón LinkedIn para más información educativa - ahora fuera del main-container -->
-    <div class="linkedin-more-container full-width fade-in">
-      <div class="linkedin-more-content">
-        <p class="linkedin-more-text">
-          Para información adicional sobre educación secundaria y otros
-          certificados, visita mi perfil de Linkedin
-        </p>
-        <a
-          href="https://www.linkedin.com/in/gonzalopontnau/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="linkedin-button"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="linkedin-icon"
-          >
-            <path
-              d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
-            ></path>
-            <rect x="2" y="9" width="4" height="12"></rect>
-            <circle cx="4" cy="4" r="2"></circle>
-          </svg>
-          Linkedin
-        </a>
-      </div>
-    </div>
-
-    <div class="main-container">
-      <!-- Reapertura del main-container para el resto del contenido -->
-      <!-- Sección de contacto -->
-      <section id="contact" class="contact-section">
-        <div class="container">
-          <div class="contact-wrapper">
-            <div class="contact-info slide-in-left">
-              <h2 class="contact-title">Contactame.</h2>
-              <p class="contact-description">
-                Si quieres contactarte conmigo puedes mandarme un mail llenando
-                el formulario o traves de Linkedin en la barra de abajo a la
-                izquierda. ¡Gracias! 🚀
-              </p>
-              <div class="contact-email">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
-                  <path d="M22,6 L12,13 L2,6"></path>
+    <!-- Nueva sección Sobre mí -->
+    <section id="about" class="about-section">
+      <div class="section-container">
+        <h2 class="section-title fade-in">Sobre Mí</h2>
+        <div class="about-content">
+          <div class="about-image">
+            <img id="profile-image" src="./assets/images/imagenPerfil.png" alt="Gonzalo Pontnau"
+              class="profile-image-large zoom-in" loading="lazy" decoding="async" />
+            <div class="about-social fade-in delay-2">
+              <a href="https://github.com/GonzaloPontnau" target="_blank" class="about-social-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                  </path>
                 </svg>
-                <a href="mailto:gonzalopontnau@gmail.com" class="email-link">
-                  gonzalopontnau@gmail.com
-                </a>
-              </div>
+              </a>
+              <a href="https://linkedin.com/in/gonzalopontnau" target="_blank" class="about-social-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="mailto:gonzalopontnau@gmail.com" class="about-social-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </a>
             </div>
-            <div class="contact-form slide-in-right">
-              <form id="contact-form">
-                <div class="form-group">
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Nombre"
-                    required
-                  />
-                </div>
-                <div class="form-group">
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="Correo electrónico"
-                    required
-                  />
-                </div>
-                <div class="form-group">
-                  <input
-                    type="text"
-                    name="subject"
-                    id="subject"
-                    placeholder="Asunto"
-                    required
-                  />
-                </div>
-                <div class="form-group">
-                  <textarea
-                    name="message"
-                    id="message"
-                    placeholder="Mensaje"
-                    rows="5"
-                    required
-                  ></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Enviar mensaje</button>
-              </form>
-              <!-- Contenedor para mensajes -->
-              <div id="form-messages" class="form-messages"></div>
+          </div>
+          <div class="about-text">
+            <p class="about-bio slide-in-right delay-1">
+              Soy desarrollador Backend con enfoque en
+              <span class="highlight">Python</span> y
+              <span class="highlight">Go</span>. Me apasiona construir
+              aplicaciones web seguras y escalables, así como diseñar APIs
+              RESTful.
+            </p>
+            <p class="about-bio slide-in-right delay-2">
+              Tengo experiencia en tecnologías como Django, Flask, FastAPI y
+              también en Go para arquitecturas de microservicios. Soy
+              competente en prácticas de seguridad web y metodologías ágiles
+              (Scrum).
+            </p>
+            <p class="about-bio slide-in-right delay-3">
+              Como estudiante avanzado de
+              <span class="highlight">Ingeniería en sistemas</span> en la
+              Universidad Nacional Tecnológica de Buenos Aires (UTN), combino
+              la sólida base teórica que brinda la formación universitaria con
+              mi constante aprendizaje autodidacta en tecnologías emergentes.
+            </p>
+            <p class="about-bio slide-in-right delay-4">
+              Soy un aprendiz apasionado de la tecnología que disfruta
+              resolviendo desafíos técnicos complejos de manera eficiente y
+              colaborativa.
+            </p>
+            <div class="about-skills fade-in delay-5">
+              <h3 class="skills-title">Tecnologías</h3>
+              <div class="skills-container">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Django</span>
+                <span class="skill-tag">FastAPI</span>
+                <span class="skill-tag">Pytest</span>
+                <span class="skill-tag">PostgreSQL</span>
+                <span class="skill-tag">SQLite</span>
+                <span class="skill-tag">Go</span>
+                <span class="skill-tag">HTML/CSS/JS</span>
+                <span class="skill-tag">RESTful APIs</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">CI/CD</span>
+                <span class="skill-tag">Linux</span>
+                <span class="skill-tag">Postman</span>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Canvas para partículas - optimizado -->
-      <canvas id="particle-canvas"></canvas>
+    <!-- Nueva sección de Experiencia -->
+    <section id="experience" class="experience-section">
+      <div class="section-container">
+        <h2 class="section-title fade-in">Experiencia Laboral</h2>
 
-      <footer class="footer">
-        <p>2025 Gonzalo Pontnau</p>
-      </footer>
+        <!-- Experiencia 1: AI Quality Analyst -->
+        <div class="experience-showcase fade-in" id="ai-quality-analyst">
+          <!-- Elementos decorativos -->
+          <div class="decorative-circle top-left"></div>
+          <div class="decorative-circle bottom-right"></div>
+
+          <!-- Cabecera de experiencia -->
+          <div class="experience-header">
+            <div class="experience-header-content">
+              <div class="title-with-logo">
+                <img src="./assets/images/outlier-logo.png" alt="Outlier" class="company-logo">
+                <h3 class="experience-title">AI Quality Analyst</h3>
+              </div>
+              <div class="experience-meta">
+                <span class="experience-type">Outlier · Freelance</span>
+                <span class="experience-divider">|</span>
+                <span class="experience-location">Buenos Aires, Argentina · Remoto</span>
+              </div>
+            </div>
+            <div class="experience-date">
+              <div class="date-pill">Jun 2025 - Presente</div>
+            </div>
+          </div>
+
+          <!-- Contenido principal -->
+          <div class="experience-content slide-in-right">
+            <div class="experience-description">
+              <p>
+                Diseño de frameworks de evaluación técnica (rúbricas) para validar
+                la calidad de código generado por modelos de IA en múltiples lenguajes
+                de programación, interpretando requisitos explícitos e implícitos de cada prompt.
+              </p>
+              <p>
+                Análisis y diagnóstico de fallos en respuestas de modelos LLM, utilizando
+                métricas precisas para diferenciar entre errores de Correctness (bugs lógicos,
+                información factual incorrecta) y de Instruction Following (incumplimiento de restricciones).
+              </p>
+            </div>
+
+            <!-- Stack tecnológico -->
+            <div class="tech-stack">
+              <h4 class="tech-stack-title">QA & AI stack:</h4>
+              <ul class="tech-stack-list">
+                <li>
+                  <div class="tech-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M9 12l2 2 4-4"></path>
+                      <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"></path>
+                    </svg>
+                  </div>
+                  <div class="tech-text">
+                    <span class="tech-highlight">Testing & Evaluation</span>:
+                    Creación de escenarios de prueba complejos y frameworks de
+                    evaluación técnica para código AI-generado en Python (Flask, FastAPI),
+                    Java y JavaScript/TypeScript.
+                  </div>
+                </li>
+                <li>
+                  <div class="tech-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="tech-text">
+                    <span class="tech-highlight">AI Model Analysis</span>:
+                    Auditorías técnicas del código generado evaluando calidad,
+                    escalabilidad y legibilidad, proporcionando feedback estructurado
+                    que guía el proceso de fine-tuning de modelos LLM.
+                  </div>
+                </li>
+                <li>
+                  <div class="tech-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 3v18m-4-4h8m-8-8h8"></path>
+                    </svg>
+                  </div>
+                  <div class="tech-text">
+                    <span class="tech-highlight">Quality Assurance</span>:
+                    Metodologías de QA aplicadas a IA, diferenciando entre errores
+                    lógicos y de seguimiento de instrucciones, con métricas exactas
+                    para alinear modelos con estándares de alta calidad.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experiencia 2: Back End Developer -->
+        <div class="experience-showcase fade-in" id="backend-developer" style="margin-top: 3rem;">
+          <!-- Elementos decorativos -->
+          <div class="decorative-circle top-left"></div>
+          <div class="decorative-circle bottom-right"></div>
+
+          <!-- Cabecera de experiencia -->
+          <div class="experience-header">
+            <div class="experience-header-content">
+              <h3 class="experience-title">Back End Developer</h3>
+              <div class="experience-meta">
+                <span class="experience-type">Freelance</span>
+                <span class="experience-divider">|</span>
+                <span class="experience-location">Buenos Aires, Argentina · Remoto</span>
+              </div>
+            </div>
+            <div class="experience-date">
+              <div class="date-pill">Mar 2023 - Jul 2025</div>
+            </div>
+          </div>
+
+          <!-- Contenido principal -->
+          <div class="experience-content slide-in-right">
+            <div class="experience-description">
+              <p>
+                Desarrollo de aplicaciones web seguras y escalables,
+                diseño de APIs RESTful y microservicios, implementación de
+                bases de datos relacionales, integración de sistemas externos y
+                desarrollo de soluciones de software.
+              </p>
+              <p>
+                Recopilación de requerimientos funcionales y no funcionales;
+                modelado UML de situaciones de uso, clases y secuencias;
+                creación de esquemas de arquitectura (MVC/MVT) y determinación
+                de flujos de datos.
+              </p>
+            </div>
+
+            <!-- Stack tecnológico -->
+            <div class="tech-stack">
+              <h4 class="tech-stack-title">Backend stack:</h4>
+              <ul class="tech-stack-list">
+                <li>
+                  <div class="tech-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="16 18 22 12 16 6"></polyline>
+                      <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                  </div>
+                  <div class="tech-text">
+                    <span class="tech-highlight">APIs REST</span> utilizando
+                    Django REST y Flask: generación de accesos, organización
+                    de páginas, autenticación JWT y administración de
+                    permisos.
+                  </div>
+                </li>
+                <li>
+                  <div class="tech-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="2" width="8" height="8"></rect>
+                      <rect x="14" y="2" width="8" height="8"></rect>
+                      <rect x="2" y="14" width="8" height="8"></rect>
+                      <rect x="14" y="14" width="8" height="8"></rect>
+                    </svg>
+                  </div>
+                  <div class="tech-text">
+                    <span class="tech-highlight">Microservicios</span> en
+                    FastAPI y Go: gestión de concurrencia a través de
+                    goroutines, transferencia de información HTTP/JSON,
+                    transformación de servicios en contenedores.
+                  </div>
+                </li>
+                <li>
+                  <div class="tech-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                      <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                      <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                    </svg>
+                  </div>
+                  <div class="tech-text">
+                    <span class="tech-highlight">Bases de datos relacionales</span>
+                    (PostgreSQL, SQLite, MySQL): organización de esquemas,
+                    optimización de consultas, operaciones mediante ORM, uso
+                    de UUIDs y funciones ACID.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nueva sección de proyectos -->
+    <section id="projects" class="projects-section">
+      <div class="section-container">
+        <h2 class="section-title fade-in">Mis Proyectos</h2>
+        <div class="projects-grid">
+          <!-- Proyecto 1 -->
+          <!-- Proyecto Money Manager -->
+          <div id="money-manager" class="project-card fade-in">
+            <div class="project-image">
+              <img src="./assets/images/demo-money-manager.gif" alt="Money Manager Dashboard" />
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Money Manager</h3>
+              <p class="project-description">
+                Aplicación web de gestión financiera personal con dashboard
+                interactivo y seguimiento de transacciones. Con autenticación
+                de usuario y almacenamiento seguro de datos.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Django</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Chart.js</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">HTTP</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/GonzaloPontnau/money-manager-python" target="_blank" class="project-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                </a>
+                <a href="https://money-manager-nine-umber.vercel.app/" target="_blank" class="project-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path
+                      d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                    </path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyecto 2 GymAI -->
+          <div id="gym-ai" class="project-card fade-in delay-1">
+            <div class="project-image">
+              <img src="./assets/images/prompt-inicial.gif" alt="GymAI - Demo"
+                onerror="this.onerror=null; this.src='./assets/images/placeholder-image.png';" />
+              <!-- onerror como fallback -->
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">GymAI - Tu personal TrAIner</h3>
+              <p class="project-description">
+                Aplicación web que utiliza IA (Google Gemini) para crear
+                rutinas de entrenamiento personalizadas y generar
+                modificaciones mediante chat en tiempo real. Implementada con
+                enfoque en calidad y pruebas automatizadas. (Espere unos
+                segundos al ingresar en la web)
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">WebSockets</span>
+                <span class="tech-tag">SQLite/PostgreSQL</span>
+                <span class="tech-tag">Pytest</span>
+                <span class="tech-tag">AI chat</span>
+                <span class="tech-tag">HTMX</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/GonzaloPontnau/gym-AI" target="_blank" class="project-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                </a>
+                <a href="https://gym-ai-pontnau.onrender.com/" target="_blank" class="project-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path
+                      d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                    </path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyecto 3 -->
+          <div class="project-card fade-in delay-2">
+            <div class="project-image">
+              <img src="./assets/images/demo-cryptoAPI-python.gif" alt="Visualizador de Criptomonedas" />
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">
+                Visualizador de Precios de Criptomonedas
+              </h3>
+              <p class="project-description">
+                Aplicación web que muestra en tiempo real los precios de las
+                10 principales criptomonedas utilizando la API de
+                CoinMarketCap. Incluye datos detallados como capitalización de
+                mercado, volumen de 24h y cambio porcentual a través del
+                endpoint
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Flask</span>
+                <span class="tech-tag">CoinMarketCap API</span>
+                <span class="tech-tag">HTML/CSS</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/GonzaloPontnau/crypto-price-pyhon" target="_blank" class="project-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                </a>
+                <a href="https://crypto-price-visualizer-one.vercel.app/" target="_blank" class="project-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path
+                      d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                    </path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyecto 4 Notes App -->
+          <div class="project-card fade-in delay-5">
+            <div class="project-image">
+              <img src="./assets/images/demo-app-notas.gif" alt="Notes App - Sistema de Gestión de Notas" />
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">
+                Notes App - Sistema de Gestión de Notas
+              </h3>
+              <p class="project-description">
+                Aplicación web completa para gestión de notas personales, con
+                funcionalidades para crear, editar, archivar y filtrar notas
+                por categorías. Desarrollada con arquitectura REST, frontend
+                moderno responsive y backend robusto.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">SQLAlchemy</span>
+                <span class="tech-tag">Vue.js 3</span>
+                <span class="tech-tag">Pinia</span>
+                <span class="tech-tag">SQLite/PostgreSQL</span>
+                <span class="tech-tag">Responsive Design</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/GonzaloPontnau/notes-app-pontnau" target="_blank" class="project-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                </a>
+                <a href="https://notes-app-pontnau.vercel.app/" target="_blank" class="project-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path
+                      d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                    </path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyecto 5 -->
+          <div class="project-card fade-in delay-4">
+            <div class="project-image">
+              <img src="./assets/images/SO.gif" alt="Sistema Operativo Distribuido en Go" />
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Sistema Operativo Distribuido en Go</h3>
+              <p class="project-description">
+                Sistema operativo distribuido desarrollado en Go que simula los
+                componentes principales de un SO moderno. Implementa gestión de
+                procesos, memoria virtual con paginación multinivel,
+                planificadores de corto/mediano/largo plazo, TLB con algoritmos
+                FIFO/LRU y sistema de I/O asíncrono.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Go</span>
+                <span class="tech-tag">Goroutines</span>
+                <span class="tech-tag">HTTP APIs</span>
+                <span class="tech-tag">Concurrencia</span>
+                <span class="tech-tag">Memoria Virtual</span>
+                <span class="tech-tag">Planificadores</span>
+                <span class="tech-tag">TLB</span>
+                <span class="tech-tag">Microservicios</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/GonzaloPontnau/SISTEMA-OPERATIVO.go" target="_blank" class="project-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proyecto 5 -->
+    <div class="project-card fade-in delay-3">
+      <div class="project-image">
+        <img src="./assets/images/go-rest-api.png" alt="GO Web API REST" />
+      </div>
+      <div class="project-info">
+        <h3 class="project-title">GO Web API REST</h3>
+        <p class="project-description">
+          API REST en Go que implementa los principios SOLID y clean
+          architecture. Estructurada en capas (Repository, Service,
+          Controller) con gestión de contexts, autenticación JWT y
+          manejo estandarizado de errores HTTP.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">Go</span>
+          <span class="tech-tag">Gin Gonic</span>
+          <span class="tech-tag">PostgreSQL</span>
+          <span class="tech-tag">JWT</span>
+          <span class="tech-tag">RESTful</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/GonzaloPontnau/go-rest-api" target="_blank" class="project-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+              </path>
+            </svg>
+          </a>
+        </div>
+      </div>
     </div>
 
-    <!-- Script para inicializar EmailJS -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Inicializar EmailJS con la clave pública
-        emailjs.init("ODb3_RO7ugreWceld");
+    <!-- Sección de Educación y Certificaciones -->
+    <section id="education" class="education-section">
+      <div class="section-container">
+        <h2 class="section-title fade-in">Educación y Certificaciones</h2>
 
-        // Configurar manejador de envío de formulario de contacto
-        const contactForm = document.getElementById("contact-form");
-        const formMessages = document.getElementById("form-messages");
+        <div class="education-cards-vertical">
+          <!-- Tarjeta de UTN -->
+          <div id="utn-education" class="education-card slide-in-left">
+            <div class="education-card-header">
+              <div class="education-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
+                </svg>
+              </div>
+              <div class="education-title-area">
+                <h3 class="education-institution">
+                  Universidad Tecnológica Nacional
+                </h3>
+                <p class="education-degree">
+                  Ingeniería de Sistemas
+                  <span class="education-date">| 2022 – Presente</span>
+                </p>
+              </div>
+            </div>
+            <div class="education-content">
+              <div class="education-content-paragraphs">
+                <div class="education-paragraph">
+                  <h4 class="paragraph-title">Formación en programación</h4>
+                  <p class="paragraph-content">
+                    Dominio de C/C++, Go, Java, bases de datos MySQL y diseño
+                    de sistemas operativos. Destaco el desarrollo de un
+                    sistema operativo distribuido en Go, integrando módulos
+                    como Kernel, CPU, Memoria y File System. Implementé APIs
+                    HTTP para comunicación modular, configuración JSON y logs
+                    estructurados. Además, diseñé un analizador léxico,
+                    sintáctico y semántico en C usando Flex/Bison y
+                    expresiones regulares (regex), aplicado en la
+                    interpretación de pseudocódigo para procesos.
+                  </p>
+                </div>
 
-        if (contactForm) {
-          contactForm.addEventListener("submit", function (e) {
-            e.preventDefault();
+                <div class="education-paragraph">
+                  <h4 class="paragraph-title">Metodologías y enfoque</h4>
+                  <p class="paragraph-content">
+                    Dominio en análisis de requisitos tanto funcionales como
+                    no funcionales, con capacidad para traducir necesidades
+                    del cliente en especificaciones técnicas precisas.
+                    Modelado UML para visualización y documentación de
+                    sistemas complejos. Implementación efectiva de
+                    metodologías ágiles, especialmente Scrum, facilitando
+                    entregas incrementales de valor y adaptación a cambios de
+                    requisitos.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-            // Mostrar indicador de carga
-            const submitButton = contactForm.querySelector(".submit-btn");
-            const originalText = submitButton.textContent;
-            submitButton.textContent = "Enviando...";
-            submitButton.disabled = true;
+          <!-- Educacion -- Curso de Platzi (Django) -->
+          <div class="education-card slide-in-left delay-1">
+            <div class="education-card-header">
+              <div class="education-icon cert-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <path d="M3 9h18"></path>
+                  <path d="M9 21V9"></path>
+                  <path d="m16 16-2 2 2 2"></path>
+                  <path d="m12 16 2 2-2 2"></path>
+                </svg>
+              </div>
+              <div class="education-title-area">
+                <h3 class="education-institution">
+                  Curso Completo de Django
+                </h3>
+                <p class="education-degree">
+                  Desarrollo Web Backend
+                  <span class="education-date">| Platzi</span>
+                </p>
+              </div>
+              <div class="education-external-link">
+                <a href="https://platzi.com/cursos/django/" target="_blank" rel="noopener noreferrer" class="edu-link"
+                  title="Ver curso en Platzi">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="education-content">
+              <div class="certification-overview">
+                <p>
+                  Formación completa en desarrollo web con Django, abarcando
+                  desde fundamentos hasta despliegue avanzado con REST API y
+                  AWS.
+                </p>
+              </div>
 
-            // Obtener datos del formulario
-            const nameValue = document.getElementById("name").value;
-            const emailValue = document.getElementById("email").value;
-            const subjectValue = document.getElementById("subject").value;
-            const messageValue = document.getElementById("message").value;
+              <div class="certification-modules">
+                <div class="certification-modules-grid">
+                  <div class="certification-module">
+                    <span class="cert-module-icon">✅</span>
+                    <span>Fundamentos de Django</span>
+                  </div>
+                  <div class="certification-module">
+                    <span class="cert-module-icon">✅</span>
+                    <span>Modelos y Bases de Datos</span>
+                  </div>
+                  <div class="certification-module">
+                    <span class="cert-module-icon">✅</span>
+                    <span>Relaciones entre Modelos</span>
+                  </div>
+                  <div class="certification-module">
+                    <span class="cert-module-icon">✅</span>
+                    <span>Queries y Filtros Avanzados</span>
+                  </div>
+                  <div class="certification-module">
+                    <span class="cert-module-icon">✅</span>
+                    <span>URLs y Vistas</span>
+                  </div>
+                  <div class="certification-module">
+                    <span class="cert-module-icon">✅</span>
+                    <span>Django REST Framework</span>
+                  </div>
+                </div>
+              </div>
+              <div class="certification-highlight">
+                <p>
+                  Curso completo que abarca tanto arquitectura MVT como
+                  desarrollo avanzado de APIs con Django REST Framework y
+                  despliegue en producción.
+                </p>
+              </div>
+            </div>
+          </div>
 
-            // Preparar los parámetros para EmailJS
-            const templateParams = {
-              from_name: nameValue, // Nombre del remitente
-              email_sender: emailValue, // Email del remitente
-              subject: subjectValue, // Asunto del mensaje
-              message: messageValue, // Contenido del mensaje
-            };
+          <!-- Educacion -- Curso de GO -->
+          <div class="education-card slide-in-left delay-2">
+            <div class="education-card-header">
+              <div class="education-icon go-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </div>
+              <div class="education-title-area">
+                <h3 class="education-institution">Fundamentos de GO</h3>
+                <p class="education-degree">
+                  Desarrollo Backend
+                  <span class="education-date">| Digital House</span>
+                </p>
+              </div>
+              <div class="education-external-link">
+                <a href="./assets/images/fundamentos-GO.pdf" target="_blank" rel="noopener noreferrer" class="edu-link"
+                  title="Ver programa del curso">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="education-content">
+              <div class="certification-overview">
+                <p>
+                  Formación técnica en <strong>Go</strong> para desarrollo de
+                  <em>back end</em> y microservicios, enfocada en sintaxis
+                  avanzada (structs, interfaces, generics), concurrencia
+                  nativa (<strong>Goroutines/Channels</strong>) y manejo de
+                  errores (<strong>Panic/Recover</strong>). Incluye diseño de
+                  <strong>APIs RESTful</strong> con arquitectura por capas
+                  (controlador, servicio, repositorio), integración con bases
+                  de datos y herramientas como <strong>Gin Gonic</strong>.
+                  Aplicación de paquetes clave (<strong>UUID</strong>,
+                  <strong>OS</strong>, <strong>log</strong>) y principios
+                  <strong>SOLID</strong> en proyectos escalables. Metodología
+                  práctica con evaluación basada en <em>checkpoints</em> y
+                  desarrollo de microservicios funcionales, priorizando
+                  integración en entornos <strong>Spring Cloud</strong> y
+                  gestión eficiente de recursos para big data.
+                </p>
+              </div>
 
-            // Enviar correo utilizando EmailJS
-            emailjs
-              .send("service_xuw6smd", "template_hoqmwho", templateParams)
-              .then(function (response) {
-                console.log("SUCCESS!", response.status, response.text);
+              <div class="education-skills-container">
+                <h4 class="certification-skills-title">Tecnologías</h4>
+                <div class="certification-skills">
+                  <span class="skill-tag">Go</span>
+                  <span class="skill-tag">APIs RESTful</span>
+                  <span class="skill-tag">Gin Gonic</span>
+                  <span class="skill-tag">Goroutines</span>
+                  <span class="skill-tag">Concurrencia</span>
+                  <span class="skill-tag">SOLID</span>
+                  <span class="skill-tag">Microservicios</span>
+                </div>
+              </div>
 
-                // Mostrar mensaje de éxito
-                formMessages.className = "form-messages success-message";
-                formMessages.textContent = `Gracias ${nameValue}, tu mensaje ha sido enviado correctamente.`;
+              <div class="certification-highlight">
+                <p>
+                  Enfoque práctico y profesional en Go para el desarrollo de
+                  APIs y microservicios escalables con arquitectura limpia y
+                  patrones de concurrencia avanzados.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- Cierre del main-container antes del contenedor LinkedIn -->
 
-                // Alerta de éxito
-                alert(
-                  `¡Gracias ${nameValue}! Tu mensaje ha sido enviado correctamente. Me pondré en contacto contigo a la brevedad.`
-                );
+  <!-- Botón LinkedIn para más información educativa - ahora fuera del main-container -->
+  <div class="linkedin-more-container full-width fade-in">
+    <div class="linkedin-more-content">
+      <p class="linkedin-more-text">
+        Para información adicional sobre educación secundaria y otros
+        certificados, visita mi perfil de Linkedin
+      </p>
+      <a href="https://www.linkedin.com/in/gonzalopontnau/" target="_blank" rel="noopener noreferrer"
+        class="linkedin-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="linkedin-icon">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+          <rect x="2" y="9" width="4" height="12"></rect>
+          <circle cx="4" cy="4" r="2"></circle>
+        </svg>
+        Linkedin
+      </a>
+    </div>
+  </div>
 
-                // Limpiar el formulario
-                contactForm.reset();
-              })
-              .catch(function (error) {
-                console.error("Error al enviar el correo:", error);
+  <div class="main-container">
+    <!-- Reapertura del main-container para el resto del contenido -->
+    <!-- Sección de contacto -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="contact-info slide-in-left">
+            <h2 class="contact-title">Contactame.</h2>
+            <p class="contact-description">
+              Si quieres contactarte conmigo puedes mandarme un mail llenando
+              el formulario o traves de Linkedin en la barra de abajo a la
+              izquierda. ¡Gracias! 🚀
+            </p>
+            <div class="contact-email">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+                <path d="M22,6 L12,13 L2,6"></path>
+              </svg>
+              <a href="mailto:gonzalopontnau@gmail.com" class="email-link">
+                gonzalopontnau@gmail.com
+              </a>
+            </div>
+          </div>
+          <div class="contact-form slide-in-right">
+            <form id="contact-form">
+              <div class="form-group">
+                <input type="text" name="name" id="name" placeholder="Nombre" required />
+              </div>
+              <div class="form-group">
+                <input type="email" name="email" id="email" placeholder="Correo electrónico" required />
+              </div>
+              <div class="form-group">
+                <input type="text" name="subject" id="subject" placeholder="Asunto" required />
+              </div>
+              <div class="form-group">
+                <textarea name="message" id="message" placeholder="Mensaje" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Enviar mensaje</button>
+            </form>
+            <!-- Contenedor para mensajes -->
+            <div id="form-messages" class="form-messages"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                // Mostrar mensaje de error
-                formMessages.className = "form-messages error-message";
-                formMessages.textContent =
-                  "Ocurrió un error al enviar el mensaje. Por favor, inténtalo de nuevo.";
+    <!-- Canvas para partículas - optimizado -->
+    <canvas id="particle-canvas"></canvas>
 
-                // Alerta de error
-                alert("Error al enviar el mensaje: " + error.text);
-              })
-              .finally(function () {
-                // Restaurar el botón
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
-              });
-          });
-        }
-      });
-    </script>
+    <footer class="footer">
+      <p>2025 Gonzalo Pontnau</p>
+    </footer>
+  </div>
 
-    <!-- JavaScript externo optimizado -->
-    <script defer src="./assets/js/particles.js"></script>
-    <script defer src="./assets/js/animations.js"></script>
-    <script defer src="./assets/js/language.js"></script>
-    <script defer src="./assets/js/cv-menu.js"></script>
-  </body>
+  <!-- Script para inicializar EmailJS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Inicializar EmailJS con la clave pública
+      emailjs.init("ODb3_RO7ugreWceld");
+
+      // Configurar manejador de envío de formulario de contacto
+      const contactForm = document.getElementById("contact-form");
+      const formMessages = document.getElementById("form-messages");
+
+      if (contactForm) {
+        contactForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Mostrar indicador de carga
+          const submitButton = contactForm.querySelector(".submit-btn");
+          const originalText = submitButton.textContent;
+          submitButton.textContent = "Enviando...";
+          submitButton.disabled = true;
+
+          // Obtener datos del formulario
+          const nameValue = document.getElementById("name").value;
+          const emailValue = document.getElementById("email").value;
+          const subjectValue = document.getElementById("subject").value;
+          const messageValue = document.getElementById("message").value;
+
+          // Preparar los parámetros para EmailJS
+          const templateParams = {
+            from_name: nameValue, // Nombre del remitente
+            email_sender: emailValue, // Email del remitente
+            subject: subjectValue, // Asunto del mensaje
+            message: messageValue, // Contenido del mensaje
+          };
+
+          // Enviar correo utilizando EmailJS
+          emailjs
+            .send("service_xuw6smd", "template_hoqmwho", templateParams)
+            .then(function (response) {
+              console.log("SUCCESS!", response.status, response.text);
+
+              // Mostrar mensaje de éxito
+              formMessages.className = "form-messages success-message";
+              formMessages.textContent = `Gracias ${nameValue}, tu mensaje ha sido enviado correctamente.`;
+
+              // Alerta de éxito
+              alert(
+                `¡Gracias ${nameValue}! Tu mensaje ha sido enviado correctamente. Me pondré en contacto contigo a la brevedad.`
+              );
+
+              // Limpiar el formulario
+              contactForm.reset();
+            })
+            .catch(function (error) {
+              console.error("Error al enviar el correo:", error);
+
+              // Mostrar mensaje de error
+              formMessages.className = "form-messages error-message";
+              formMessages.textContent =
+                "Ocurrió un error al enviar el mensaje. Por favor, inténtalo de nuevo.";
+
+              // Alerta de error
+              alert("Error al enviar el mensaje: " + error.text);
+            })
+            .finally(function () {
+              // Restaurar el botón
+              submitButton.textContent = originalText;
+              submitButton.disabled = false;
+            });
+        });
+      }
+    });
+  </script>
+
+  <!-- JavaScript externo optimizado -->
+  <script defer src="./assets/js/particles.js"></script>
+  <script defer src="./assets/js/animations.js"></script>
+  <script defer src="./assets/js/language.js"></script>
+  <script defer src="./assets/js/cv-menu.js"></script>
+</body>
+
 </html>

@@ -24,6 +24,9 @@
 
   <!-- EmailJS -->
   <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  
+  <!-- Partículas - Carga inmediata para evitar pantalla negra -->
+  <script src="./assets/js/particles.js"></script>
 </head>
 
 <body>
@@ -67,12 +70,26 @@
       <div class="social-line"></div>
     </div>
   </div>
-  <!-- Navbar -->
+  <!-- Navbar Rediseñada -->
   <nav class="navbar">
-    <div class="nav-container">
-      <div class="logo">
-        <span class="gp-logo">GP</span>
+    <!-- Logo GP fijo en la esquina izquierda -->
+    <div class="logo">
+      <span class="gp-logo">GP</span>
+    </div>
+    
+    <!-- Dynamic Island que aparece al hacer scroll -->
+    <div class="dynamic-island">
+      <div class="nav-links">
+        <a href="#about">Sobre mí</a>
+        <a href="#experience">Experiencia</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#education">Educación</a>
+        <a href="#contact">Contacto</a>
       </div>
+    </div>
+    
+    <!-- Navbar inicial (se oculta al hacer scroll) -->
+    <div class="nav-container">
       <div class="nav-links">
         <a href="#about">Sobre mí</a>
         <a href="#experience">Experiencia</a>
@@ -1009,7 +1026,6 @@
   </script>
 
   <!-- JavaScript externo optimizado -->
-  <script defer src="./assets/js/particles.js"></script>
   <script defer src="./assets/js/animations.js"></script>
   <script defer src="./assets/js/language.js"></script>
   <script defer src="./assets/js/cv-menu.js"></script>

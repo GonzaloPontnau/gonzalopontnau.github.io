@@ -55,6 +55,27 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
+  // Optimización especial para la imagen de perfil
+  const profileImage = document.getElementById('profile-image');
+  if (profileImage) {
+    // Verificar si la imagen ya está cargada
+    if (profileImage.complete && profileImage.naturalHeight > 0) {
+      profileImage.style.opacity = '1';
+    } else {
+      // Si no está cargada, esperamos a que se cargue completamente
+      profileImage.addEventListener('load', function() {
+        this.style.opacity = '1';
+      });
+      
+      // Timeout de seguridad en caso de error
+      setTimeout(() => {
+        if (profileImage.style.opacity !== '1') {
+          profileImage.style.opacity = '1';
+        }
+      }, 2000);
+    }
+  }
+
   // Manejar animaciones para elementos que no usan el observador
   // (por ejemplo, elementos que siempre deberían animarse al cargar)
   const immediateElements = document.querySelectorAll('.animate-immediate');

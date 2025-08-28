@@ -19,8 +19,8 @@
   <link rel="manifest" href="./assets/favicon/site.webmanifest" />
   <meta name="msapplication-TileColor" content="#ffffff" />
 
-  <!-- Precargar imágenes críticas -->
-  <link rel="preload" as="image" href="./assets/images/imagenPerfil.png" />
+  <!-- Precargar imágenes críticas con alta prioridad -->
+  <link rel="preload" as="image" href="./assets/images/imagenPerfil.png" fetchpriority="high" />
 
   <!-- EmailJS -->
   <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -108,7 +108,8 @@
         <div class="about-content">
           <div class="about-image">
             <img id="profile-image" src="./assets/images/imagenPerfil.png" alt="Gonzalo Pontnau"
-              class="profile-image-large zoom-in" loading="lazy" decoding="async" />
+              class="profile-image-large zoom-in" loading="eager" decoding="sync" 
+              onload="this.style.opacity='1'" />
             <div class="about-social fade-in delay-2">
               <a href="https://github.com/GonzaloPontnau" target="_blank" class="about-social-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"

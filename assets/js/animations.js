@@ -5,7 +5,7 @@
 document.addEventListener("DOMContentLoaded", function() {
   // Seleccionar todos los elementos con clases de animación
   const animatedElements = document.querySelectorAll(
-    '.fade-in, .slide-in-right, .slide-in-left, .zoom-in, .stagger-item'
+    '.fade-in, .slide-in-right, .slide-in-left, .zoom-in, .stagger-item, .project-reveal'
   );
   
   // Si no hay elementos para animar, terminamos

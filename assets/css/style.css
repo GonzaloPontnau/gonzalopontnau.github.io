@@ -557,6 +557,7 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin: 0;
     padding: 1rem;
+    position: relative;
 }
 
 .projects-section .project-card:hover {
@@ -1618,31 +1619,129 @@ footer {
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
+/* Nueva animación espectacular para proyectos */
+.project-reveal {
+    opacity: 0;
+    transform: translateY(60px) scale(0.8) rotateX(15deg);
+    filter: blur(5px);
+    transition: 
+        opacity 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        filter 0.8s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/* Animación de brillo que se ejecuta al aparecer */
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes floatIn {
+    0% {
+        opacity: 0;
+        transform: translateY(80px) scale(0.7) rotateX(20deg) rotateY(5deg);
+        filter: blur(8px);
+    }
+    60% {
+        opacity: 0.8;
+        transform: translateY(-10px) scale(1.05) rotateX(-2deg) rotateY(-1deg);
+        filter: blur(2px);
+    }
+    80% {
+        transform: translateY(5px) scale(0.98) rotateX(1deg) rotateY(0.5deg);
+        filter: blur(0px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotateX(0deg) rotateY(0deg);
+        filter: blur(0px);
+    }
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        box-shadow: 
+            0 4px 15px rgba(0, 0, 0, 0.2),
+            0 0 0 0 rgba(0, 255, 136, 0);
+    }
+    50% {
+        box-shadow: 
+            0 8px 30px rgba(0, 0, 0, 0.3),
+            0 0 20px 5px rgba(0, 255, 136, 0.1);
+    }
+}
+
 /* Clases activas al entrar en viewport */
 .show {
     opacity: 1;
     transform: translateY(0) translateX(0) scale(1);
 }
 
-/* Delay para efectos escalonados */
+.project-reveal.show {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0deg);
+    filter: blur(0px);
+    animation: floatIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Efecto de brillo que aparece después de la animación principal */
+.project-reveal.show::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        rgba(0, 255, 136, 0.1),
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    animation: shimmer 2s ease-in-out 0.5s;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Efecto de resplandor continuo después de aparecer */
+.project-reveal.show {
+    animation: 
+        floatIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
+        glow-pulse 3s ease-in-out 1.5s infinite;
+}
+
+/* Delay para efectos escalonados - aumentados para más drama */
 .delay-1 {
-    transition-delay: 0.1s;
+    transition-delay: 0.2s;
+    animation-delay: 0.2s;
 }
 
 .delay-2 {
-    transition-delay: 0.2s;
+    transition-delay: 0.4s;
+    animation-delay: 0.4s;
 }
 
 .delay-3 {
-    transition-delay: 0.3s;
+    transition-delay: 0.6s;
+    animation-delay: 0.6s;
 }
 
 .delay-4 {
-    transition-delay: 0.4s;
+    transition-delay: 0.8s;
+    animation-delay: 0.8s;
 }
 
 .delay-5 {
-    transition-delay: 0.5s;
+    transition-delay: 1.0s;
+    animation-delay: 1.0s;
 }
 
 /*  SELECTOR DE IDIOMA  */

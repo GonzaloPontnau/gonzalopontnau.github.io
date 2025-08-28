@@ -191,8 +191,6 @@ body {
     left: 50%;
     transform: translateX(-50%) scale(0);
     background: rgba(20, 20, 25, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     border-radius: 50px;
     padding: 0.8rem 2rem;
     transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -206,6 +204,9 @@ body {
     -webkit-transform: translateX(-50%) scale(0);
     -webkit-transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     will-change: transform, opacity;
+    z-index: 1000;
+    /*backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);*/
 }
 
 /* Dynamic Island activo cuando se hace scroll */
@@ -258,22 +259,32 @@ body {
     width: 70%;
 }
 
-/* Navbar inicial (estado no scrolled) */
+/* Navbar inicial (estado no scrolled) - Centrado como el Dynamic Island */
 .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 0 40px;
+    padding: 0.8rem 2rem;
     box-sizing: border-box;
     opacity: 1;
-    transition: opacity 0.3s ease;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 999;
+    /* Estilo similar al Dynamic Island pero transparente */
+    background: rgba(20, 20, 25, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .navbar-scrolled .nav-container {
     opacity: 0;
     pointer-events: none;
+    transform: translateX(-50%) scale(0.9);
 }
 
 /* Animación del dynamic island */
@@ -294,9 +305,52 @@ body {
     animation: dynamicIslandEnter 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
+/* Estilos unificados para nav-links (inicial y dynamic island) */
+.nav-container .nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin: 0;
+}
+
+.nav-container .nav-links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    white-space: nowrap;
+}
+
+.nav-container .nav-links a:hover {
+    color: #00ff88;
+    background: rgba(0, 255, 136, 0.1);
+    transform: translateY(-1px);
+}
+
+.nav-container .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0.3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #00ff88;
+    transition: width 0.3s ease;
+}
+
+.nav-container .nav-links a:hover::after {
+    width: 70%;
+}
+
 /* Responsive Design para dispositivos móviles */
 @media (max-width: 991px) {
-    .dynamic-island {
+    .dynamic-island, .nav-container {
         padding: 0.6rem 1.5rem;
     }
     
@@ -304,7 +358,7 @@ body {
         gap: 1.5rem;
     }
     
-    .nav-links a {
+    .nav-links a, .nav-container .nav-links a {
         font-size: 0.85rem;
         padding: 0.4rem 0.8rem;
     }
@@ -319,19 +373,19 @@ body {
 }
 
 @media (max-width: 767px) {
-    .dynamic-island {
+    .dynamic-island, .nav-container {
         padding: 0.5rem 1rem;
         top: 0.8rem;
         max-width: 90vw;
         overflow-x: auto;
     }
     
-    .nav-links {
+    .nav-links, .nav-container .nav-links {
         gap: 1rem;
         flex-wrap: nowrap;
     }
     
-    .nav-links a {
+    .nav-links a, .nav-container .nav-links a {
         font-size: 0.8rem;
         padding: 0.3rem 0.6rem;
         white-space: nowrap;
@@ -344,19 +398,6 @@ body {
     
     .gp-logo {
         font-size: 1.5rem;
-    }
-    
-    .nav-container {
-        padding: 0 20px;
-    }
-    
-    .nav-container .nav-links {
-        gap: 1rem;
-        justify-content: flex-end;
-    }
-    
-    .nav-container .nav-links a {
-        font-size: 0.8rem;
     }
 }
 

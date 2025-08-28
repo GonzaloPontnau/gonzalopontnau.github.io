@@ -1596,8 +1596,8 @@ footer {
 
 .fade-in {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .slide-in-right {
@@ -1624,25 +1624,7 @@ footer {
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* Nueva animación suave y rápida para proyectos */
-.project-reveal {
-    opacity: 0;
-    transform: translateY(30px) scale(0.95);
-    transition: 
-        opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-        transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-@keyframes slideUpFade {
-    0% {
-        opacity: 0;
-        transform: translateY(30px) scale(0.95);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
+/* Animaciones no utilizadas eliminadas */
 
 /* Clases activas al entrar en viewport */
 .show {
@@ -1650,36 +1632,30 @@ footer {
     transform: translateY(0) translateX(0) scale(1);
 }
 
-.project-reveal.show {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    animation: slideUpFade 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-}
-
-/* Delay para efectos escalonados - más rápidos y suaves */
+/* Delay para efectos escalonados - aparición por filas de a dos */
 .delay-1 {
-    transition-delay: 0.1s;
-    animation-delay: 0.1s;
+    transition-delay: 0.4s;
+    animation-delay: 0.4s;
 }
 
 .delay-2 {
-    transition-delay: 0.15s;
-    animation-delay: 0.15s;
+    transition-delay: 0.8s;
+    animation-delay: 0.8s;
 }
 
 .delay-3 {
-    transition-delay: 0.2s;
-    animation-delay: 0.2s;
+    transition-delay: 0.6s;
+    animation-delay: 0.6s;
 }
 
 .delay-4 {
-    transition-delay: 0.25s;
-    animation-delay: 0.25s;
+    transition-delay: 1.0s;
+    animation-delay: 1.0s;
 }
 
 .delay-5 {
-    transition-delay: 0.3s;
-    animation-delay: 0.3s;
+    transition-delay: 1.2s;
+    animation-delay: 1.2s;
 }
 
 /*  SELECTOR DE IDIOMA  */

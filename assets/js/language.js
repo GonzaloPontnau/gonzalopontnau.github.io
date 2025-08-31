@@ -45,8 +45,8 @@ document.addEventListener("DOMContentLoaded", function() {
           'type': 'Outlier · Freelance',
           'location': 'Buenos Aires, Argentina · Remoto',
           'period': 'Jun 2025 - Presente',
-          'description1': 'Diseño de frameworks de evaluación técnica (rúbricas) para validar la calidad de código generado por modelos de IA en múltiples lenguajes de programación, interpretando requisitos explícitos e implícitos de cada prompt.',
-          'description2': 'Análisis y diagnóstico de fallos en respuestas de modelos LLM, utilizando métricas precisas para diferenciar entre errores de Correctness (bugs lógicos, información factual incorrecta) y de Instruction Following (incumplimiento de restricciones).',
+          'description1': 'Diseño de frameworks de evaluación técnica (rúbricas) para validar la calidad de código generado por modelos de IA en múltiples lenguajes de programación, interpretando requisitos explícitos e implícitos de cada prompt. Elaboración de system prompts y user prompts estratégicos para simular flujos conversacionales complejos, evaluando capacidades agénticas del modelo.',
+          'description2': 'Análisis y diagnóstico de fallos en respuestas de modelos LLM, utilizando métricas precisas para diferenciar entre errores de Correctness (bugs lógicos, información factual incorrecta) y de Instruction Following (incumplimiento de restricciones), manteniendo coherencia contextual en interacciones multi-turn.',
           'stack_title': 'QA & AI stack:',
           'tech1': '<span class="tech-highlight">Testing & Evaluation</span>: Creación de escenarios de prueba complejos y frameworks de evaluación técnica para código AI-generado en Python (Flask, FastAPI), Java y JavaScript/TypeScript.',
           'tech2': '<span class="tech-highlight">AI Model Analysis</span>: Auditorías técnicas del código generado evaluando calidad, escalabilidad y legibilidad, proporcionando feedback estructurado que guía el proceso de fine-tuning de modelos LLM.',
@@ -72,8 +72,8 @@ document.addEventListener("DOMContentLoaded", function() {
           'type': 'Outlier · Freelance',
           'location': 'Buenos Aires, Argentina · Remote',
           'period': 'Jun 2025 - Present',
-          'description1': 'Designed complex test scenarios and technical evaluation frameworks (rubrics) to validate the quality of AI-generated code across Python (Flask, FastAPI), Java, and JavaScript/TypeScript, interpreting both explicit and implicit prompt requirements.',
-          'description2': 'Using exact metrics, methodically examined and diagnosed model response failures, differentiating between Instruction Following mistakes (constraint violations) and Correctness problems (logical defects, factual inaccuracies).',
+          'description1': 'Design of technical evaluation frameworks (rubrics) to validate the quality of AI-generated code across multiple programming languages, interpreting explicit and implicit requirements of each prompt. Creation of strategic system prompts and user prompts to simulate complex conversational flows, evaluating the model\'s agentic capabilities.',
+          'description2': 'Analysis and diagnosis of failures in LLM responses, using precise metrics to differentiate between Correctness errors (logical bugs, incorrect factual information) and Instruction Following errors (non-compliance with restrictions), maintaining contextual coherence in multi-turn interactions.',
           'stack_title': 'QA & AI stack:',
           'tech1': '<span class="tech-highlight">Testing & Evaluation</span>: Complex test scenario creation and technical evaluation frameworks for AI-generated code in Python (Flask, FastAPI), Java, and JavaScript/TypeScript.',
           'tech2': '<span class="tech-highlight">AI Model Analysis</span>: Technical audits of generated code evaluating quality, scalability, and readability, providing structured feedback that guides the LLM fine-tuning process.',
@@ -116,18 +116,16 @@ document.addEventListener("DOMContentLoaded", function() {
     'about': {
       'es': {
         'title': 'Sobre Mí',
-        'bio1': 'Soy desarrollador Backend con enfoque en <span class="highlight">Python</span> y <span class="highlight">Go</span>. Me apasiona construir aplicaciones web seguras y escalables, así como diseñar APIs RESTful.',
-        'bio2': 'Tengo experiencia en tecnologías como Django, Flask, FastAPI y también en Go para arquitecturas de microservicios. Soy competente en prácticas de seguridad web y metodologías ágiles (Scrum).',
-        'bio3': 'Como estudiante avanzado de <span class="highlight">Ingeniería en sistemas</span> en la Universidad Nacional Tecnológica de Buenos Aires (UTN), combino la sólida base teórica que brinda la formación universitaria con mi constante aprendizaje autodidacta en tecnologías emergentes.',
-        'bio4': 'Soy un aprendiz apasionado de la tecnología que disfruta resolviendo desafíos técnicos complejos de manera eficiente y colaborativa.',
+        'bio1': 'Soy desarrollador de software y futuro <span class="highlight">Ingeniero en sistemas</span>, con enfoque en <span class="highlight">Python</span> y <span class="highlight">Go</span>. Me apasiona construir y mejorar software de apps innovadores y escalables, así como diseñar APIs RESTful. Soy competente en prácticas de seguridad web y metodologías ágiles.',
+        'bio2': 'Actualmente trabajo como AI Quality Analyst evaluando y optimizando modelos de inteligencia artificial, diseñando prompts y analizando capacidades agénticas de LLMs. Busco nutrirme de nuevas experiencias en el desarrollo de software. Una área en la que me gustaría progresar es en <span class="highlight">automatizaciones de procesos</span> estilo Power Apps, ya que tengo experiencia vendiendo software como el de GoHighLevel.',
+        'bio3': 'Uno de mis fuertes es la comunicación ya que soy una persona extrovertida, lo que me permite trabajar bien en equipo y conectar con diferentes personas, lo cual es muy importante a la hora de colaborar en proyectos complejos.',
         'skillsTitle': 'Tecnologías'
       },
       'en': {
         'title': 'About Me',
-        'bio1': 'I am a Backend developer focused on <span class="highlight">Python</span> and <span class="highlight">Go</span>. I am passionate about building secure and scalable web applications and designing RESTful APIs.',
-        'bio2': 'I have experience with technologies such as Django, Flask, FastAPI, and Go for microservices architectures. I am proficient in web security practices and agile methodologies (Scrum).',
-        'bio3': 'As an advanced <span class="highlight">Systems Engineering</span> student at the National Technological University of Buenos Aires (UTN), I combine the solid theoretical foundation provided by university education with my continuous self-learning in emerging technologies.',
-        'bio4': 'I am a passionate technology learner who enjoys solving complex technical challenges efficiently and collaboratively.',
+        'bio1': 'I am a software developer and future <span class="highlight">Systems Engineer</span>, focused on <span class="highlight">Python</span> and <span class="highlight">Go</span>. I am passionate about building and improving innovative and scalable app software, as well as designing RESTful APIs. I am proficient in web security practices and agile methodologies.',
+        'bio2': 'Currently working as an AI Quality Analyst evaluating and optimizing artificial intelligence models, designing prompts and analyzing agentic capabilities of LLMs. I seek to nourish myself with new experiences in software development. One area I would like to progress in is <span class="highlight">process automation</span> Power Apps style, as I have experience selling software like GoHighLevel.',
+        'bio3': 'One of my strengths is communication as I am an extroverted person, which allows me to work well in teams and connect with different people, which is very important when collaborating on complex projects.',
         'skillsTitle': 'Technologies'
       }
     },
@@ -407,11 +405,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     const aboutBios = document.querySelectorAll('.about-bio');
-    if (aboutBios.length >= 4) {
+    if (aboutBios.length >= 3) {
       aboutBios[0].innerHTML = translations.about[currentLang].bio1;
       aboutBios[1].innerHTML = translations.about[currentLang].bio2;
       aboutBios[2].innerHTML = translations.about[currentLang].bio3;
-      aboutBios[3].innerHTML = translations.about[currentLang].bio4;
     }
 
     if (elementExists('.skills-title')) {

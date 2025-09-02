@@ -578,6 +578,13 @@ body {
     align-items: center;
 }
 
+/* Contenedor para permitir la calcomanía sobre la imagen */
+.profile-image-wrapper {
+    position: relative;
+    display: inline-block;
+    overflow: visible;
+}
+
 .profile-image-large {
     max-width: 250px;
     /* Reducido de 280px */
@@ -596,6 +603,62 @@ body {
     transition: opacity 0.3s ease;
     image-rendering: auto;
     image-orientation: from-image;
+}
+
+/* Calcomanía de mate en la esquina superior izquierda */
+.mate-sticker {
+    position: absolute;
+    top: -24px;
+    left: -26px;
+    width: 64px;
+    height: 64px;
+    z-index: 2;
+    pointer-events: none;
+    background: transparent;
+    transform: rotate(-10deg);
+}
+
+.mate-sticker::before {
+    content: "🧉";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+    /* Simular borde blanco tipo calcomanía alrededor del emoji */
+    text-shadow:
+        0 0 0 #fff,
+        1px 0 0 #fff,
+        -1px 0 0 #fff,
+        0 1px 0 #fff,
+        0 -1px 0 #fff,
+        1px 1px 0 #fff,
+        -1px 1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px -1px 0 #fff,
+        2px 0 0 #fff,
+        -2px 0 0 #fff,
+        0 2px 0 #fff,
+        0 -2px 0 #fff,
+        2px 2px 0 #fff,
+        -2px 2px 0 #fff,
+        2px -2px 0 #fff,
+        -2px -2px 0 #fff;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3));
+}
+
+@media (max-width: 767px) {
+    .mate-sticker {
+        top: -16px;
+        left: -18px;
+        width: 56px;
+        height: 56px;
+    }
+
+    .mate-sticker::before {
+        font-size: 36px;
+    }
 }
 
 .about-social {
@@ -1997,22 +2060,19 @@ footer {
 }
 
 .tech-list {
-    list-style-type: none;
-    padding-left: 0;
+    list-style-type: disc;
+    padding-left: 1.2rem;
 }
 
 .tech-list li {
     margin-bottom: 0.75rem;
-    position: relative;
-    padding-left: 1.5rem;
+    position: static;
+    padding-left: 0;
     line-height: 1.5;
 }
 
 .tech-list li:before {
-    content: "▹";
-    position: absolute;
-    left: 0;
-    color: var(--accent-color);
+    content: none;
 }
 
 .tech-highlight {
@@ -2417,13 +2477,13 @@ footer {
 }
 
 .tech-stack-list {
-    list-style: none;
-    padding: 0;
+    list-style: disc;
+    padding-left: 1.2rem;
     margin: 0;
 }
 
 .tech-stack-list li {
-    display: flex;
+    display: list-item;
     margin-bottom: 1.2rem;
     color: var(--text-secondary);
     line-height: 1.6;
@@ -2434,11 +2494,7 @@ footer {
 }
 
 .tech-icon {
-    display: flex;
-    align-items: flex-start;
-    color: var(--accent-color);
-    margin-right: 0.8rem;
-    margin-top: 0.3rem;
+    display: none;
 }
 
 .tech-text {

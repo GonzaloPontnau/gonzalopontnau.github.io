@@ -1298,8 +1298,9 @@ body {
 }
 
 .contact-form {
-    flex: 1;
-    max-width: 80px;
+    flex: auto;
+    max-width: 600px;
+    padding-right: 30px;
 }
 
 .form-group {

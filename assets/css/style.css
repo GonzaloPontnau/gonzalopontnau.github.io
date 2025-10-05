@@ -407,11 +407,12 @@ body {
 .social-icon {
     color: #e0e0e0;
     transition: all 0.3s ease;
+    transform: scale(1.35);
 }
 
 .social-icon:hover {
     color: #00ff88;
-    transform: translateY(-2px);
+    transform: scale(1.35) translateY(-2px);
 }
 
 .social-line {
@@ -427,13 +428,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 22px;
-    height: 22px;
+    width: 28px;
+    height: 28px;
 }
 
 .cv-circle {
-    width: 22px;
-    height: 22px;
+    width: 28px;
+    height: 28px;
     border: 2px solid currentColor;
     border-radius: 50%;
     display: flex;
@@ -444,7 +445,7 @@ body {
 .cv-text {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 8px;
+    font-size: 10px;
 }
 
 /* Estilos para el menú desplegable del CV */
@@ -523,10 +524,8 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 120px;
     width: 100%;
     max-width: 100%;
-    overflow: hidden;
     padding-top: 200px;
 }
 
@@ -2120,8 +2119,8 @@ footer {
     background-color: transparent;
     border: 2px solid #ffffff;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     color: #ffffff;
     cursor: pointer;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
@@ -2138,7 +2137,7 @@ footer {
 .language-text {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     color: #ffffff;
 }
 

@@ -30,8 +30,8 @@
     let animationRunning = true;
     let animationFrame = null;
 
-    // Número de partículas optimizado para dispositivos móviles
-    const particleCount = isMobile ? 50 : 100;
+    // Número de partículas reducido para mejor rendimiento inicial
+    const particleCount = isMobile ? 30 : 60;
     const particles = [];
 
     // Clase Partícula mejorada
@@ -57,16 +57,9 @@
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         
-        // Sombra sutil para efecto de brillo
-        ctx.shadowBlur = this.radius * 1.5;
-        ctx.shadowColor = 'rgba(255, 255, 255, 0.2)';
-        
-        // Color con opacidad personalizada
+        // Color con opacidad personalizada (sin sombra para mejor rendimiento)
         ctx.fillStyle = `${this.color} ${this.alpha})`;
         ctx.fill();
-        
-        // Restaurar configuración de sombra
-        ctx.shadowBlur = 0;
       }
 
       update() {
@@ -86,14 +79,14 @@
     function animate() {
       if (!animationRunning) return;
 
-      // Limpiar con el color de fondo en lugar de clearRect para mejor rendimiento
-      ctx.fillStyle = '#0a0a0a';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      // Limpiar con clearRect para mejor rendimiento
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      particles.forEach((particle) => {
-        particle.update();
-        particle.draw();
-      });
+      // Dibujar y actualizar partículas
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+      }
 
       animationFrame = requestAnimationFrame(animate);
     }
@@ -134,16 +127,11 @@
     document.addEventListener("visibilitychange", handleVisibilityChange);
     window.addEventListener("resize", handleResize());
 
-    // Inicializar y comenzar la animación inmediatamente
+    // Inicializar partículas
     initParticles();
     
-    // Render inicial inmediato
-    ctx.fillStyle = '#0a0a0a';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(particle => particle.draw());
-    
-    // Comenzar animación
-    requestAnimationFrame(animate);
+    // Comenzar animación inmediatamente
+    animationFrame = requestAnimationFrame(animate);
 
     // Manejar evento de scroll para la navbar (solo si existe)
     const navbar = document.querySelector(".navbar");

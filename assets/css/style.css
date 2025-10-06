@@ -401,7 +401,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 40px;
 }
 
 .social-icon {

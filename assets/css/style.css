@@ -768,7 +768,7 @@ body {
 .about-text {
     flex: 0 0 65%;
     padding: 0;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     justify-content: space-between;
     max-height: 100%;

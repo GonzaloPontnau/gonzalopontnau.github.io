@@ -40,6 +40,21 @@ document.addEventListener("DOMContentLoaded", function() {
     'experience': {
       'es': {
         'title': 'Experiencia Laboral',
+        'abbTrainee': {
+          'role': 'Trainee Full Stack AI',
+          'type': 'ABB · Trainee',
+          'location': 'Buenos Aires, Argentina · Remoto',
+          'period': 'Oct 2025 - Presente',
+          'description1': 'Desarrollo y despliegue de <strong>Charly.AI</strong>, un agente inteligente diseñado para optimizar la gestión de proyectos mediante la automatización de tareas repetitivas y la integración profunda con el ecosistema <strong>Microsoft 365</strong>. Utilizando <strong>Copilot Studio</strong>, <strong>Power Automate</strong> y <strong>Graph API</strong>, el agente asiste a equipos de proyectos en la creación automática de resúmenes de reuniones, seguimiento de tareas, gestión de conocimiento y notificaciones contextuales, reduciendo tiempos operativos y mejorando la eficiencia colaborativa.',
+          'description2': 'Colaboración directa con equipos de <strong>PMO</strong> e <strong>IT</strong> para diseñar flujos de trabajo seguros y escalables que respetan las políticas de seguridad corporativa. Implementación de prototipos <strong>low-code (MVPs)</strong> que conectan <strong>Teams, SharePoint, Planner, Loop y Outlook</strong>, aplicando buenas prácticas de <strong>PMI y Scrum</strong> para garantizar entregas incrementales y alineación con objetivos estratégicos. Enfoque en innovación tecnológica y automatización inteligente para proyectos internos.',
+          'stack_title': 'AI & Automation stack:',
+          'tech1': '<span class="tech-highlight">Desarrollo de Agentic AI (Charly.AI)</span> en <strong>Microsoft Copilot Studio</strong> con capacidades conversacionales y automatización avanzada.',
+          'tech2': '<span class="tech-highlight">Integración con Microsoft 365</span> mediante <strong>Power Automate</strong>, <strong>Graph API</strong>, y conectores nativos (Teams, SharePoint, Planner, Outlook, Loop).',
+          'tech3': '<span class="tech-highlight">Automatización de flujos de trabajo</span>: resúmenes de reuniones, tracking de tareas, gestión documental y notificaciones inteligentes.',
+          'tech4': '<span class="tech-highlight">Creación de MVPs low-code</span> para validar casos de uso y acelerar la adopción de soluciones AI en equipos de proyecto.',
+          'tech5': '<span class="tech-highlight">Aplicación de metodologías ágiles</span> (PMI/Scrum) para optimizar procesos de gestión de proyectos y mejorar la colaboración.',
+          'tech6': '<span class="tech-highlight">Colaboración cross-funcional</span> con PMO, IT y equipos técnicos para garantizar seguridad, escalabilidad y cumplimiento normativo.'
+        },
         'aiQualityAnalyst': {
           'role': 'AI Quality Analyst',
           'type': 'Outlier · Freelance',
@@ -67,6 +82,21 @@ document.addEventListener("DOMContentLoaded", function() {
       },
       'en': {
         'title': 'Work Experience',
+        'abbTrainee': {
+          'role': 'Trainee Full Stack AI',
+          'type': 'ABB · Trainee',
+          'location': 'Buenos Aires, Argentina · Remote',
+          'period': 'Oct 2025 - Present',
+          'description1': 'Development and deployment of <strong>Charly.AI</strong>, an intelligent agent designed to optimize project management through the automation of repetitive tasks and deep integration with the <strong>Microsoft 365</strong> ecosystem. Using <strong>Copilot Studio</strong>, <strong>Power Automate</strong>, and <strong>Graph API</strong>, the agent assists project teams in automatically creating meeting summaries, tracking tasks, managing knowledge, and sending contextual notifications, reducing operational time and enhancing collaborative efficiency.',
+          'description2': 'Direct collaboration with <strong>PMO</strong> and <strong>IT</strong> teams to design secure and scalable workflows that comply with corporate security policies. Implementation of <strong>low-code prototypes (MVPs)</strong> connecting <strong>Teams, SharePoint, Planner, Loop, and Outlook</strong>, applying <strong>PMI and Scrum</strong> best practices to ensure incremental deliveries and alignment with strategic objectives. Focus on technological innovation and intelligent automation for internal projects.',
+          'stack_title': 'AI & Automation stack:',
+          'tech1': '<span class="tech-highlight">Development of Agentic AI (Charly.AI)</span> in <strong>Microsoft Copilot Studio</strong> with conversational capabilities and advanced automation.',
+          'tech2': '<span class="tech-highlight">Microsoft 365 integration</span> using <strong>Power Automate</strong>, <strong>Graph API</strong>, and native connectors (Teams, SharePoint, Planner, Outlook, Loop).',
+          'tech3': '<span class="tech-highlight">Workflow automation</span>: meeting summaries, task tracking, document management, and intelligent notifications.',
+          'tech4': '<span class="tech-highlight">Creation of low-code MVPs</span> to validate use cases and accelerate AI solution adoption across project teams.',
+          'tech5': '<span class="tech-highlight">Application of agile methodologies</span> (PMI/Scrum) to optimize project management processes and improve collaboration.',
+          'tech6': '<span class="tech-highlight">Cross-functional collaboration</span> with PMO, IT, and technical teams to ensure security, scalability, and regulatory compliance.'
+        },
         'aiQualityAnalyst': {
           'role': 'AI Quality Analyst',
           'type': 'Outlier · Freelance',
@@ -116,16 +146,18 @@ document.addEventListener("DOMContentLoaded", function() {
     'about': {
       'es': {
         'title': 'Sobre Mí',
-        'bio1': 'Soy desarrollador de software y futuro <span class="highlight">Ingeniero en sistemas</span>, con enfoque en <span class="highlight">Python</span> y <span class="highlight">Go</span>. Me apasiona construir y mejorar software de apps innovadores y escalables, así como diseñar APIs RESTful. Soy competente en prácticas de seguridad web y metodologías ágiles.',
-        'bio2': 'Actualmente trabajo como AI Quality Analyst evaluando y optimizando modelos de inteligencia artificial, diseñando prompts y analizando capacidades agénticas de LLMs. Busco nutrirme de nuevas experiencias en el desarrollo de software. Una área en la que me gustaría progresar es en <span class="highlight">automatizaciones de procesos</span> estilo Power Apps, ya que tengo experiencia vendiendo software como el de GoHighLevel.',
-        'bio3': 'Uno de mis fuertes es la comunicación ya que soy una persona extrovertida, lo que me permite trabajar bien en equipo y conectar con diferentes personas, lo cual es muy importante a la hora de colaborar en proyectos complejos.',
+        'bio1': 'Soy estudiante de <span class="highlight">Ingeniería en Sistemas</span> y desarrollador de software especializado en combinar <span class="highlight">código y automatización</span> para crear soluciones inteligentes, escalables y eficientes.',
+        'bio2': 'Actualmente trabajo en <span class="highlight">ABB</span> como Full Stack AI Trainee, donde diseño e implemento sistemas de automatización basados en IA utilizando herramientas como <span class="highlight">Power Apps</span>, <span class="highlight">Power Automate</span> y <span class="highlight">Microsoft Copilot</span>.',
+        'bio3': 'Mi objetivo a largo plazo es especializarme en <span class="highlight">RPA (Robotic Process Automation)</span> y diseño de procesos inteligentes, creando soluciones que fusionen programación (Python, Go) con plataformas de automatización para generar un impacto empresarial medible.',
+        'bio4': 'La comunicación es una de mis principales fortalezas. Como persona extrovertida, prospero en entornos de equipo y conecto fácilmente con personas diversas, lo cual es crucial cuando colaboro en proyectos complejos.',
         'skillsTitle': 'Tecnologías'
       },
       'en': {
         'title': 'About Me',
-        'bio1': 'I am a software developer and future <span class="highlight">Systems Engineer</span>, focused on <span class="highlight">Python</span> and <span class="highlight">Go</span>. I am passionate about building and improving innovative and scalable app software, as well as designing RESTful APIs. I am proficient in web security practices and agile methodologies.',
-        'bio2': 'Currently working as an AI Quality Analyst evaluating and optimizing artificial intelligence models, designing prompts and analyzing agentic capabilities of LLMs. I seek to nourish myself with new experiences in software development. One area I would like to progress in is <span class="highlight">process automation</span> Power Apps style, as I have experience selling software like GoHighLevel.',
-        'bio3': 'One of my strengths is communication as I am an extroverted person, which allows me to work well in teams and connect with different people, which is very important when collaborating on complex projects.',
+        'bio1': 'I\'m a <span class="highlight">Systems Engineering</span> student and a software developer specializing in combining <span class="highlight">code and automation</span> to create smart, scalable, and efficient solutions.',
+        'bio2': 'I currently work at <span class="highlight">ABB</span> as a Full Stack AI Intern, where I design and implement AI-based automation systems using tools such as <span class="highlight">Power Apps</span>, <span class="highlight">Power Automate</span>, and <span class="highlight">Microsoft Copilot</span>.',
+        'bio3': 'My long-term goal is to specialize in <span class="highlight">RPA (Robotic Process Automation)</span> and intelligent process design, creating solutions that merge programming (Python, Go) with automation platforms to generate measurable business impact.',
+        'bio4': 'Communication is one of my key strengths. As an extrovert, I thrive in team environments and connect easily with diverse individuals, which is crucial when collaborating on complex projects.',
         'skillsTitle': 'Technologies'
       }
     },
@@ -405,10 +437,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     const aboutBios = document.querySelectorAll('.about-bio');
-    if (aboutBios.length >= 3) {
+    if (aboutBios.length >= 4) {
       aboutBios[0].innerHTML = translations.about[currentLang].bio1;
       aboutBios[1].innerHTML = translations.about[currentLang].bio2;
       aboutBios[2].innerHTML = translations.about[currentLang].bio3;
+      aboutBios[3].innerHTML = translations.about[currentLang].bio4;
     }
 
     if (elementExists('.skills-title')) {
@@ -420,6 +453,48 @@ document.addEventListener("DOMContentLoaded", function() {
     if (elementExists('#experience .section-title')) {
       document.querySelector('#experience .section-title').textContent = 
         translations.experience[currentLang].title;
+    }
+
+    // ABB Trainee experience
+    if (elementExists('#abb-trainee .experience-title')) {
+      document.querySelector('#abb-trainee .experience-title').textContent = 
+        translations.experience[currentLang].abbTrainee.role;
+    }
+
+    if (elementExists('#abb-trainee .experience-type')) {
+      document.querySelector('#abb-trainee .experience-type').textContent = 
+        translations.experience[currentLang].abbTrainee.type;
+    }
+
+    if (elementExists('#abb-trainee .experience-location')) {
+      document.querySelector('#abb-trainee .experience-location').textContent = 
+        translations.experience[currentLang].abbTrainee.location;
+    }
+
+    if (elementExists('#abb-trainee .date-pill')) {
+      document.querySelector('#abb-trainee .date-pill').textContent = 
+        translations.experience[currentLang].abbTrainee.period;
+    }
+
+    const abbDescriptions = document.querySelectorAll('#abb-trainee .experience-description p');
+    if (abbDescriptions.length >= 2) {
+      abbDescriptions[0].innerHTML = translations.experience[currentLang].abbTrainee.description1;
+      abbDescriptions[1].innerHTML = translations.experience[currentLang].abbTrainee.description2;
+    }
+
+    if (elementExists('#abb-trainee .tech-stack-title')) {
+      document.querySelector('#abb-trainee .tech-stack-title').textContent = 
+        translations.experience[currentLang].abbTrainee.stack_title;
+    }
+
+    const abbTechTexts = document.querySelectorAll('#abb-trainee .tech-text');
+    if (abbTechTexts.length >= 6) {
+      abbTechTexts[0].innerHTML = translations.experience[currentLang].abbTrainee.tech1;
+      abbTechTexts[1].innerHTML = translations.experience[currentLang].abbTrainee.tech2;
+      abbTechTexts[2].innerHTML = translations.experience[currentLang].abbTrainee.tech3;
+      abbTechTexts[3].innerHTML = translations.experience[currentLang].abbTrainee.tech4;
+      abbTechTexts[4].innerHTML = translations.experience[currentLang].abbTrainee.tech5;
+      abbTechTexts[5].innerHTML = translations.experience[currentLang].abbTrainee.tech6;
     }
 
     // AI Quality Analyst experience

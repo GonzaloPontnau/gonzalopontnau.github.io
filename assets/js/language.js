@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function() {
     'hero': {
       'es': {
         'greeting': 'Hola 👋🏼, soy',
-        'role': 'Python Backend Developer',
+        'role': 'Software Engineer',
         'btnExperience': 'Experiencia',
         'btnProjects': 'Proyectos',
         'btnEducation': 'Educación',
@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function() {
       },
       'en': {
         'greeting': 'Hello 👋🏼, I am',
-        'role': 'Python Backend Developer',
+        'role': 'Software Engineer',
         'btnExperience': 'Experience',
         'btnProjects': 'Projects',
         'btnEducation': 'Education',

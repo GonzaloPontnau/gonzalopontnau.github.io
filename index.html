@@ -24,9 +24,12 @@
 
   <!-- EmailJS -->
   <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  
+
   <!-- Partículas - Carga diferida para mejorar rendimiento -->
   <script defer src="./assets/js/particles.js"></script>
+
+  <!-- Mobile Menu - Menú lateral móvil -->
+  <script defer src="./assets/js/mobile-menu.js"></script>
 </head>
 
 <body>
@@ -76,7 +79,7 @@
     <div class="logo">
       <span class="gp-logo">GP</span>
     </div>
-    
+
     <!-- Dynamic Island siempre visible -->
     <div class="dynamic-island">
       <div class="nav-links">
@@ -88,6 +91,37 @@
       </div>
     </div>
   </nav>
+
+  <!-- Mobile Hamburger Button -->
+  <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+  </button>
+
+  <!-- Mobile Sidebar Menu -->
+  <div class="mobile-sidebar" id="mobile-sidebar">
+    <div class="sidebar-header">
+      <span class="sidebar-logo">GP</span>
+      <button class="sidebar-close-btn" id="sidebar-close-btn" aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#about" class="sidebar-link" data-es="Sobre mí" data-en="About">Sobre mí</a>
+      <a href="#experience" class="sidebar-link" data-es="Experiencia" data-en="Experience">Experiencia</a>
+      <a href="#projects" class="sidebar-link" data-es="Proyectos" data-en="Projects">Proyectos</a>
+      <a href="#education" class="sidebar-link" data-es="Educación" data-en="Education">Educación</a>
+      <a href="#contact" class="sidebar-link" data-es="Contacto" data-en="Contact">Contacto</a>
+    </nav>
+  </div>
+
+  <!-- Mobile Sidebar Overlay -->
+  <div class="mobile-sidebar-overlay" id="mobile-sidebar-overlay"></div>
 
   <!-- Contenedor principal con margen fijo -->
   <div class="main-container">
@@ -115,8 +149,7 @@
           <div class="about-image">
             <div class="profile-image-wrapper">
               <img id="profile-image" src="./assets/images/imagenPerfil.png" alt="Gonzalo Pontnau"
-                class="profile-image-large zoom-in" loading="eager" decoding="sync" 
-                onload="this.style.opacity='1'" />
+                class="profile-image-large zoom-in" loading="eager" decoding="sync" onload="this.style.opacity='1'" />
               <div class="mate-sticker" aria-hidden="true"></div>
             </div>
             <div class="about-social fade-in delay-2">
@@ -146,27 +179,41 @@
             </div>
           </div>
           <div class="about-text">
-            <p class="about-bio slide-in-right delay-1">
-              Soy estudiante de <span class="highlight">Ingeniería en Sistemas</span> y desarrollador de software 
-              especializado en combinar <span class="highlight">código y automatización</span> para crear soluciones 
-              inteligentes, escalables y eficientes.
+            <p class="about-bio slide-in-right delay-1"
+              data-es="Estudiante avanzado en Ingeniería en Sistemas (UTN.BA) y desarrollador orientado a IA y automatización. Convierto procesos lentos, repetitivos y propensos a errores en flujos automatizados con IA activados por lenguaje natural, diseñando agentes y chatbots con RAG y búsqueda vectorial que integran datos, APIs y entornos corporativos."
+              data-en="Advanced Systems Engineering student (UTN.BA) and developer focused on AI and automation. I transform slow, repetitive, and error-prone processes into automated AI-powered workflows triggered by natural language, designing agents and chatbots with RAG and vector search that integrate data, APIs, and enterprise environments.">
+              Estudiante avanzado en Ingeniería en Sistemas (UTN.BA) y desarrollador orientado a IA y automatización.
+              Convierto procesos lentos, repetitivos y propensos a errores en flujos automatizados con IA activados por
+              lenguaje natural, diseñando agentes y chatbots con <span class="highlight">RAG</span> y
+              <span class="highlight">búsqueda vectorial</span> que integran datos, APIs y entornos corporativos.
             </p>
-            <p class="about-bio slide-in-right delay-2">
-              Actualmente trabajo en <span class="highlight">ABB</span> como Full Stack AI Trainee, donde diseño e 
-              implemento soluciones de <span class="highlight">Agentic AI</span> con arquitectura de 
-              <span class="highlight">orquestador y módulos especializados</span>, utilizando 
-              <span class="highlight">FastAPI</span>, <span class="highlight">LangChain/LangGraph</span>, 
-              <span class="highlight">Azure AI Search</span>, <span class="highlight">Pinecone</span>, y 
-              <span class="highlight">Power Automate</span> para automatización M365.
+            <p class="about-bio slide-in-right delay-2"
+              data-es="Actualmente trabajo en ABB como Full-Stack AI Trainee, donde diseño e implemento soluciones de Agentic AI con arquitectura de orquestador y módulos especializados. Combino FastAPI, LangGraph/LangChain, Copilot Studio y Power Automate para integrar Microsoft 365 (Teams, SharePoint, OneDrive, Planner) y automatizar tareas reales del negocio."
+              data-en="Currently working at ABB as a Full-Stack AI Trainee, where I design and implement Agentic AI solutions with orchestrator architecture and specialized modules. I combine FastAPI, LangGraph/LangChain, Copilot Studio, and Power Automate to integrate Microsoft 365 (Teams, SharePoint, OneDrive, Planner) and automate real business tasks.">
+              Actualmente trabajo en <span class="highlight">ABB</span> como Full-Stack AI Trainee, donde diseño e
+              implemento soluciones de <span class="highlight">Agentic AI</span> con arquitectura de
+              <span class="highlight">orquestador y módulos especializados</span>. Combino
+              <span class="highlight">FastAPI</span>, <span class="highlight">LangGraph/LangChain</span>,
+              <span class="highlight">Copilot Studio</span> y <span class="highlight">Power Automate</span>
+              para integrar Microsoft 365 (Teams, SharePoint, OneDrive, Planner) y automatizar tareas reales del
+              negocio.
             </p>
-            <p class="about-bio slide-in-right delay-3">
-              Mi objetivo a largo plazo es especializarme en <span class="highlight">RPA (Robotic Process Automation)</span> 
-              y diseño de procesos inteligentes, creando soluciones que fusionen programación (Python, Go) con plataformas 
-              de automatización para generar un impacto empresarial medible.
+            <p class="about-bio slide-in-right delay-3"
+              data-es="Me interesa especialmente medir el impacto de la automatización: diseño soluciones pensando en KPIs claros (tiempo ahorrado, reducción de errores, adopción de usuarios) y en tableros de seguimiento con herramientas como Power BI para que el negocio pueda ver, en datos, cómo la IA mejora su operación."
+              data-en="I'm particularly interested in measuring automation impact: I design solutions with clear KPIs in mind (time saved, error reduction, user adoption) and tracking dashboards using tools like Power BI so the business can see, in data, how AI improves their operations.">
+              Me interesa especialmente <span class="highlight">medir el impacto de la automatización</span>:
+              diseño soluciones pensando en <span class="highlight">KPIs claros</span> (tiempo ahorrado, reducción de
+              errores,
+              adopción de usuarios) y en tableros de seguimiento con herramientas como <span class="highlight">Power
+                BI</span>
+              para que el negocio pueda ver, en datos, cómo la IA mejora su operación.
             </p>
-            <p class="about-bio slide-in-right delay-4">
-              La comunicación es una de mis principales fortalezas. Como persona extrovertida, prospero en entornos 
-              de equipo y conecto fácilmente con personas diversas, lo cual es crucial cuando colaboro en proyectos complejos.
+            <p class="about-bio slide-in-right delay-4"
+              data-es="La comunicación es una de mis principales fortalezas: soy extrovertido, trabajo muy bien en equipo y conecto fácilmente con personas diversas, algo clave cuando se construyen soluciones de IA que cruzan tecnología, negocio y usuarios finales."
+              data-en="Communication is one of my main strengths: I'm extroverted, work very well in teams, and connect easily with diverse people, which is key when building AI solutions that bridge technology, business, and end users.">
+              La comunicación es una de mis principales fortalezas: soy extrovertido, trabajo muy bien en equipo y
+              conecto fácilmente con personas diversas, algo clave cuando se construyen soluciones de IA que cruzan
+              tecnología, negocio y usuarios finales.
             </p>
             <div class="about-skills fade-in delay-5">
               <h3 class="skills-title">Tecnologías</h3>
@@ -229,24 +276,26 @@
           <div class="experience-content slide-in-right">
             <div class="experience-description">
               <p>
-                Impulso el diseño e implementación de soluciones de <strong>Agentic AI</strong> dentro del ecosistema 
-                Microsoft 365 para mejorar la eficiencia operativa y acelerar la innovación. Diseñé un 
-                <strong>orquestador</strong> que coordina módulos especializados (recuperación de conocimiento, 
-                experto en PM, monitoreo de tareas, feedback) expuestos vía <strong>FastAPI</strong> y desplegados 
+                Impulso el diseño e implementación de soluciones de <strong>Agentic AI</strong> dentro del ecosistema
+                Microsoft 365 para mejorar la eficiencia operativa y acelerar la innovación. Diseñé un
+                <strong>orquestador</strong> que coordina módulos especializados (recuperación de conocimiento,
+                experto en PM, monitoreo de tareas, feedback) expuestos vía <strong>FastAPI</strong> y desplegados
                 en <strong>Azure App Service</strong>.
               </p>
               <p>
-                Implementé <strong>RAG de punta a punta</strong> con integración de <strong>Azure AI Search</strong> y 
-                <strong>Pinecone</strong> usando <strong>LangGraph/LangChain</strong> para flujos de orquestación; 
-                embeddings + <strong>reranking</strong> para respuestas más precisas, con controles de calidad y fallbacks. 
-                Creé flujos con <strong>Power Automate</strong> que generan <strong>minutas</strong>, decisiones y acciones 
-                a partir de reuniones en Teams, con publicación en <strong>SharePoint/OneDrive/Teams</strong> y 
+                Implementé <strong>RAG de punta a punta</strong> con integración de <strong>Azure AI Search</strong> y
+                <strong>Pinecone</strong> usando <strong>LangGraph/LangChain</strong> para flujos de orquestación;
+                embeddings + <strong>reranking</strong> para respuestas más precisas, con controles de calidad y
+                fallbacks.
+                Creé flujos con <strong>Power Automate</strong> que generan <strong>minutas</strong>, decisiones y
+                acciones
+                a partir de reuniones en Teams, con publicación en <strong>SharePoint/OneDrive/Teams</strong> y
                 creación/actualización de tareas en <strong>Planner</strong> mediante <strong>Microsoft Graph</strong>.
               </p>
               <p>
-                Desarrollé <strong>frontend React + Vite + TypeScript + Tailwind</strong> integrado al backend, 
-                logrando un MVP funcional con datos reales anonimizados y adopción por equipos internos. Apliqué 
-                arquitectura DDD, APIs consistentes, telemetría y pruebas, con foco en seguridad, gobernanza y 
+                Desarrollé <strong>frontend React + Vite + TypeScript + Tailwind</strong> integrado al backend,
+                logrando un MVP funcional con datos reales anonimizados y adopción por equipos internos. Apliqué
+                arquitectura DDD, APIs consistentes, telemetría y pruebas, con foco en seguridad, gobernanza y
                 despliegues repetibles en Azure.
               </p>
             </div>
@@ -265,9 +314,9 @@
                     </svg>
                   </div>
                   <div class="tech-text">
-                    <span class="tech-highlight">Arquitectura de agentes:</span> 
-                    Diseño de <strong>orquestador</strong> que coordina módulos especializados 
-                    (recuperación de conocimiento, experto en PM, monitoreo de tareas, feedback) 
+                    <span class="tech-highlight">Arquitectura de agentes:</span>
+                    Diseño de <strong>orquestador</strong> que coordina módulos especializados
+                    (recuperación de conocimiento, experto en PM, monitoreo de tareas, feedback)
                     expuestos vía <strong>FastAPI</strong> y desplegados en <strong>Azure App Service</strong>.
                   </div>
                 </li>
@@ -275,15 +324,17 @@
                   <div class="tech-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                      <path
+                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                      </path>
                       <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
                       <line x1="12" y1="22.08" x2="12" y2="12"></line>
                     </svg>
                   </div>
                   <div class="tech-text">
-                    <span class="tech-highlight">RAG de punta a punta:</span> 
-                    Integración de <strong>Azure AI Search</strong> y <strong>Pinecone</strong> con 
-                    <strong>LangGraph/LangChain</strong> para flujos de orquestación; embeddings + 
+                    <span class="tech-highlight">RAG de punta a punta:</span>
+                    Integración de <strong>Azure AI Search</strong> y <strong>Pinecone</strong> con
+                    <strong>LangGraph/LangChain</strong> para flujos de orquestación; embeddings +
                     <strong>reranking</strong> para respuestas más precisas; controles de calidad y fallbacks.
                   </div>
                 </li>
@@ -295,10 +346,10 @@
                     </svg>
                   </div>
                   <div class="tech-text">
-                    <span class="tech-highlight">Automatización M365:</span> 
-                    Creación de flujos con <strong>Power Automate</strong> que generan 
-                    <strong>minutas</strong>, decisiones y acciones a partir de reuniones en Teams; 
-                    publicación en <strong>SharePoint/OneDrive/Teams</strong> y creación/actualización 
+                    <span class="tech-highlight">Automatización M365:</span>
+                    Creación de flujos con <strong>Power Automate</strong> que generan
+                    <strong>minutas</strong>, decisiones y acciones a partir de reuniones en Teams;
+                    publicación en <strong>SharePoint/OneDrive/Teams</strong> y creación/actualización
                     de tareas en <strong>Planner</strong> mediante <strong>Microsoft Graph</strong>.
                   </div>
                 </li>
@@ -311,9 +362,9 @@
                     </svg>
                   </div>
                   <div class="tech-text">
-                    <span class="tech-highlight">Entrega de producto:</span> 
-                    Desarrollo de <strong>frontend React + Vite + TypeScript + Tailwind</strong> 
-                    integrado al backend; MVP funcional con datos reales anonimizados y adopción 
+                    <span class="tech-highlight">Entrega de producto:</span>
+                    Desarrollo de <strong>frontend React + Vite + TypeScript + Tailwind</strong>
+                    integrado al backend; MVP funcional con datos reales anonimizados y adopción
                     por equipos internos.
                   </div>
                 </li>
@@ -326,8 +377,8 @@
                     </svg>
                   </div>
                   <div class="tech-text">
-                    <span class="tech-highlight">Buenas prácticas:</span> 
-                    Arquitectura DDD, APIs consistentes, telemetría y pruebas; foco en seguridad, 
+                    <span class="tech-highlight">Buenas prácticas:</span>
+                    Arquitectura DDD, APIs consistentes, telemetría y pruebas; foco en seguridad,
                     gobernanza y despliegues repetibles en Azure.
                   </div>
                 </li>
@@ -342,12 +393,12 @@
                     </svg>
                   </div>
                   <div class="tech-text">
-                    <span class="tech-highlight">Tecnologías completas:</span> 
-                    Python · FastAPI · <strong>LangGraph</strong> · <strong>LangChain</strong> · RAG · 
-                    <strong>Azure OpenAI</strong> · <strong>Google Gemini</strong> · 
-                    <strong>Azure AI Search</strong> · <strong>Pinecone</strong> · 
-                    <strong>Power Automate (M365)</strong> · <strong>Microsoft Graph</strong> · 
-                    SharePoint/OneDrive/Teams/Planner · React · TypeScript · Vite · Tailwind CSS · 
+                    <span class="tech-highlight">Tecnologías completas:</span>
+                    Python · FastAPI · <strong>LangGraph</strong> · <strong>LangChain</strong> · RAG ·
+                    <strong>Azure OpenAI</strong> · <strong>Google Gemini</strong> ·
+                    <strong>Azure AI Search</strong> · <strong>Pinecone</strong> ·
+                    <strong>Power Automate (M365)</strong> · <strong>Microsoft Graph</strong> ·
+                    SharePoint/OneDrive/Teams/Planner · React · TypeScript · Vite · Tailwind CSS ·
                     Azure App Service · REST APIs · CI/CD básico y observabilidad.
                   </div>
                 </li>
@@ -969,8 +1020,8 @@
                 </p>
               </div>
               <div class="education-external-link">
-                <a href="https://www.digitalhouse.com/ar/productos/programacion/fundamentos-de-go" target="_blank" rel="noopener noreferrer" class="edu-link"
-                  title="Ver curso en Digital House">
+                <a href="https://www.digitalhouse.com/ar/productos/programacion/fundamentos-de-go" target="_blank"
+                  rel="noopener noreferrer" class="edu-link" title="Ver curso en Digital House">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>

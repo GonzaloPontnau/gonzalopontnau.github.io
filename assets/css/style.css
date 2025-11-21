@@ -41,7 +41,9 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -166,6 +168,7 @@ body {
     0% {
         width: 0;
     }
+
     100% {
         width: 100%;
     }
@@ -175,9 +178,11 @@ body {
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
@@ -232,7 +237,7 @@ body {
     transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     opacity: 1;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 
+    box-shadow:
         0 4px 16px rgba(0, 0, 0, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.05);
     /* Mejor soporte para WebKit */
@@ -246,7 +251,7 @@ body {
 .navbar-scrolled .dynamic-island {
     background: rgba(20, 20, 25, 0.9);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 
+    box-shadow:
         0 8px 32px rgba(0, 0, 0, 0.4),
         0 4px 16px rgba(0, 0, 0, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -304,6 +309,7 @@ body {
     0% {
         background: rgba(20, 20, 25, 0.6);
     }
+
     100% {
         background: rgba(20, 20, 25, 0.9);
     }
@@ -314,20 +320,20 @@ body {
     .dynamic-island {
         padding: 0.6rem 1.2rem;
     }
-    
+
     .nav-links {
         gap: 1.2rem;
     }
-    
+
     .nav-links a {
         font-size: 0.8rem;
         padding: 0.4rem 0.7rem;
     }
-    
+
     .logo {
         left: 1.5rem;
     }
-    
+
     .gp-logo {
         font-size: 1.6rem;
     }
@@ -342,27 +348,27 @@ body {
         scrollbar-width: none;
         -ms-overflow-style: none;
     }
-    
+
     .dynamic-island::-webkit-scrollbar {
         display: none;
     }
-    
+
     .nav-links {
         gap: 0.6rem;
         flex-wrap: nowrap;
     }
-    
+
     .nav-links a {
         font-size: 0.7rem;
         padding: 0.25rem 0.5rem;
         white-space: nowrap;
     }
-    
+
     .logo {
         left: 0.8rem;
         top: 0.7rem;
     }
-    
+
     .gp-logo {
         font-size: 1.4rem;
     }
@@ -373,16 +379,16 @@ body {
         padding: 0.35rem 0.6rem;
         max-width: 75vw;
     }
-    
+
     .nav-links {
         gap: 0.4rem;
     }
-    
+
     .nav-links a {
         font-size: 0.65rem;
         padding: 0.2rem 0.4rem;
     }
-    
+
     .gp-logo {
         font-size: 1.3rem;
     }
@@ -478,6 +484,214 @@ body {
 .cv-options-menu a:hover {
     background-color: rgba(0, 255, 136, 0.1);
     color: #00ff88;
+}
+
+
+/*  MENÚ LATERAL MÓVIL  */
+/* Botón hamburguesa - oculto por defecto, visible solo en móviles */
+.mobile-menu-btn {
+    position: fixed;
+    top: 1rem;
+    right: 1.5rem;
+    z-index: 1002;
+    background: rgba(20, 20, 25, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    width: 48px;
+    height: 48px;
+    display: none;
+    /* Oculto por defecto */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu-btn:hover {
+    background: rgba(20, 20, 25, 1);
+    border-color: rgba(0, 255, 136, 0.3);
+}
+
+.mobile-menu-btn:active {
+    transform: scale(0.95);
+}
+
+.hamburger-line {
+    width: 24px;
+    height: 2px;
+    background: #e0e0e0;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-btn:hover .hamburger-line {
+    background: #00ff88;
+}
+
+/* Animación del botón hamburguesa cuando está activo */
+.mobile-menu-btn.active .hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Sidebar móvil */
+.mobile-sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: rgba(20, 20, 25, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 1001;
+    display: none;
+    /* Oculto por defecto */
+    flex-direction: column;
+    padding: 2rem 0;
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.5);
+    transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    overflow-y: auto;
+}
+
+.mobile-sidebar.active {
+    right: 0;
+}
+
+/* Header del sidebar */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-logo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    background: linear-gradient(45deg, #4f2fffd2, #037ff3, #03f0b4, #9df100);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 5s ease infinite;
+}
+
+.sidebar-close-btn {
+    background: transparent;
+    border: none;
+    color: #e0e0e0;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    width: 44px;
+    height: 44px;
+}
+
+.sidebar-close-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #00ff88;
+}
+
+.sidebar-close-btn:active {
+    transform: scale(0.95);
+}
+
+/* Navegación del sidebar */
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
+    gap: 0.5rem;
+}
+
+.sidebar-link {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+    position: relative;
+}
+
+.sidebar-link:hover,
+.sidebar-link:active {
+    color: #00ff88;
+    background: rgba(0, 255, 136, 0.1);
+    border-left-color: #00ff88;
+}
+
+.sidebar-link:active {
+    transform: translateX(4px);
+}
+
+/* Overlay oscuro */
+.mobile-sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    display: none;
+    /* Oculto por defecto */
+}
+
+.mobile-sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Mostrar solo en móviles */
+@media (max-width: 767px) {
+
+    .mobile-menu-btn,
+    .mobile-sidebar,
+    .mobile-sidebar-overlay {
+        display: flex;
+    }
+
+    /* Ocultar el Dynamic Island en móviles */
+    .dynamic-island {
+        display: none !important;
+    }
+
+    /* Ocultar el logo GP en móviles ya que estará en el sidebar */
+    .logo {
+        display: none;
+    }
+}
+
+/* Optimización para pantallas pequeñas */
+@media (max-width: 480px) {
+    .mobile-sidebar {
+        width: 100%;
+        right: -100%;
+    }
 }
 
 /* Estilos para el selector de idiomas del proyecto Notes App */
@@ -719,7 +933,7 @@ body {
         -2px 2px 0 #fff,
         2px -2px 0 #fff,
         -2px -2px 0 #fff;
-    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.3));
 }
 
 @media (max-width: 767px) {
@@ -1233,12 +1447,12 @@ body {
     .education-section {
         padding: 4rem 0;
     }
-    
+
     .education-card {
         padding: 1.2rem;
         margin-bottom: 1rem;
     }
-    
+
     .education-paragraph {
         padding: 1rem;
     }
@@ -1258,16 +1472,16 @@ body {
         padding-bottom: 1rem;
         margin-bottom: 1rem;
     }
-    
+
     .education-icon {
         width: 60px;
         height: 60px;
     }
-    
+
     .education-institution {
         font-size: 1.3rem;
     }
-    
+
     .education-degree {
         font-size: 0.85rem;
     }
@@ -1275,7 +1489,7 @@ body {
     .education-external-link {
         margin: 0.5rem 0 0 auto;
     }
-    
+
     .certification-overview p {
         font-size: 0.9rem;
     }
@@ -1318,11 +1532,11 @@ body {
     .certification-module span {
         font-size: 0.9rem;
     }
-    
+
     .cert-module-icon {
         font-size: 1rem;
     }
-    
+
     .certification-overview p,
     .certification-highlight p {
         font-size: 0.9rem;
@@ -1339,12 +1553,12 @@ body {
         justify-content: flex-start;
         gap: 0.6rem;
     }
-    
+
     .certification-skills .skill-tag {
         font-size: 0.75rem;
         padding: 0.5rem 1rem;
     }
-    
+
     .certification-highlight {
         padding: 1rem;
         margin-top: 0.8rem;
@@ -1718,12 +1932,12 @@ footer {
         margin-bottom: 1.5rem;
         letter-spacing: 1px;
     }
-    
+
     .button-container {
         gap: 0.8rem;
         margin-top: 1.5rem;
     }
-    
+
     .button-container .btn {
         padding: 0.8rem 1.3rem;
         font-size: 0.8rem;
@@ -1749,16 +1963,16 @@ footer {
 
     /* About section */
     .about-section {
-        padding: 4rem 0;
+        padding: 5rem 0;
     }
 
     .about-content {
         flex-direction: column;
         justify-content: center;
         text-align: center;
-        gap: 2rem;
+        gap: 2.5rem;
     }
-    
+
     .about-image {
         flex: 0 0 100%;
         width: 100%;
@@ -1766,34 +1980,50 @@ footer {
 
     .profile-image-large {
         width: 100%;
-        max-width: 300px;
+        max-width: 320px;
         height: auto;
     }
-    
+
     .about-text {
         flex: 0 0 100%;
         margin-top: 1rem;
     }
-    
+
     .about-bio {
-        font-size: 1rem;
+        font-size: 1.05rem;
         text-align: left;
-        margin-bottom: 1rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.8;
     }
 
     .skills-container {
         justify-content: center;
+        gap: 0.8rem;
     }
 
     .about-skills .skills-title {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         text-align: center;
-        margin: 1.5rem 0 1rem;
+        margin: 2rem 0 1.2rem;
     }
 
     .skill-tag {
-        font-size: 0.85rem;
-        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        padding: 0.55rem 1.1rem;
+        min-height: 36px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .about-social {
+        margin-top: 1.5rem;
+        gap: 1.2rem;
+    }
+
+    .about-social-icon {
+        width: 52px;
+        height: 52px;
     }
 
     /* Proyectos section */
@@ -1824,7 +2054,7 @@ footer {
         font-size: 2rem;
         margin-bottom: 2rem;
     }
-    
+
     .project-description {
         font-size: 0.95rem;
         line-height: 1.6;
@@ -1834,7 +2064,7 @@ footer {
         font-size: 0.75rem;
         padding: 0.35rem 0.7rem;
     }
-    
+
     .project-info {
         padding: 1rem;
     }
@@ -1867,7 +2097,7 @@ footer {
         max-width: 100%;
         margin: 0 auto 1.5rem;
     }
-    
+
     .contact-description {
         font-size: 1rem;
         line-height: 1.6;
@@ -1882,7 +2112,7 @@ footer {
     .email-link {
         font-size: 1rem;
     }
-    
+
     .contact-form {
         padding-right: 0;
     }
@@ -1904,11 +2134,11 @@ footer {
     .name-animation {
         font-size: 2.5rem;
     }
-    
+
     .greeting {
         font-size: 1.1rem;
     }
-    
+
     .title {
         font-size: 1.1rem;
     }
@@ -1945,21 +2175,21 @@ footer {
         padding: 2.5rem 1rem;
         margin: 3rem auto;
     }
-    
+
     .button-container .btn {
         padding: 0.7rem 1.1rem;
         font-size: 0.75rem;
         min-height: 44px;
     }
-    
+
     .main-container {
         padding: 0 15px;
     }
-    
+
     .linkedin-more-container {
         padding: 2rem 1rem;
     }
-    
+
     .linkedin-more-text {
         font-size: 1rem;
     }
@@ -2146,15 +2376,24 @@ footer {
     .language-switcher {
         right: 15px;
         bottom: 15px;
+        /* Asegurar que no se solape con el botón hamburguesa */
+        z-index: 999;
     }
-    
+
     .language-button {
-        width: 40px;
-        height: 40px;
+        width: 48px;
+        height: 48px;
+        /* Tamaño táctil óptimo */
     }
 
     .language-text {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    /* Hero section - mejorar padding superior para evitar solapamiento con hamburguesa */
+    .hero {
+        padding-top: 140px !important;
+        min-height: 85vh;
     }
 }
 
@@ -2163,14 +2402,20 @@ footer {
         right: 12px;
         bottom: 12px;
     }
-    
+
     .language-button {
-        width: 36px;
-        height: 36px;
+        width: 44px;
+        height: 44px;
     }
-    
+
     .language-text {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    /* Hero section - ajustes para pantallas muy pequeñas */
+    .hero {
+        padding-top: 130px !important;
+        min-height: 80vh;
     }
 }
 
@@ -2786,7 +3031,7 @@ footer {
     .experience-section {
         padding: 4rem 0;
     }
-    
+
     .experience-header {
         flex-direction: column;
         padding: 1.5rem 1.5rem;
@@ -2813,11 +3058,11 @@ footer {
         height: 60px;
         padding: 8px;
     }
-    
+
     .experience-description p {
         font-size: 0.95rem;
     }
-    
+
     .tech-text {
         font-size: 0.9rem;
     }
@@ -2827,19 +3072,19 @@ footer {
     .experience-section {
         padding: 3rem 0;
     }
-    
+
     .experience-showcase {
         margin: 2rem auto;
     }
-    
+
     .experience-header {
         padding: 1.2rem 1.2rem;
     }
-    
+
     .experience-content {
         padding: 1.2rem 1.2rem;
     }
-    
+
     .experience-title {
         font-size: 1.3rem;
     }
@@ -2854,12 +3099,12 @@ footer {
     .experience-divider {
         display: none;
     }
-    
+
     .date-pill {
         padding: 0.5rem 1rem;
         font-size: 0.8rem;
     }
-    
+
     .experience-description p {
         font-size: 0.9rem;
         margin-bottom: 1rem;
@@ -2869,12 +3114,12 @@ footer {
         padding: 1rem;
         margin-top: 1.2rem;
     }
-    
+
     .tech-stack-title {
         font-size: 1rem;
         margin-bottom: 1rem;
     }
-    
+
     .tech-stack-list {
         padding-left: 1rem;
     }
@@ -2888,7 +3133,7 @@ footer {
     .tech-icon {
         margin-bottom: 0.5rem;
     }
-    
+
     .tech-text {
         font-size: 0.85rem;
     }
@@ -2899,6 +3144,7 @@ footer {
         height: 50px;
         padding: 8px;
     }
+
     .title-with-logo {
         gap: 0.5rem;
     }

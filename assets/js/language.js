@@ -224,12 +224,12 @@ document.addEventListener("DOMContentLoaded", function() {
     'education': {
       'es': {
         'title': 'Educación y Certificaciones',
-        'more': 'Para información adicional sobre educación secundaria y otros certificados, visita mi perfil de Linkedin',
+        'more': 'Si quieres ver más información, casos reales y certificados adicionales, te dejo mi perfil de LinkedIn. Allí cuento cómo diseño automatizaciones con IA (RAG, chatbots, agentes) en ABB, el impacto en productividad y cómo combino Ingeniería con proyectos aplicados.',
         'skillsTitle': 'Tecnologías',
         'utn': {
           'institution': 'Universidad Tecnológica Nacional',
           'degree': 'Ingeniería de Sistemas',
-          'period': '| 2022 – Presente',
+          'period': '| 2022 - Presente',
           'programmingTitle': 'Formación en programación',
           'programmingContent': 'Dominio de C/C++, Go, Java, bases de datos MySQL y diseño de sistemas operativos. Destaco el desarrollo de un sistema operativo distribuido en Go, integrando módulos como Kernel, CPU, Memoria y File System. Implementé APIs HTTP para comunicación modular, configuración JSON y logs estructurados. Además, diseñé un analizador léxico, sintáctico y semántico en C usando Flex/Bison y expresiones regulares (regex), aplicado en la interpretación de pseudocódigo para programación.',
           'methodologiesTitle': 'Metodologías y enfoque',
@@ -262,7 +262,7 @@ document.addEventListener("DOMContentLoaded", function() {
       },
       'en': {
         'title': 'Education and Certifications',
-        'more': 'For additional information on secondary education and other certificates, visit my LinkedIn profile',
+        'more': 'If you want to see more details, real cases, and additional certificates, check my LinkedIn profile. There I share how I design AI automations (RAG, chatbots, agents) at ABB, the productivity impact, and how I blend my engineering background with applied projects.',
         'skillsTitle': 'Technologies',
         'utn': {
           'institution': 'National Technological University',
@@ -303,7 +303,7 @@ document.addEventListener("DOMContentLoaded", function() {
     'contact': {
       'es': {
         'title': 'Contactame',
-        'description': 'Si quieres contactarte conmigo puedes mandarme un mail llenando el formulario o traves de Linkedin en la barra de abajo a la izquierda. ¡Gracias! 🚀',
+        'description': 'Si quieres contactarte conmigo puedes mandarme un mail completando el formulario o conectar directamente desde el badge de LinkedIn. ¡Gracias!',
         'form': {
           'name': 'Nombre',
           'email': 'Correo electrónico',
@@ -314,7 +314,7 @@ document.addEventListener("DOMContentLoaded", function() {
       },
       'en': {
         'title': 'Contact Me',
-        'description': 'If you want to contact me, you can send me an email by filling out the form or through LinkedIn in the bar on the bottom left. Thanks! 🚀',
+        'description': 'If you want to contact me, you can send me an email by filling out the form or connect directly through the LinkedIn badge. Thanks!',
         'form': {
           'name': 'Name',
           'email': 'Email',

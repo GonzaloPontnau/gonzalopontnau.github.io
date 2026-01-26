@@ -2,13 +2,13 @@
  * Sistema de cambio de idioma
  * Implementado con datos estructurados y cache de traducciones para mejor rendimiento
  */
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const languageToggle = document.getElementById('language-toggle');
   const currentLanguage = document.getElementById('current-language');
-  
+
   // Verificar que existan los elementos necesarios
   if (!languageToggle || !currentLanguage) return;
-  
+
   // Idioma inicial
   let currentLang = 'es';
 
@@ -69,16 +69,16 @@ document.addEventListener("DOMContentLoaded", function() {
           'tech3': '<span class="tech-highlight">Quality Assurance</span>: Metodologías de QA aplicadas a IA, diferenciando entre errores lógicos y de seguimiento de instrucciones, con métricas exactas para alinear modelos con estándares de alta calidad.'
         },
         'backendDeveloper': {
-        'role': 'Back End Developer',
-        'type': 'Freelance',
-        'location': 'Buenos Aires, Argentina · Remoto',
+          'role': 'Back End Developer',
+          'type': 'Freelance',
+          'location': 'Buenos Aires, Argentina · Remoto',
           'period': 'Mar 2023 - Jul 2025',
           'description1': 'Desarrollo de aplicaciones web seguras y escalables, diseño de APIs RESTful y microservicios, implementación de bases de datos relacionales, integración de sistemas externos y desarrollo de soluciones de software.',
-        'description2': 'Recopilación de requerimientos funcionales y no funcionales; modelado UML de situaciones de uso, clases y secuencias; creación de esquemas de arquitectura (MVC/MVT) y determinación de flujos de datos.',
-        'stack_title': 'Backend stack:',
-        'tech1': '<span class="tech-highlight">APIs REST</span> utilizando Django REST y Flask: generación de accesos, organización de páginas, autenticación JWT y administración de permisos.',
-        'tech2': '<span class="tech-highlight">Microservicios</span> en FastAPI y Go: gestión de concurrencia a través de goroutines, transferencia de información HTTP/JSON, transformación de servicios en contenedores.',
-        'tech3': '<span class="tech-highlight">Bases de datos relacionales</span> (PostgreSQL, SQLite, MySQL): organización de esquemas, optimización de consultas, operaciones mediante ORM, uso de UUIDs y funciones ACID.'
+          'description2': 'Recopilación de requerimientos funcionales y no funcionales; modelado UML de situaciones de uso, clases y secuencias; creación de esquemas de arquitectura (MVC/MVT) y determinación de flujos de datos.',
+          'stack_title': 'Backend stack:',
+          'tech1': '<span class="tech-highlight">APIs REST</span> utilizando Django REST y Flask: generación de accesos, organización de páginas, autenticación JWT y administración de permisos.',
+          'tech2': '<span class="tech-highlight">Microservicios</span> en FastAPI y Go: gestión de concurrencia a través de goroutines, transferencia de información HTTP/JSON, transformación de servicios en contenedores.',
+          'tech3': '<span class="tech-highlight">Bases de datos relacionales</span> (PostgreSQL, SQLite, MySQL): organización de esquemas, optimización de consultas, operaciones mediante ORM, uso de UUIDs y funciones ACID.'
         }
       },
       'en': {
@@ -350,7 +350,7 @@ document.addEventListener("DOMContentLoaded", function() {
       languageToggle.setAttribute('aria-label', translations.languageBtn[currentLang].label);
     }
   }
-  
+
   // Inicializar estado del botón
   updateLanguageButtonState();
 
@@ -358,11 +358,11 @@ document.addEventListener("DOMContentLoaded", function() {
   function changeLanguage(lang) {
     // Medir rendimiento
     const startTime = performance.now();
-    
+
     // Actualizar idioma actual
     currentLang = lang;
     console.log(`Cambiando idioma a: ${lang}`);
-    
+
     try {
       // Actualizar el botón de idioma
       updateLanguageButtonState();
@@ -372,32 +372,32 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // === Navbar ===
       updateNavigation();
-      
+
       // === Hero section ===
       updateHeroSection();
-      
+
       // === About section ===
       updateAboutSection();
-      
+
       // === Experience section ===
       updateExperienceSection();
-      
+
       // === Projects section ===
       updateProjectsSection();
-      
+
       // === Education section ===
       updateEducationSection();
-      
+
       // === Contact section ===
       updateContactSection();
-      
+
       // === Footer ===
       updateFooter();
 
       // Medir tiempo total de cambio
       const endTime = performance.now();
       console.log(`Idioma cambiado a ${lang} en ${(endTime - startTime).toFixed(2)}ms`);
-      
+
     } catch (error) {
       console.error(`Error al cambiar el idioma a ${lang}:`, error);
     }
@@ -439,12 +439,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     const aboutBios = document.querySelectorAll('.about-bio');
-    if (aboutBios.length >= 4) {
-      aboutBios[0].innerHTML = translations.about[currentLang].bio1;
-      aboutBios[1].innerHTML = translations.about[currentLang].bio2;
-      aboutBios[2].innerHTML = translations.about[currentLang].bio3;
-      aboutBios[3].innerHTML = translations.about[currentLang].bio4;
-    }
+    if (aboutBios.length >= 1) aboutBios[0].innerHTML = translations.about[currentLang].bio1;
+    if (aboutBios.length >= 2) aboutBios[1].innerHTML = translations.about[currentLang].bio2;
+    if (aboutBios.length >= 3) aboutBios[2].innerHTML = translations.about[currentLang].bio3;
+    if (aboutBios.length >= 4) aboutBios[3].innerHTML = translations.about[currentLang].bio4;
 
     if (elementExists('.skills-title')) {
       document.querySelector('.skills-title').textContent = translations.about[currentLang].skillsTitle;
@@ -453,40 +451,38 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function updateExperienceSection() {
     if (elementExists('#experience .section-title')) {
-      document.querySelector('#experience .section-title').textContent = 
+      document.querySelector('#experience .section-title').textContent =
         translations.experience[currentLang].title;
     }
 
     // ABB Trainee experience
     if (elementExists('#abb-trainee .experience-title')) {
-      document.querySelector('#abb-trainee .experience-title').textContent = 
+      document.querySelector('#abb-trainee .experience-title').textContent =
         translations.experience[currentLang].abbTrainee.role;
     }
 
     if (elementExists('#abb-trainee .experience-type')) {
-      document.querySelector('#abb-trainee .experience-type').textContent = 
+      document.querySelector('#abb-trainee .experience-type').textContent =
         translations.experience[currentLang].abbTrainee.type;
     }
 
     if (elementExists('#abb-trainee .experience-location')) {
-      document.querySelector('#abb-trainee .experience-location').textContent = 
+      document.querySelector('#abb-trainee .experience-location').textContent =
         translations.experience[currentLang].abbTrainee.location;
     }
 
     if (elementExists('#abb-trainee .date-pill')) {
-      document.querySelector('#abb-trainee .date-pill').textContent = 
+      document.querySelector('#abb-trainee .date-pill').textContent =
         translations.experience[currentLang].abbTrainee.period;
     }
 
     const abbDescriptions = document.querySelectorAll('#abb-trainee .experience-description p');
-    if (abbDescriptions.length >= 3) {
-      abbDescriptions[0].innerHTML = translations.experience[currentLang].abbTrainee.description1;
-      abbDescriptions[1].innerHTML = translations.experience[currentLang].abbTrainee.description2;
-      abbDescriptions[2].innerHTML = translations.experience[currentLang].abbTrainee.description3;
-    }
+    if (abbDescriptions.length >= 1) abbDescriptions[0].innerHTML = translations.experience[currentLang].abbTrainee.description1;
+    if (abbDescriptions.length >= 2) abbDescriptions[1].innerHTML = translations.experience[currentLang].abbTrainee.description2;
+    if (abbDescriptions.length >= 3) abbDescriptions[2].innerHTML = translations.experience[currentLang].abbTrainee.description3;
 
     if (elementExists('#abb-trainee .tech-stack-title')) {
-      document.querySelector('#abb-trainee .tech-stack-title').textContent = 
+      document.querySelector('#abb-trainee .tech-stack-title').textContent =
         translations.experience[currentLang].abbTrainee.stack_title;
     }
 
@@ -502,22 +498,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // AI Quality Analyst experience
     if (elementExists('#ai-quality-analyst .experience-title')) {
-      document.querySelector('#ai-quality-analyst .experience-title').textContent = 
+      document.querySelector('#ai-quality-analyst .experience-title').textContent =
         translations.experience[currentLang].aiQualityAnalyst.role;
     }
 
     if (elementExists('#ai-quality-analyst .experience-type')) {
-      document.querySelector('#ai-quality-analyst .experience-type').textContent = 
+      document.querySelector('#ai-quality-analyst .experience-type').textContent =
         translations.experience[currentLang].aiQualityAnalyst.type;
     }
 
     if (elementExists('#ai-quality-analyst .experience-location')) {
-      document.querySelector('#ai-quality-analyst .experience-location').textContent = 
+      document.querySelector('#ai-quality-analyst .experience-location').textContent =
         translations.experience[currentLang].aiQualityAnalyst.location;
     }
 
     if (elementExists('#ai-quality-analyst .date-pill')) {
-      document.querySelector('#ai-quality-analyst .date-pill').textContent = 
+      document.querySelector('#ai-quality-analyst .date-pill').textContent =
         translations.experience[currentLang].aiQualityAnalyst.period;
     }
 
@@ -528,7 +524,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     if (elementExists('#ai-quality-analyst .tech-stack-title')) {
-      document.querySelector('#ai-quality-analyst .tech-stack-title').textContent = 
+      document.querySelector('#ai-quality-analyst .tech-stack-title').textContent =
         translations.experience[currentLang].aiQualityAnalyst.stack_title;
     }
 
@@ -541,22 +537,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Backend Developer experience
     if (elementExists('#backend-developer .experience-title')) {
-      document.querySelector('#backend-developer .experience-title').textContent = 
+      document.querySelector('#backend-developer .experience-title').textContent =
         translations.experience[currentLang].backendDeveloper.role;
     }
 
     if (elementExists('#backend-developer .experience-type')) {
-      document.querySelector('#backend-developer .experience-type').textContent = 
+      document.querySelector('#backend-developer .experience-type').textContent =
         translations.experience[currentLang].backendDeveloper.type;
     }
 
     if (elementExists('#backend-developer .experience-location')) {
-      document.querySelector('#backend-developer .experience-location').textContent = 
+      document.querySelector('#backend-developer .experience-location').textContent =
         translations.experience[currentLang].backendDeveloper.location;
     }
 
     if (elementExists('#backend-developer .date-pill')) {
-      document.querySelector('#backend-developer .date-pill').textContent = 
+      document.querySelector('#backend-developer .date-pill').textContent =
         translations.experience[currentLang].backendDeveloper.period;
     }
 
@@ -569,7 +565,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     if (elementExists('#backend-developer .tech-stack-title')) {
-      document.querySelector('#backend-developer .tech-stack-title').textContent = 
+      document.querySelector('#backend-developer .tech-stack-title').textContent =
         translations.experience[currentLang].backendDeveloper.stack_title;
     }
 
@@ -583,48 +579,48 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function updateProjectsSection() {
     if (elementExists('#projects .section-title')) {
-      document.querySelector('#projects .section-title').textContent = 
+      document.querySelector('#projects .section-title').textContent =
         translations.projects[currentLang].title;
     }
-    
+
     // Declaración de variables usadas en toda la función
     const projectTitles = document.querySelectorAll('.project-title');
     const projectDescriptions = document.querySelectorAll('.project-description');
-    
+
     // Money Manager
     if (elementExists('#money-manager .project-title')) {
-      document.querySelector('#money-manager .project-title').textContent = 
+      document.querySelector('#money-manager .project-title').textContent =
         translations.projects[currentLang].moneyManager.title;
     }
 
     if (elementExists('#money-manager .project-description')) {
-      document.querySelector('#money-manager .project-description').textContent = 
+      document.querySelector('#money-manager .project-description').textContent =
         translations.projects[currentLang].moneyManager.description;
     }
 
     // GymAI
     if (elementExists('#gym-ai .project-title')) {
-      document.querySelector('#gym-ai .project-title').textContent = 
+      document.querySelector('#gym-ai .project-title').textContent =
         translations.projects[currentLang].GymAI.title;
     }
 
     if (elementExists('#gym-ai .project-description')) {
-      document.querySelector('#gym-ai .project-description').textContent = 
+      document.querySelector('#gym-ai .project-description').textContent =
         translations.projects[currentLang].GymAI.description;
     }
 
     // Notes App
     projectTitles.forEach(title => {
-      if (title.textContent.includes('Notes App') || 
-          title.textContent.includes('Sistema de Gestión de Notas') ||
-          title.textContent.includes('Note Management System')) {
+      if (title.textContent.includes('Notes App') ||
+        title.textContent.includes('Sistema de Gestión de Notas') ||
+        title.textContent.includes('Note Management System')) {
         title.textContent = translations.projects[currentLang].notesApp.title;
       }
     });
 
     projectDescriptions.forEach(desc => {
-      if (desc.textContent.includes('gestión de notas') || 
-          desc.textContent.includes('note management')) {
+      if (desc.textContent.includes('gestión de notas') ||
+        desc.textContent.includes('note management')) {
         desc.textContent = translations.projects[currentLang].notesApp.description;
       }
     });
@@ -650,9 +646,9 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     projectDescriptions.forEach(desc => {
-      if (desc.textContent.includes('clean architecture') || 
-          desc.textContent.includes('SOLID') && desc.textContent.includes('REST') && 
-          desc.textContent.includes('Go')) {
+      if (desc.textContent.includes('clean architecture') ||
+        desc.textContent.includes('SOLID') && desc.textContent.includes('REST') &&
+        desc.textContent.includes('Go')) {
         desc.textContent = translations.projects[currentLang]['Go-web-api'].description;
       }
     });
@@ -665,23 +661,23 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     projectDescriptions.forEach(desc => {
-      if (desc.textContent.includes('Spring Boot') || 
-          desc.textContent.includes('MySQL') && desc.textContent.includes('Flyway')) {
+      if (desc.textContent.includes('Spring Boot') ||
+        desc.textContent.includes('MySQL') && desc.textContent.includes('Flyway')) {
         desc.textContent = translations.projects[currentLang]['API-RESTful-java'].description;
       }
     });
 
     // Detector de Líneas Blancas
     projectTitles.forEach(title => {
-      if (title.textContent.includes('Detector') || 
-          title.textContent.includes('White Line')) {
+      if (title.textContent.includes('Detector') ||
+        title.textContent.includes('White Line')) {
         title.textContent = translations.projects[currentLang]['python-lineas-blancas'].title;
       }
     });
 
     projectDescriptions.forEach(desc => {
-      if (desc.textContent.includes('visión artificial') || 
-          desc.textContent.includes('Machine vision')) {
+      if (desc.textContent.includes('visión artificial') ||
+        desc.textContent.includes('Machine vision')) {
         desc.textContent = translations.projects[currentLang]['python-lineas-blancas'].description;
       }
     });
@@ -689,27 +685,27 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function updateEducationSection() {
     if (elementExists('#education .section-title')) {
-      document.querySelector('#education .section-title').textContent = 
+      document.querySelector('#education .section-title').textContent =
         translations.education[currentLang].title;
     }
-    
+
     if (elementExists('.linkedin-more-text')) {
-      document.querySelector('.linkedin-more-text').textContent = 
+      document.querySelector('.linkedin-more-text').textContent =
         translations.education[currentLang].more;
     }
 
     // UTN
     if (elementExists('#utn-education .education-institution')) {
-      document.querySelector('#utn-education .education-institution').textContent = 
+      document.querySelector('#utn-education .education-institution').textContent =
         translations.education[currentLang].utn.institution;
     }
 
     if (elementExists('#utn-education .education-degree')) {
       const degreeElement = document.querySelector('#utn-education .education-degree');
-      degreeElement.innerHTML = 
-        translations.education[currentLang].utn.degree + 
-        ' <span class="education-date">' + 
-        translations.education[currentLang].utn.period + 
+      degreeElement.innerHTML =
+        translations.education[currentLang].utn.degree +
+        ' <span class="education-date">' +
+        translations.education[currentLang].utn.period +
         '</span>';
     }
 
@@ -718,24 +714,24 @@ document.addEventListener("DOMContentLoaded", function() {
     const paragraphContents = document.querySelectorAll('.paragraph-content');
 
     paragraphTitles.forEach(title => {
-      if (title.textContent.includes('programación') || 
-          title.textContent.includes('Programming')) {
+      if (title.textContent.includes('programación') ||
+        title.textContent.includes('Programming')) {
         title.textContent = translations.education[currentLang].utn.programmingTitle;
       }
-      if (title.textContent.includes('Metodologías') || 
-          title.textContent.includes('Methodologies')) {
+      if (title.textContent.includes('Metodologías') ||
+        title.textContent.includes('Methodologies')) {
         title.textContent = translations.education[currentLang].utn.methodologiesTitle;
       }
     });
 
     paragraphContents.forEach(content => {
-      if (content.textContent.includes('C/C++') && 
-          content.textContent.includes('Go')) {
+      if (content.textContent.includes('C/C++') &&
+        content.textContent.includes('Go')) {
         content.textContent = translations.education[currentLang].utn.programmingContent;
       }
-      if (content.textContent.includes('requisitos') || 
-          content.textContent.includes('UML') || 
-          content.textContent.includes('requirements')) {
+      if (content.textContent.includes('requisitos') ||
+        content.textContent.includes('UML') ||
+        content.textContent.includes('requirements')) {
         content.textContent = translations.education[currentLang].utn.methodologiesContent;
       }
     });
@@ -746,35 +742,35 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function updateEducationCards() {
     const educationInstitutions = document.querySelectorAll('.education-institution');
-    
+
     educationInstitutions.forEach(institution => {
       // Django
       if (institution.textContent.includes('Django')) {
         institution.textContent = translations.education[currentLang].django.institution;
-        
+
         const parentCard = institution.closest('.education-card');
         if (parentCard) {
           // Titulo
           const degree = parentCard.querySelector('.education-degree');
           if (degree) {
-            degree.innerHTML = 
-              translations.education[currentLang].django.degree + 
-              ' <span class="education-date">' + 
-              translations.education[currentLang].django.period + 
+            degree.innerHTML =
+              translations.education[currentLang].django.degree +
+              ' <span class="education-date">' +
+              translations.education[currentLang].django.period +
               '</span>';
           }
-          
+
           // Descripciones (overview y summary)
           const certOverview = parentCard.querySelector('.certification-overview p');
           if (certOverview) {
             certOverview.textContent = translations.education[currentLang].django.description;
           }
-          
+
           const certHighlight = parentCard.querySelector('.certification-highlight p');
           if (certHighlight) {
             certHighlight.textContent = translations.education[currentLang].django.summary;
           }
-          
+
           // Módulos específicos
           const moduleSpans = parentCard.querySelectorAll('.certification-module span:not(.cert-module-icon)');
           if (moduleSpans.length > 0) {
@@ -787,41 +783,41 @@ document.addEventListener("DOMContentLoaded", function() {
           }
         }
       }
-      
+
       // Go
-      if (institution.textContent.includes('GO') || 
-          institution.textContent.includes('Fundamentos de GO')) {
+      if (institution.textContent.includes('GO') ||
+        institution.textContent.includes('Fundamentos de GO')) {
         institution.textContent = translations.education[currentLang].go.institution;
-        
+
         const parentCard = institution.closest('.education-card');
         if (parentCard) {
           // Titulo
           const degree = parentCard.querySelector('.education-degree');
           if (degree) {
-            degree.innerHTML = 
-              translations.education[currentLang].go.degree + 
-              ' <span class="education-date">' + 
-              translations.education[currentLang].go.period + 
+            degree.innerHTML =
+              translations.education[currentLang].go.degree +
+              ' <span class="education-date">' +
+              translations.education[currentLang].go.period +
               '</span>';
           }
-          
+
           // Buscar párrafos principales - por longitud del texto
           const certOverview = parentCard.querySelector('.certification-overview p');
           if (certOverview) {
             certOverview.textContent = translations.education[currentLang].go.description;
           }
-          
+
           const certHighlight = parentCard.querySelector('.certification-highlight p');
           if (certHighlight) {
             certHighlight.textContent = translations.education[currentLang].go.summary;
           }
-          
+
           // Título de habilidades
           const skillsTitle = parentCard.querySelector('.certification-skills-title');
           if (skillsTitle) {
             skillsTitle.textContent = translations.education[currentLang].go.skillsTitle;
           }
-          
+
           // Etiquetas de habilidades - Mantener como están ya que son las mismas en ambos idiomas
         }
       }
@@ -830,32 +826,32 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function updateContactSection() {
     if (elementExists('#contact .contact-title')) {
-      document.querySelector('#contact .contact-title').textContent = 
+      document.querySelector('#contact .contact-title').textContent =
         translations.contact[currentLang].title + '.';
     }
-    
+
     if (elementExists('.contact-description')) {
-      document.querySelector('.contact-description').textContent = 
+      document.querySelector('.contact-description').textContent =
         translations.contact[currentLang].description;
     }
-    
+
     // Formulario
     if (elementExists('#name')) {
       document.querySelector('#name').placeholder = translations.contact[currentLang].form.name;
     }
-    
+
     if (elementExists('#email')) {
       document.querySelector('#email').placeholder = translations.contact[currentLang].form.email;
     }
-    
+
     if (elementExists('#subject')) {
       document.querySelector('#subject').placeholder = translations.contact[currentLang].form.subject;
     }
-    
+
     if (elementExists('#message')) {
       document.querySelector('#message').placeholder = translations.contact[currentLang].form.message;
     }
-    
+
     if (elementExists('.submit-btn')) {
       document.querySelector('.submit-btn').textContent = translations.contact[currentLang].form.send;
     }
@@ -868,49 +864,49 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   // Event listener para el botón de cambio de idioma
-  languageToggle.addEventListener('click', function() {
+  languageToggle.addEventListener('click', function () {
     const newLang = currentLang === 'es' ? 'en' : 'es';
     changeLanguage(newLang);
   });
 
   // Event listener para teclas de accesibilidad
-  languageToggle.addEventListener('keydown', function(event) {
+  languageToggle.addEventListener('keydown', function (event) {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
       const newLang = currentLang === 'es' ? 'en' : 'es';
       changeLanguage(newLang);
     }
   });
-  
+
   // Detectar idioma preferido por el usuario si no hay una preferencia guardada
   function detectPreferredLanguage() {
     const savedLang = localStorage.getItem('preferredLanguage');
-    
+
     if (savedLang) {
       // Si hay un idioma guardado, úsalo
       return savedLang;
     } else {
       // Detectar idioma del navegador 
       const browserLang = navigator.language || navigator.userLanguage;
-      
+
       // Simplificar a solo 'en' o 'es'
       return browserLang.startsWith('es') ? 'es' : 'en';
     }
   }
-  
+
   // Almacenar la preferencia de idioma
   function saveLanguagePreference(lang) {
     localStorage.setItem('preferredLanguage', lang);
   }
-  
+
   // Configurar idioma inicial basado en preferencias
   const initialLang = detectPreferredLanguage();
   if (initialLang !== currentLang) {
     changeLanguage(initialLang);
   }
-  
+
   // Guardar preferencia cuando el idioma cambia
-  languageToggle.addEventListener('click', function() {
+  languageToggle.addEventListener('click', function () {
     const newLang = currentLang === 'es' ? 'en' : 'es';
     saveLanguagePreference(newLang);
   });

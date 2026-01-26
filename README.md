@@ -16,4 +16,4 @@ Un portafolio web personal con diseño responsive para mostrar mis proyectos, ha
 - **Frontend**: HTML5, CSS3, JavaScript
 - **Formulario de Contacto**: EmailJS
 - **Animaciones**: CSS Animations, Canvas API para partículas
-- **Despliegue**: Vercel/Render/GitHub Pages
+- **Despliegue**: Vercel

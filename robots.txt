@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://gonzalopontnau.github.io/sitemap.xml

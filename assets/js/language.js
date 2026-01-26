@@ -47,12 +47,10 @@ document.addEventListener("DOMContentLoaded", function () {
           'period': 'Oct 2025 - Presente',
           'description1': 'Lideré la creación de <strong>agentes inteligentes internos</strong> con arquitectura de <strong>orquestación multi-agente</strong> para eficientizar operaciones en diferentes áreas de negocio. Diseñé e implementé un ecosistema de <strong>Agentic AI</strong> con <strong>sub-agentes verticales</strong> desplegados en <strong>Azure</strong>, entregando MVPs en fases iterativas con adopción real por equipos corporativos.',
           'stack_title': 'Stack & Skills:',
-          'tech1': '<span class="tech-highlight">Arquitectura de agentes:</span> Diseño de <strong>orquestador</strong> que coordina módulos especializados (recuperación de conocimiento, experto en PM, monitoreo de tareas, feedback) expuestos vía <strong>FastAPI</strong> y desplegados en <strong>Azure App Service</strong>.',
-          'tech2': '<span class="tech-highlight">RAG de punta a punta:</span> Integración de <strong>Azure AI Search</strong> y <strong>Pinecone</strong> con <strong>LangGraph/LangChain</strong> para flujos de orquestación; embeddings + <strong>reranking</strong> para respuestas más precisas; controles de calidad y fallbacks.',
-          'tech3': '<span class="tech-highlight">Automatización M365:</span> Creación de flujos con <strong>Power Automate</strong> que generan <strong>minutas</strong>, decisiones y acciones a partir de reuniones en Teams; publicación en <strong>SharePoint/OneDrive/Teams</strong> y creación/actualización de tareas en <strong>Planner</strong> mediante <strong>Microsoft Graph</strong>.',
-          'tech4': '<span class="tech-highlight">Entrega de producto:</span> Desarrollo de <strong>frontend React + Vite + TypeScript + Tailwind</strong> integrado al backend; MVP funcional con datos reales anonimizados y adopción por equipos internos.',
-          'tech5': '<span class="tech-highlight">Buenas prácticas:</span> Arquitectura DDD, APIs consistentes, telemetría y pruebas; foco en seguridad, gobernanza y despliegues repetibles en Azure.',
-          'tech6': '<span class="tech-highlight">Tecnologías completas:</span> Python · FastAPI · <strong>LangGraph</strong> · <strong>LangChain</strong> · RAG · <strong>Azure OpenAI</strong> · <strong>Google Gemini</strong> · <strong>Azure AI Search</strong> · <strong>Pinecone</strong> · <strong>Power Automate (M365)</strong> · <strong>Microsoft Graph</strong> · SharePoint/OneDrive/Teams/Planner · React · TypeScript · Vite · Tailwind CSS · Azure App Service · REST APIs · CI/CD básico y observabilidad.'
+          'tech1': '<span class="tech-highlight">Agentic Architecture & Orchestration:</span> Diseño de <strong>orquestador multi-agente</strong> con <strong>LangGraph</strong> que coordina sub-agentes especializados (knowledge retrieval, task monitoring, feedback loop) expuestos vía <strong>FastAPI</strong> y desplegados en <strong>Azure App Service</strong>. Implementación de <strong>state management</strong>, <strong>conditional routing</strong> y <strong>tool calling</strong> para flujos conversacionales complejos.',
+          'tech2': '<span class="tech-highlight">RAG Pipelines & Vector Search:</span> Implementación de pipelines <strong>RAG</strong> end-to-end con <strong>Azure AI Search</strong> y <strong>Pinecone</strong> como vector stores. Estrategias de <strong>chunking</strong> (recursive, semantic), generación de <strong>embeddings</strong> con Azure OpenAI, <strong>hybrid search</strong> (keyword + semantic), <strong>reranking</strong> con cross-encoders y <strong>query expansion</strong>. Controles de calidad con <strong>hallucination detection</strong> y fallbacks.',
+          'tech3': '<span class="tech-highlight">Prompt Engineering & LLM Optimization:</span> Diseño de <strong>system prompts</strong> y técnicas avanzadas: <strong>few-shot learning</strong>, <strong>chain-of-thought</strong>, <strong>structured outputs</strong> con JSON schemas. Optimización de <strong>token usage</strong>, manejo de <strong>context windows</strong> y estrategias de <strong>prompt caching</strong>. Observabilidad con <strong>LangSmith</strong> para tracing y debugging de flujos LLM.',
+          'tech4': '<span class="tech-highlight">M365 Automation & Integration:</span> Creación de flujos con <strong>Power Automate</strong> que generan <strong>minutas</strong>, decisiones y acciones a partir de reuniones en Teams; publicación en <strong>SharePoint/OneDrive/Teams</strong> y creación/actualización de tareas en <strong>Planner</strong> mediante <strong>Microsoft Graph API</strong>.'
         },
         'aiQualityAnalyst': {
           'role': 'AI Quality Analyst',
@@ -88,12 +86,10 @@ document.addEventListener("DOMContentLoaded", function () {
           'period': 'Oct 2025 - Present',
           'description1': 'I led the creation of <strong>internal intelligent agents</strong> with <strong>multi-agent orchestration</strong> architecture to streamline operations across different business areas. I designed and implemented an <strong>Agentic AI</strong> ecosystem with <strong>vertical sub-agents</strong> deployed on <strong>Azure</strong>, delivering MVPs in iterative phases with real adoption by corporate teams.',
           'stack_title': 'Stack & Skills:',
-          'tech1': '<span class="tech-highlight">Agent Architecture:</span> Design of <strong>orchestrator</strong> that coordinates specialized modules (knowledge retrieval, PM expert, task monitoring, feedback) exposed via <strong>FastAPI</strong> and deployed on <strong>Azure App Service</strong>.',
-          'tech2': '<span class="tech-highlight">End-to-end RAG:</span> Integration of <strong>Azure AI Search</strong> and <strong>Pinecone</strong> with <strong>LangGraph/LangChain</strong> for orchestration flows; embeddings + <strong>reranking</strong> for more accurate responses; quality controls and fallbacks.',
-          'tech3': '<span class="tech-highlight">M365 Automation:</span> Creation of flows with <strong>Power Automate</strong> that generate <strong>meeting minutes</strong>, decisions, and actions from Teams meetings; publication to <strong>SharePoint/OneDrive/Teams</strong> and task creation/updates in <strong>Planner</strong> via <strong>Microsoft Graph</strong>.',
-          'tech4': '<span class="tech-highlight">Product Delivery:</span> Development of <strong>React + Vite + TypeScript + Tailwind frontend</strong> integrated with backend; functional MVP with anonymized real data and adoption by internal teams.',
-          'tech5': '<span class="tech-highlight">Best Practices:</span> DDD architecture, consistent APIs, telemetry and testing; focus on security, governance, and repeatable deployments on Azure.',
-          'tech6': '<span class="tech-highlight">Complete Technologies:</span> Python · FastAPI · <strong>LangGraph</strong> · <strong>LangChain</strong> · RAG · <strong>Azure OpenAI</strong> · <strong>Google Gemini</strong> · <strong>Azure AI Search</strong> · <strong>Pinecone</strong> · <strong>Power Automate (M365)</strong> · <strong>Microsoft Graph</strong> · SharePoint/OneDrive/Teams/Planner · React · TypeScript · Vite · Tailwind CSS · Azure App Service · REST APIs · Basic CI/CD and observability.'
+          'tech1': '<span class="tech-highlight">Agentic Architecture & Orchestration:</span> Design of <strong>multi-agent orchestrator</strong> with <strong>LangGraph</strong> that coordinates specialized sub-agents (knowledge retrieval, task monitoring, feedback loop) exposed via <strong>FastAPI</strong> and deployed on <strong>Azure App Service</strong>. Implementation of <strong>state management</strong>, <strong>conditional routing</strong> and <strong>tool calling</strong> for complex conversational flows.',
+          'tech2': '<span class="tech-highlight">RAG Pipelines & Vector Search:</span> Implementation of end-to-end <strong>RAG</strong> pipelines with <strong>Azure AI Search</strong> and <strong>Pinecone</strong> as vector stores. <strong>Chunking</strong> strategies (recursive, semantic), <strong>embeddings</strong> generation with Azure OpenAI, <strong>hybrid search</strong> (keyword + semantic), <strong>reranking</strong> with cross-encoders and <strong>query expansion</strong>. Quality controls with <strong>hallucination detection</strong> and fallbacks.',
+          'tech3': '<span class="tech-highlight">Prompt Engineering & LLM Optimization:</span> Design of <strong>system prompts</strong> and advanced techniques: <strong>few-shot learning</strong>, <strong>chain-of-thought</strong>, <strong>structured outputs</strong> with JSON schemas. <strong>Token usage</strong> optimization, <strong>context windows</strong> management and <strong>prompt caching</strong> strategies. Observability with <strong>LangSmith</strong> for LLM flow tracing and debugging.',
+          'tech4': '<span class="tech-highlight">M365 Automation & Integration:</span> Creation of flows with <strong>Power Automate</strong> that generate <strong>meeting minutes</strong>, decisions, and actions from Teams meetings; publication to <strong>SharePoint/OneDrive/Teams</strong> and task creation/updates in <strong>Planner</strong> via <strong>Microsoft Graph API</strong>.'
         },
         'aiQualityAnalyst': {
           'role': 'AI Quality Analyst',
@@ -125,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
     'hero': {
       'es': {
         'greeting': 'Hola 👋🏼, soy',
-        'role': 'Software Engineer',
+        'role': 'AI Engineer | Agentic Systems',
         'btnExperience': 'Experiencia',
         'btnProjects': 'Proyectos',
         'btnEducation': 'Educación',
@@ -133,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       'en': {
         'greeting': 'Hello 👋🏼, I am',
-        'role': 'Software Engineer',
+        'role': 'AI Engineer | Agentic Systems',
         'btnExperience': 'Experience',
         'btnProjects': 'Projects',
         'btnEducation': 'Education',

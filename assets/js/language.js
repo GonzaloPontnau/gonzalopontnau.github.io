@@ -41,13 +41,11 @@ document.addEventListener("DOMContentLoaded", function () {
       'es': {
         'title': 'Experiencia Laboral',
         'abbTrainee': {
-          'role': 'Trainee Full Stack AI',
+          'role': 'AI Engineer Trainee',
           'type': 'ABB · Trainee',
           'location': 'Buenos Aires, Argentina · Remoto',
           'period': 'Oct 2025 - Presente',
-          'description1': 'Impulso el diseño e implementación de soluciones de <strong>Agentic AI</strong> dentro del ecosistema Microsoft 365 para mejorar la eficiencia operativa y acelerar la innovación. Diseñé un <strong>orquestador</strong> que coordina módulos especializados (recuperación de conocimiento, experto en PM, monitoreo de tareas, feedback) expuestos vía <strong>FastAPI</strong> y desplegados en <strong>Azure App Service</strong>.',
-          'description2': 'Implementé <strong>RAG de punta a punta</strong> con integración de <strong>Azure AI Search</strong> y <strong>Pinecone</strong> usando <strong>LangGraph/LangChain</strong> para flujos de orquestación; embeddings + <strong>reranking</strong> para respuestas más precisas, con controles de calidad y fallbacks. Creé flujos con <strong>Power Automate</strong> que generan <strong>minutas</strong>, decisiones y acciones a partir de reuniones en Teams, con publicación en <strong>SharePoint/OneDrive/Teams</strong> y creación/actualización de tareas en <strong>Planner</strong> mediante <strong>Microsoft Graph</strong>.',
-          'description3': 'Desarrollé <strong>frontend React + Vite + TypeScript + Tailwind</strong> integrado al backend, logrando un MVP funcional con datos reales anonimizados y adopción por equipos internos. Apliqué arquitectura DDD, APIs consistentes, telemetría y pruebas, con foco en seguridad, gobernanza y despliegues repetibles en Azure.',
+          'description1': 'Lideré la creación de <strong>agentes inteligentes internos</strong> con arquitectura de <strong>orquestación multi-agente</strong> para eficientizar operaciones en diferentes áreas de negocio. Diseñé e implementé un ecosistema de <strong>Agentic AI</strong> con <strong>sub-agentes verticales</strong> desplegados en <strong>Azure</strong>, entregando MVPs en fases iterativas con adopción real por equipos corporativos.',
           'stack_title': 'Stack & Skills:',
           'tech1': '<span class="tech-highlight">Arquitectura de agentes:</span> Diseño de <strong>orquestador</strong> que coordina módulos especializados (recuperación de conocimiento, experto en PM, monitoreo de tareas, feedback) expuestos vía <strong>FastAPI</strong> y desplegados en <strong>Azure App Service</strong>.',
           'tech2': '<span class="tech-highlight">RAG de punta a punta:</span> Integración de <strong>Azure AI Search</strong> y <strong>Pinecone</strong> con <strong>LangGraph/LangChain</strong> para flujos de orquestación; embeddings + <strong>reranking</strong> para respuestas más precisas; controles de calidad y fallbacks.',
@@ -84,13 +82,11 @@ document.addEventListener("DOMContentLoaded", function () {
       'en': {
         'title': 'Work Experience',
         'abbTrainee': {
-          'role': 'Trainee Full Stack AI',
+          'role': 'AI Engineer Trainee',
           'type': 'ABB · Trainee',
           'location': 'Buenos Aires, Argentina · Remote',
           'period': 'Oct 2025 - Present',
-          'description1': 'I drive the design and implementation of <strong>Agentic AI</strong> solutions within the Microsoft 365 ecosystem to improve operational efficiency and accelerate innovation. I designed an <strong>orchestrator</strong> that coordinates specialized modules (knowledge retrieval, PM expert, task monitoring, feedback) exposed via <strong>FastAPI</strong> and deployed on <strong>Azure App Service</strong>.',
-          'description2': 'I implemented <strong>end-to-end RAG</strong> with integration of <strong>Azure AI Search</strong> and <strong>Pinecone</strong> using <strong>LangGraph/LangChain</strong> for orchestration flows; embeddings + <strong>reranking</strong> for more accurate responses, with quality controls and fallbacks. I created flows with <strong>Power Automate</strong> that generate <strong>meeting minutes</strong>, decisions, and actions from Teams meetings, with publication to <strong>SharePoint/OneDrive/Teams</strong> and task creation/updates in <strong>Planner</strong> via <strong>Microsoft Graph</strong>.',
-          'description3': 'I developed a <strong>React + Vite + TypeScript + Tailwind frontend</strong> integrated with the backend, achieving a functional MVP with anonymized real data and adoption by internal teams. I applied DDD architecture, consistent APIs, telemetry and testing, with focus on security, governance, and repeatable deployments on Azure.',
+          'description1': 'I led the creation of <strong>internal intelligent agents</strong> with <strong>multi-agent orchestration</strong> architecture to streamline operations across different business areas. I designed and implemented an <strong>Agentic AI</strong> ecosystem with <strong>vertical sub-agents</strong> deployed on <strong>Azure</strong>, delivering MVPs in iterative phases with real adoption by corporate teams.',
           'stack_title': 'Stack & Skills:',
           'tech1': '<span class="tech-highlight">Agent Architecture:</span> Design of <strong>orchestrator</strong> that coordinates specialized modules (knowledge retrieval, PM expert, task monitoring, feedback) exposed via <strong>FastAPI</strong> and deployed on <strong>Azure App Service</strong>.',
           'tech2': '<span class="tech-highlight">End-to-end RAG:</span> Integration of <strong>Azure AI Search</strong> and <strong>Pinecone</strong> with <strong>LangGraph/LangChain</strong> for orchestration flows; embeddings + <strong>reranking</strong> for more accurate responses; quality controls and fallbacks.',
@@ -148,18 +144,16 @@ document.addEventListener("DOMContentLoaded", function () {
     'about': {
       'es': {
         'title': 'Sobre Mí',
-        'bio1': 'Soy estudiante de <span class="highlight">Ingeniería en Sistemas</span> y desarrollador de software especializado en combinar <span class="highlight">código y automatización</span> para crear soluciones inteligentes, escalables y eficientes.',
-        'bio2': 'Actualmente trabajo en <span class="highlight">ABB</span> como Full Stack AI Trainee, donde diseño e implemento soluciones de <span class="highlight">Agentic AI</span> con arquitectura de <span class="highlight">orquestador y módulos especializados</span>, utilizando <span class="highlight">FastAPI</span>, <span class="highlight">LangChain/LangGraph</span>, <span class="highlight">Azure AI Search</span>, <span class="highlight">Pinecone</span>, y <span class="highlight">Power Automate</span> para automatización M365.',
-        'bio3': 'Mi objetivo a largo plazo es especializarme en <span class="highlight">RPA (Robotic Process Automation)</span> y diseño de procesos inteligentes, creando soluciones que fusionen programación (Python, Go) con plataformas de automatización para generar un impacto empresarial medible.',
-        'bio4': 'La comunicación es una de mis principales fortalezas. Como persona extrovertida, prospero en entornos de equipo y conecto fácilmente con personas diversas, lo cual es crucial cuando colaboro en proyectos complejos.',
+        'bio1': 'Estudiante avanzado en Ingeniería en Sistemas (UTN.BA) especializado en <span class="highlight">AI Engineering</span>. Lidero la creación de <span class="highlight">agentes inteligentes</span> y workflows automatizados que transforman operaciones manuales en procesos eficientes, ahorrando tiempo y reduciendo errores en el día a día de equipos corporativos.',
+        'bio2': 'Me apasiona <span class="highlight">hacer visible el impacto de la IA</span>: trabajo de cerca con diferentes áreas de negocio para entender sus necesidades, diseñar soluciones adoptables y demostrar con datos cómo la automatización mejora su operación.',
+        'bio3': 'La comunicación es una de mis principales fortalezas: soy extrovertido, trabajo muy bien en equipo y conecto fácilmente con personas diversas, algo clave cuando se construyen soluciones de IA que cruzan tecnología, negocio y usuarios finales.',
         'skillsTitle': 'Tecnologías'
       },
       'en': {
         'title': 'About Me',
-        'bio1': 'I\'m a <span class="highlight">Systems Engineering</span> student and a software developer specializing in combining <span class="highlight">code and automation</span> to create smart, scalable, and efficient solutions.',
-        'bio2': 'I currently work at <span class="highlight">ABB</span> as a Full Stack AI Intern, where I design and implement <span class="highlight">Agentic AI</span> solutions with <span class="highlight">orchestrator and specialized modules</span> architecture, using <span class="highlight">FastAPI</span>, <span class="highlight">LangChain/LangGraph</span>, <span class="highlight">Azure AI Search</span>, <span class="highlight">Pinecone</span>, and <span class="highlight">Power Automate</span> for M365 automation.',
-        'bio3': 'My long-term goal is to specialize in <span class="highlight">RPA (Robotic Process Automation)</span> and intelligent process design, creating solutions that merge programming (Python, Go) with automation platforms to generate measurable business impact.',
-        'bio4': 'Communication is one of my key strengths. As an extrovert, I thrive in team environments and connect easily with diverse individuals, which is crucial when collaborating on complex projects.',
+        'bio1': 'Advanced Systems Engineering student (UTN.BA) specialized in <span class="highlight">AI Engineering</span>. I lead the creation of <span class="highlight">intelligent agents</span> and automated workflows that transform manual operations into efficient processes, saving time and reducing errors in the daily work of corporate teams.',
+        'bio2': 'I\'m passionate about <span class="highlight">making AI impact visible</span>: I work closely with different business areas to understand their needs, design adoptable solutions, and demonstrate with data how automation improves their operations.',
+        'bio3': 'Communication is one of my main strengths: I\'m extroverted, work very well in teams, and connect easily with diverse people, which is key when building AI solutions that bridge technology, business, and end users.',
         'skillsTitle': 'Technologies'
       }
     },

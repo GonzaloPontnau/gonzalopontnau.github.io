@@ -475,13 +475,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const abbTechTexts = document.querySelectorAll('#abb-trainee .tech-text');
-    if (abbTechTexts.length >= 6) {
+    if (abbTechTexts.length >= 3) {
       abbTechTexts[0].innerHTML = translations.experience[currentLang].abbTrainee.tech1;
       abbTechTexts[1].innerHTML = translations.experience[currentLang].abbTrainee.tech2;
       abbTechTexts[2].innerHTML = translations.experience[currentLang].abbTrainee.tech3;
-      abbTechTexts[3].innerHTML = translations.experience[currentLang].abbTrainee.tech4;
-      abbTechTexts[4].innerHTML = translations.experience[currentLang].abbTrainee.tech5;
-      abbTechTexts[5].innerHTML = translations.experience[currentLang].abbTrainee.tech6;
     }
 
     // AI Quality Analyst experience

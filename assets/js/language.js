@@ -59,8 +59,8 @@ document.addEventListener("DOMContentLoaded", function () {
           'description1': 'Diseño de frameworks de evaluación técnica (rúbricas) para validar la calidad de código generado por modelos de IA en múltiples lenguajes de programación, interpretando requisitos explícitos e implícitos de cada prompt. Elaboración de system prompts y user prompts estratégicos para simular flujos conversacionales complejos, evaluando capacidades agénticas del modelo.',
           'description2': 'Análisis y diagnóstico de fallos en respuestas de modelos LLM, utilizando métricas precisas para diferenciar entre errores de Correctness (bugs lógicos, información factual incorrecta) y de Instruction Following (incumplimiento de restricciones), manteniendo coherencia contextual en interacciones multi-turn.',
           'stack_title': 'QA & AI stack:',
-          'tech1': '<span class="tech-highlight">Testing & Evaluation</span>: Creación de escenarios de prueba complejos y frameworks de evaluación técnica para código AI-generado en Python (Flask, FastAPI), Java y JavaScript/TypeScript.',
-          'tech2': '<span class="tech-highlight">AI Model Analysis</span>: Auditorías técnicas del código generado evaluando calidad, escalabilidad y legibilidad, proporcionando feedback estructurado que guía el proceso de fine-tuning de modelos LLM.',
+          'tech1': '<span class="tech-highlight">Testing & Evaluation</span>: Creación de escenarios de prueba complejos y frameworks de evaluación técnica para código AI-generado.',
+          'tech2': '<span class="tech-highlight">RLHF & AI Model Analysis</span>: Auditorías técnicas del código generado evaluando calidad, escalabilidad y legibilidad, proporcionando feedback estructurado que guía el proceso de <strong>RLHF (Reinforcement Learning from Human Feedback)</strong> para el fine-tuning de modelos LLM.',
           'tech3': '<span class="tech-highlight">Quality Assurance</span>: Metodologías de QA aplicadas a IA, diferenciando entre errores lógicos y de seguimiento de instrucciones, con métricas exactas para alinear modelos con estándares de alta calidad.'
         },
         'backendDeveloper': {
@@ -97,8 +97,8 @@ document.addEventListener("DOMContentLoaded", function () {
           'description1': 'Design of technical evaluation frameworks (rubrics) to validate the quality of AI-generated code across multiple programming languages, interpreting explicit and implicit requirements of each prompt. Creation of strategic system prompts and user prompts to simulate complex conversational flows, evaluating the model\'s agentic capabilities.',
           'description2': 'Analysis and diagnosis of failures in LLM responses, using precise metrics to differentiate between Correctness errors (logical bugs, incorrect factual information) and Instruction Following errors (non-compliance with restrictions), maintaining contextual coherence in multi-turn interactions.',
           'stack_title': 'QA & AI stack:',
-          'tech1': '<span class="tech-highlight">Testing & Evaluation</span>: Complex test scenario creation and technical evaluation frameworks for AI-generated code in Python (Flask, FastAPI), Java, and JavaScript/TypeScript.',
-          'tech2': '<span class="tech-highlight">AI Model Analysis</span>: Technical audits of generated code evaluating quality, scalability, and readability, providing structured feedback that guides the LLM fine-tuning process.',
+          'tech1': '<span class="tech-highlight">Testing & Evaluation</span>: Complex test scenario creation and technical evaluation frameworks for AI-generated code.',
+          'tech2': '<span class="tech-highlight">RLHF & AI Model Analysis</span>: Technical audits of generated code evaluating quality, scalability, and readability, providing structured feedback that guides the <strong>RLHF (Reinforcement Learning from Human Feedback)</strong> process for LLM fine-tuning.',
           'tech3': '<span class="tech-highlight">Quality Assurance</span>: QA methodologies applied to AI, differentiating between logical errors and instruction-following issues, with exact metrics to align models with high-quality standards.'
         },
         'backendDeveloper': {

@@ -155,6 +155,10 @@ document.addEventListener("DOMContentLoaded", function () {
     'projects': {
       'es': {
         'title': 'Mis Proyectos',
+        'tenderCortex': {
+          'title': 'TenderCortex - Multi-Agent Intelligence',
+          'description': 'Sistema multi-agente avanzado para automatizar el analisis y respuesta a licitaciones. Implementa arquitectura de orquestacion con LangGraph, RAG pipeline con Qdrant, y sub-agentes especializados (Legal, Financiero, Tecnico, Timeline) con auditor de calidad integrado y refinamiento iterativo.'
+        },
         'moneyManager': {
           'title': 'Money Manager',
           'description': 'Aplicación web de gestión financiera personal con dashboard interactivo y seguimiento de transacciones. Con autenticación de usuario y almacenamiento seguro de datos.'
@@ -182,6 +186,10 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       'en': {
         'title': 'My Projects',
+        'tenderCortex': {
+          'title': 'TenderCortex - Multi-Agent Intelligence',
+          'description': 'Advanced multi-agent system to automate tender analysis and response. Implements orchestration architecture with LangGraph, RAG pipeline with Qdrant, and specialized sub-agents (Legal, Financial, Technical, Timeline) with integrated quality auditor and iterative refinement.'
+        },
         'moneyManager': {
           'title': 'Money Manager',
           'description': 'Personal finance management web application with interactive dashboard and transaction tracking. Features user authentication and secure data storage.'
@@ -571,6 +579,17 @@ document.addEventListener("DOMContentLoaded", function () {
     // Declaración de variables usadas en toda la función
     const projectTitles = document.querySelectorAll('.project-title');
     const projectDescriptions = document.querySelectorAll('.project-description');
+
+    // TenderCortex
+    if (elementExists('#tender-cortex .project-title')) {
+      document.querySelector('#tender-cortex .project-title').textContent =
+        translations.projects[currentLang].tenderCortex.title;
+    }
+
+    if (elementExists('#tender-cortex .project-description')) {
+      document.querySelector('#tender-cortex .project-description').textContent =
+        translations.projects[currentLang].tenderCortex.description;
+    }
 
     // Money Manager
     if (elementExists('#money-manager .project-title')) {

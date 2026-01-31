@@ -1,31 +1,61 @@
 /* Define color variables at the root */
 :root {
     --accent-color: #00ff88;
-    /* Tu color verde de acento principal */
     --bg-color: #0a0a0a;
-    /* Tu color de fondo principal */
     --card-bg: rgba(30, 30, 30, 0.9);
-    /* Fondo para tarjetas como educación y experiencia */
     --text-color: #fff;
-    /* Tu color de texto principal */
     --text-secondary: #e0e0e0;
-    /* Tu color de texto secundario */
     --linkedin-badge-bg: #0b0d10;
     --linkedin-badge-header: #3d4654;
+    
+    /* Sistema de espaciado escalable */
+    --space-xs: clamp(0.25rem, 0.5vw, 0.5rem);
+    --space-sm: clamp(0.5rem, 1vw, 0.75rem);
+    --space-md: clamp(0.75rem, 1.5vw, 1rem);
+    --space-lg: clamp(1rem, 2vw, 1.5rem);
+    --space-xl: clamp(1.5rem, 3vw, 2.5rem);
+    --space-2xl: clamp(2rem, 4vw, 4rem);
+    --space-3xl: clamp(3rem, 6vw, 6rem);
 }
 
-/* Ajuste global de tamaño base con escalado responsivo al zoom */
+/* Ajuste global de tamaño base - REDUCIDO para mejor proporción */
 html {
-    /* Uso de clamp para tamaño fluido que se adapta al zoom del navegador */
-    font-size: clamp(14px, 1vw + 0.5rem, 18px);
+    /* Base más pequeña: 14px en móvil, escala hasta 15px en desktop grande */
+    font-size: clamp(13px, 0.65vw + 0.5rem, 15px);
     scroll-behavior: smooth;
     overflow-x: hidden;
     width: 100%;
+    scroll-padding-top: 100px;
+}
+
+/* Escalado más suave con más breakpoints */
+@media (max-width: 1600px) {
+    html {
+        font-size: clamp(13px, 0.6vw + 0.5rem, 14.5px);
+    }
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: clamp(13px, 0.7vw + 0.45rem, 14px);
+    }
+}
+
+@media (max-width: 991px) {
+    html {
+        font-size: clamp(13px, 0.8vw + 0.4rem, 14px);
+    }
 }
 
 @media (max-width: 767px) {
     html {
-        font-size: clamp(14px, 2vw, 16px);
+        font-size: clamp(13px, 1vw + 0.35rem, 14px);
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 13px;
     }
 }
 
@@ -80,34 +110,32 @@ body {
     scrollbar-color: rgba(50, 50, 50, 0.5) transparent;
 }
 
-/* Añadiendo contenedor principal con margen adaptable */
+/* Contenedor principal con mejor escalado */
 .main-container {
-    max-width: 1900px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 clamp(20px, 10vw, 300px);
+    padding: 0 clamp(1rem, 5vw, 8rem);
     box-sizing: border-box;
     width: 100%;
 }
 
-/* Ajustamos el ancho de los contenedores de sección para que respeten el contenedor principal */
+/* Contenedores de sección más compactos */
 .section-container {
     width: 100%;
-    max-width: 1450px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Ajuste para que la navbar respete el contenedor principal */
+/* Navbar container */
 .nav-container {
-    max-width: 1200px;
-    /* Reducido de 1300px */
+    max-width: 1000px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px;
-    /* Reducido de 50px */
+    padding: 0 var(--space-lg);
     box-sizing: border-box;
 }
 
@@ -207,8 +235,8 @@ body {
 /* Logo GP fijo en la esquina izquierda */
 .logo {
     position: fixed;
-    top: 1rem;
-    left: 2rem;
+    top: 0.8rem;
+    left: 1.5rem;
     z-index: 1001;
     transition: all 0.3s ease;
 }
@@ -216,7 +244,7 @@ body {
 .gp-logo {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 1.9rem;
+    font-size: clamp(1.3rem, 1.6vw, 1.6rem);
     background: linear-gradient(45deg, #4f2fffd2, #037ff3, #03f0b4, #9df100);
     background-size: 400% 400%;
     -webkit-background-clip: text;
@@ -227,23 +255,24 @@ body {
     letter-spacing: -1px;
 }
 
-/* Dynamic Island - Siempre visible, cambia al hacer scroll */
+/* Dynamic Island - Centrado correcto */
 .dynamic-island {
     position: fixed;
-    top: 1rem;
-    left: 50%;
-    transform: translateX(-50%) scale(1);
+    top: 0.8rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: fit-content;
+    max-width: min(90vw, 600px);
     background: rgba(20, 20, 25, 0.6);
     border-radius: 50px;
-    padding: 0.8rem 2rem;
+    padding: 0.6rem 1.5rem;
     transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     opacity: 1;
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow:
         0 4px 16px rgba(0, 0, 0, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    /* Mejor soporte para WebKit */
-    -webkit-transform: translateX(-50%) scale(1);
     -webkit-transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     will-change: transform, opacity;
     z-index: 1000;
@@ -262,7 +291,7 @@ body {
 /* Links dentro del Dynamic Island */
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: clamp(0.8rem, 1.5vw, 1.5rem);
     align-items: center;
     margin: 0;
 }
@@ -272,10 +301,10 @@ body {
     text-decoration: none;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: clamp(0.75rem, 0.9vw, 0.85rem);
     transition: all 0.3s ease;
     position: relative;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 25px;
     white-space: nowrap;
 }
@@ -317,34 +346,49 @@ body {
     }
 }
 
-/* Responsive Design para dispositivos móviles */
-@media (max-width: 991px) {
+/* Responsive Design para Dynamic Island */
+@media (max-width: 1200px) {
     .dynamic-island {
-        padding: 0.6rem 1.2rem;
+        padding: 0.55rem 1.3rem;
     }
 
     .nav-links {
-        gap: 1.2rem;
+        gap: 1rem;
     }
 
     .nav-links a {
         font-size: 0.8rem;
-        padding: 0.4rem 0.7rem;
+        padding: 0.35rem 0.7rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .dynamic-island {
+        padding: 0.5rem 1.1rem;
+    }
+
+    .nav-links {
+        gap: 0.8rem;
+    }
+
+    .nav-links a {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
     }
 
     .logo {
-        left: 1.5rem;
+        left: 1.2rem;
     }
 
     .gp-logo {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
 }
 
 @media (max-width: 767px) {
     .dynamic-island {
         padding: 0.4rem 0.8rem;
-        top: 0.7rem;
+        top: 0.6rem;
         max-width: 85vw;
         overflow-x: auto;
         scrollbar-width: none;
@@ -356,43 +400,43 @@ body {
     }
 
     .nav-links {
-        gap: 0.6rem;
+        gap: 0.5rem;
         flex-wrap: nowrap;
     }
 
     .nav-links a {
         font-size: 0.7rem;
-        padding: 0.25rem 0.5rem;
+        padding: 0.2rem 0.45rem;
         white-space: nowrap;
     }
 
     .logo {
         left: 0.8rem;
-        top: 0.7rem;
+        top: 0.6rem;
     }
 
     .gp-logo {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
 }
 
 @media (max-width: 480px) {
     .dynamic-island {
         padding: 0.35rem 0.6rem;
-        max-width: 75vw;
+        max-width: 80vw;
     }
 
     .nav-links {
-        gap: 0.4rem;
+        gap: 0.35rem;
     }
 
     .nav-links a {
         font-size: 0.65rem;
-        padding: 0.2rem 0.4rem;
+        padding: 0.18rem 0.35rem;
     }
 
     .gp-logo {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 }
 
@@ -734,7 +778,7 @@ body {
 
 /*  SECCIÓN HERO  */
 .hero {
-    height: 70vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -742,23 +786,24 @@ body {
     text-align: center;
     width: 100%;
     max-width: 100%;
-    padding-top: 200px;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .greeting {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
+    font-size: clamp(0.85rem, 1vw, 1rem);
+    margin-bottom: 0.8rem;
     font-family: 'Inter', sans-serif;
     color: #e0e0e0;
 }
 
 .name-animation {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-size: clamp(2rem, 4vw, 3.5rem);
     font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1rem;
+    line-height: 1.15;
+    margin-bottom: 0.8rem;
     font-family: 'Poppins', sans-serif;
-    margin: 0 0 1rem 0;
+    margin: 0 0 0.8rem 0;
     background: linear-gradient(45deg, #4f2fffd2, #037ff3, #03f0b4, #9df100);
     background-size: 400% 400%;
     -webkit-background-clip: text;
@@ -769,24 +814,24 @@ body {
 }
 
 .title {
-    font-size: 1.3rem;
-    margin-bottom: 1.5rem;
+    font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+    margin-bottom: 1.2rem;
     font-family: 'Inter', sans-serif;
     color: #e0e0e0;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
 }
 
 .button-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 0.6rem;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
     justify-content: center;
 }
 
 .btn {
-    padding: 0.6rem 1.4rem;
-    font-size: 0.85rem;
+    padding: 0.5rem 1.2rem;
+    font-size: clamp(0.75rem, 0.9vw, 0.82rem);
     border: 2px solid #00ff88;
     border-radius: 25px;
     text-decoration: none;
@@ -801,9 +846,9 @@ body {
 
 @media (max-width: 767px) {
     .btn {
-        padding: 0.8rem 1.5rem;
-        font-size: 0.85rem;
-        min-height: 44px;
+        padding: 0.6rem 1.1rem;
+        font-size: 0.78rem;
+        min-height: 40px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -817,52 +862,56 @@ body {
 
 /*  SECCIÓN SOBRE MÍ  */
 .about-section {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    padding-top: clamp(6rem, 15vh, 10rem);
+    padding-bottom: clamp(6rem, 15vh, 10rem);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 @media (min-width: 768px) {
     .about-section {
-        padding-top: 15rem;
-        padding-bottom: 15rem;
+        padding-top: clamp(8rem, 18vh, 12rem);
+        padding-bottom: clamp(8rem, 18vh, 12rem);
     }
 }
 
 @media (min-width: 1200px) {
     .about-section {
-        padding-top: 20rem;
-        padding-bottom: 20rem;
+        padding-top: clamp(10rem, 20vh, 15rem);
+        padding-bottom: clamp(10rem, 20vh, 15rem);
     }
 }
 
 .section-title {
-    font-size: clamp(2rem, 3vw, 2.5rem);
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
     color: #fff;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     position: relative;
 }
 
 .section-title::after {
     content: '';
     position: absolute;
-    bottom: -0.5rem;
+    bottom: -0.4rem;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
+    width: 60px;
+    height: 2px;
     background: #00ff88;
 }
 
 .about-content {
     display: flex;
-    gap: 3rem;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
     align-items: flex-start;
     justify-content: space-between;
 }
 
 .about-image {
-    flex: 0 0 30%;
+    flex: 0 0 28%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -982,9 +1031,8 @@ body {
 }
 
 .about-text {
-    flex: 0 0 65%;
+    flex: 0 0 68%;
     padding: 0;
-    /* display: flex; */
     flex-direction: column;
     justify-content: space-between;
     max-height: 100%;
@@ -992,10 +1040,10 @@ body {
 }
 
 .about-bio {
-    font-size: clamp(0.9rem, 1.1vw, 1rem);
+    font-size: clamp(0.82rem, 0.95vw, 0.9rem);
     color: #e0e0e0;
-    line-height: 1.7;
-    margin-bottom: 1.2rem;
+    line-height: 1.65;
+    margin-bottom: 1rem;
 }
 
 .highlight {
@@ -1004,27 +1052,27 @@ body {
 }
 
 .about-skills {
-    margin-top: 1.5rem;
+    margin-top: 1.2rem;
 }
 
 .skills-title {
-    font-size: 1.2rem;
+    font-size: clamp(0.95rem, 1.1vw, 1.05rem);
     color: #fff;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
 }
 
 .skills-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.6rem;
+    gap: 0.45rem;
 }
 
 .skill-tag {
     background: rgba(0, 255, 136, 0.1);
     color: #00ff88;
-    padding: 0.35rem 0.7rem;
+    padding: 0.28rem 0.6rem;
     border-radius: 25px;
-    font-size: 0.8rem;
+    font-size: clamp(0.7rem, 0.8vw, 0.75rem);
     transition: all 0.3s ease;
 }
 
@@ -1035,28 +1083,28 @@ body {
 
 /*  SECCIÓN DE PROYECTOS - DISEÑO PREMIUM  */
 .projects-section {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    padding-top: clamp(6rem, 15vh, 10rem);
+    padding-bottom: clamp(6rem, 15vh, 10rem);
 }
 
 @media (min-width: 768px) {
     .projects-section {
-        padding-top: 15rem;
-        padding-bottom: 15rem;
+        padding-top: clamp(8rem, 18vh, 12rem);
+        padding-bottom: clamp(8rem, 18vh, 12rem);
     }
 }
 
 @media (min-width: 1200px) {
     .projects-section {
-        padding-top: 20rem;
-        padding-bottom: 20rem;
+        padding-top: clamp(10rem, 20vh, 15rem);
+        padding-bottom: clamp(10rem, 20vh, 15rem);
     }
 }
 
 .projects-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: clamp(1.5rem, 2.5vw, 2rem);
     width: 100%;
     max-width: 100%;
 }
@@ -1134,7 +1182,7 @@ body {
         display: grid;
         grid-template-columns: 1.2fr 1fr;
         gap: 0;
-        min-height: 400px;
+        min-height: clamp(280px, 30vw, 340px);
     }
 }
 
@@ -1151,31 +1199,31 @@ body {
     z-index: 0;
 }
 
-/* ====== PROJECT IMAGE - DEMOS MÁS GRANDES ====== */
+/* ====== PROJECT IMAGE ====== */
 .project-image {
     width: 100%;
-    height: 280px;
+    height: clamp(180px, 20vw, 220px);
     overflow: hidden;
     position: relative;
-    border-radius: 20px 20px 0 0;
+    border-radius: 16px 16px 0 0;
 }
 
 /* Cards normales (no featured) */
 .project-card:not(.featured-project) .project-image {
-    height: 240px;
+    height: clamp(160px, 18vw, 200px);
 }
 
 /* Featured projects - imagen más grande */
 .featured-project .project-image {
     height: 100%;
-    min-height: 320px;
-    border-radius: 20px 20px 0 0;
+    min-height: clamp(200px, 25vw, 280px);
+    border-radius: 16px 16px 0 0;
 }
 
 @media (min-width: 992px) {
     .featured-project .project-image {
-        border-radius: 20px 0 0 20px;
-        min-height: 400px;
+        border-radius: 16px 0 0 16px;
+        min-height: clamp(260px, 28vw, 320px);
     }
 }
 
@@ -1220,9 +1268,27 @@ body {
     transform: scale(1.08);
 }
 
+/* Estilos para video identicos a las imágenes pero con posición absoluta para evitar overflow */
+.project-image video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: block;
+}
+
+.project-card:hover .project-image video {
+    transform: scale(1.08);
+    /* Removed layout shift on hover */
+}
+
 /* ====== PROJECT INFO ====== */
 .project-info {
-    padding: 1.8rem;
+    padding: clamp(1rem, 1.5vw, 1.4rem);
     position: relative;
     z-index: 2;
     display: flex;
@@ -1231,28 +1297,28 @@ body {
 }
 
 .featured-project .project-info {
-    padding: 2rem 2.5rem;
+    padding: clamp(1.2rem, 1.8vw, 1.6rem) clamp(1.4rem, 2vw, 1.8rem);
 }
 
 @media (min-width: 992px) {
     .featured-project .project-info {
-        padding: 2.5rem 3rem;
+        padding: clamp(1.5rem, 2vw, 2rem) clamp(1.8rem, 2.5vw, 2.2rem);
     }
 }
 
 /* ====== PROJECT TITLE ====== */
 .project-title {
-    font-size: 1.4rem;
+    font-size: clamp(1.1rem, 1.3vw, 1.25rem);
     font-weight: 700;
     color: #fff;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.6rem;
     line-height: 1.3;
     transition: color 0.3s ease;
 }
 
 .featured-project .project-title {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
+    font-size: clamp(1.25rem, 1.5vw, 1.45rem);
+    margin-bottom: 0.8rem;
 }
 
 .project-card:hover .project-title {
@@ -1261,37 +1327,37 @@ body {
 
 /* ====== PROJECT DESCRIPTION ====== */
 .project-description {
-    font-size: 0.95rem;
+    font-size: clamp(0.8rem, 0.9vw, 0.88rem);
     color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 1.2rem;
-    line-height: 1.7;
+    margin-bottom: 1rem;
+    line-height: 1.6;
 }
 
 .featured-project .project-description {
-    font-size: 1.05rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.8;
+    font-size: clamp(0.85rem, 0.95vw, 0.92rem);
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
 }
 
 /* ====== TECH TAGS - DISEÑO PREMIUM ====== */
 .project-tech {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1.2rem;
+    gap: 0.35rem;
+    margin-bottom: 0.9rem;
 }
 
 .featured-project .project-tech {
-    gap: 0.6rem;
-    margin-bottom: 1.5rem;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
 }
 
 .project-tech .tech-tag {
     background: linear-gradient(135deg, rgba(0, 255, 136, 0.15), rgba(0, 255, 136, 0.05));
     color: #00ff88;
-    padding: 0.4rem 0.9rem;
+    padding: 0.28rem 0.6rem;
     border-radius: 20px;
-    font-size: 0.75rem;
+    font-size: clamp(0.65rem, 0.75vw, 0.72rem);
     font-weight: 500;
     display: inline-block;
     border: 1px solid rgba(0, 255, 136, 0.2);
@@ -1305,14 +1371,14 @@ body {
 }
 
 .featured-project .project-tech .tech-tag {
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
+    padding: 0.32rem 0.7rem;
+    font-size: clamp(0.68rem, 0.78vw, 0.75rem);
 }
 
 /* ====== PROJECT LINKS - BOTONES PREMIUM ====== */
 .project-links {
     display: flex;
-    gap: 1rem;
+    gap: 0.7rem;
 }
 
 .project-link {
@@ -1320,8 +1386,8 @@ body {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 50%;
-    width: 44px;
-    height: 44px;
+    width: clamp(34px, 3.5vw, 38px);
+    height: clamp(34px, 3.5vw, 38px);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1337,18 +1403,18 @@ body {
 }
 
 .project-link svg {
-    width: 20px;
-    height: 20px;
+    width: clamp(16px, 1.6vw, 18px);
+    height: clamp(16px, 1.6vw, 18px);
 }
 
 .featured-project .project-link {
-    width: 48px;
-    height: 48px;
+    width: clamp(36px, 3.8vw, 42px);
+    height: clamp(36px, 3.8vw, 42px);
 }
 
 .featured-project .project-link svg {
-    width: 22px;
-    height: 22px;
+    width: clamp(18px, 1.8vw, 20px);
+    height: clamp(18px, 1.8vw, 20px);
 }
 
 /* ====== RESPONSIVE ADJUSTMENTS ====== */
@@ -1448,22 +1514,42 @@ body {
     }
 }
 
+/* SECCIÓN DE EDUCACIÓN */
+.education-section {
+    padding-top: clamp(6rem, 15vh, 10rem);
+    padding-bottom: clamp(6rem, 15vh, 10rem);
+}
+
+@media (min-width: 768px) {
+    .education-section {
+        padding-top: clamp(8rem, 18vh, 12rem);
+        padding-bottom: clamp(8rem, 18vh, 12rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .education-section {
+        padding-top: clamp(10rem, 20vh, 15rem);
+        padding-bottom: clamp(10rem, 20vh, 15rem);
+    }
+}
+
 .education-cards-vertical {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: clamp(1.5rem, 2.5vw, 2rem);
     width: 100%;
 }
 
 .education-card {
     position: relative;
-    padding: 1.5rem;
-    border-radius: 12px;
+    padding: clamp(1rem, 1.5vw, 1.3rem);
+    border-radius: 10px;
     background: rgba(30, 30, 30, 0.9);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-left: 4px solid #00ff88;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    margin-bottom: 1.5rem;
+    border-left: 3px solid #00ff88;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
@@ -1477,22 +1563,27 @@ body {
 .education-card-header {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    padding-bottom: 1.5rem;
+    gap: 1rem;
+    padding-bottom: 1rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .education-icon {
     background: rgba(0, 255, 136, 0.1);
     color: #00ff88;
-    width: 70px;
-    height: 70px;
+    width: clamp(45px, 5vw, 55px);
+    height: clamp(45px, 5vw, 55px);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+}
+
+.education-icon svg {
+    width: clamp(24px, 3vw, 30px);
+    height: clamp(24px, 3vw, 30px);
 }
 
 .cert-icon {
@@ -1510,13 +1601,13 @@ body {
 }
 
 .education-institution {
-    font-size: 1.3rem;
+    font-size: clamp(1rem, 1.2vw, 1.15rem);
     color: #fff;
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 0.35rem 0;
 }
 
 .education-degree {
-    font-size: 0.9rem;
+    font-size: clamp(0.78rem, 0.9vw, 0.85rem);
     color: #e0e0e0;
     margin: 0;
 }
@@ -1534,96 +1625,96 @@ body {
 
 .certification-overview p {
     color: #e0e0e0;
-    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
-    line-height: 1.7;
+    font-size: clamp(0.8rem, 0.92vw, 0.88rem);
+    line-height: 1.6;
     margin: 0;
 }
 
 .certification-modules-title,
 .certification-skills-title {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 1.2vw, 1.15rem);
     color: #fff;
-    margin: 0 0 1.5rem 0;
+    margin: 0 0 1rem 0;
 }
 
 .certification-modules-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.2rem;
+    gap: 0.8rem;
     background: rgba(40, 40, 40, 0.4);
-    border-radius: 10px;
-    padding: 1.5rem;
+    border-radius: 8px;
+    padding: 1rem;
 }
 
 .certification-module {
     display: flex;
     align-items: center;
-    gap: 0.8rem;
+    gap: 0.5rem;
 }
 
 .certification-module span {
     color: #e0e0e0;
-    font-size: 1rem;
+    font-size: clamp(0.75rem, 0.85vw, 0.82rem);
 }
 
 .cert-module-icon {
     color: #00ff88;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
 }
 
 .certification-skills {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.8rem;
+    gap: 0.5rem;
 }
 
 .certification-skills .skill-tag {
     background: rgba(0, 255, 136, 0.1);
     color: #00ff88;
-    padding: 0.6rem 1.2rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 25px;
-    font-size: 0.85rem;
+    font-size: clamp(0.7rem, 0.8vw, 0.75rem);
 }
 
 .certification-highlight {
     background: rgba(0, 255, 136, 0.05);
-    border-left: 3px solid #00ff88;
-    padding: 1.5rem;
-    margin-top: 1rem;
+    border-left: 2px solid #00ff88;
+    padding: 1rem;
+    margin-top: 0.8rem;
     font-style: italic;
-    border-radius: 0 10px 10px 0;
+    border-radius: 0 8px 8px 0;
 }
 
 .certification-highlight p {
     color: #e0e0e0;
-    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
-    line-height: 1.7;
+    font-size: clamp(0.78rem, 0.9vw, 0.85rem);
+    line-height: 1.6;
     margin: 0;
 }
 
 .education-content-paragraphs {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: 1rem;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
 }
 
 .education-paragraph {
     background: rgba(40, 40, 40, 0.4);
-    border-radius: 10px;
-    padding: 1.5rem;
+    border-radius: 8px;
+    padding: 1rem;
 }
 
 .paragraph-title {
-    font-size: 1.1rem;
+    font-size: clamp(0.9rem, 1vw, 0.95rem);
     color: #00ff88;
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 0.4rem 0;
 }
 
 .paragraph-content {
     color: #e0e0e0;
-    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
-    line-height: 1.7;
+    font-size: clamp(0.8rem, 0.9vw, 0.85rem);
+    line-height: 1.6;
     margin: 0;
 }
 
@@ -1654,21 +1745,21 @@ body {
     justify-content: center;
     align-items: center;
     text-align: left;
-    margin: 4rem 0;
-    padding: 3rem 2rem;
+    margin: clamp(6rem, 12vh, 10rem) 0;
+    padding: clamp(2rem, 3vw, 3rem) clamp(1.5rem, 2.5vw, 2rem);
     background: rgba(30, 30, 30, 0.6);
     width: 100%;
     box-sizing: border-box;
 }
 
 .linkedin-more-content {
-    max-width: 1200px;
+    max-width: 1000px;
     width: 100%;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2.5rem;
+    gap: clamp(1.5rem, 2.5vw, 2rem);
 }
 
 /* Clase adicional para elementos que deben ocupar todo el ancho */
@@ -1683,10 +1774,10 @@ body {
 
 .linkedin-more-text {
     color: #e0e0e0;
-    font-size: 1.15rem;
+    font-size: clamp(0.85rem, 0.95vw, 0.95rem);
     margin: 0;
-    max-width: 640px;
-    line-height: 1.7;
+    max-width: 550px;
+    line-height: 1.6;
 }
 
 .linkedin-more-content .linkedin-badge-wrapper {
@@ -1737,7 +1828,7 @@ body {
 /* Media query para dispositivos móviles */
 @media (max-width: 767px) {
     .education-section {
-        padding: 4rem 0;
+        padding: clamp(5rem, 12vh, 8rem) 0;
     }
 
     .education-card {
@@ -1891,25 +1982,25 @@ body {
 
 /*  SECCIÓN DE CONTACTO  */
 .contact-section {
-    padding: 4rem 3rem;
+    padding: clamp(2rem, 3vw, 3rem) clamp(1.5rem, 2.5vw, 2.5rem);
     background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
-    border-radius: 20px;
-    margin: 20rem auto;
-    max-width: 1500px;
+    border-radius: 16px;
+    margin: clamp(8rem, 15vh, 12rem) auto;
+    max-width: 1000px;
     width: 100%;
     box-sizing: border-box;
 }
 
 @media (max-width: 991px) {
     .contact-section {
-        margin: 10rem auto;
+        margin: clamp(6rem, 12vh, 10rem) auto;
     }
 }
 
 @media (max-width: 767px) {
     .contact-section {
-        margin: 6rem auto;
-        border-radius: 15px;
+        margin: clamp(5rem, 10vh, 8rem) auto;
+        border-radius: 12px;
     }
 }
 
@@ -1937,7 +2028,7 @@ body {
 .contact-title {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 2.2rem;
+    font-size: clamp(1.5rem, 2vw, 1.8rem);
     background: linear-gradient(45deg, #4f2fffd2, #037ff3, #03f0b4, #9df100);
     background-size: 400% 400%;
     -webkit-background-clip: text;
@@ -1945,17 +2036,17 @@ body {
     -webkit-text-fill-color: transparent;
     animation: gradientShift 5s ease infinite;
     -webkit-animation: gradientShift 5s ease infinite;
-    margin-bottom: 1rem;
-    padding: 1rem 0;
+    margin-bottom: 0.8rem;
+    padding: 0.8rem 0;
     display: inline-block;
     text-align: left;
 }
 
 .contact-description {
-    font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+    font-size: clamp(0.85rem, 0.95vw, 0.95rem);
     color: #e0e0e0;
-    line-height: 1.8;
-    margin-bottom: 2rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
     text-align: left;
 }
 
@@ -2112,66 +2203,55 @@ footer {
 /*  SECCIÓN CONTAINER GENERAL  */
 .section-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding-top: 15rem 2rem;
+    padding: 0;
     box-sizing: border-box;
 }
 
 /*  MEDIA QUERIES  */
-/* Celulares, Tablets, cosas chicas */
+/* Tablets y pantallas medianas */
 @media (max-width: 991px) {
     .section-title {
-        font-size: 2.8rem;
-        margin-bottom: 2.5rem;
+        font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+        margin-bottom: 1.5rem;
     }
-
-    @media (max-width: 991px) {
-
-        .about-bio,
-        .contact-description,
-        .project-description {
-            font-size: 1.2rem;
-            line-height: 1.8;
-        }
-    }
-
 
     .about-bio,
     .contact-description,
     .project-description {
-        font-size: 1.2rem;
-        line-height: 1.8;
+        font-size: clamp(0.82rem, 0.95vw, 0.9rem);
+        line-height: 1.65;
     }
 
     .button-container .btn {
-        padding: 1rem 2.5rem;
-        font-size: 1.1rem;
+        padding: 0.55rem 1.3rem;
+        font-size: 0.8rem;
     }
 
     .cv-circle {
-        width: 28px;
-        height: 28px;
+        width: 24px;
+        height: 24px;
     }
 
     .cv-text {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .submit-btn {
-        font-size: 1.1rem;
-        padding: 1.2rem;
+        font-size: 0.9rem;
+        padding: 0.9rem;
     }
 
     /* Específico para tablets */
     @media (min-width: 768px) and (max-width: 991px) {
         .about-content {
-            gap: 3rem;
+            gap: 2rem;
         }
 
         .profile-image-large {
-            width: 240px;
-            height: 240px;
+            width: 200px;
+            height: auto;
         }
 
         .projects-grid {
@@ -2179,15 +2259,15 @@ footer {
         }
 
         .hero {
-            padding-top: 80px;
+            padding-top: 70px;
         }
 
         .name-animation {
-            font-size: 4.2rem;
+            font-size: clamp(2.2rem, 4vw, 3rem);
         }
 
         .title {
-            font-size: 1.7rem;
+            font-size: clamp(1rem, 1.2vw, 1.15rem);
         }
     }
 }
@@ -2207,74 +2287,75 @@ footer {
         margin-left: auto;
         margin-right: auto;
         max-width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
     /* Hero section */
     .hero {
         height: auto;
-        min-height: 90vh;
-        padding: 120px 20px 50px;
+        min-height: 100vh;
+        padding: 0 15px;
         display: flex;
         justify-content: center;
     }
 
     .greeting {
-        font-size: 1.3rem;
-        margin-bottom: 0.8rem;
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem;
     }
 
     .name-animation {
-        font-size: 2.8rem;
-        margin-bottom: 0.8rem;
+        font-size: clamp(1.8rem, 8vw, 2.4rem);
+        margin-bottom: 0.6rem;
     }
 
     .title {
-        font-size: 1.3rem;
-        margin-top: 1rem;
-        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+        margin-top: 0.8rem;
+        margin-bottom: 1.2rem;
         letter-spacing: 1px;
     }
 
     .button-container {
-        gap: 0.8rem;
-        margin-top: 1.5rem;
+        gap: 0.6rem;
+        margin-top: 1rem;
     }
 
     .button-container .btn {
-        padding: 0.8rem 1.3rem;
-        font-size: 0.8rem;
-        min-height: 44px;
+        padding: 0.55rem 1rem;
+        font-size: 0.72rem;
+        min-height: 38px;
     }
 
     /* Ajustes para la navegación */
     .nav-container {
-        padding: 0 1rem;
+        padding: 0 0.8rem;
     }
 
     .nav-links {
-        gap: 1rem;
+        gap: 0.5rem;
     }
 
     .nav-links a {
-        font-size: 13px;
+        font-size: 0.7rem;
     }
 
     .gp-logo {
-        font-size: 2rem;
+        font-size: 1.3rem;
     }
 
     /* About section */
     .about-section {
-        padding: 5rem 0;
+        padding: clamp(5rem, 12vh, 8rem) 0;
+        min-height: auto;
     }
 
     .about-content {
         flex-direction: column;
         justify-content: center;
         text-align: center;
-        gap: 2.5rem;
+        gap: 1.8rem;
     }
 
     .about-image {
@@ -2284,107 +2365,107 @@ footer {
 
     .profile-image-large {
         width: 100%;
-        max-width: 320px;
+        max-width: 240px;
         height: auto;
     }
 
     .about-text {
         flex: 0 0 100%;
-        margin-top: 1rem;
+        margin-top: 0.8rem;
     }
 
     .about-bio {
-        font-size: 1.05rem;
+        font-size: 0.85rem;
         text-align: left;
-        margin-bottom: 1.2rem;
-        line-height: 1.8;
+        margin-bottom: 0.9rem;
+        line-height: 1.6;
     }
 
     .skills-container {
         justify-content: center;
-        gap: 0.8rem;
+        gap: 0.5rem;
     }
 
     .about-skills .skills-title {
-        font-size: 1.4rem;
+        font-size: 1rem;
         text-align: center;
-        margin: 2rem 0 1.2rem;
+        margin: 1.2rem 0 0.8rem;
     }
 
     .skill-tag {
-        font-size: 0.9rem;
-        padding: 0.55rem 1.1rem;
-        min-height: 36px;
+        font-size: 0.72rem;
+        padding: 0.35rem 0.7rem;
+        min-height: 32px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
     }
 
     .about-social {
-        margin-top: 1.5rem;
-        gap: 1.2rem;
+        margin-top: 1.2rem;
+        gap: 0.8rem;
     }
 
     .about-social-icon {
-        width: 52px;
-        height: 52px;
+        width: 42px;
+        height: 42px;
     }
 
     /* Proyectos section */
     .projects-section {
-        padding: 4rem 0;
+        padding: clamp(5rem, 12vh, 8rem) 0;
     }
 
     .projects-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1.2rem;
     }
 
     .projects-section .project-card {
         margin-bottom: 0;
-        padding: 1rem;
+        padding: 0.8rem;
     }
 
     .project-image {
-        height: 200px;
+        height: 160px;
     }
 
     .project-title {
-        font-size: 1.4rem;
-        margin-bottom: 0.8rem;
+        font-size: 1.05rem;
+        margin-bottom: 0.5rem;
     }
 
     .section-title {
-        font-size: 2rem;
-        margin-bottom: 2rem;
+        font-size: 1.4rem;
+        margin-bottom: 1.2rem;
     }
 
     .project-description {
-        font-size: 0.95rem;
-        line-height: 1.6;
+        font-size: 0.8rem;
+        line-height: 1.55;
     }
 
     .project-tech .tech-tag {
-        font-size: 0.75rem;
-        padding: 0.35rem 0.7rem;
+        font-size: 0.65rem;
+        padding: 0.25rem 0.5rem;
     }
 
     .project-info {
-        padding: 1rem;
+        padding: 0.8rem;
     }
 
     /* Contact section */
     .contact-section {
-        padding: 3rem 1.5rem;
+        padding: 2rem 1.2rem;
         flex-direction: column;
         align-items: center;
         text-align: center;
-        margin: 4rem auto;
+        margin: 2.5rem auto;
     }
 
     .contact-wrapper {
         flex-direction: column;
-        gap: 2rem;
+        gap: 1.5rem;
         width: 100%;
         padding: 0;
     }
@@ -2400,27 +2481,27 @@ footer {
     }
 
     .contact-title {
-        font-size: 2rem;
+        font-size: 1.4rem;
         width: auto;
         max-width: 100%;
-        margin: 0 auto 1.5rem;
+        margin: 0 auto 1rem;
         text-align: center;
     }
 
     .contact-description {
-        font-size: 1rem;
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
+        font-size: 0.85rem;
+        line-height: 1.55;
+        margin-bottom: 1rem;
         text-align: center;
     }
 
     .contact-email {
         justify-content: center;
-        margin: 1.5rem auto;
+        margin: 1rem auto;
     }
 
     .email-link {
-        font-size: 1rem;
+        font-size: 0.85rem;
     }
 
     .contact-form {
@@ -2429,8 +2510,8 @@ footer {
 
     .form-group input,
     .form-group textarea {
-        font-size: 1rem;
-        padding: 1rem;
+        font-size: 0.88rem;
+        padding: 0.8rem;
     }
 
     /* Arreglo para el contenedor principal */
@@ -2442,66 +2523,66 @@ footer {
 /* Dispositivos muy pequeños */
 @media (max-width: 480px) {
     .name-animation {
-        font-size: 2.5rem;
+        font-size: clamp(1.6rem, 7vw, 2rem);
     }
 
     .greeting {
-        font-size: 1.1rem;
+        font-size: 0.85rem;
     }
 
     .title {
-        font-size: 1.1rem;
+        font-size: 0.88rem;
     }
 
     .profile-image-large {
-        max-width: 250px;
+        max-width: 200px;
     }
 
     .project-image {
-        height: 180px;
+        height: 140px;
     }
 
     .about-content {
-        gap: 1.5rem;
+        gap: 1.2rem;
     }
 
     .section-title {
-        font-size: 1.8rem;
+        font-size: 1.25rem;
     }
 
     .about-bio,
     .contact-description,
     .project-description {
-        font-size: 0.95rem;
-        line-height: 1.6;
+        font-size: 0.8rem;
+        line-height: 1.55;
     }
 
     .contact-title {
         padding: 0;
-        font-size: 1.8rem;
+        font-size: 1.25rem;
     }
 
     .contact-section {
-        padding: 2.5rem 1rem;
-        margin: 3rem auto;
+        padding: 1.8rem 0.8rem;
+        margin: 2rem auto;
     }
 
     .button-container .btn {
-        padding: 0.7rem 1.1rem;
-        font-size: 0.75rem;
-        min-height: 44px;
+        padding: 0.5rem 0.9rem;
+        font-size: 0.68rem;
+        min-height: 36px;
     }
 
     .main-container {
-        padding: 0 15px;
+        padding: 0 12px;
     }
 
     .linkedin-more-container {
-        padding: 2rem 1rem;
+        padding: 1.5rem 0.8rem;
     }
 
     .linkedin-more-text {
-        font-size: 1rem;
+        font-size: 0.85rem;
     }
 }
 
@@ -2522,50 +2603,50 @@ footer {
     }
 }
 
-/* Media queries específicos para tamaños adicionales - ACTUALIZADOS para mejor responsividad */
+/* Media queries específicos para tamaños adicionales */
 @media (max-width: 1440px) {
     .main-container {
-        padding: 0 clamp(40px, 8vw, 120px);
+        padding: 0 clamp(2rem, 5vw, 5rem);
     }
 }
 
 @media (max-width: 1200px) {
     .main-container {
-        padding: 0 clamp(30px, 5vw, 80px);
+        padding: 0 clamp(1.5rem, 4vw, 3.5rem);
     }
 }
 
 @media (max-width: 991px) {
     .main-container {
-        padding: 0 clamp(25px, 4vw, 50px);
+        padding: 0 clamp(1.2rem, 3vw, 2.5rem);
     }
 
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
+        gap: 1.2rem;
     }
 }
 
 @media (max-width: 767px) {
     .main-container {
-        padding: 0 20px;
+        padding: 0 15px;
     }
 }
 
 /* Mantener responsive para dispositivos más pequeños */
 @media (max-width: 480px) {
     .main-container {
-        padding: 0 15px;
+        padding: 0 12px;
     }
 
     .about-section,
     .projects-section,
     .education-section {
-        padding: 3rem 0;
+        padding: clamp(4rem, 10vh, 6rem) 0;
     }
 
     .project-card {
-        padding: 0.8rem;
+        padding: 0.6rem;
     }
 }
 
@@ -2684,55 +2765,47 @@ footer {
 /* Ajustes responsivos para el selector de idioma */
 @media (max-width: 767px) {
     .language-switcher {
-        right: 15px;
-        bottom: 15px;
-        /* Asegurar que no se solape con el botón hamburguesa */
+        right: 12px;
+        bottom: 12px;
         z-index: 999;
     }
 
     .language-button {
-        width: 48px;
-        height: 48px;
-        /* Tamaño táctil óptimo */
-    }
-
-    .language-text {
-        font-size: 0.9rem;
-    }
-
-    /* Hero section - mejorar padding superior para evitar solapamiento con hamburguesa */
-    .hero {
-        padding-top: 140px !important;
-        min-height: 85vh;
-    }
-}
-
-@media (max-width: 480px) {
-    .language-switcher {
-        right: 12px;
-        bottom: 12px;
-    }
-
-    .language-button {
-        width: 44px;
-        height: 44px;
+        width: 40px;
+        height: 40px;
     }
 
     .language-text {
         font-size: 0.8rem;
     }
 
-    /* Hero section - ajustes para pantallas muy pequeñas */
+    /* Hero section - mejorar padding superior */
     .hero {
-        padding-top: 130px !important;
-        min-height: 80vh;
+        padding-top: 0 !important;
+        min-height: 100vh;
     }
 }
 
-/* Estilos para la sección de Experiencia laboral */
-.experience-section {
-    padding: 6rem 0;
-    background-color: var(--bg-color);
+@media (max-width: 480px) {
+    .language-switcher {
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .language-button {
+        width: 36px;
+        height: 36px;
+    }
+
+    .language-text {
+        font-size: 0.75rem;
+    }
+
+    /* Hero section - ajustes para pantallas muy pequeñas */
+    .hero {
+        padding-top: 0 !important;
+        min-height: 100vh;
+    }
 }
 
 /* Contenedor de la línea de tiempo */
@@ -3132,19 +3205,34 @@ footer {
 
 /* Nuevo diseño para la sección de Experiencia laboral */
 .experience-section {
-    padding: 6rem 0;
+    padding-top: clamp(6rem, 15vh, 10rem);
+    padding-bottom: clamp(6rem, 15vh, 10rem);
     background-color: var(--bg-color);
+}
+
+@media (min-width: 768px) {
+    .experience-section {
+        padding-top: clamp(8rem, 18vh, 12rem);
+        padding-bottom: clamp(8rem, 18vh, 12rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .experience-section {
+        padding-top: clamp(10rem, 20vh, 15rem);
+        padding-bottom: clamp(10rem, 20vh, 15rem);
+    }
 }
 
 .experience-showcase {
     position: relative;
     background: rgba(25, 25, 30, 0.7);
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
     max-width: 100%;
     width: 100%;
-    margin: 3rem auto;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    margin: clamp(1.5rem, 2.5vw, 2rem) auto;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
     border: 1px solid rgba(0, 255, 136, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
@@ -3187,7 +3275,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 2rem 2.5rem;
+    padding: clamp(1.2rem, 2vw, 1.6rem) clamp(1.5rem, 2.5vw, 2rem);
     background-color: rgba(20, 20, 25, 0.5);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -3197,28 +3285,28 @@ footer {
 }
 
 .experience-title {
-    font-size: 1.8rem;
+    font-size: clamp(1.15rem, 1.4vw, 1.35rem);
     font-weight: 600;
     color: var(--text-color);
-    margin: 0 0 0.8rem 0;
+    margin: 0 0 0.6rem 0;
 }
 
 /* Título con logo de empresa */
 .title-with-logo {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.8rem;
+    gap: 0.6rem;
+    margin-bottom: 0.6rem;
 }
 
 .company-logo {
-    width: 70px;
-    height: 70px;
-    border-radius: 10px;
+    width: clamp(45px, 5vw, 55px);
+    height: clamp(45px, 5vw, 55px);
+    border-radius: 8px;
     object-fit: contain;
     background-color: rgba(255, 255, 255, 0.98);
-    padding: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    padding: 6px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
     transition: all 0.3s ease;
 }
 
@@ -3235,9 +3323,9 @@ footer {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: clamp(0.78rem, 0.88vw, 0.85rem);
 }
 
 .experience-type {
@@ -3260,9 +3348,9 @@ footer {
     display: inline-block;
     background: rgba(0, 255, 136, 0.1);
     color: var(--accent-color);
-    padding: 0.6rem 1.2rem;
+    padding: 0.4rem 0.9rem;
     border-radius: 25px;
-    font-size: 0.9rem;
+    font-size: clamp(0.72rem, 0.82vw, 0.8rem);
     font-weight: 500;
     border: 1px solid rgba(0, 255, 136, 0.2);
     white-space: nowrap;
@@ -3278,30 +3366,30 @@ footer {
 .experience-content {
     position: relative;
     z-index: 1;
-    padding: 2rem 2.5rem 2.5rem;
+    padding: clamp(1.2rem, 2vw, 1.6rem) clamp(1.5rem, 2.5vw, 2rem);
 }
 
 .experience-description p {
-    margin-bottom: 1.2rem;
-    line-height: 1.7;
+    margin-bottom: 1rem;
+    line-height: 1.6;
     color: var(--text-color);
-    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    font-size: clamp(0.82rem, 0.95vw, 0.9rem);
 }
 
 /* Stack tecnológico */
 .tech-stack {
-    margin-top: 2rem;
-    padding: 1.8rem;
+    margin-top: 1.5rem;
+    padding: clamp(1rem, 1.5vw, 1.4rem);
     background: rgba(15, 15, 20, 0.4);
-    border-radius: 12px;
+    border-radius: 10px;
     border-left: 3px solid var(--accent-color);
 }
 
 .tech-stack-title {
-    font-size: 1.15rem;
+    font-size: clamp(0.9rem, 1vw, 1rem);
     font-weight: 600;
     color: var(--accent-color);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .tech-stack-list {
@@ -3327,8 +3415,8 @@ footer {
 
 .tech-text {
     flex: 1;
-    font-size: clamp(0.9rem, 1.1vw, 1rem);
-    line-height: 1.6;
+    font-size: clamp(0.78rem, 0.9vw, 0.88rem);
+    line-height: 1.55;
 }
 
 .tech-highlight {
@@ -3380,11 +3468,11 @@ footer {
 
 @media (max-width: 480px) {
     .experience-section {
-        padding: 3rem 0;
+        padding: clamp(4rem, 10vh, 6rem) 0;
     }
 
     .experience-showcase {
-        margin: 2rem auto;
+        margin: 1.5rem auto;
     }
 
     .experience-header {

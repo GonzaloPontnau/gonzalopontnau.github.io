@@ -6,10 +6,10 @@
 (function () {
   // ==================== CONFIGURACIÓN ====================
   const CONFIG = {
-    // Cantidad de partículas (ajustable según rendimiento deseado)
+    // Cantidad de partículas (optimizado para rendimiento 60fps)
     particleCount: {
-      desktop: 50,
-      mobile: 25
+      desktop: 35,
+      mobile: 15
     },
 
     // Colores de las partículas (muy sutiles para no interferir)
@@ -56,7 +56,7 @@
     // Conexiones entre partículas
     connections: {
       enabled: true,
-      distance: 120,         // Distancia máxima para conectar
+      distance: 80,          // Distancia máxima para conectar (optimizado)
       opacity: 0.08,         // Opacidad de las líneas
       color: 'rgba(200, 200, 210,'
     }

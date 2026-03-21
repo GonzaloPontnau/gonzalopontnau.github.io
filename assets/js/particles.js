@@ -1,68 +1,71 @@
 /**
- * Sistema de animación de partículas mejorado
- * Características: Interactivo, sutil, con conexiones entre partículas
- * Optimizado para rendimiento y legibilidad del contenido
+ * Neural Void — Ambient Particle System
+ * Organic drifting constellations with cursor-reactive luminance
+ * Colors: Electric Cyan → Indigo → Violet (matching Neural Void palette)
+ * Performance: requestAnimationFrame with visibility pause
  */
 (function () {
-  // ==================== CONFIGURACIÓN ====================
   const CONFIG = {
-    // Cantidad de partículas (optimizado para rendimiento 60fps)
     particleCount: {
-      desktop: 35,
-      mobile: 15
+      desktop: 50,
+      mobile: 20
     },
 
-    // Colores de las partículas (muy sutiles para no interferir)
+    // Neutral base tones — barely visible dots in the void
     colors: [
-      'rgba(200, 200, 210,', // Gris claro
-      'rgba(180, 180, 190,', // Gris medio
-      'rgba(220, 220, 230,'  // Gris muy claro
+      'rgba(180, 195, 210,',
+      'rgba(160, 175, 195,',
+      'rgba(200, 210, 225,'
     ],
 
-    // Colores del gradiente para cuando el mouse está cerca (mismo gradiente que el nombre)
+    // Activated colors near cursor — Neural Void accent palette
     gradientColors: [
-      'rgba(79, 47, 255,',   // Púrpura (#4f2fffd2)
-      'rgba(3, 127, 243,',   // Azul (#037ff3)
-      'rgba(3, 240, 180,',   // Turquesa (#03f0b4)
-      'rgba(157, 241, 0,'    // Verde lima (#9df100)
+      'rgba(0, 229, 255,',     // Electric cyan (#00e5ff)
+      'rgba(0, 124, 240,',     // Deep blue (#007cf0)
+      'rgba(153, 69, 255,',    // Violet (#9945ff)
+      'rgba(0, 180, 216,'      // Teal
     ],
 
-    // Opacidad de las partículas (muy baja para sutileza)
     opacity: {
-      min: 0.05,
-      max: 0.15,
-      nearMouse: 0.85  // Opacidad alta cuando está cerca del mouse (efecto notorio)
+      min: 0.03,
+      max: 0.12,
+      nearMouse: 0.7
     },
 
-    // Velocidad de movimiento
+    // Slower, more organic drift
     speed: {
-      min: 0.2,
-      max: 0.8
+      min: 0.08,
+      max: 0.35
     },
 
-    // Tamaño de las partículas (aumentado para mayor visibilidad)
     size: {
-      min: 2,
-      max: 5
+      min: 1.5,
+      max: 4
     },
 
-    // Interacción con el mouse
     mouse: {
-      radius: 150,           // Radio de interacción
-      repelForce: 0.8,       // Fuerza de repulsión (positivo = alejar)
+      radius: 200,
+      attractForce: 0.3,   // Gentle attraction instead of repulsion
       enabled: true
     },
 
-    // Conexiones entre partículas
     connections: {
       enabled: true,
-      distance: 80,          // Distancia máxima para conectar (optimizado)
-      opacity: 0.08,         // Opacidad de las líneas
-      color: 'rgba(200, 200, 210,'
+      distance: 120,
+      opacity: 0.06,
+      mouseDistance: 200,   // Connect particles near cursor at larger range
+      mouseOpacity: 0.15,
+      color: 'rgba(180, 195, 210,'
+    },
+
+    // Organic sine-wave drift
+    drift: {
+      enabled: true,
+      amplitude: 0.3,
+      frequency: 0.002
     }
   };
 
-  // ==================== INICIALIZACIÓN ====================
   function initParticleSystem() {
     const canvas = document.getElementById("particle-canvas");
     if (!canvas) {
@@ -76,38 +79,34 @@
     const ctx = canvas.getContext("2d");
     const isMobile = window.innerWidth <= 767;
 
-    // Configurar canvas
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    // Limpiar canvas con el color de fondo
     ctx.fillStyle = '#0a0a0a';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Estado del mouse
     const mouse = {
       x: null,
       y: null,
       radius: CONFIG.mouse.radius
     };
 
-    // Estado de la animación
     let animationRunning = true;
     let animationFrame = null;
+    let time = 0;
 
-    // Array de partículas
     const particleCount = isMobile ? CONFIG.particleCount.mobile : CONFIG.particleCount.desktop;
     const particles = [];
 
-    // ==================== CLASE PARTÍCULA ====================
     class Particle {
       constructor() {
         this.reset();
-        // Velocidad en ambas direcciones (x, y)
-        this.vx = (Math.random() - 0.5) * (CONFIG.speed.max - CONFIG.speed.min) + CONFIG.speed.min;
-        this.vy = (Math.random() - 0.5) * (CONFIG.speed.max - CONFIG.speed.min) + CONFIG.speed.min;
-        // Asignar un color del gradiente específico a esta partícula
+        this.vx = (Math.random() - 0.5) * CONFIG.speed.max;
+        this.vy = (Math.random() - 0.5) * CONFIG.speed.max;
         this.gradientColor = CONFIG.gradientColors[Math.floor(Math.random() * CONFIG.gradientColors.length)];
+        // Unique phase offset for organic movement
+        this.phase = Math.random() * Math.PI * 2;
+        this.driftSpeed = CONFIG.drift.frequency * (0.5 + Math.random());
       }
 
       reset() {
@@ -116,60 +115,77 @@
         this.radius = Math.random() * (CONFIG.size.max - CONFIG.size.min) + CONFIG.size.min;
         this.baseAlpha = Math.random() * (CONFIG.opacity.max - CONFIG.opacity.min) + CONFIG.opacity.min;
         this.alpha = this.baseAlpha;
-
-        // Color base (gris neutro)
         this.baseColor = CONFIG.colors[Math.floor(Math.random() * CONFIG.colors.length)];
         this.color = this.baseColor;
+        // Pulsing: each particle breathes at its own rate
+        this.pulseSpeed = 0.003 + Math.random() * 0.005;
+        this.pulsePhase = Math.random() * Math.PI * 2;
       }
 
       draw() {
+        // Soft glow effect for activated particles
+        if (this.alpha > 0.2) {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius * 3, 0, Math.PI * 2);
+          ctx.fillStyle = `${this.color} ${this.alpha * 0.15})`;
+          ctx.fill();
+        }
+
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx.fillStyle = `${this.color} ${this.alpha})`;
         ctx.fill();
       }
 
-      update() {
-        // Movimiento base
-        this.x += this.vx;
-        this.y += this.vy;
-
-        // Rebote en los bordes
-        if (this.x > canvas.width || this.x < 0) {
-          this.vx = -this.vx;
-        }
-        if (this.y > canvas.height || this.y < 0) {
-          this.vy = -this.vy;
+      update(time) {
+        // Organic sine-wave drift
+        if (CONFIG.drift.enabled) {
+          this.x += this.vx + Math.sin(time * this.driftSpeed + this.phase) * CONFIG.drift.amplitude;
+          this.y += this.vy + Math.cos(time * this.driftSpeed * 0.7 + this.phase) * CONFIG.drift.amplitude;
+        } else {
+          this.x += this.vx;
+          this.y += this.vy;
         }
 
-        // Interacción con el mouse
+        // Subtle breathing pulse
+        const pulse = Math.sin(time * this.pulseSpeed + this.pulsePhase);
+        const basePulseAlpha = this.baseAlpha + pulse * 0.02;
+
+        // Wrap around edges (seamless, no bounce)
+        if (this.x > canvas.width + 10) this.x = -10;
+        if (this.x < -10) this.x = canvas.width + 10;
+        if (this.y > canvas.height + 10) this.y = -10;
+        if (this.y < -10) this.y = canvas.height + 10;
+
+        // Mouse interaction: gentle attraction + illumination
         if (CONFIG.mouse.enabled && mouse.x !== null && mouse.y !== null) {
           const dx = this.x - mouse.x;
           const dy = this.y - mouse.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
           if (distance < mouse.radius) {
-            // Calcular fuerza basada en la distancia
             const force = (mouse.radius - distance) / mouse.radius;
             const angle = Math.atan2(dy, dx);
 
-            // Aplicar repulsión (alejar partículas del cursor)
-            this.x += Math.cos(angle) * force * CONFIG.mouse.repelForce;
-            this.y += Math.sin(angle) * force * CONFIG.mouse.repelForce;
+            // Gentle attraction toward cursor
+            this.x -= Math.cos(angle) * force * CONFIG.mouse.attractForce;
+            this.y -= Math.sin(angle) * force * CONFIG.mouse.attractForce;
 
-            // Cambiar a color del gradiente y aumentar muchísimo la opacidad
+            // Illuminate with gradient color
             this.color = this.gradientColor;
-            this.alpha = Math.min(CONFIG.opacity.nearMouse, this.baseAlpha + force * 0.8);
+            // Smooth cubic falloff for natural glow
+            const intensity = force * force * force;
+            this.alpha = Math.min(CONFIG.opacity.nearMouse, basePulseAlpha + intensity * 0.6);
           } else {
-            // Restaurar color y opacidad originales
             this.color = this.baseColor;
-            this.alpha = this.baseAlpha;
+            this.alpha = basePulseAlpha;
           }
+        } else {
+          this.alpha = basePulseAlpha;
         }
       }
     }
 
-    // ==================== CONEXIONES ENTRE PARTÍCULAS ====================
     function connectParticles() {
       if (!CONFIG.connections.enabled) return;
 
@@ -179,11 +195,35 @@
           const dy = particles[i].y - particles[j].y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < CONFIG.connections.distance) {
-            // Opacidad basada en distancia (más cerca = más opaco)
-            const opacity = (1 - distance / CONFIG.connections.distance) * CONFIG.connections.opacity;
+          // Check if either particle is near the mouse for enhanced connections
+          let maxDist = CONFIG.connections.distance;
+          let maxOpacity = CONFIG.connections.opacity;
 
-            ctx.strokeStyle = `${CONFIG.connections.color} ${opacity})`;
+          if (mouse.x !== null && mouse.y !== null) {
+            const dxMouse1 = particles[i].x - mouse.x;
+            const dyMouse1 = particles[i].y - mouse.y;
+            const distMouse1 = Math.sqrt(dxMouse1 * dxMouse1 + dyMouse1 * dyMouse1);
+
+            const dxMouse2 = particles[j].x - mouse.x;
+            const dyMouse2 = particles[j].y - mouse.y;
+            const distMouse2 = Math.sqrt(dxMouse2 * dxMouse2 + dyMouse2 * dyMouse2);
+
+            if (distMouse1 < CONFIG.connections.mouseDistance && distMouse2 < CONFIG.connections.mouseDistance) {
+              maxDist = CONFIG.connections.mouseDistance;
+              maxOpacity = CONFIG.connections.mouseOpacity;
+            }
+          }
+
+          if (distance < maxDist) {
+            const opacity = (1 - distance / maxDist) * maxOpacity;
+
+            // Use gradient color for connections near mouse
+            let lineColor = CONFIG.connections.color;
+            if (maxOpacity > CONFIG.connections.opacity) {
+              lineColor = particles[i].gradientColor;
+            }
+
+            ctx.strokeStyle = `${lineColor} ${opacity})`;
             ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
@@ -194,47 +234,39 @@
       }
     }
 
-    // ==================== INICIALIZAR PARTÍCULAS ====================
     function initParticles() {
       for (let i = 0; i < particleCount; i++) {
         particles.push(new Particle());
       }
     }
 
-    // ==================== ANIMACIÓN PRINCIPAL ====================
     function animate() {
       if (!animationRunning) return;
 
-      // Limpiar canvas
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      time++;
 
-      // Dibujar conexiones primero (van detrás de las partículas)
       connectParticles();
 
-      // Actualizar y dibujar partículas
       for (let i = 0; i < particles.length; i++) {
-        particles[i].update();
+        particles[i].update(time);
         particles[i].draw();
       }
 
       animationFrame = requestAnimationFrame(animate);
     }
 
-    // ==================== EVENT LISTENERS ====================
-
-    // Seguimiento del mouse
+    // Event listeners
     window.addEventListener('mousemove', (event) => {
       mouse.x = event.clientX;
       mouse.y = event.clientY;
     });
 
-    // Limpiar posición del mouse al salir
     window.addEventListener('mouseout', () => {
       mouse.x = null;
       mouse.y = null;
     });
 
-    // Soporte táctil para móviles
     window.addEventListener('touchmove', (event) => {
       if (event.touches.length > 0) {
         mouse.x = event.touches[0].clientX;
@@ -247,7 +279,6 @@
       mouse.y = null;
     });
 
-    // Page Visibility API - pausar cuando no está visible
     function handleVisibilityChange() {
       if (document.hidden) {
         animationRunning = false;
@@ -265,7 +296,6 @@
 
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
-    // Redimensionamiento con debounce
     let resizeTimeout;
     window.addEventListener("resize", () => {
       clearTimeout(resizeTimeout);
@@ -276,7 +306,6 @@
       }, 200);
     });
 
-    // Manejo de scroll para navbar (solo si existe)
     const navbar = document.querySelector(".navbar");
     if (navbar) {
       let scrollTimeout;
@@ -294,12 +323,10 @@
       });
     }
 
-    // ==================== INICIAR ====================
     initParticles();
     animationFrame = requestAnimationFrame(animate);
   }
 
-  // Ejecutar cuando el DOM esté listo
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initParticleSystem);
   } else {

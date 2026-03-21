@@ -231,20 +231,35 @@ document.addEventListener("DOMContentLoaded", function () {
           'methodologiesTitle': 'Metodologías y enfoque',
           'methodologiesContent': 'Dominio en análisis de requisitos tanto funcionales como no funcionales, con capacidad para traducir necesidades del cliente en especificaciones técnicas precisas. Modelado UML para visualización y documentación de sistemas complejos. Implementación efectiva de metodologías ágiles, especialmente Scrum, facilitando entregas incrementales de valor y adaptación a cambios de requisitos.'
         },
-        'django': {
-          'institution': 'Curso Completo de Django',
-          'degree': 'Desarrollo Web Backend',
-          'period': '| Platzi',
-          'description': 'Formación completa en desarrollo web con Django, abarcando desde fundamentos hasta despliegue avanzado con REST API y AWS.',
+        'mcp': {
+          'institution': 'Model Context Protocol: Advanced Topics',
+          'degree': 'MCP Engineering & Production Deployment',
+          'period': '| Anthropic',
+          'description': 'Inmersión profunda en las características avanzadas del protocolo <strong>MCP (Model Context Protocol)</strong>, el estándar que permite a modelos de IA interactuar con herramientas externas y fuentes de datos en producción. <strong>15 lecciones</strong>, cuestionarios y certificado de finalización.',
           'modules': [
-            'Fundamentos de Django',
-            'Modelos y Bases de Datos',
-            'Relaciones entre Modelos',
-            'Queries y Filtros Avanzados',
-            'URLs y Vistas',
-            'Django REST Framework'
+            'Servidores MCP con herramientas, logging y notificaciones de progreso',
+            'Comunicación bidireccional cliente-servidor MCP',
+            'Transportes stdio & HTTP para despliegues locales y remotos',
+            'Sampling callbacks para solicitudes LLM iniciadas por servidor',
+            'Depuración con mensajes JSON-RPC y StreamableHTTP',
+            'Despliegue de servidores MCP escalables en producción'
           ],
-          'summary': 'Curso completo que abarca tanto arquitectura MVT como desarrollo avanzado de APIs con Django REST Framework y despliegue en producción.'
+          'summary': 'Orientado a ingenieros que construyen servidores MCP para producción: manejo seguro de acceso al sistema de archivos con roots, configuraciones HTTP stateless y resolución de problemas en la transición de desarrollo a producción.'
+        },
+        'agentSkills': {
+          'institution': 'Introduction to Agent Skills',
+          'degree': 'Claude Code Skills & AI Agent Customization',
+          'period': '| Anthropic',
+          'description': 'Curso enfocado en construir, configurar y compartir <strong>Skills</strong> (instrucciones reutilizables en Markdown) dentro de <strong>Claude Code</strong>, permitiendo que el agente aplique automáticamente directrices a las tareas correctas.',
+          'modules': [
+            'Creación de skills con SKILL.md y divulgación progresiva',
+            'Configuración avanzada con allowed-tools y scripts',
+            'Skills vs. CLAUDE.md, hooks y subagentes',
+            'Distribución de skills vía plugins y configuraciones enterprise',
+            'Delegación experta con subagentes personalizados',
+            'Troubleshooting: diagnóstico de activación y conflictos'
+          ],
+          'summary': 'Formación completa en la creación y gestión de Skills para Claude Code: desde la escritura de frontmatter efectivo hasta la distribución empresarial y la conexión con subagentes expertos aislados para delegar tareas especializadas.'
         },
         'go': {
           'institution': 'Fundamentos de GO',
@@ -269,20 +284,35 @@ document.addEventListener("DOMContentLoaded", function () {
           'methodologiesTitle': 'Methodologies and approach',
           'methodologiesContent': 'Expertise in analyzing both functional and non-functional requirements, with the ability to translate client needs into precise technical specifications. UML modeling for visualization and documentation of complex systems. Effective implementation of agile methodologies, especially Scrum, facilitating incremental value delivery and adaptation to changing requirements.'
         },
-        'django': {
-          'institution': 'Complete Django Course',
-          'degree': 'Web Backend Development',
-          'period': '| Platzi',
-          'description': 'Comprehensive training in web development with Django, covering from fundamentals to advanced deployment with REST API and AWS.',
+        'mcp': {
+          'institution': 'Model Context Protocol: Advanced Topics',
+          'degree': 'MCP Engineering & Production Deployment',
+          'period': '| Anthropic',
+          'description': 'Deep dive into the advanced features of the <strong>MCP (Model Context Protocol)</strong>, the standard that enables AI models to interact with external tools and data sources in production. <strong>15 lessons</strong>, quizzes and completion certificate.',
           'modules': [
-            'Django Fundamentals',
-            'Models and Databases',
-            'Model Relationships',
-            'Advanced Queries and Filters',
-            'URLs and Views',
-            'Django REST Framework'
+            'MCP servers with tools, logging and progress notifications',
+            'Bidirectional client-server MCP communication',
+            'stdio & HTTP transports for local and remote deployments',
+            'Sampling callbacks for server-initiated LLM requests',
+            'Debugging with JSON-RPC messages and StreamableHTTP',
+            'Deploying scalable MCP servers in production'
           ],
-          'summary': 'Complete course covering both MVT architecture and advanced API development with Django REST Framework and production deployment.'
+          'summary': 'Designed for engineers building production MCP servers: secure file system access handling with roots, stateless HTTP configurations and troubleshooting the transition from development to production.'
+        },
+        'agentSkills': {
+          'institution': 'Introduction to Agent Skills',
+          'degree': 'Claude Code Skills & AI Agent Customization',
+          'period': '| Anthropic',
+          'description': 'Course focused on building, configuring and sharing <strong>Skills</strong> (reusable Markdown instructions) within <strong>Claude Code</strong>, enabling the agent to automatically apply guidelines to the right tasks.',
+          'modules': [
+            'Creating skills with SKILL.md and progressive disclosure',
+            'Advanced configuration with allowed-tools and scripts',
+            'Skills vs. CLAUDE.md, hooks and subagents',
+            'Distributing skills via plugins and enterprise configurations',
+            'Expert delegation with custom subagents',
+            'Troubleshooting: activation diagnosis and conflicts'
+          ],
+          'summary': 'Comprehensive training in creating and managing Skills for Claude Code: from writing effective frontmatter to enterprise distribution and connecting with isolated expert subagents to delegate specialized tasks.'
         },
         'go': {
           'institution': 'GO Fundamentals',
@@ -322,8 +352,8 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     // Footer
     'footer': {
-      'es': '2025 Gonzalo Pontnau',
-      'en': '2025 Gonzalo Pontnau'
+      'es': '2026 Gonzalo Pontnau',
+      'en': '2026 Gonzalo Pontnau'
     },
     // Language button
     'languageBtn': {
@@ -748,37 +778,71 @@ document.addEventListener("DOMContentLoaded", function () {
     const educationInstitutions = document.querySelectorAll('.education-institution');
 
     educationInstitutions.forEach(institution => {
-      // Django
-      if (institution.textContent.includes('Django')) {
-        institution.textContent = translations.education[currentLang].django.institution;
+      // MCP Advanced Topics
+      if (institution.textContent.includes('Model Context Protocol')) {
+        institution.textContent = translations.education[currentLang].mcp.institution;
 
         const parentCard = institution.closest('.education-card');
         if (parentCard) {
-          // Titulo
           const degree = parentCard.querySelector('.education-degree');
           if (degree) {
             degree.innerHTML =
-              translations.education[currentLang].django.degree +
+              translations.education[currentLang].mcp.degree +
               ' <span class="education-date">' +
-              translations.education[currentLang].django.period +
+              translations.education[currentLang].mcp.period +
               '</span>';
           }
 
-          // Descripciones (overview y summary)
           const certOverview = parentCard.querySelector('.certification-overview p');
           if (certOverview) {
-            certOverview.textContent = translations.education[currentLang].django.description;
+            certOverview.innerHTML = translations.education[currentLang].mcp.description;
           }
 
           const certHighlight = parentCard.querySelector('.certification-highlight p');
           if (certHighlight) {
-            certHighlight.textContent = translations.education[currentLang].django.summary;
+            certHighlight.textContent = translations.education[currentLang].mcp.summary;
           }
 
-          // Módulos específicos
           const moduleSpans = parentCard.querySelectorAll('.certification-module span:not(.cert-module-icon)');
           if (moduleSpans.length > 0) {
-            const modules = translations.education[currentLang].django.modules;
+            const modules = translations.education[currentLang].mcp.modules;
+            moduleSpans.forEach((span, index) => {
+              if (index < modules.length) {
+                span.textContent = modules[index];
+              }
+            });
+          }
+        }
+      }
+
+      // Introduction to Agent Skills
+      if (institution.textContent.includes('Agent Skills')) {
+        institution.textContent = translations.education[currentLang].agentSkills.institution;
+
+        const parentCard = institution.closest('.education-card');
+        if (parentCard) {
+          const degree = parentCard.querySelector('.education-degree');
+          if (degree) {
+            degree.innerHTML =
+              translations.education[currentLang].agentSkills.degree +
+              ' <span class="education-date">' +
+              translations.education[currentLang].agentSkills.period +
+              '</span>';
+          }
+
+          const certOverview = parentCard.querySelector('.certification-overview p');
+          if (certOverview) {
+            certOverview.innerHTML = translations.education[currentLang].agentSkills.description;
+          }
+
+          const certHighlight = parentCard.querySelector('.certification-highlight p');
+          if (certHighlight) {
+            certHighlight.textContent = translations.education[currentLang].agentSkills.summary;
+          }
+
+          const moduleSpans = parentCard.querySelectorAll('.certification-module span:not(.cert-module-icon)');
+          if (moduleSpans.length > 0) {
+            const modules = translations.education[currentLang].agentSkills.modules;
             moduleSpans.forEach((span, index) => {
               if (index < modules.length) {
                 span.textContent = modules[index];

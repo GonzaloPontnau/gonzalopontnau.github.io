@@ -56,12 +56,12 @@ document.addEventListener("DOMContentLoaded", function () {
           'type': 'Spinlab · Part-time',
           'location': 'Argentina · Remoto',
           'period': 'Abr 2026 - Presente',
-          'description1': 'Diseño y construyo soluciones de Agentic AI para automatización de negocios, enfocado en agentes inteligentes, ingeniería de contexto, automatización de workflows, uso de herramientas y adopción práctica de IA.',
-          'description2': 'Desarrollo flujos de trabajo basados en LLM para integrar herramientas externas y datos en tiempo real.',
-          'stack_title': 'Stack & Skills:',
-          'tech1': '<span class="tech-highlight">Agentes de IA y Workflows:</span> Diseño de agentes autónomos con arquitectura reactiva y planificación, implementando ciclos de percepción-decisión-acción para automatización de procesos.',
-          'tech2': '<span class="tech-highlight">Sistemas LLM y Tooling:</span> Integración con modelos de lenguaje grandes (LLMs) mediante APIs y SDKs, conectando con fuentes de datos y herramientas externas para extender capacidades del agente.',
-          'tech3': '<span class="tech-highlight">Automatización e Integración:</span> Desarrollo de pipelines de automatización end-to-end con Python, conectando APIs, bases de datos y servicios externos para flujos de trabajo inteligentes.'
+          'description1': 'Diseño y construyo soluciones de <strong>Agentic AI</strong> para automatización de negocios, enfocado en agentes inteligentes, ingeniería de contexto, automatización de workflows, uso de herramientas y adopción práctica de IA.',
+          'description2': 'Desarrollo flujos de trabajo basados en <strong>LLM</strong> para integrar herramientas externas y datos en tiempo real, creando sistemas que conectan múltiples APIs y servicios.',
+          'stack_title': 'Agentic AI Stack:',
+          'tech1': '<span class="tech-highlight">AI Agents & Workflows:</span> Diseño de <strong>agentes de IA</strong> y <strong>workflows agentic</strong> para automatización de procesos de negocio, utilizando <strong>OpenAI Agents SDK</strong>, <strong>Google ADK</strong>, <strong>Microsoft Agents SDK</strong>, <strong>LangChain</strong> y <strong>LangGraph</strong>.',
+          'tech2': '<span class="tech-highlight">LLM Systems & Tooling:</span> Construcción de sistemas <strong>LLM-powered</strong> con <strong>OpenAI API Platform</strong>, <strong>OpenAI SDK</strong>, <strong>function calling</strong>, <strong>structured outputs</strong> y workflows basados en herramientas.',
+          'tech3': '<span class="tech-highlight">Automation & Integration:</span> Desarrollo de flujos de automatización con <strong>n8n</strong>, conectando LLMs, APIs, bases de datos y herramientas de negocio. Integración con <strong>Supabase</strong>, plataformas internas y sistemas de negocio externos.'
         },
         'aiQualityAnalyst': {
           'role': 'AI Quality Analyst',
@@ -106,12 +106,12 @@ document.addEventListener("DOMContentLoaded", function () {
           'type': 'Spinlab · Part-time',
           'location': 'Argentina · Remote',
           'period': 'Apr 2026 - Present',
-          'description1': 'I design and build Agentic AI solutions for business automation, focused on intelligent agents, context engineering, workflow automation, tool usage, and practical AI adoption.',
-          'description2': 'I develop LLM-based workflows to integrate external tools and real-time data.',
-          'stack_title': 'Stack & Skills:',
-          'tech1': '<span class="tech-highlight">AI Agents & Workflows:</span> Design of autonomous agents with reactive architecture and planning, implementing perception-decision-action cycles for process automation.',
-          'tech2': '<span class="tech-highlight">LLM Systems & Tooling:</span> Integration with large language models (LLMs) via APIs and SDKs, connecting with data sources and external tools to extend agent capabilities.',
-          'tech3': '<span class="tech-highlight">Automation & Integration:</span> Development of end-to-end automation pipelines with Python, connecting APIs, databases, and external services for intelligent workflows.'
+          'description1': 'I design and build <strong>Agentic AI</strong> solutions for business automation, focused on intelligent agents, context engineering, workflow automation, tool usage, and practical AI adoption.',
+          'description2': 'I develop <strong>LLM</strong>-based workflows to integrate external tools and real-time data, creating systems that connect multiple APIs and services.',
+          'stack_title': 'Agentic AI Stack:',
+          'tech1': '<span class="tech-highlight">AI Agents & Workflows:</span> Design of <strong>AI agents</strong> and <strong>agentic workflows</strong> for business process automation, using <strong>OpenAI Agents SDK</strong>, <strong>Google ADK</strong>, <strong>Microsoft Agents SDK</strong>, <strong>LangChain</strong>, and <strong>LangGraph</strong>.',
+          'tech2': '<span class="tech-highlight">LLM Systems & Tooling:</span> Building <strong>LLM-powered</strong> systems with <strong>OpenAI API Platform</strong>, <strong>OpenAI SDK</strong>, <strong>function calling</strong>, <strong>structured outputs</strong>, and tool-based workflows.',
+          'tech3': '<span class="tech-highlight">Automation & Integration:</span> Developing automation workflows with <strong>n8n</strong>, connecting LLMs, APIs, databases, and business tools. Integration with <strong>Supabase</strong>, internal platforms, and external business systems.'
         },
         'aiQualityAnalyst': {
           'role': 'AI Quality Analyst',

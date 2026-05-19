@@ -51,6 +51,18 @@ document.addEventListener("DOMContentLoaded", function () {
           'tech2': '<span class="tech-highlight">RAG Pipelines & Vector Search:</span> Implementación de pipelines <strong>RAG</strong> end-to-end con <strong>Azure AI Search</strong> y <strong>Pinecone</strong> como vector stores. Estrategias de <strong>chunking</strong> (recursive, semantic), generación de <strong>embeddings</strong> con Azure OpenAI, <strong>hybrid search</strong> (keyword + semantic), <strong>reranking</strong> con cross-encoders y <strong>query expansion</strong>. Controles de calidad con <strong>hallucination detection</strong> y fallbacks.',
           'tech3': '<span class="tech-highlight">M365 Automation & Integration:</span> Creación de flujos con <strong>Power Automate</strong> que generan <strong>minutas</strong>, decisiones y acciones a partir de reuniones en Teams; publicación en <strong>SharePoint/OneDrive/Teams</strong> y creación/actualización de tareas en <strong>Planner</strong> mediante <strong>Microsoft Graph API</strong>.'
         },
+        'spinlabEngineer': {
+          'role': 'Ingeniero de Agentic AI',
+          'type': 'Spinlab · Part-time',
+          'location': 'Argentina · Remoto',
+          'period': 'Abr 2026 - Presente',
+          'description1': 'Diseño e implemento agentes de inteligencia artificial para la automatización inteligente de procesos empresariales.',
+          'description2': 'Desarrollo flujos de trabajo basados en LLM para integrar herramientas externas y datos en tiempo real.',
+          'stack_title': 'Stack & Skills:',
+          'tech1': '<span class="tech-highlight">Agentes de IA y Workflows:</span> Diseño de agentes autónomos con arquitectura reactiva y planificación, implementando ciclos de percepción-decisión-acción para automatización de procesos.',
+          'tech2': '<span class="tech-highlight">Sistemas LLM y Tooling:</span> Integración con modelos de lenguaje grandes (LLMs) mediante APIs y SDKs, conectando con fuentes de datos y herramientas externas para extender capacidades del agente.',
+          'tech3': '<span class="tech-highlight">Automatización e Integración:</span> Desarrollo de pipelines de automatización end-to-end con Python, conectando APIs, bases de datos y servicios externos para flujos de trabajo inteligentes.'
+        },
         'aiQualityAnalyst': {
           'role': 'AI Quality Analyst',
           'type': 'Outlier · Freelance',
@@ -88,6 +100,18 @@ document.addEventListener("DOMContentLoaded", function () {
           'tech1': '<span class="tech-highlight">Agentic Architecture & Orchestration:</span> Design of <strong>multi-agent orchestrator</strong> with <strong>LangGraph</strong> that coordinates specialized sub-agents (knowledge retrieval, task monitoring, feedback loop) exposed via <strong>FastAPI</strong> and deployed on <strong>Azure App Service</strong>. Implementation of <strong>state management</strong>, <strong>conditional routing</strong> and <strong>tool calling</strong> for complex conversational flows.',
           'tech2': '<span class="tech-highlight">RAG Pipelines & Vector Search:</span> Implementation of end-to-end <strong>RAG</strong> pipelines with <strong>Azure AI Search</strong> and <strong>Pinecone</strong> as vector stores. <strong>Chunking</strong> strategies (recursive, semantic), <strong>embeddings</strong> generation with Azure OpenAI, <strong>hybrid search</strong> (keyword + semantic), <strong>reranking</strong> with cross-encoders and <strong>query expansion</strong>. Quality controls with <strong>hallucination detection</strong> and fallbacks.',
           'tech3': '<span class="tech-highlight">M365 Automation & Integration:</span> Creation of flows with <strong>Power Automate</strong> that generate <strong>meeting minutes</strong>, decisions, and actions from Teams meetings; publication to <strong>SharePoint/OneDrive/Teams</strong> and task creation/updates in <strong>Planner</strong> via <strong>Microsoft Graph API</strong>.'
+        },
+        'spinlabEngineer': {
+          'role': 'Agentic AI Engineer',
+          'type': 'Spinlab · Part-time',
+          'location': 'Argentina · Remote',
+          'period': 'Apr 2026 - Present',
+          'description1': 'Design and implement artificial intelligence agents for intelligent business process automation.',
+          'description2': 'Develop LLM-based workflows to integrate external tools and real-time data.',
+          'stack_title': 'Stack & Skills:',
+          'tech1': '<span class="tech-highlight">AI Agents & Workflows:</span> Design of autonomous agents with reactive architecture and planning, implementing perception-decision-action cycles for process automation.',
+          'tech2': '<span class="tech-highlight">LLM Systems & Tooling:</span> Integration with large language models (LLMs) via APIs and SDKs, connecting with data sources and external tools to extend agent capabilities.',
+          'tech3': '<span class="tech-highlight">Automation & Integration:</span> Development of end-to-end automation pipelines with Python, connecting APIs, databases, and external services for intelligent workflows.'
         },
         'aiQualityAnalyst': {
           'role': 'AI Quality Analyst',
@@ -479,6 +503,45 @@ document.addEventListener("DOMContentLoaded", function () {
     if (elementExists('#experience .section-title')) {
       document.querySelector('#experience .section-title').textContent =
         translations.experience[currentLang].title;
+    }
+
+    // SpinLab Engineer experience
+    if (elementExists('#spinlab-engineer .experience-title')) {
+      document.querySelector('#spinlab-engineer .experience-title').textContent =
+        translations.experience[currentLang].spinlabEngineer.role;
+    }
+
+    if (elementExists('#spinlab-engineer .experience-type')) {
+      document.querySelector('#spinlab-engineer .experience-type').textContent =
+        translations.experience[currentLang].spinlabEngineer.type;
+    }
+
+    if (elementExists('#spinlab-engineer .experience-location')) {
+      document.querySelector('#spinlab-engineer .experience-location').textContent =
+        translations.experience[currentLang].spinlabEngineer.location;
+    }
+
+    if (elementExists('#spinlab-engineer .date-pill')) {
+      document.querySelector('#spinlab-engineer .date-pill').textContent =
+        translations.experience[currentLang].spinlabEngineer.period;
+    }
+
+    const spinlabDescriptions = document.querySelectorAll('#spinlab-engineer .experience-description p');
+    if (spinlabDescriptions.length >= 2) {
+      spinlabDescriptions[0].innerHTML = translations.experience[currentLang].spinlabEngineer.description1;
+      spinlabDescriptions[1].innerHTML = translations.experience[currentLang].spinlabEngineer.description2;
+    }
+
+    if (elementExists('#spinlab-engineer .tech-stack-title')) {
+      document.querySelector('#spinlab-engineer .tech-stack-title').textContent =
+        translations.experience[currentLang].spinlabEngineer.stack_title;
+    }
+
+    const spinlabTechTexts = document.querySelectorAll('#spinlab-engineer .tech-text');
+    if (spinlabTechTexts.length >= 3) {
+      spinlabTechTexts[0].innerHTML = translations.experience[currentLang].spinlabEngineer.tech1;
+      spinlabTechTexts[1].innerHTML = translations.experience[currentLang].spinlabEngineer.tech2;
+      spinlabTechTexts[2].innerHTML = translations.experience[currentLang].spinlabEngineer.tech3;
     }
 
     // ABB Trainee experience

@@ -3795,4 +3795,46 @@ img {
         opacity: 1 !important;
         transform: none !important;
     }
+
+    .main-container strong,
+    .linkedin-more-container strong,
+    .highlight,
+    .tech-highlight {
+        background-size: 100% 100% !important;
+        transition: none !important;
+    }
+}
+
+/* ScrollTrigger Text Highlighting (Procedural gradient transition with glow effect) */
+.main-container strong,
+.linkedin-more-container strong,
+.main-container .highlight,
+.main-container .tech-highlight,
+.linkedin-more-container .highlight,
+.linkedin-more-container .tech-highlight {
+    display: inline;
+    position: relative;
+    background: linear-gradient(to right, #00e5ff 0%, #00e5ff 40%, #ffffff 48%, #ffffff 52%, rgba(255, 255, 255, 0.45) 60%, rgba(255, 255, 255, 0.45) 100%) no-repeat !important;
+    background-size: 220% 100% !important;
+    background-position: 100% 0 !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    text-fill-color: transparent !important;
+    font-weight: 700;
+    padding: 0 !important;
+    margin: 0 !important;
+    transition: background-position 1.5s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+/* When active, transition background-position to reveal the accent color and move the glow */
+.main-container strong.active,
+.linkedin-more-container strong.active,
+.main-container .highlight.active,
+.main-container .tech-highlight.active,
+.linkedin-more-container .highlight.active,
+.linkedin-more-container .tech-highlight.active {
+    background-position: 0% 0 !important;
+    -webkit-text-fill-color: transparent !important;
+    text-fill-color: transparent !important;
 }

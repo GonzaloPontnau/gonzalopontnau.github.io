@@ -45,11 +45,11 @@ document.addEventListener("DOMContentLoaded", function () {
           'type': 'ABB · Trainee',
           'location': 'Buenos Aires, Argentina · Remoto',
           'period': 'Oct 2025 - Presente',
-          'description1': 'Lideré la creación de <strong>agentes inteligentes internos</strong> con arquitectura de <strong>orquestación multi-agente</strong> para eficientizar operaciones en diferentes áreas de negocio. Diseñé e implementé un ecosistema de <strong>Agentic AI</strong> con <strong>sub-agentes verticales</strong> desplegados en <strong>Azure</strong>, entregando MVPs en fases iterativas con adopción real por equipos corporativos.',
+          'description1': 'Lideré la creación de agentes inteligentes internos con arquitectura de <strong>orquestación multi-agente</strong> para eficientizar operaciones en diferentes áreas de negocio. Diseñé e implementé un ecosistema de Agentic AI con sub-agentes verticales desplegados en <strong>Azure</strong>, entregando MVPs en fases iterativas con adopción real por equipos corporativos.',
           'stack_title': 'Stack & Skills:',
-          'tech1': '<span class="tech-highlight">Agentic Architecture & Orchestration:</span> Diseño de <strong>orquestador multi-agente</strong> con <strong>LangGraph</strong> que coordina sub-agentes especializados (knowledge retrieval, task monitoring, feedback loop) expuestos vía <strong>FastAPI</strong> y desplegados en <strong>Azure App Service</strong>. Implementación de <strong>state management</strong>, <strong>conditional routing</strong> y <strong>tool calling</strong> para flujos conversacionales complejos.',
-          'tech2': '<span class="tech-highlight">RAG Pipelines & Vector Search:</span> Implementación de pipelines <strong>RAG</strong> end-to-end con <strong>Azure AI Search</strong> y <strong>Pinecone</strong> como vector stores. Estrategias de <strong>chunking</strong> (recursive, semantic), generación de <strong>embeddings</strong> con Azure OpenAI, <strong>hybrid search</strong> (keyword + semantic), <strong>reranking</strong> con cross-encoders y <strong>query expansion</strong>. Controles de calidad con <strong>hallucination detection</strong> y fallbacks.',
-          'tech3': '<span class="tech-highlight">M365 Automation & Integration:</span> Creación de flujos con <strong>Power Automate</strong> que generan <strong>minutas</strong>, decisiones y acciones a partir de reuniones en Teams; publicación en <strong>SharePoint/OneDrive/Teams</strong> y creación/actualización de tareas en <strong>Planner</strong> mediante <strong>Microsoft Graph API</strong>.'
+          'tech1': '<span class="tech-highlight">Agentic Architecture & Orchestration:</span> Diseño de orquestador multi-agente con LangGraph que coordina sub-agentes especializados (knowledge retrieval, task monitoring, feedback loop) expuestos vía FastAPI y desplegados en Azure App Service. Implementación de <strong>state management</strong>, <strong>conditional routing</strong> y <strong>tool calling</strong> para flujos conversacionales complejos.',
+          'tech2': '<span class="tech-highlight">RAG Pipelines & Vector Search:</span> Implementación de pipelines <strong>RAG</strong> end-to-end con <strong>Azure AI Search</strong> y <strong>Pinecone</strong> como vector stores. Estrategias de chunking (recursive, semantic), generación de <strong>embeddings</strong> con Azure OpenAI, hybrid search (keyword + semantic), reranking con cross-encoders y query expansion. Controles de calidad con <strong>hallucination detection</strong> y fallbacks.',
+          'tech3': '<span class="tech-highlight">M365 Automation & Integration:</span> Creación de flujos con Power Automate que generan minutas, decisiones y acciones a partir de reuniones en Teams; publicación en <strong>SharePoint/OneDrive/Teams</strong> y creación/actualización de tareas en Planner mediante <strong>Microsoft Graph API</strong>.'
         },
         'spinlabEngineer': {
           'role': 'Ingeniero de Agentic AI',
@@ -59,9 +59,9 @@ document.addEventListener("DOMContentLoaded", function () {
           'description1': 'Diseño y construyo soluciones de <strong>Agentic AI</strong> para automatización de negocios, enfocado en agentes inteligentes, ingeniería de contexto, automatización de workflows, uso de herramientas y adopción práctica de IA.',
           'description2': 'Desarrollo flujos de trabajo basados en <strong>LLM</strong> para integrar herramientas externas y datos en tiempo real, creando sistemas que conectan múltiples APIs y servicios.',
           'stack_title': 'Agentic AI Stack:',
-          'tech1': '<span class="tech-highlight">AI Agents & Workflows:</span> Diseño de <strong>agentes de IA</strong> y <strong>workflows agentic</strong> para automatización de procesos de negocio, utilizando <strong>OpenAI Agents SDK</strong>, <strong>Google ADK</strong>, <strong>Microsoft Agents SDK</strong>, <strong>LangChain</strong> y <strong>LangGraph</strong>.',
-          'tech2': '<span class="tech-highlight">LLM Systems & Tooling:</span> Construcción de sistemas <strong>LLM-powered</strong> con <strong>OpenAI API Platform</strong>, <strong>OpenAI SDK</strong>, <strong>function calling</strong>, <strong>structured outputs</strong> y workflows basados en herramientas.',
-          'tech3': '<span class="tech-highlight">Automation & Integration:</span> Desarrollo de flujos de automatización con <strong>n8n</strong>, conectando LLMs, APIs, bases de datos y herramientas de negocio. Integración con <strong>Supabase</strong>, plataformas internas y sistemas de negocio externos.'
+          'tech1': '<span class="tech-highlight">AI Agents & Workflows:</span> Diseño de <strong>agentes de IA</strong> y workflows agentic para automatización de procesos de negocio, utilizando OpenAI Agents SDK, Google ADK, Microsoft Agents SDK, LangChain y LangGraph.',
+          'tech2': '<span class="tech-highlight">LLM Systems & Tooling:</span> Construcción de sistemas LLM-powered con <strong>OpenAI API Platform</strong>, OpenAI SDK, function calling, structured outputs y workflows basados en herramientas.',
+          'tech3': '<span class="tech-highlight">Automation & Integration:</span> Desarrollo de flujos de automatización con <strong>n8n</strong>, conectando LLMs, APIs, bases de datos y herramientas de negocio. Integración con Supabase, plataformas internas y sistemas de negocio externos.'
         },
         'aiQualityAnalyst': {
           'role': 'AI Quality Analyst',
@@ -95,11 +95,11 @@ document.addEventListener("DOMContentLoaded", function () {
           'type': 'ABB · Trainee',
           'location': 'Buenos Aires, Argentina · Remote',
           'period': 'Oct 2025 - Present',
-          'description1': 'I led the creation of <strong>internal intelligent agents</strong> with <strong>multi-agent orchestration</strong> architecture to streamline operations across different business areas. I designed and implemented an <strong>Agentic AI</strong> ecosystem with <strong>vertical sub-agents</strong> deployed on <strong>Azure</strong>, delivering MVPs in iterative phases with real adoption by corporate teams.',
+          'description1': 'I led the creation of internal intelligent agents with <strong>multi-agent orchestration</strong> architecture to streamline operations across different business areas. I designed and implemented an Agentic AI ecosystem with vertical sub-agents deployed on <strong>Azure</strong>, delivering MVPs in iterative phases with real adoption by corporate teams.',
           'stack_title': 'Stack & Skills:',
-          'tech1': '<span class="tech-highlight">Agentic Architecture & Orchestration:</span> Design of <strong>multi-agent orchestrator</strong> with <strong>LangGraph</strong> that coordinates specialized sub-agents (knowledge retrieval, task monitoring, feedback loop) exposed via <strong>FastAPI</strong> and deployed on <strong>Azure App Service</strong>. Implementation of <strong>state management</strong>, <strong>conditional routing</strong> and <strong>tool calling</strong> for complex conversational flows.',
-          'tech2': '<span class="tech-highlight">RAG Pipelines & Vector Search:</span> Implementation of end-to-end <strong>RAG</strong> pipelines with <strong>Azure AI Search</strong> and <strong>Pinecone</strong> as vector stores. <strong>Chunking</strong> strategies (recursive, semantic), <strong>embeddings</strong> generation with Azure OpenAI, <strong>hybrid search</strong> (keyword + semantic), <strong>reranking</strong> with cross-encoders and <strong>query expansion</strong>. Quality controls with <strong>hallucination detection</strong> and fallbacks.',
-          'tech3': '<span class="tech-highlight">M365 Automation & Integration:</span> Creation of flows with <strong>Power Automate</strong> that generate <strong>meeting minutes</strong>, decisions, and actions from Teams meetings; publication to <strong>SharePoint/OneDrive/Teams</strong> and task creation/updates in <strong>Planner</strong> via <strong>Microsoft Graph API</strong>.'
+          'tech1': '<span class="tech-highlight">Agentic Architecture & Orchestration:</span> Design of multi-agent orchestrator with LangGraph that coordinates specialized sub-agents (knowledge retrieval, task monitoring, feedback loop) exposed via FastAPI and deployed on Azure App Service. Implementation of <strong>state management</strong>, <strong>conditional routing</strong> and <strong>tool calling</strong> for complex conversational flows.',
+          'tech2': '<span class="tech-highlight">RAG Pipelines & Vector Search:</span> Implementation of end-to-end <strong>RAG</strong> pipelines with <strong>Azure AI Search</strong> and <strong>Pinecone</strong> as vector stores. Chunking strategies (recursive, semantic), <strong>embeddings</strong> generation with Azure OpenAI, hybrid search (keyword + semantic), reranking with cross-encoders and query expansion. Quality controls with <strong>hallucination detection</strong> and fallbacks.',
+          'tech3': '<span class="tech-highlight">M365 Automation & Integration:</span> Creation of flows with Power Automate that generate meeting minutes, decisions, and actions from Teams meetings; publication to <strong>SharePoint/OneDrive/Teams</strong> and task creation/updates in Planner via <strong>Microsoft Graph API</strong>.'
         },
         'spinlabEngineer': {
           'role': 'Agentic AI Engineer',
@@ -109,9 +109,9 @@ document.addEventListener("DOMContentLoaded", function () {
           'description1': 'I design and build <strong>Agentic AI</strong> solutions for business automation, focused on intelligent agents, context engineering, workflow automation, tool usage, and practical AI adoption.',
           'description2': 'I develop <strong>LLM</strong>-based workflows to integrate external tools and real-time data, creating systems that connect multiple APIs and services.',
           'stack_title': 'Agentic AI Stack:',
-          'tech1': '<span class="tech-highlight">AI Agents & Workflows:</span> Design of <strong>AI agents</strong> and <strong>agentic workflows</strong> for business process automation, using <strong>OpenAI Agents SDK</strong>, <strong>Google ADK</strong>, <strong>Microsoft Agents SDK</strong>, <strong>LangChain</strong>, and <strong>LangGraph</strong>.',
-          'tech2': '<span class="tech-highlight">LLM Systems & Tooling:</span> Building <strong>LLM-powered</strong> systems with <strong>OpenAI API Platform</strong>, <strong>OpenAI SDK</strong>, <strong>function calling</strong>, <strong>structured outputs</strong>, and tool-based workflows.',
-          'tech3': '<span class="tech-highlight">Automation & Integration:</span> Developing automation workflows with <strong>n8n</strong>, connecting LLMs, APIs, databases, and business tools. Integration with <strong>Supabase</strong>, internal platforms, and external business systems.'
+          'tech1': '<span class="tech-highlight">AI Agents & Workflows:</span> Design of <strong>AI agents</strong> and agentic workflows for business process automation, using OpenAI Agents SDK, Google ADK, Microsoft Agents SDK, LangChain, and LangGraph.',
+          'tech2': '<span class="tech-highlight">LLM Systems & Tooling:</span> Building LLM-powered systems with <strong>OpenAI API Platform</strong>, OpenAI SDK, function calling, structured outputs, and tool-based workflows.',
+          'tech3': '<span class="tech-highlight">Automation & Integration:</span> Developing automation workflows with <strong>n8n</strong>, connecting LLMs, APIs, databases, and business tools. Integration with Supabase, internal platforms, and external business systems.'
         },
         'aiQualityAnalyst': {
           'role': 'AI Quality Analyst',
@@ -447,6 +447,9 @@ document.addEventListener("DOMContentLoaded", function () {
       // Medir tiempo total de cambio
       const endTime = performance.now();
       console.log(`Idioma cambiado a ${lang} en ${(endTime - startTime).toFixed(2)}ms`);
+
+      // Despachar evento personalizado indicando que el idioma ha cambiado
+      document.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
 
     } catch (error) {
       console.error(`Error al cambiar el idioma a ${lang}:`, error);

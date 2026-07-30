@@ -76,6 +76,11 @@
       return;
     }
 
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      canvas.hidden = true;
+      return;
+    }
+
     const ctx = canvas.getContext("2d");
     const isMobile = window.innerWidth <= 767;
 

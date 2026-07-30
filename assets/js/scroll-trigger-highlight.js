@@ -53,8 +53,6 @@ function initHighlightAnimationsWithGSAP() {
   }
 
   const parentMap = getParentContainersMap();
-  console.log(`[GSAP ScrollTrigger] Inicializando resaltado para ${parentMap.size} contenedores de bloque.`);
-
   parentMap.forEach((children, parent) => {
     // Resetear clase active en los hijos
     children.forEach(child => child.classList.remove('active'));
@@ -94,8 +92,6 @@ function initHighlightAnimationsWithObserver() {
   }
 
   const parentMap = getParentContainersMap();
-  console.log(`[Observer Fallback] Inicializando resaltado para ${parentMap.size} contenedores de bloque.`);
-
   const observerOptions = {
     root: null,
     rootMargin: '0px 0px -22% 0px', // Equivale aproximadamente a top 78%
@@ -156,7 +152,6 @@ if (document.readyState === "complete") {
 
 // Escuchar cambios de idioma para re-inicializar
 document.addEventListener("languageChanged", () => {
-  console.log("Cambio de idioma detectado. Re-inicializando animaciones...");
   setTimeout(() => {
     startHighlight();
   }, 100);

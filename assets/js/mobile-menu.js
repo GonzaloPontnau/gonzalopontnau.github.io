@@ -12,7 +12,10 @@ document.addEventListener('DOMContentLoaded', function () {
         sidebarOverlay.classList.add('active');
         mobileMenuBtn.classList.add('active');
         mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        mobileSidebar.setAttribute('aria-hidden', 'false');
+        mobileSidebar.inert = false;
         document.body.style.overflow = 'hidden'; // Prevenir scroll del body
+        sidebarCloseBtn.focus();
     }
 
     // Función para cerrar el sidebar
@@ -21,7 +24,10 @@ document.addEventListener('DOMContentLoaded', function () {
         sidebarOverlay.classList.remove('active');
         mobileMenuBtn.classList.remove('active');
         mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        mobileSidebar.setAttribute('aria-hidden', 'true');
+        mobileSidebar.inert = true;
         document.body.style.overflow = ''; // Restaurar scroll del body
+        mobileMenuBtn.focus();
     }
 
     // Toggle del sidebar al hacer click en el botón hamburguesa

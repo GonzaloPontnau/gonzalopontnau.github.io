@@ -37,20 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function updateCvLinks(language) {
-    const heroCv = document.querySelector("[data-cv-link]");
-    if (heroCv) {
-      heroCv.href = language === "en"
-        ? "./assets/images/CV-2026 (EN).pdf"
-        : "./assets/images/CV-2026 (ES).pdf";
-    }
-  }
-
   function applyLanguage(language, persist = true) {
     currentLanguage = supportedLanguages.has(language) ? language : "es";
     document.documentElement.lang = currentLanguage;
     translateAttributes(currentLanguage);
-    updateCvLinks(currentLanguage);
     indicator.textContent = currentLanguage.toUpperCase();
 
     if (persist) localStorage.setItem("preferredLanguage", currentLanguage);

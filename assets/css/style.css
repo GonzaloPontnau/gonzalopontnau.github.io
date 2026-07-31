@@ -3283,13 +3283,10 @@ footer {
 
 .company-logo.spinlab-logo {
     background: #ffffff;
-    border-radius: 50%;
+    border-radius: 10px;
     box-sizing: border-box;
     object-fit: contain;
-    width: clamp(64px, 6vw, 76px);
-    height: clamp(64px, 6vw, 76px);
-    padding: 0;
-    flex: 0 0 auto;
+    padding: 4px;
 }
 
 .company-logo:hover {

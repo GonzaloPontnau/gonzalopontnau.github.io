@@ -3281,6 +3281,14 @@ footer {
     transition: all 0.3s ease;
 }
 
+.company-logo.spinlab-logo {
+    background: #ffffff;
+    border-radius: 50%;
+    box-sizing: border-box;
+    object-fit: contain;
+    padding: 4px;
+}
+
 .company-logo:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);

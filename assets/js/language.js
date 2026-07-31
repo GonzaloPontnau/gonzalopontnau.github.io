@@ -141,14 +141,14 @@ document.addEventListener("DOMContentLoaded", function () {
       'es': {
         'title': 'Sobre Mí',
         'bio1': 'Estudiante avanzado en Ingeniería en Sistemas (UTN.BA) especializado en <span class="highlight">AI Engineering</span>. Lidero la creación de <span class="highlight">agentes inteligentes</span> y workflows automatizados que transforman operaciones manuales en procesos eficientes, ahorrando tiempo y reduciendo errores en el día a día de equipos corporativos.',
-        'bio2': 'Me apasiona <span class="highlight">hacer visible el impacto de la IA</span>: trabajo de cerca con diferentes áreas de negocio para entender sus necesidades, diseñar soluciones adoptables y demostrar con datos cómo la automatización mejora su operación.',
+        'bio2': 'Me apasiona <span class="highlight">hacer visible el impacto de la IA</span>: trabajo de cerca con diferentes áreas de negocio para entender sus necesidades, diseñar soluciones adoptables y demostrar con datos cómo la automatización mejora su operación. El futuro del software estará cada vez más ligado a servicios inteligentes capaces de resolver problemas de punta a punta, y quienes logren llevar esas ideas a la práctica serán quienes marquen la diferencia.',
         'bio3': 'La comunicación es una de mis principales fortalezas: soy extrovertido, trabajo muy bien en equipo y conecto fácilmente con personas diversas, algo clave cuando se construyen soluciones de IA que cruzan tecnología, negocio y usuarios finales.',
         'skillsTitle': 'Tecnologías'
       },
       'en': {
         'title': 'About Me',
         'bio1': 'Advanced Systems Engineering student (UTN.BA) specialized in <span class="highlight">AI Engineering</span>. I lead the creation of <span class="highlight">intelligent agents</span> and automated workflows that transform manual operations into efficient processes, saving time and reducing errors in the daily work of corporate teams.',
-        'bio2': 'I\'m passionate about <span class="highlight">making AI impact visible</span>: I work closely with different business areas to understand their needs, design adoptable solutions, and demonstrate with data how automation improves their operations.',
+        'bio2': 'I\'m passionate about <span class="highlight">making AI impact visible</span>: I work closely with different business areas to understand their needs, design adoptable solutions, and demonstrate with data how automation improves their operations. The future of software will be increasingly connected to intelligent services capable of solving problems end to end, and those who turn these ideas into reality will be the ones who make the difference.',
         'bio3': 'Communication is one of my main strengths: I\'m extroverted, work very well in teams, and connect easily with diverse people, which is key when building AI solutions that bridge technology, business, and end users.',
         'skillsTitle': 'Technologies'
       }

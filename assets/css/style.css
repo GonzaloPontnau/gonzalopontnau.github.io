@@ -3286,7 +3286,10 @@ footer {
     border-radius: 50%;
     box-sizing: border-box;
     object-fit: contain;
-    padding: 4px;
+    width: clamp(64px, 6vw, 76px);
+    height: clamp(64px, 6vw, 76px);
+    padding: 0;
+    flex: 0 0 auto;
 }
 
 .company-logo:hover {

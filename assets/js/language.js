@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
         'spinlabEngineer': {
           'role': 'Ingeniero de IA agéntica',
           'type': 'Spinlab · Tiempo parcial',
-          'location': 'Argentina · Remoto',
+          'location': 'Latam · Remoto',
           'period': 'Abr 2026 - Presente',
           'description1': 'Diseño y entrego soluciones empresariales de <strong>IA y automatización inteligente</strong> para clientes multinacionales mediante tecnologías Microsoft. Este enfoque se refleja en proyectos del portfolio como <strong>GymAI - Tu personal TrAIner</strong> y <strong>Money Manager</strong>, donde convierto necesidades concretas en flujos y experiencias digitales.',
           'stack_title': 'Pilares y capacidades principales:',
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
         'spinlabEngineer': {
           'role': 'Agentic AI Engineer',
           'type': 'Spinlab · Part-time',
-          'location': 'Argentina · Remote',
+          'location': 'Latam · Remote',
           'period': 'Apr 2026 - Present',
           'description1': 'I design and deliver <strong>enterprise AI and intelligent automation</strong> solutions for multinational clients using Microsoft technologies. This approach is reflected in portfolio projects such as <strong>GymAI - Your Personal TrAIner</strong> and <strong>Money Manager</strong>, where I turn concrete needs into digital workflows and experiences.',
           'stack_title': 'Core Pillars & Capabilities:',
